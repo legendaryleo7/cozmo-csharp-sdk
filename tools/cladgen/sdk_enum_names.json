@@ -1,0 +1,835 @@
+{
+  "_comment": "Explicit CladEnumWrapper entries extracted from the Python SDK 1.4.12 sources. Do not edit by hand; run tools/cladgen/extract_sdk_enum_names.py.",
+  "cozmocladVersion": "3.6.0",
+  "wrappers": {
+    "BehaviorTypes": {
+      "enum": "Anki.Cozmo.ExecutableBehaviorType",
+      "source": "behavior.py",
+      "addMissing": false,
+      "entries": [
+        {
+          "public": "FindFaces",
+          "clad": "FindFaces",
+          "id": 1
+        },
+        {
+          "public": "KnockOverCubes",
+          "clad": "KnockOverCubes",
+          "id": 4
+        },
+        {
+          "public": "LookAroundInPlace",
+          "clad": "LookAroundInPlace",
+          "id": 6
+        },
+        {
+          "public": "PounceOnMotion",
+          "clad": "PounceOnMotion",
+          "id": 7
+        },
+        {
+          "public": "RollBlock",
+          "clad": "RollBlock",
+          "id": 8
+        },
+        {
+          "public": "StackBlocks",
+          "clad": "StackBlocks",
+          "id": 9
+        },
+        {
+          "public": "EnrollFace",
+          "clad": "EnrollFace",
+          "pythonAttribute": "_EnrollFace",
+          "internal": true,
+          "id": 0
+        }
+      ]
+    },
+    "AudioEvents": {
+      "enum": "Anki.AudioMetaData.GameEvent.Codelab",
+      "source": "audio.py",
+      "addMissing": true,
+      "entries": [
+        {
+          "public": "Invalid",
+          "clad": "Invalid",
+          "id": 0
+        },
+        {
+          "public": "MusicGlobalStop",
+          "clad": "Music_Global_Stop",
+          "id": 2512535841
+        },
+        {
+          "public": "MusicBackgroundSilenceOn",
+          "clad": "Music_Background_Silence_On",
+          "id": 4207184651
+        },
+        {
+          "public": "MusicBackgroundSilenceOff",
+          "clad": "Music_Background_Silence_Off",
+          "id": 3328628191
+        },
+        {
+          "public": "MusicTinyOrchestraInit",
+          "clad": "Music_Tiny_Orchestra_Init",
+          "id": 4134268600
+        },
+        {
+          "public": "MusicTinyOrchestraStop",
+          "clad": "Music_Tiny_Orchestra_Stop",
+          "id": 4261649076
+        },
+        {
+          "public": "MusicTinyOrchestraBassMode1",
+          "clad": "Music_Tiny_Orchestra_Bass_Mode_1",
+          "id": 2111780371
+        },
+        {
+          "public": "MusicTinyOrchestraBassMode1Stop",
+          "clad": "Music_Tiny_Orchestra_Bass_Mode_1_Stop",
+          "id": 222737888
+        },
+        {
+          "public": "MusicTinyOrchestraBassMode2",
+          "clad": "Music_Tiny_Orchestra_Bass_Mode_2",
+          "id": 2111780368
+        },
+        {
+          "public": "MusicTinyOrchestraBassMode2Stop",
+          "clad": "Music_Tiny_Orchestra_Bass_Mode_2_Stop",
+          "id": 1587327405
+        },
+        {
+          "public": "MusicTinyOrchestraBassMode3",
+          "clad": "Music_Tiny_Orchestra_Bass_Mode_3",
+          "id": 2111780369
+        },
+        {
+          "public": "MusicTinyOrchestraBassMode3Stop",
+          "clad": "Music_Tiny_Orchestra_Bass_Mode_3_Stop",
+          "id": 1731643034
+        },
+        {
+          "public": "MusicTinyOrchestraBassStop",
+          "clad": "Music_Tiny_Orchestra_Bass_Stop",
+          "id": 1011028768
+        },
+        {
+          "public": "MusicTinyOrchestraGlockPluckMode1",
+          "clad": "Music_Tiny_Orchestra_Glock_Pluck_Mode_1",
+          "id": 1774266660
+        },
+        {
+          "public": "MusicTinyOrchestraGlockPluckMode1Stop",
+          "clad": "Music_Tiny_Orchestra_Glock_Pluck_Mode_1_Stop",
+          "id": 1662844729
+        },
+        {
+          "public": "MusicTinyOrchestraGlockPluckMode2",
+          "clad": "Music_Tiny_Orchestra_Glock_Pluck_Mode_2",
+          "id": 1774266663
+        },
+        {
+          "public": "MusicTinyOrchestraGlockPluckMode2Stop",
+          "clad": "Music_Tiny_Orchestra_Glock_Pluck_Mode_2_Stop",
+          "id": 2287415996
+        },
+        {
+          "public": "MusicTinyOrchestraGlockPluckMode3",
+          "clad": "Music_Tiny_Orchestra_Glock_Pluck_Mode_3",
+          "id": 1774266662
+        },
+        {
+          "public": "MusicTinyOrchestraGlockPluckMode3Stop",
+          "clad": "Music_Tiny_Orchestra_Glock_Pluck_Mode_3_Stop",
+          "id": 3420658727
+        },
+        {
+          "public": "MusicTinyOrchestraGlockPluckStop",
+          "clad": "Music_Tiny_Orchestra_Glock_Pluck_Stop",
+          "id": 3644877187
+        },
+        {
+          "public": "MusicTinyOrchestraStringsMode1",
+          "clad": "Music_Tiny_Orchestra_Strings_Mode_1",
+          "id": 3175211494
+        },
+        {
+          "public": "MusicTinyOrchestraStringsMode1Stop",
+          "clad": "Music_Tiny_Orchestra_Strings_Mode_1_Stop",
+          "id": 2836526843
+        },
+        {
+          "public": "MusicTinyOrchestraStringsMode2",
+          "clad": "Music_Tiny_Orchestra_Strings_Mode_2",
+          "id": 3175211493
+        },
+        {
+          "public": "MusicTinyOrchestraStringsMode2Stop",
+          "clad": "Music_Tiny_Orchestra_Strings_Mode_2_Stop",
+          "id": 3381154170
+        },
+        {
+          "public": "MusicTinyOrchestraStringsMode3",
+          "clad": "Music_Tiny_Orchestra_Strings_Mode_3",
+          "id": 3175211492
+        },
+        {
+          "public": "MusicTinyOrchestraStringsMode3Stop",
+          "clad": "Music_Tiny_Orchestra_Strings_Mode_3_Stop",
+          "id": 2812380813
+        },
+        {
+          "public": "MusicTinyOrchestraStringsStop",
+          "clad": "Music_Tiny_Orchestra_Strings_Stop",
+          "id": 3805843413
+        },
+        {
+          "public": "MusicTinyOrchestraBass01Loop",
+          "clad": "Music_Tiny_Orchestra_Bass_01_Loop",
+          "id": 1352943452
+        },
+        {
+          "public": "MusicTinyOrchestraBass01LoopStop",
+          "clad": "Music_Tiny_Orchestra_Bass_01_Loop_Stop",
+          "id": 1353021637
+        },
+        {
+          "public": "MusicTinyOrchestraBass02Loop",
+          "clad": "Music_Tiny_Orchestra_Bass_02_Loop",
+          "id": 3270107901
+        },
+        {
+          "public": "MusicTinyOrchestraBass02LoopStop",
+          "clad": "Music_Tiny_Orchestra_Bass_02_Loop_Stop",
+          "id": 3636979286
+        },
+        {
+          "public": "MusicTinyOrchestraBass03Loop",
+          "clad": "Music_Tiny_Orchestra_Bass_03_Loop",
+          "id": 3677506218
+        },
+        {
+          "public": "MusicTinyOrchestraBass03LoopStop",
+          "clad": "Music_Tiny_Orchestra_Bass_03_Loop_Stop",
+          "id": 1838210855
+        },
+        {
+          "public": "MusicTinyOrchestraGlockPluck01Loop",
+          "clad": "Music_Tiny_Orchestra_Glock_Pluck_01_Loop",
+          "id": 2091022501
+        },
+        {
+          "public": "MusicTinyOrchestraGlockPluck01LoopStop",
+          "clad": "Music_Tiny_Orchestra_Glock_Pluck_01_Loop_Stop",
+          "id": 1371551766
+        },
+        {
+          "public": "MusicTinyOrchestraGlockPluck02Loop",
+          "clad": "Music_Tiny_Orchestra_Glock_Pluck_02_Loop",
+          "id": 1416718788
+        },
+        {
+          "public": "MusicTinyOrchestraGlockPluck02LoopStop",
+          "clad": "Music_Tiny_Orchestra_Glock_Pluck_02_Loop_Stop",
+          "id": 1925511301
+        },
+        {
+          "public": "MusicTinyOrchestraGlockPluck03Loop",
+          "clad": "Music_Tiny_Orchestra_Glock_Pluck_03_Loop",
+          "id": 668702647
+        },
+        {
+          "public": "MusicTinyOrchestraGlockPluck03LoopStop",
+          "clad": "Music_Tiny_Orchestra_Glock_Pluck_03_Loop_Stop",
+          "id": 2578133564
+        },
+        {
+          "public": "MusicTinyOrchestraStrings01Loop",
+          "clad": "Music_Tiny_Orchestra_Strings_01_Loop",
+          "id": 846761783
+        },
+        {
+          "public": "MusicTinyOrchestraStrings01LoopStop",
+          "clad": "Music_Tiny_Orchestra_Strings_01_Loop_Stop",
+          "id": 3051334784
+        },
+        {
+          "public": "MusicTinyOrchestraStrings02Loop",
+          "clad": "Music_Tiny_Orchestra_Strings_02_Loop",
+          "id": 363664914
+        },
+        {
+          "public": "MusicTinyOrchestraStrings02LoopStop",
+          "clad": "Music_Tiny_Orchestra_Strings_02_Loop_Stop",
+          "id": 3105309531
+        },
+        {
+          "public": "MusicTinyOrchestraStrings03Loop",
+          "clad": "Music_Tiny_Orchestra_Strings_03_Loop",
+          "id": 2269081637
+        },
+        {
+          "public": "MusicTinyOrchestraStrings03LoopStop",
+          "clad": "Music_Tiny_Orchestra_Strings_03_Loop_Stop",
+          "id": 4031668042
+        },
+        {
+          "public": "MusicCubeWhack",
+          "clad": "Music_Cube_Whack",
+          "id": 3324716189
+        },
+        {
+          "public": "MusicHotPotatoLevel1Loop",
+          "clad": "Music_Hot_Potato_Level_1_Loop",
+          "id": 716489468
+        },
+        {
+          "public": "MusicHotPotatoLevel1LoopStop",
+          "clad": "Music_Hot_Potato_Level_1_Loop_Stop",
+          "id": 2689778401
+        },
+        {
+          "public": "MusicHotPotatoLevel2Loop",
+          "clad": "Music_Hot_Potato_Level_2_Loop",
+          "id": 2357357213
+        },
+        {
+          "public": "MusicHotPotatoLevel2LoopStop",
+          "clad": "Music_Hot_Potato_Level_2_Loop_Stop",
+          "id": 3058241090
+        },
+        {
+          "public": "MusicHotPotatoLevel3Loop",
+          "clad": "Music_Hot_Potato_Level_3_Loop",
+          "id": 2340195146
+        },
+        {
+          "public": "MusicHotPotatoLevel3LoopStop",
+          "clad": "Music_Hot_Potato_Level_3_Loop_Stop",
+          "id": 2301371667
+        },
+        {
+          "public": "MusicHotPotatoLevel4Loop",
+          "clad": "Music_Hot_Potato_Level_4_Loop",
+          "id": 4097176099
+        },
+        {
+          "public": "MusicHotPotatoLevel4LoopStop",
+          "clad": "Music_Hot_Potato_Level_4_Loop_Stop",
+          "id": 3129138908
+        },
+        {
+          "public": "MusicMagic8RevealStinger",
+          "clad": "Music_Magic8_Reveal_Stinger",
+          "id": 1998467689
+        },
+        {
+          "public": "MusicMagic8RevealStingerStop",
+          "clad": "Music_Magic8_Reveal_Stinger_Stop",
+          "id": 16687378
+        },
+        {
+          "public": "MusicStyle80S1159BpmLoop",
+          "clad": "Music_Style_80S_1_159Bpm_Loop",
+          "id": 1808088864
+        },
+        {
+          "public": "MusicStyle80S1159BpmLoopStop",
+          "clad": "Music_Style_80S_1_159Bpm_Loop_Stop",
+          "id": 1451276801
+        },
+        {
+          "public": "MusicStyleDisco1135BpmLoop",
+          "clad": "Music_Style_Disco_1_135Bpm_Loop",
+          "id": 2717741607
+        },
+        {
+          "public": "MusicStyleDisco1135BpmLoopStop",
+          "clad": "Music_Style_Disco_1_135Bpm_Loop_Stop",
+          "id": 3069781320
+        },
+        {
+          "public": "MusicStyleMambo1183BpmLoop",
+          "clad": "Music_Style_Mambo_1_183Bpm_Loop",
+          "id": 1905159696
+        },
+        {
+          "public": "MusicStyleMambo1183BpmLoopStop",
+          "clad": "Music_Style_Mambo_1_183Bpm_Loop_Stop",
+          "id": 1709157641
+        },
+        {
+          "public": "SfxGlobalStop",
+          "clad": "Sfx_Global_Stop",
+          "id": 2451909313
+        },
+        {
+          "public": "SfxCubeLight",
+          "clad": "Sfx_Cube_Light",
+          "id": 1237348851
+        },
+        {
+          "public": "SfxCubeLightStop",
+          "clad": "Sfx_Cube_Light_Stop",
+          "id": 2096539976
+        },
+        {
+          "public": "SfxFiretruckTimerStart",
+          "clad": "Sfx_Firetruck_Timer_Start",
+          "id": 2969457917
+        },
+        {
+          "public": "SfxFiretruckTimerStartStop",
+          "clad": "Sfx_Firetruck_Timer_Start_Stop",
+          "id": 494556302
+        },
+        {
+          "public": "SfxFiretruckTimerEnd",
+          "clad": "Sfx_Firetruck_Timer_End",
+          "id": 2490749974
+        },
+        {
+          "public": "SfxFiretruckTimerEndStop",
+          "clad": "Sfx_Firetruck_Timer_End_Stop",
+          "id": 421166967
+        },
+        {
+          "public": "SfxGameWin",
+          "clad": "Sfx_Game_Win",
+          "id": 2440620400
+        },
+        {
+          "public": "SfxGameWinStop",
+          "clad": "Sfx_Game_Win_Stop",
+          "id": 1156077641
+        },
+        {
+          "public": "SfxGameLose",
+          "clad": "Sfx_Game_Lose",
+          "id": 1551222965
+        },
+        {
+          "public": "SfxGameLoseStop",
+          "clad": "Sfx_Game_Lose_Stop",
+          "id": 347471374
+        },
+        {
+          "public": "SfxHotPotatoCubeCharge",
+          "clad": "Sfx_Hot_Potato_Cube_Charge",
+          "id": 1053690875
+        },
+        {
+          "public": "SfxHotPotatoCubeChargeStop",
+          "clad": "Sfx_Hot_Potato_Cube_Charge_Stop",
+          "id": 3280818964
+        },
+        {
+          "public": "SfxHotPotatoCubeReady",
+          "clad": "Sfx_Hot_Potato_Cube_Ready",
+          "id": 1379908684
+        },
+        {
+          "public": "SfxHotPotatoCubeReadyStop",
+          "clad": "Sfx_Hot_Potato_Cube_Ready_Stop",
+          "id": 3293236253
+        },
+        {
+          "public": "SfxHotPotatoPass",
+          "clad": "Sfx_Hot_Potato_Pass",
+          "id": 17262752
+        },
+        {
+          "public": "SfxHotPotatoPassStop",
+          "clad": "Sfx_Hot_Potato_Pass_Stop",
+          "id": 2579746409
+        },
+        {
+          "public": "SfxHotPotatoTimerEnd",
+          "clad": "Sfx_Hot_Potato_Timer_End",
+          "id": 1167243172
+        },
+        {
+          "public": "SfxHotPotatoTimerEndStop",
+          "clad": "Sfx_Hot_Potato_Timer_End_Stop",
+          "id": 1930994181
+        },
+        {
+          "public": "SfxMagic8MessageReveal",
+          "clad": "Sfx_Magic8_Message_Reveal",
+          "id": 4071915446
+        },
+        {
+          "public": "SfxMagic8MessageRevealStop",
+          "clad": "Sfx_Magic8_Message_Reveal_Stop",
+          "id": 3951709903
+        },
+        {
+          "public": "SfxMagnetAttract",
+          "clad": "Sfx_Magnet_Attract",
+          "id": 3253652261
+        },
+        {
+          "public": "SfxMagnetAttractStop",
+          "clad": "Sfx_Magnet_Attract_Stop",
+          "id": 1573765534
+        },
+        {
+          "public": "SfxMagnetRepel",
+          "clad": "Sfx_Magnet_Repel",
+          "id": 131125164
+        },
+        {
+          "public": "SfxMagnetRepelStop",
+          "clad": "Sfx_Magnet_Repel_Stop",
+          "id": 827939469
+        },
+        {
+          "public": "SfxSharedCountdown",
+          "clad": "Sfx_Shared_Countdown",
+          "id": 3959673678
+        },
+        {
+          "public": "SfxSharedCountdownStop",
+          "clad": "Sfx_Shared_Countdown_Stop",
+          "id": 769770611
+        },
+        {
+          "public": "SfxSharedCubeLightOn",
+          "clad": "Sfx_Shared_Cube_Light_On",
+          "id": 2279105405
+        },
+        {
+          "public": "SfxSharedCubeLightOnStop",
+          "clad": "Sfx_Shared_Cube_Light_On_Stop",
+          "id": 3298580386
+        },
+        {
+          "public": "SfxSharedError",
+          "clad": "Sfx_Shared_Error",
+          "id": 2368558265
+        },
+        {
+          "public": "SfxSharedErrorStop",
+          "clad": "Sfx_Shared_Error_Stop",
+          "id": 63429898
+        },
+        {
+          "public": "SfxSharedSuccess",
+          "clad": "Sfx_Shared_Success",
+          "id": 211381434
+        },
+        {
+          "public": "SfxSharedSuccessStop",
+          "clad": "Sfx_Shared_Success_Stop",
+          "id": 2158984211
+        },
+        {
+          "public": "SfxSharedTimerClick",
+          "clad": "Sfx_Shared_Timer_Click",
+          "id": 3038792837
+        },
+        {
+          "public": "SfxSharedTimerClickStop",
+          "clad": "Sfx_Shared_Timer_Click_Stop",
+          "id": 165689370
+        },
+        {
+          "public": "SfxSharedTimerEnd",
+          "clad": "Sfx_Shared_Timer_End",
+          "id": 343938494
+        },
+        {
+          "public": "SfxSharedTimerEndStop",
+          "clad": "Sfx_Shared_Timer_End_Stop",
+          "id": 1219615815
+        },
+        {
+          "public": "SfxSharedTimerWarning",
+          "clad": "Sfx_Shared_Timer_Warning",
+          "id": 1420860677
+        },
+        {
+          "public": "SfxSharedTimerWarningStop",
+          "clad": "Sfx_Shared_Timer_Warning_Stop",
+          "id": 3016301418
+        },
+        {
+          "public": "MusicFunLoop",
+          "clad": "Music_Fun_Loop",
+          "pythonEntryName": "Music_Fun_Loop",
+          "id": 1284343309
+        },
+        {
+          "public": "MusicFunLoopStop",
+          "clad": "Music_Fun_Loop_Stop",
+          "pythonEntryName": "Music_Fun_Loop_Stop",
+          "id": 2123694542
+        },
+        {
+          "public": "SfxPuttHoleSuccess",
+          "clad": "Sfx_Putt_Hole_Success",
+          "pythonEntryName": "Sfx_Putt_Hole_Success",
+          "id": 3020894301
+        },
+        {
+          "public": "SfxPuttHoleSuccessStop",
+          "clad": "Sfx_Putt_Hole_Success_Stop",
+          "pythonEntryName": "Sfx_Putt_Hole_Success_Stop",
+          "id": 3048074246
+        },
+        {
+          "public": "Sfx_Alien_Invasion_Ufo",
+          "clad": "Sfx_Alien_Invasion_Ufo",
+          "id": 72626837
+        },
+        {
+          "public": "Sfx_Alien_Invasion_Ufo_Stop",
+          "clad": "Sfx_Alien_Invasion_Ufo_Stop",
+          "id": 2912905250
+        },
+        {
+          "public": "Sfx_Brick_Bash",
+          "clad": "Sfx_Brick_Bash",
+          "id": 773532685
+        },
+        {
+          "public": "Sfx_Brick_Bash_Stop",
+          "clad": "Sfx_Brick_Bash_Stop",
+          "id": 1455749214
+        },
+        {
+          "public": "Sfx_Constellation_Star",
+          "clad": "Sfx_Constellation_Star",
+          "id": 1881919109
+        },
+        {
+          "public": "Sfx_Constellation_Star_Stop",
+          "clad": "Sfx_Constellation_Star_Stop",
+          "id": 579345806
+        },
+        {
+          "public": "Sfx_Egg_Decorating_Crack",
+          "clad": "Sfx_Egg_Decorating_Crack",
+          "id": 1294616912
+        },
+        {
+          "public": "Sfx_Egg_Decorating_Crack_Stop",
+          "clad": "Sfx_Egg_Decorating_Crack_Stop",
+          "id": 3818701437
+        },
+        {
+          "public": "Sfx_Fidget_Spinner_Loop_Play",
+          "clad": "Sfx_Fidget_Spinner_Loop_Play",
+          "id": 711055678
+        },
+        {
+          "public": "Sfx_Fidget_Spinner_Loop_Stop",
+          "clad": "Sfx_Fidget_Spinner_Loop_Stop",
+          "id": 2909245734
+        },
+        {
+          "public": "Sfx_Fidget_Spinner_Start",
+          "clad": "Sfx_Fidget_Spinner_Start",
+          "id": 2368469177
+        },
+        {
+          "public": "Sfx_Fidget_Spinner_Start_Stop",
+          "clad": "Sfx_Fidget_Spinner_Start_Stop",
+          "id": 2997419718
+        },
+        {
+          "public": "Sfx_Flappy_Increase",
+          "clad": "Sfx_Flappy_Increase",
+          "id": 3457937792
+        },
+        {
+          "public": "Sfx_Flappy_Increase_Stop",
+          "clad": "Sfx_Flappy_Increase_Stop",
+          "id": 437871341
+        },
+        {
+          "public": "Sfx_Morse_Code_Dash",
+          "clad": "Sfx_Morse_Code_Dash",
+          "id": 3631133922
+        },
+        {
+          "public": "Sfx_Morse_Code_Dash_Stop",
+          "clad": "Sfx_Morse_Code_Dash_Stop",
+          "id": 4156175391
+        },
+        {
+          "public": "Sfx_Morse_Code_Dot",
+          "clad": "Sfx_Morse_Code_Dot",
+          "id": 4212384135
+        },
+        {
+          "public": "Sfx_Morse_Code_Dot_Stop",
+          "clad": "Sfx_Morse_Code_Dot_Stop",
+          "id": 850860868
+        },
+        {
+          "public": "Sfx_Morse_Code_Silent",
+          "clad": "Sfx_Morse_Code_Silent",
+          "id": 1002265509
+        },
+        {
+          "public": "Sfx_Morse_Code_Silent_Stop",
+          "clad": "Sfx_Morse_Code_Silent_Stop",
+          "id": 620507378
+        },
+        {
+          "public": "Sfx_Paddle_Ball_Bounce",
+          "clad": "Sfx_Paddle_Ball_Bounce",
+          "id": 1845849602
+        },
+        {
+          "public": "Sfx_Paddle_Ball_Bounce_Stop",
+          "clad": "Sfx_Paddle_Ball_Bounce_Stop",
+          "id": 3192082383
+        },
+        {
+          "public": "Sfx_Pot_O_Gold_Blip_Level1",
+          "clad": "Sfx_Pot_O_Gold_Blip_Level1",
+          "id": 3533103863
+        },
+        {
+          "public": "Sfx_Pot_O_Gold_Blip_Level1_Stop",
+          "clad": "Sfx_Pot_O_Gold_Blip_Level1_Stop",
+          "id": 970660780
+        },
+        {
+          "public": "Sfx_Pot_O_Gold_Blip_Level2",
+          "clad": "Sfx_Pot_O_Gold_Blip_Level2",
+          "id": 3533103860
+        },
+        {
+          "public": "Sfx_Pot_O_Gold_Blip_Level2_Stop",
+          "clad": "Sfx_Pot_O_Gold_Blip_Level2_Stop",
+          "id": 3985940521
+        },
+        {
+          "public": "Sfx_Pot_O_Gold_Blip_Level3",
+          "clad": "Sfx_Pot_O_Gold_Blip_Level3",
+          "id": 3533103861
+        },
+        {
+          "public": "Sfx_Pot_O_Gold_Blip_Level3_Stop",
+          "clad": "Sfx_Pot_O_Gold_Blip_Level3_Stop",
+          "id": 2482812534
+        }
+      ]
+    },
+    "NoteTypes": {
+      "enum": "Anki.Cozmo.ExternalInterface.SongNoteType",
+      "source": "song.py",
+      "addMissing": true,
+      "entries": [
+        {
+          "public": "C2",
+          "clad": "C2",
+          "id": 0
+        },
+        {
+          "public": "C2_Sharp",
+          "clad": "C2_Sharp",
+          "id": 1
+        },
+        {
+          "public": "D2",
+          "clad": "D2",
+          "id": 2
+        },
+        {
+          "public": "D2_Sharp",
+          "clad": "D2_Sharp",
+          "id": 3
+        },
+        {
+          "public": "E2",
+          "clad": "E2",
+          "id": 4
+        },
+        {
+          "public": "F2",
+          "clad": "F2",
+          "id": 5
+        },
+        {
+          "public": "F2_Sharp",
+          "clad": "F2_Sharp",
+          "id": 6
+        },
+        {
+          "public": "G2",
+          "clad": "G2",
+          "id": 7
+        },
+        {
+          "public": "G2_Sharp",
+          "clad": "G2_Sharp",
+          "id": 8
+        },
+        {
+          "public": "A2",
+          "clad": "A2",
+          "id": 9
+        },
+        {
+          "public": "A2_Sharp",
+          "clad": "A2_Sharp",
+          "id": 10
+        },
+        {
+          "public": "B2",
+          "clad": "B2",
+          "id": 11
+        },
+        {
+          "public": "C3",
+          "clad": "C3",
+          "id": 12
+        },
+        {
+          "public": "C3_Sharp",
+          "clad": "C3_Sharp",
+          "id": 13
+        },
+        {
+          "public": "Rest",
+          "clad": "Rest",
+          "id": 14
+        }
+      ]
+    },
+    "NoteDurations": {
+      "enum": "Anki.Cozmo.ExternalInterface.SongNoteDuration",
+      "source": "song.py",
+      "addMissing": true,
+      "entries": [
+        {
+          "public": "Whole",
+          "clad": "Whole",
+          "id": 0
+        },
+        {
+          "public": "ThreeQuarter",
+          "clad": "ThreeQuarter",
+          "id": 1
+        },
+        {
+          "public": "Half",
+          "clad": "Half",
+          "id": 2
+        },
+        {
+          "public": "Quarter",
+          "clad": "Quarter",
+          "id": 3
+        }
+      ]
+    }
+  }
+}
