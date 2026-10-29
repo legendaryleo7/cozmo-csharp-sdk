@@ -14,3 +14,7 @@ TestResults/
 
 # Tooling scratch
 .scratch/
+
+# Python tooling cache
+__pycache__/
+*.pyc

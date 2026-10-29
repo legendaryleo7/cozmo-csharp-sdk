@@ -260,6 +260,51 @@ public enum ActionConstants : uint
 /// <summary>CLAD enumeration <c>Anki.Cozmo.ActionResult</c> (uint_32).</summary>
 public enum ActionResult : uint
 {
+    SUCCESS = 0,
+    RUNNING = 16777216,
+    CANCELLED_WHILE_RUNNING = 33554432,
+    NOT_STARTED = 33554433,
+    ABORT = 50331648,
+    ANIM_ABORTED = 50331649,
+    BAD_MARKER = 50331650,
+    BAD_MESSAGE_TAG = 50331651,
+    BAD_OBJECT = 50331652,
+    BAD_POSE = 50331653,
+    BAD_TAG = 50331654,
+    FAILED_SETTING_CALIBRATION = 50331655,
+    FOLLOWING_PATH_BUT_NOT_TRAVERSING = 50331656,
+    INTERRUPTED = 50331657,
+    INVALID_OFF_TREADS_STATE = 50331658,
+    MISMATCHED_UP_AXIS = 50331659,
+    NO_ANIM_NAME = 50331660,
+    NO_DISTANCE_SET = 50331661,
+    NO_FACE = 50331662,
+    NO_GOAL_SET = 50331663,
+    NO_PREACTION_POSES = 50331664,
+    NOT_CARRYING_OBJECT_ABORT = 50331665,
+    NULL_SUBACTION = 50331666,
+    PATH_PLANNING_FAILED_ABORT = 50331667,
+    PICKUP_OBJECT_UNEXPECTEDLY_MOVING = 50331668,
+    PICKUP_OBJECT_UNEXPECTEDLY_NOT_MOVING = 50331669,
+    SEND_MESSAGE_TO_ROBOT_FAILED = 50331670,
+    STILL_CARRYING_OBJECT = 50331671,
+    TIMEOUT = 50331672,
+    TRACKS_LOCKED = 50331673,
+    UNEXPECTED_DOCK_ACTION = 50331674,
+    UNKNOWN_TOOL_CODE = 50331675,
+    UPDATE_DERIVED_FAILED = 50331676,
+    VISUAL_OBSERVATION_FAILED = 50331677,
+    RETRY = 67108864,
+    DID_NOT_REACH_PREACTION_POSE = 67108865,
+    FAILED_TRAVERSING_PATH = 67108866,
+    LAST_PICK_AND_PLACE_FAILED = 67108867,
+    MOTOR_STOPPED_MAKING_PROGRESS = 67108868,
+    NOT_CARRYING_OBJECT_RETRY = 67108869,
+    NOT_ON_CHARGER = 67108870,
+    PATH_PLANNING_FAILED_RETRY = 67108871,
+    PLACEMENT_GOAL_NOT_FREE = 67108872,
+    STILL_ON_CHARGER = 67108873,
+    UNEXPECTED_PITCH_ANGLE = 67108874
 }
 
 /// <summary>CLAD enumeration <c>Anki.Cozmo.ActionResultCategory</c> (uint_8).</summary>
@@ -2482,7 +2527,11 @@ public sealed partial class DeviceDataPair
 /// <summary>CLAD enumeration <c>Anki.Cozmo.DeviceDataType</c> (uint_8).</summary>
 public enum DeviceDataType : byte
 {
-    DeviceID = 0
+    DeviceID = 0,
+    DeviceModel = 1,
+    AppRunID = 2,
+    LastAppRunID = 3,
+    BuildVersion = 4
 }
 
 /// <summary>CLAD enumeration <c>Anki.Cozmo.DockAction</c> (uint_8).</summary>
@@ -7396,7 +7445,23 @@ public enum UserFacingActionResult : byte
 /// <summary>CLAD enumeration <c>Anki.Cozmo.VisionMode</c> (uint_32).</summary>
 public enum VisionMode : uint
 {
-    Idle = 0
+    Idle = 0,
+    DetectingMarkers = 1,
+    DetectingFaces = 2,
+    DetectingMotion = 3,
+    DetectingOverheadEdges = 4,
+    ReadingToolCode = 5,
+    ComputingCalibration = 6,
+    CheckingQuality = 7,
+    ComputingStatistics = 8,
+    DetectingPets = 9,
+    EstimatingFacialExpression = 10,
+    DetectingSmileAmount = 11,
+    DetectingGaze = 12,
+    DetectingBlinkAmount = 13,
+    LimitedExposure = 14,
+    DetectingLaserPoints = 15,
+    Count = 16
 }
 
 /// <summary>CLAD enumeration <c>Anki.Cozmo.VizConstants</c> (uint_32).</summary>
