@@ -248,6 +248,24 @@ public sealed class RobotActionTests
     }
 
     [Fact]
+    public void TurnTowardsFaceEncodesFaceIdAndMaxAngle()
+    {
+        Face face = NewFace(42);
+
+        CladIface.RobotActionUnion union = Encode(new TurnTowardsFace(face));
+
+        Assert.Equal(CladIface.RobotActionUnion.Tag.turnTowardsFace, union.tag);
+        Assert.Equal(42, union.turnTowardsFace.faceID);
+        Assert.Equal((float)Math.PI, union.turnTowardsFace.maxTurnAngle_rad, 1e-6);
+    }
+
+    [Fact]
+    public void TurnTowardsFaceRejectsFacesWithoutIds()
+    {
+        Assert.Throws<InvalidOperationException>(() => new TurnTowardsFace(NewFace(null)));
+    }
+
+    [Fact]
     public void ObjectActionsRejectObjectsWithoutIds()
     {
         LightCube cube = NewCube(objectId: null);
@@ -260,6 +278,12 @@ public sealed class RobotActionTests
         var union = new CladIface.RobotActionUnion();
         action.Encode(union);
         return union;
+    }
+
+    private static Face NewFace(int? faceId)
+    {
+        var connection = new CozmoConnection(new FakeTransport());
+        return new Face(connection, faceId: faceId);
     }
 
     private static LightCube NewCube(int? objectId = 7)
