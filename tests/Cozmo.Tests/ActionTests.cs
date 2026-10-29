@@ -313,7 +313,7 @@ public sealed class ActionTests
     private sealed class TestAction : CozmoAction
     {
         public override void Encode(RobotActionUnion action)
-            => action.driveOffChargerContacts = new DriveOffChargerContacts();
+            => action.driveOffChargerContacts = new Anki.Cozmo.ExternalInterface.DriveOffChargerContacts();
     }
 
     private sealed class Harness : IAsyncDisposable
