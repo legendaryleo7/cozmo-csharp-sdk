@@ -1,11 +1,17 @@
 #!/usr/bin/env python3
-"""Extract the Python SDK's explicit CladEnumWrapper entries into a JSON name map.
+"""Extract the Python SDK's explicit enum-wrapper and object-catalogue entries.
+
+The result is the JSON name map consumed by ``emit_sdk_enums.py``.
 
 The Python wrappers are not always mechanical PascalCase conversions of the CLAD member
 they wrap (``audio.py`` maps ``Music_Global_Stop`` to the public attribute
 ``MusicGlobalStop``).  ``emit_sdk_enums.py`` therefore consumes this committed mapping
 instead of guessing names, and verifies every mapped CLAD id against the generated
 schema.
+
+``objects.py`` uses namedtuple-style catalogues instead of ``CladEnumWrapper``
+subclasses, and declares the LightCube object ids as module constants.  Both forms are
+extracted here as well, so rerunning the command does not lose the catalogue mappings.
 
 One-off regeneration from the Python SDK sources::
 
@@ -27,6 +33,31 @@ WRAPPERS = [
     ('AudioEvents', 'audio.py'),
     ('NoteTypes', 'song.py'),
     ('NoteDurations', 'song.py'),
+]
+
+# objects.py's catalogues are namedtuple-style classes rather than CladEnumWrapper
+# subclasses: each attribute names its CLAD member explicitly.  The Python module also
+# declares the LightCube object ids as module-level constants, which the C# catalogue
+# groups with the custom object types for one ObjectType lookup surface.
+CATALOGUE_WRAPPERS = [
+    {
+        'class': 'CustomObjectTypes',
+        'filename': 'objects.py',
+        'entryType': '_CustomObjectType',
+        'moduleConstants': ['LightCube1Id', 'LightCube2Id', 'LightCube3Id'],
+    },
+    {
+        'class': 'CustomObjectMarkers',
+        'filename': 'objects.py',
+        'entryType': '_CustomObjectMarker',
+        'moduleConstants': [],
+    },
+]
+
+# Python has no module-level charger object id.  The world layer still needs the
+# ObjectType.Charger_Basic id by name, so it is the one supplemental catalogue entry.
+SUPPLEMENTAL_ENTRIES = [
+    ('CustomObjectTypes', 'ChargerBasic', 'Anki.Cozmo.ObjectType', 'Charger_Basic'),
 ]
 
 # Python SDK module alias -> fully qualified CLAD type prefix.
@@ -101,6 +132,102 @@ def parse_class(source, class_name):
     return enum_fqn, entries, add_missing
 
 
+def split_clad_reference(alias, path, class_name):
+    """Split a ``alias.Enum.Member`` reference into its enum FQN and member name."""
+    if alias not in CLAD_PREFIXES:
+        raise SystemExit('unknown CLAD alias %s in class %s' % (alias, class_name))
+    if '.' not in path:
+        raise SystemExit('invalid CLAD reference %s.%s in class %s' % (alias, path, class_name))
+    suffix, member = path.rsplit('.', 1)
+    return '%s.%s' % (CLAD_PREFIXES[alias], suffix), member
+
+
+def parse_catalogue(source, class_name, entry_type, module_constants):
+    """Return a namedtuple-style catalogue's CLAD enum and explicit entries."""
+    header = re.search(r'^class %s:' % re.escape(class_name), source, re.MULTILINE)
+    if header is None:
+        raise SystemExit('class %s was not found' % class_name)
+
+    tail = source[header.end():]
+    next_class = re.search(r'^class ', tail, re.MULTILINE)
+    block = tail if next_class is None else tail[:next_class.start()]
+
+    entry_re = re.compile(
+        r'^\s*(?P<decl>\w+)\s*=\s*%s\(\s*"(?P<entry>[^"]+)"\s*,\s*'
+        r'(?P<alias>_clad_to_\w+)\.(?P<path>[\w.]+)\s*\)\s*$' % re.escape(entry_type),
+        re.MULTILINE)
+
+    enum_fqn = None
+    entries = []
+    for match in entry_re.finditer(block):
+        entry_enum, clad = split_clad_reference(
+            match.group('alias'), match.group('path'), class_name)
+        if enum_fqn is None:
+            enum_fqn = entry_enum
+        elif entry_enum != enum_fqn:
+            raise SystemExit(
+                'class %s mixes CLAD enums %s and %s' % (class_name, enum_fqn, entry_enum))
+        public = match.group('decl')
+        item = {'public': public, 'clad': clad}
+        if match.group('entry') != public:
+            item['pythonEntryName'] = match.group('entry')
+        entries.append(item)
+
+    if enum_fqn is None:
+        raise SystemExit('class %s has no explicit entries' % class_name)
+
+    for constant in module_constants:
+        constant_re = re.compile(
+            r'^%s\s*=\s*(?P<alias>_clad_to_\w+)\.(?P<path>[\w.]+)\s*$' % re.escape(constant),
+            re.MULTILINE)
+        match = constant_re.search(source)
+        if match is None:
+            raise SystemExit('module constant %s was not found' % constant)
+        entry_enum, clad = split_clad_reference(
+            match.group('alias'), match.group('path'), class_name)
+        if entry_enum != enum_fqn:
+            raise SystemExit(
+                'module constant %s uses CLAD enum %s, expected %s' %
+                (constant, entry_enum, enum_fqn))
+        entries.append({'public': constant, 'clad': clad})
+
+    return enum_fqn, entries
+
+
+def record_wrapper(wrappers, types, class_name, filename, enum_fqn, entries, add_missing,
+                   cozmoclad_path):
+    """Validate one wrapper's entries and add it to the JSON document."""
+    enum = types.get(enum_fqn)
+    if enum is None:
+        raise SystemExit('%s: %s is not in the schema' % (class_name, enum_fqn))
+    values = enum['values']
+    python_enum = resolve_enum(enum_fqn, cozmoclad_path) if cozmoclad_path else None
+
+    seen = set()
+    for entry in entries:
+        clad = entry['clad']
+        if clad not in values:
+            raise SystemExit('%s: CLAD member %s is not in the schema' % (class_name, clad))
+        if entry['public'] in seen:
+            raise SystemExit('%s: duplicate public name %s' % (class_name, entry['public']))
+        seen.add(entry['public'])
+        schema_id = values[clad]
+        if python_enum is not None:
+            python_id = getattr(python_enum, clad)
+            if python_id != schema_id:
+                raise SystemExit(
+                    '%s: %s has id %d in the Python SDK but %d in the schema' %
+                    (class_name, clad, python_id, schema_id))
+            entry['id'] = python_id
+
+    wrappers[class_name] = {
+        'enum': enum_fqn,
+        'source': filename,
+        'addMissing': add_missing,
+        'entries': entries,
+    }
+
+
 def resolve_enum(enum_fqn, cozmoclad_path):
     """Return the Python CLAD enum object, importing cozmoclad from a wheel or directory."""
     if cozmoclad_path:
@@ -130,41 +257,32 @@ def main():
         path = os.path.join(args.python_src, filename)
         source = open(path, encoding='utf-8').read()
         enum_fqn, entries, add_missing = parse_class(source, class_name)
+        record_wrapper(wrappers, types, class_name, filename, enum_fqn, entries, add_missing,
+                       args.cozmoclad)
 
-        enum = types.get(enum_fqn)
-        if enum is None:
-            raise SystemExit('%s: %s is not in the schema' % (class_name, enum_fqn))
-        values = enum['values']
-        python_enum = resolve_enum(enum_fqn, args.cozmoclad) if args.cozmoclad else None
-
-        seen = set()
-        for entry in entries:
-            clad = entry['clad']
-            if clad not in values:
-                raise SystemExit('%s: CLAD member %s is not in the schema' % (class_name, clad))
-            if entry['public'] in seen:
-                raise SystemExit('%s: duplicate public name %s' % (class_name, entry['public']))
-            seen.add(entry['public'])
-            schema_id = values[clad]
-            if python_enum is not None:
-                python_id = getattr(python_enum, clad)
-                if python_id != schema_id:
-                    raise SystemExit(
-                        '%s: %s has id %d in the Python SDK but %d in the schema' %
-                        (class_name, clad, python_id, schema_id))
-                entry['id'] = python_id
-
-        wrappers[class_name] = {
-            'enum': enum_fqn,
-            'source': filename,
-            'addMissing': add_missing,
-            'entries': entries,
-        }
+    for spec in CATALOGUE_WRAPPERS:
+        class_name = spec['class']
+        filename = spec['filename']
+        path = os.path.join(args.python_src, filename)
+        source = open(path, encoding='utf-8').read()
+        enum_fqn, entries = parse_catalogue(
+            source, class_name, spec['entryType'], spec['moduleConstants'])
+        for owner, public, supplemental_enum, clad in SUPPLEMENTAL_ENTRIES:
+            if owner != class_name:
+                continue
+            if supplemental_enum != enum_fqn:
+                raise SystemExit(
+                    '%s: supplemental %s uses CLAD enum %s, expected %s' %
+                    (class_name, public, supplemental_enum, enum_fqn))
+            entries.append({'public': public, 'clad': clad})
+        record_wrapper(wrappers, types, class_name, filename, enum_fqn, entries, False,
+                       args.cozmoclad)
 
     document = {
         '_comment': (
-            'Explicit CladEnumWrapper entries extracted from the Python SDK 1.4.12 sources. '
-            'Do not edit by hand; run tools/cladgen/extract_sdk_enum_names.py.'),
+            'Explicit CladEnumWrapper and objects.py catalogue entries extracted from the '
+            'Python SDK 1.4.12 sources. Do not edit by hand; run '
+            'tools/cladgen/extract_sdk_enum_names.py.'),
         'cozmocladVersion': (schema.get('cozmoclad') or {}).get('version'),
         'wrappers': wrappers,
     }

@@ -54,8 +54,8 @@ dotnet test tests/Cozmo.Tests
 |---|---|
 | `src/Cozmo/Clad/Generated/*.g.cs` | 739 CLAD types in 18 namespaces: enums, structs, messages and unions with `Pack`/`Unpack` |
 | `src/Cozmo/Clad/Generated/CladIdentity.g.cs` | cozmoclad version, app build version and both 16-byte hashes in wire order |
-| `src/Cozmo/Generated/SdkEnums.g.cs` | `CladEnum<T>` catalogues: `ActionResults`, `Triggers` (with `TriggerList`), `BehaviorTypes`, `AudioEvents`, `NoteTypes`, `NoteDurations` |
-| `tools/cladgen/sdk_enum_names.json` | Explicit Python wrapper names/ids used by `emit_sdk_enums.py` |
+| `src/Cozmo/Generated/SdkEnums.g.cs` | `CladEnum<T>` catalogues: `ActionResults`, `Triggers` (with `TriggerList`), `BehaviorTypes`, `AudioEvents`, `NoteTypes`, `NoteDurations`, `CustomObjectTypes` (with `LightCubeIDs`), `CustomObjectMarkers` |
+| `tools/cladgen/sdk_enum_names.json` | Explicit Python wrapper and custom-object catalogue names/ids used by `emit_sdk_enums.py` |
 | `tests/Cozmo.Tests/CladOracleTests.g.cs` | one test per message in both top-level unions |
 
 The oracle test builds the same value in Python, packs it there, and asserts that the C#

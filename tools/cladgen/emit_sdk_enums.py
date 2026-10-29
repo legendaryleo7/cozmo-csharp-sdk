@@ -7,15 +7,18 @@ can name CLAD values without exposing raw integers.
 Most wrappers expose every CLAD member under a mechanically derived name.  The Python
 SDK's ``AudioEvents`` wrapper, however, renames many CLAD members (``Music_Global_Stop``
 becomes ``MusicGlobalStop``), so explicit public-name mappings are read from a JSON file
-produced by ``extract_sdk_enum_names.py``.  Mapped ids are verified against the schema,
-so a renamed or missing entry fails the build generation instead of silently drifting.
+produced by ``extract_sdk_enum_names.py``.  The object catalogues use the same mechanism
+because ``LightCube1Id`` wraps ``Block_LIGHTCUBE1``.  Mapped ids are verified against the
+schema, so a renamed or missing entry fails the build generation instead of silently
+drifting.
 """
 import argparse
 import json
 import os
 
 # Each entry: class name, CLAD enum, member naming, skip set, optional name map key,
-# optional list member, and optional documentation remark.
+# optional list member (a name for every entry, or a {name, members, summary} mapping for
+# a subset), and optional documentation remark.
 WRAPPERS = [
     {
         'name': 'ActionResults',
@@ -60,6 +63,29 @@ WRAPPERS = [
         'name': 'NoteDurations',
         'enum': 'Anki.Cozmo.ExternalInterface.SongNoteDuration',
         'nameMap': 'NoteDurations',
+    },
+    {
+        'name': 'CustomObjectTypes',
+        'enum': 'Anki.Cozmo.ObjectType',
+        'nameMap': 'CustomObjectTypes',
+        'list': {
+            'name': 'LightCubeIDs',
+            'members': ['LightCube1Id', 'LightCube2Id', 'LightCube3Id'],
+            'summary': 'An ordered list of the 3 light cube ids for convenience.',
+        },
+        'remarks': (
+            'Python declares the custom types in <c>CustomObjectTypes</c> and the LightCube '
+            'object ids as module-level constants (objects.py); both are grouped here. '
+            '<c>ChargerBasic</c> is the port\'s name for <c>ObjectType.Charger_Basic</c>, which '
+            'the world layer needs but Python has no module-level constant for.'),
+    },
+    {
+        'name': 'CustomObjectMarkers',
+        'enum': 'Anki.Cozmo.CustomObjectMarker',
+        'nameMap': 'CustomObjectMarkers',
+        'remarks': (
+            'Python custom object marker catalogue (objects.py); the CLAD <c>Count</c> '
+            'sentinel is not exposed.'),
     },
 ]
 
@@ -171,6 +197,39 @@ def build_entries(wrapper, enum, name_map):
     return entries
 
 
+def list_spec(wrapper, entries):
+    """Return the normalized list member configuration, or None when there is none."""
+    spec = wrapper.get('list')
+    if not spec:
+        return None
+    default_summary = 'Every entry above, in CLAD declaration order.'
+    if isinstance(spec, str):
+        return {'name': spec, 'entries': entries, 'summary': default_summary}
+    if not isinstance(spec, dict):
+        raise SystemExit('%s: list must be a string or a mapping' % wrapper['name'])
+    name = spec.get('name')
+    if not name:
+        raise SystemExit('%s: list has no name' % wrapper['name'])
+    members = spec.get('members')
+    if members is None:
+        selected = entries
+    else:
+        by_public = {entry['public']: entry for entry in entries}
+        missing = [member for member in members if member not in by_public]
+        if missing:
+            raise SystemExit(
+                '%s: list member(s) %s are not in the catalogue' %
+                (wrapper['name'], ', '.join(missing)))
+        if len(set(members)) != len(members):
+            raise SystemExit('%s: duplicate list member' % wrapper['name'])
+        selected = [by_public[member] for member in members]
+    return {
+        'name': name,
+        'entries': selected,
+        'summary': spec.get('summary', default_summary),
+    }
+
+
 def emit_wrapper(lines, wrapper, enum_fqn, entries):
     lines.append('/// <summary>Named %s values, mirroring the Python <c>%s</c> wrapper.</summary>'
                  % (enum_fqn.rsplit('.', 1)[1], wrapper['name']))
@@ -191,12 +250,13 @@ def emit_wrapper(lines, wrapper, enum_fqn, entries):
                      % (access, enum_fqn, entry['public'], enum_fqn, entry['clad']))
         lines.append('')
 
-    if wrapper.get('list'):
-        lines.append('    /// <summary>Every entry above, in CLAD declaration order.</summary>')
+    list_member = list_spec(wrapper, entries)
+    if list_member:
+        lines.append('    /// <summary>%s</summary>' % list_member['summary'])
         lines.append('    public static readonly IReadOnlyList<CladEnum<global::%s>> %s = new[]'
-                     % (enum_fqn, wrapper['list']))
+                     % (enum_fqn, list_member['name']))
         lines.append('    {')
-        for entry in entries:
+        for entry in list_member['entries']:
             lines.append('        %s,' % entry['public'])
         lines.append('    };')
         lines.append('')

@@ -1,5 +1,5 @@
 {
-  "_comment": "Explicit CladEnumWrapper entries extracted from the Python SDK 1.4.12 sources. Do not edit by hand; run tools/cladgen/extract_sdk_enum_names.py.",
+  "_comment": "Explicit CladEnumWrapper and objects.py catalogue entries extracted from the Python SDK 1.4.12 sources. Do not edit by hand; run tools/cladgen/extract_sdk_enum_names.py.",
   "cozmocladVersion": "3.6.0",
   "wrappers": {
     "BehaviorTypes": {
@@ -828,6 +828,220 @@
           "public": "Quarter",
           "clad": "Quarter",
           "id": 3
+        }
+      ]
+    },
+    "CustomObjectTypes": {
+      "enum": "Anki.Cozmo.ObjectType",
+      "source": "objects.py",
+      "addMissing": false,
+      "entries": [
+        {
+          "public": "CustomType00",
+          "clad": "CustomType00",
+          "id": 17
+        },
+        {
+          "public": "CustomType01",
+          "clad": "CustomType01",
+          "id": 18
+        },
+        {
+          "public": "CustomType02",
+          "clad": "CustomType02",
+          "id": 19
+        },
+        {
+          "public": "CustomType03",
+          "clad": "CustomType03",
+          "id": 20
+        },
+        {
+          "public": "CustomType04",
+          "clad": "CustomType04",
+          "id": 21
+        },
+        {
+          "public": "CustomType05",
+          "clad": "CustomType05",
+          "id": 22
+        },
+        {
+          "public": "CustomType06",
+          "clad": "CustomType06",
+          "id": 23
+        },
+        {
+          "public": "CustomType07",
+          "clad": "CustomType07",
+          "id": 24
+        },
+        {
+          "public": "CustomType08",
+          "clad": "CustomType08",
+          "id": 25
+        },
+        {
+          "public": "CustomType09",
+          "clad": "CustomType09",
+          "id": 26
+        },
+        {
+          "public": "CustomType10",
+          "clad": "CustomType10",
+          "id": 27
+        },
+        {
+          "public": "CustomType11",
+          "clad": "CustomType11",
+          "id": 28
+        },
+        {
+          "public": "CustomType12",
+          "clad": "CustomType12",
+          "id": 29
+        },
+        {
+          "public": "CustomType13",
+          "clad": "CustomType13",
+          "id": 30
+        },
+        {
+          "public": "CustomType14",
+          "clad": "CustomType14",
+          "id": 31
+        },
+        {
+          "public": "CustomType15",
+          "clad": "CustomType15",
+          "id": 32
+        },
+        {
+          "public": "CustomType16",
+          "clad": "CustomType16",
+          "id": 33
+        },
+        {
+          "public": "CustomType17",
+          "clad": "CustomType17",
+          "id": 34
+        },
+        {
+          "public": "CustomType18",
+          "clad": "CustomType18",
+          "id": 35
+        },
+        {
+          "public": "CustomType19",
+          "clad": "CustomType19",
+          "id": 36
+        },
+        {
+          "public": "LightCube1Id",
+          "clad": "Block_LIGHTCUBE1",
+          "id": 1
+        },
+        {
+          "public": "LightCube2Id",
+          "clad": "Block_LIGHTCUBE2",
+          "id": 2
+        },
+        {
+          "public": "LightCube3Id",
+          "clad": "Block_LIGHTCUBE3",
+          "id": 3
+        },
+        {
+          "public": "ChargerBasic",
+          "clad": "Charger_Basic",
+          "id": 13
+        }
+      ]
+    },
+    "CustomObjectMarkers": {
+      "enum": "Anki.Cozmo.CustomObjectMarker",
+      "source": "objects.py",
+      "addMissing": false,
+      "entries": [
+        {
+          "public": "Circles2",
+          "clad": "Circles2",
+          "id": 0
+        },
+        {
+          "public": "Circles3",
+          "clad": "Circles3",
+          "id": 1
+        },
+        {
+          "public": "Circles4",
+          "clad": "Circles4",
+          "id": 2
+        },
+        {
+          "public": "Circles5",
+          "clad": "Circles5",
+          "id": 3
+        },
+        {
+          "public": "Diamonds2",
+          "clad": "Diamonds2",
+          "id": 4
+        },
+        {
+          "public": "Diamonds3",
+          "clad": "Diamonds3",
+          "id": 5
+        },
+        {
+          "public": "Diamonds4",
+          "clad": "Diamonds4",
+          "id": 6
+        },
+        {
+          "public": "Diamonds5",
+          "clad": "Diamonds5",
+          "id": 7
+        },
+        {
+          "public": "Hexagons2",
+          "clad": "Hexagons2",
+          "id": 8
+        },
+        {
+          "public": "Hexagons3",
+          "clad": "Hexagons3",
+          "id": 9
+        },
+        {
+          "public": "Hexagons4",
+          "clad": "Hexagons4",
+          "id": 10
+        },
+        {
+          "public": "Hexagons5",
+          "clad": "Hexagons5",
+          "id": 11
+        },
+        {
+          "public": "Triangles2",
+          "clad": "Triangles2",
+          "id": 12
+        },
+        {
+          "public": "Triangles3",
+          "clad": "Triangles3",
+          "id": 13
+        },
+        {
+          "public": "Triangles4",
+          "clad": "Triangles4",
+          "id": 14
+        },
+        {
+          "public": "Triangles5",
+          "clad": "Triangles5",
+          "id": 15
         }
       ]
     }
