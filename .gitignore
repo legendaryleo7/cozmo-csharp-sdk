@@ -1,4 +1,16 @@
+# Legacy Xamarin/MonoDevelop project
 csharp_interface/obj/
 csharp_interface/bin/
 csharp_interface/cozmocsharp.sln
 csharp_interface/cozmocsharp.userprefs
+
+# .NET build output
+bin/
+obj/
+*.user
+*.suo
+.vs/
+TestResults/
+
+# Tooling scratch
+.scratch/
