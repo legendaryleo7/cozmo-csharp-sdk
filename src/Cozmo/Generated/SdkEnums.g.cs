@@ -159,3 +159,134 @@ public static class ActionResults
     /// <summary>CLAD <c>UNEXPECTED_PITCH_ANGLE</c> (67108874).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.ActionResult> UnexpectedPitchAngle = CladEnum<global::Anki.Cozmo.ActionResult>.FromName("UNEXPECTED_PITCH_ANGLE");
 }
+
+/// <summary>Named ObjectType values, mirroring the Python <c>CustomObjectTypes</c> wrapper.</summary>
+public static class CustomObjectTypes
+{
+    /// <summary>CLAD <c>CustomType00</c> (17).</summary>
+    public static readonly CladEnum<global::Anki.Cozmo.ObjectType> CustomType00 = CladEnum<global::Anki.Cozmo.ObjectType>.FromName("CustomType00");
+
+    /// <summary>CLAD <c>CustomType01</c> (18).</summary>
+    public static readonly CladEnum<global::Anki.Cozmo.ObjectType> CustomType01 = CladEnum<global::Anki.Cozmo.ObjectType>.FromName("CustomType01");
+
+    /// <summary>CLAD <c>CustomType02</c> (19).</summary>
+    public static readonly CladEnum<global::Anki.Cozmo.ObjectType> CustomType02 = CladEnum<global::Anki.Cozmo.ObjectType>.FromName("CustomType02");
+
+    /// <summary>CLAD <c>CustomType03</c> (20).</summary>
+    public static readonly CladEnum<global::Anki.Cozmo.ObjectType> CustomType03 = CladEnum<global::Anki.Cozmo.ObjectType>.FromName("CustomType03");
+
+    /// <summary>CLAD <c>CustomType04</c> (21).</summary>
+    public static readonly CladEnum<global::Anki.Cozmo.ObjectType> CustomType04 = CladEnum<global::Anki.Cozmo.ObjectType>.FromName("CustomType04");
+
+    /// <summary>CLAD <c>CustomType05</c> (22).</summary>
+    public static readonly CladEnum<global::Anki.Cozmo.ObjectType> CustomType05 = CladEnum<global::Anki.Cozmo.ObjectType>.FromName("CustomType05");
+
+    /// <summary>CLAD <c>CustomType06</c> (23).</summary>
+    public static readonly CladEnum<global::Anki.Cozmo.ObjectType> CustomType06 = CladEnum<global::Anki.Cozmo.ObjectType>.FromName("CustomType06");
+
+    /// <summary>CLAD <c>CustomType07</c> (24).</summary>
+    public static readonly CladEnum<global::Anki.Cozmo.ObjectType> CustomType07 = CladEnum<global::Anki.Cozmo.ObjectType>.FromName("CustomType07");
+
+    /// <summary>CLAD <c>CustomType08</c> (25).</summary>
+    public static readonly CladEnum<global::Anki.Cozmo.ObjectType> CustomType08 = CladEnum<global::Anki.Cozmo.ObjectType>.FromName("CustomType08");
+
+    /// <summary>CLAD <c>CustomType09</c> (26).</summary>
+    public static readonly CladEnum<global::Anki.Cozmo.ObjectType> CustomType09 = CladEnum<global::Anki.Cozmo.ObjectType>.FromName("CustomType09");
+
+    /// <summary>CLAD <c>CustomType10</c> (27).</summary>
+    public static readonly CladEnum<global::Anki.Cozmo.ObjectType> CustomType10 = CladEnum<global::Anki.Cozmo.ObjectType>.FromName("CustomType10");
+
+    /// <summary>CLAD <c>CustomType11</c> (28).</summary>
+    public static readonly CladEnum<global::Anki.Cozmo.ObjectType> CustomType11 = CladEnum<global::Anki.Cozmo.ObjectType>.FromName("CustomType11");
+
+    /// <summary>CLAD <c>CustomType12</c> (29).</summary>
+    public static readonly CladEnum<global::Anki.Cozmo.ObjectType> CustomType12 = CladEnum<global::Anki.Cozmo.ObjectType>.FromName("CustomType12");
+
+    /// <summary>CLAD <c>CustomType13</c> (30).</summary>
+    public static readonly CladEnum<global::Anki.Cozmo.ObjectType> CustomType13 = CladEnum<global::Anki.Cozmo.ObjectType>.FromName("CustomType13");
+
+    /// <summary>CLAD <c>CustomType14</c> (31).</summary>
+    public static readonly CladEnum<global::Anki.Cozmo.ObjectType> CustomType14 = CladEnum<global::Anki.Cozmo.ObjectType>.FromName("CustomType14");
+
+    /// <summary>CLAD <c>CustomType15</c> (32).</summary>
+    public static readonly CladEnum<global::Anki.Cozmo.ObjectType> CustomType15 = CladEnum<global::Anki.Cozmo.ObjectType>.FromName("CustomType15");
+
+    /// <summary>CLAD <c>CustomType16</c> (33).</summary>
+    public static readonly CladEnum<global::Anki.Cozmo.ObjectType> CustomType16 = CladEnum<global::Anki.Cozmo.ObjectType>.FromName("CustomType16");
+
+    /// <summary>CLAD <c>CustomType17</c> (34).</summary>
+    public static readonly CladEnum<global::Anki.Cozmo.ObjectType> CustomType17 = CladEnum<global::Anki.Cozmo.ObjectType>.FromName("CustomType17");
+
+    /// <summary>CLAD <c>CustomType18</c> (35).</summary>
+    public static readonly CladEnum<global::Anki.Cozmo.ObjectType> CustomType18 = CladEnum<global::Anki.Cozmo.ObjectType>.FromName("CustomType18");
+
+    /// <summary>CLAD <c>CustomType19</c> (36).</summary>
+    public static readonly CladEnum<global::Anki.Cozmo.ObjectType> CustomType19 = CladEnum<global::Anki.Cozmo.ObjectType>.FromName("CustomType19");
+
+    /// <summary>CLAD <c>Block_LIGHTCUBE1</c> (1).</summary>
+    public static readonly CladEnum<global::Anki.Cozmo.ObjectType> LightCube1Id = CladEnum<global::Anki.Cozmo.ObjectType>.FromName("Block_LIGHTCUBE1");
+
+    /// <summary>CLAD <c>Block_LIGHTCUBE2</c> (2).</summary>
+    public static readonly CladEnum<global::Anki.Cozmo.ObjectType> LightCube2Id = CladEnum<global::Anki.Cozmo.ObjectType>.FromName("Block_LIGHTCUBE2");
+
+    /// <summary>CLAD <c>Block_LIGHTCUBE3</c> (3).</summary>
+    public static readonly CladEnum<global::Anki.Cozmo.ObjectType> LightCube3Id = CladEnum<global::Anki.Cozmo.ObjectType>.FromName("Block_LIGHTCUBE3");
+
+    /// <summary>CLAD <c>Charger_Basic</c> (13).</summary>
+    public static readonly CladEnum<global::Anki.Cozmo.ObjectType> ChargerBasic = CladEnum<global::Anki.Cozmo.ObjectType>.FromName("Charger_Basic");
+
+    /// <summary>An ordered list of the 3 light cube ids for convenience.</summary>
+    public static global::System.Collections.Generic.IReadOnlyList<CladEnum<global::Anki.Cozmo.ObjectType>> LightCubeIDs { get; } = global::System.Array.AsReadOnly(new[] { LightCube1Id, LightCube2Id, LightCube3Id });
+}
+
+/// <summary>Named CustomObjectMarker values, mirroring the Python <c>CustomObjectMarkers</c> wrapper.</summary>
+public static class CustomObjectMarkers
+{
+    /// <summary>CLAD <c>Circles2</c> (0).</summary>
+    public static readonly CladEnum<global::Anki.Cozmo.CustomObjectMarker> Circles2 = CladEnum<global::Anki.Cozmo.CustomObjectMarker>.FromName("Circles2");
+
+    /// <summary>CLAD <c>Circles3</c> (1).</summary>
+    public static readonly CladEnum<global::Anki.Cozmo.CustomObjectMarker> Circles3 = CladEnum<global::Anki.Cozmo.CustomObjectMarker>.FromName("Circles3");
+
+    /// <summary>CLAD <c>Circles4</c> (2).</summary>
+    public static readonly CladEnum<global::Anki.Cozmo.CustomObjectMarker> Circles4 = CladEnum<global::Anki.Cozmo.CustomObjectMarker>.FromName("Circles4");
+
+    /// <summary>CLAD <c>Circles5</c> (3).</summary>
+    public static readonly CladEnum<global::Anki.Cozmo.CustomObjectMarker> Circles5 = CladEnum<global::Anki.Cozmo.CustomObjectMarker>.FromName("Circles5");
+
+    /// <summary>CLAD <c>Diamonds2</c> (4).</summary>
+    public static readonly CladEnum<global::Anki.Cozmo.CustomObjectMarker> Diamonds2 = CladEnum<global::Anki.Cozmo.CustomObjectMarker>.FromName("Diamonds2");
+
+    /// <summary>CLAD <c>Diamonds3</c> (5).</summary>
+    public static readonly CladEnum<global::Anki.Cozmo.CustomObjectMarker> Diamonds3 = CladEnum<global::Anki.Cozmo.CustomObjectMarker>.FromName("Diamonds3");
+
+    /// <summary>CLAD <c>Diamonds4</c> (6).</summary>
+    public static readonly CladEnum<global::Anki.Cozmo.CustomObjectMarker> Diamonds4 = CladEnum<global::Anki.Cozmo.CustomObjectMarker>.FromName("Diamonds4");
+
+    /// <summary>CLAD <c>Diamonds5</c> (7).</summary>
+    public static readonly CladEnum<global::Anki.Cozmo.CustomObjectMarker> Diamonds5 = CladEnum<global::Anki.Cozmo.CustomObjectMarker>.FromName("Diamonds5");
+
+    /// <summary>CLAD <c>Hexagons2</c> (8).</summary>
+    public static readonly CladEnum<global::Anki.Cozmo.CustomObjectMarker> Hexagons2 = CladEnum<global::Anki.Cozmo.CustomObjectMarker>.FromName("Hexagons2");
+
+    /// <summary>CLAD <c>Hexagons3</c> (9).</summary>
+    public static readonly CladEnum<global::Anki.Cozmo.CustomObjectMarker> Hexagons3 = CladEnum<global::Anki.Cozmo.CustomObjectMarker>.FromName("Hexagons3");
+
+    /// <summary>CLAD <c>Hexagons4</c> (10).</summary>
+    public static readonly CladEnum<global::Anki.Cozmo.CustomObjectMarker> Hexagons4 = CladEnum<global::Anki.Cozmo.CustomObjectMarker>.FromName("Hexagons4");
+
+    /// <summary>CLAD <c>Hexagons5</c> (11).</summary>
+    public static readonly CladEnum<global::Anki.Cozmo.CustomObjectMarker> Hexagons5 = CladEnum<global::Anki.Cozmo.CustomObjectMarker>.FromName("Hexagons5");
+
+    /// <summary>CLAD <c>Triangles2</c> (12).</summary>
+    public static readonly CladEnum<global::Anki.Cozmo.CustomObjectMarker> Triangles2 = CladEnum<global::Anki.Cozmo.CustomObjectMarker>.FromName("Triangles2");
+
+    /// <summary>CLAD <c>Triangles3</c> (13).</summary>
+    public static readonly CladEnum<global::Anki.Cozmo.CustomObjectMarker> Triangles3 = CladEnum<global::Anki.Cozmo.CustomObjectMarker>.FromName("Triangles3");
+
+    /// <summary>CLAD <c>Triangles4</c> (14).</summary>
+    public static readonly CladEnum<global::Anki.Cozmo.CustomObjectMarker> Triangles4 = CladEnum<global::Anki.Cozmo.CustomObjectMarker>.FromName("Triangles4");
+
+    /// <summary>CLAD <c>Triangles5</c> (15).</summary>
+    public static readonly CladEnum<global::Anki.Cozmo.CustomObjectMarker> Triangles5 = CladEnum<global::Anki.Cozmo.CustomObjectMarker>.FromName("Triangles5");
+}

@@ -3,15 +3,103 @@
 
 Each wrapper is a static class exposing PascalCase entries of CladEnum<TEnum> so the
 public API can name CLAD values without exposing raw integers.
+
+The catalogue entries below are an explicit mapping rather than a mechanical rename,
+because the Python SDK exposes some names that do not match the CLAD member spelling
+(``LightCube1Id`` for ``Block_LIGHTCUBE1``). The mapping was extracted from the Python
+wrapper with this one-off command (run from the repository root)::
+
+    python3 - <<'PY'
+    import ast, pathlib
+    tree = ast.parse(pathlib.Path(
+        'ddl-cozmo-python-sdk/src/cozmo/objects.py').read_text())
+    for node in tree.body:
+        if isinstance(node, ast.ClassDef) and node.name in (
+                'CustomObjectTypes', 'CustomObjectMarkers'):
+            for stmt in node.body:
+                if isinstance(stmt, ast.Assign) and isinstance(stmt.value, ast.Call):
+                    name = ast.unparse(stmt.value.args[1]).rsplit('.', 1)[-1]
+                    print(node.name, stmt.targets[0].id, name)
+    for node in tree.body:
+        if isinstance(node, ast.Assign) and isinstance(node.targets[0], ast.Name):
+            if node.targets[0].id.startswith('LightCube'):
+                print('module', node.targets[0].id, ast.unparse(node.value))
+    PY
+
+The resulting names were copied into ``WRAPPERS`` below. ``ChargerBasic`` is an
+addition: Python has no module-level charger id constant, but the engine object type is
+needed by the world layer and is listed here with the other object ids.
 """
 import argparse
 import json
 import os
-import sys
 
-# (class name, CLAD enum fully qualified name, entries to skip)
 WRAPPERS = [
-    ('ActionResults', 'Anki.Cozmo.ActionResult', {'Count'}),
+    {
+        'class': 'ActionResults',
+        'enum': 'Anki.Cozmo.ActionResult',
+        'skip': {'Count'},
+    },
+    {
+        'class': 'CustomObjectTypes',
+        'enum': 'Anki.Cozmo.ObjectType',
+        'entries': [
+            ('CustomType00', 'CustomType00'),
+            ('CustomType01', 'CustomType01'),
+            ('CustomType02', 'CustomType02'),
+            ('CustomType03', 'CustomType03'),
+            ('CustomType04', 'CustomType04'),
+            ('CustomType05', 'CustomType05'),
+            ('CustomType06', 'CustomType06'),
+            ('CustomType07', 'CustomType07'),
+            ('CustomType08', 'CustomType08'),
+            ('CustomType09', 'CustomType09'),
+            ('CustomType10', 'CustomType10'),
+            ('CustomType11', 'CustomType11'),
+            ('CustomType12', 'CustomType12'),
+            ('CustomType13', 'CustomType13'),
+            ('CustomType14', 'CustomType14'),
+            ('CustomType15', 'CustomType15'),
+            ('CustomType16', 'CustomType16'),
+            ('CustomType17', 'CustomType17'),
+            ('CustomType18', 'CustomType18'),
+            ('CustomType19', 'CustomType19'),
+            # Python module-level object id constants (objects.py:417-425).
+            ('LightCube1Id', 'Block_LIGHTCUBE1'),
+            ('LightCube2Id', 'Block_LIGHTCUBE2'),
+            ('LightCube3Id', 'Block_LIGHTCUBE3'),
+            ('ChargerBasic', 'Charger_Basic'),
+        ],
+        'lists': [
+            {
+                'name': 'LightCubeIDs',
+                'entries': ['LightCube1Id', 'LightCube2Id', 'LightCube3Id'],
+                'summary': 'An ordered list of the 3 light cube ids for convenience.',
+            },
+        ],
+    },
+    {
+        'class': 'CustomObjectMarkers',
+        'enum': 'Anki.Cozmo.CustomObjectMarker',
+        'entries': [
+            ('Circles2', 'Circles2'),
+            ('Circles3', 'Circles3'),
+            ('Circles4', 'Circles4'),
+            ('Circles5', 'Circles5'),
+            ('Diamonds2', 'Diamonds2'),
+            ('Diamonds3', 'Diamonds3'),
+            ('Diamonds4', 'Diamonds4'),
+            ('Diamonds5', 'Diamonds5'),
+            ('Hexagons2', 'Hexagons2'),
+            ('Hexagons3', 'Hexagons3'),
+            ('Hexagons4', 'Hexagons4'),
+            ('Hexagons5', 'Hexagons5'),
+            ('Triangles2', 'Triangles2'),
+            ('Triangles3', 'Triangles3'),
+            ('Triangles4', 'Triangles4'),
+            ('Triangles5', 'Triangles5'),
+        ],
+    },
 ]
 
 HEADER = '''// Copyright (c) 2016-2017 Anki, Inc.
@@ -50,6 +138,28 @@ def pascal_case(name):
     return ''.join(out)
 
 
+def resolve_entries(wrapper, enum):
+    skip = wrapper.get('skip', set())
+    if 'entries' in wrapper:
+        declared = wrapper['entries']
+    else:
+        declared = [(pascal_case(name), name)
+                    for name in enum['values'] if name not in skip]
+
+    entries = []
+    seen = {}
+    for public, member in declared:
+        if member not in enum['values']:
+            raise SystemExit('%s: CLAD member %s not found in %s'
+                             % (wrapper['class'], member, wrapper['enum']))
+        if public in seen:
+            raise SystemExit('%s: duplicate public name %s (%s and %s)'
+                             % (wrapper['class'], public, seen[public], member))
+        seen[public] = member
+        entries.append((public, member, enum['values'][member]))
+    return entries
+
+
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument('--schema', required=True)
@@ -59,29 +169,34 @@ def main():
     schema = json.load(open(args.schema, encoding='utf-8'))
     types = schema['types']
     lines = [HEADER.format(version=schema['cozmoclad']['version'])]
-    for class_name, enum_fqn, skip in WRAPPERS:
+    for wrapper in WRAPPERS:
+        class_name = wrapper['class']
+        enum_fqn = wrapper['enum']
         enum = types[enum_fqn]
-        entries = []
-        seen = {}
-        for name, value in enum['values'].items():
-            if name in skip:
-                continue
-            member = pascal_case(name)
-            if member in seen:
-                raise SystemExit('collision in %s: %s and %s -> %s' % (class_name, seen[member], name, member))
-            seen[member] = name
-            entries.append((member, name, value))
+        entries = resolve_entries(wrapper, enum)
 
         lines.append('/// <summary>Named %s values, mirroring the Python <c>%s</c> wrapper.</summary>'
                      % (enum_fqn.rsplit('.', 1)[1], class_name))
         lines.append('public static class %s' % class_name)
         lines.append('{')
-        for index, (member, name, value) in enumerate(entries):
-            lines.append('    /// <summary>CLAD <c>%s</c> (%d).</summary>' % (name, value))
+        for index, (public, member, value) in enumerate(entries):
+            lines.append('    /// <summary>CLAD <c>%s</c> (%d).</summary>' % (member, value))
             lines.append('    public static readonly CladEnum<global::%s> %s = CladEnum<global::%s>.FromName("%s");'
-                         % (enum_fqn, member, enum_fqn, name))
-            if index < len(entries) - 1:
+                         % (enum_fqn, public, enum_fqn, member))
+            if index < len(entries) - 1 or 'lists' in wrapper:
                 lines.append('')
+
+        lists = wrapper.get('lists', [])
+        for list_index, list_spec in enumerate(lists):
+            ids = ', '.join(list_spec['entries'])
+            lines.append('    /// <summary>%s</summary>' % list_spec['summary'])
+            lines.append('    public static global::System.Collections.Generic.IReadOnlyList<'
+                         'CladEnum<global::%s>> %s { get; } = '
+                         'global::System.Array.AsReadOnly(new[] { %s });'
+                         % (enum_fqn, list_spec['name'], ids))
+            if list_index < len(lists) - 1:
+                lines.append('')
+
         lines.append('}')
         lines.append('')
 
