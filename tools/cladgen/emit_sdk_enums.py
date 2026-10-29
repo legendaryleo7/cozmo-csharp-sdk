@@ -1,104 +1,91 @@
 #!/usr/bin/env python3
 """Emit the SDK's named CLAD enum wrappers (the C# equivalent of CladEnumWrapper).
 
-Each wrapper is a static class exposing PascalCase entries of CladEnum<TEnum> so the
-public API can name CLAD values without exposing raw integers.
+Each wrapper is a static class exposing entries of ``CladEnum<TEnum>`` so the public API
+can name CLAD values without exposing raw integers.
 
-The catalogue entries below are an explicit mapping rather than a mechanical rename,
-because the Python SDK exposes some names that do not match the CLAD member spelling
-(``LightCube1Id`` for ``Block_LIGHTCUBE1``). The mapping was extracted from the Python
-wrapper with this one-off command (run from the repository root)::
-
-    python3 - <<'PY'
-    import ast, pathlib
-    tree = ast.parse(pathlib.Path(
-        'ddl-cozmo-python-sdk/src/cozmo/objects.py').read_text())
-    for node in tree.body:
-        if isinstance(node, ast.ClassDef) and node.name in (
-                'CustomObjectTypes', 'CustomObjectMarkers'):
-            for stmt in node.body:
-                if isinstance(stmt, ast.Assign) and isinstance(stmt.value, ast.Call):
-                    name = ast.unparse(stmt.value.args[1]).rsplit('.', 1)[-1]
-                    print(node.name, stmt.targets[0].id, name)
-    for node in tree.body:
-        if isinstance(node, ast.Assign) and isinstance(node.targets[0], ast.Name):
-            if node.targets[0].id.startswith('LightCube'):
-                print('module', node.targets[0].id, ast.unparse(node.value))
-    PY
-
-The resulting names were copied into ``WRAPPERS`` below. ``ChargerBasic`` is an
-addition: Python has no module-level charger id constant, but the engine object type is
-needed by the world layer and is listed here with the other object ids.
+Most wrappers expose every CLAD member under a mechanically derived name.  The Python
+SDK's ``AudioEvents`` wrapper, however, renames many CLAD members (``Music_Global_Stop``
+becomes ``MusicGlobalStop``), so explicit public-name mappings are read from a JSON file
+produced by ``extract_sdk_enum_names.py``.  The object catalogues use the same mechanism
+because ``LightCube1Id`` wraps ``Block_LIGHTCUBE1``.  Mapped ids are verified against the
+schema, so a renamed or missing entry fails the build generation instead of silently
+drifting.
 """
 import argparse
 import json
 import os
 
+# Each entry: class name, CLAD enum, member naming, skip set, optional name map key,
+# optional list member (a name for every entry, or a {name, members, summary} mapping for
+# a subset), and optional documentation remark.
 WRAPPERS = [
     {
-        'class': 'ActionResults',
+        'name': 'ActionResults',
         'enum': 'Anki.Cozmo.ActionResult',
+        'memberStyle': 'pascal',
         'skip': {'Count'},
     },
     {
-        'class': 'CustomObjectTypes',
-        'enum': 'Anki.Cozmo.ObjectType',
-        'entries': [
-            ('CustomType00', 'CustomType00'),
-            ('CustomType01', 'CustomType01'),
-            ('CustomType02', 'CustomType02'),
-            ('CustomType03', 'CustomType03'),
-            ('CustomType04', 'CustomType04'),
-            ('CustomType05', 'CustomType05'),
-            ('CustomType06', 'CustomType06'),
-            ('CustomType07', 'CustomType07'),
-            ('CustomType08', 'CustomType08'),
-            ('CustomType09', 'CustomType09'),
-            ('CustomType10', 'CustomType10'),
-            ('CustomType11', 'CustomType11'),
-            ('CustomType12', 'CustomType12'),
-            ('CustomType13', 'CustomType13'),
-            ('CustomType14', 'CustomType14'),
-            ('CustomType15', 'CustomType15'),
-            ('CustomType16', 'CustomType16'),
-            ('CustomType17', 'CustomType17'),
-            ('CustomType18', 'CustomType18'),
-            ('CustomType19', 'CustomType19'),
-            # Python module-level object id constants (objects.py:417-425).
-            ('LightCube1Id', 'Block_LIGHTCUBE1'),
-            ('LightCube2Id', 'Block_LIGHTCUBE2'),
-            ('LightCube3Id', 'Block_LIGHTCUBE3'),
-            ('ChargerBasic', 'Charger_Basic'),
-        ],
-        'lists': [
-            {
-                'name': 'LightCubeIDs',
-                'entries': ['LightCube1Id', 'LightCube2Id', 'LightCube3Id'],
-                'summary': 'An ordered list of the 3 light cube ids for convenience.',
-            },
-        ],
+        'name': 'Triggers',
+        'enum': 'Anki.Cozmo.AnimationTrigger',
+        'memberStyle': 'clad',
+        'list': 'TriggerList',
+        'remarks': (
+            'Python builds this catalogue at import time from every public CLAD member '
+            '(anim.py:206-211), including the <c>Count</c> sentinel.'),
     },
     {
-        'class': 'CustomObjectMarkers',
+        'name': 'BehaviorTypes',
+        'enum': 'Anki.Cozmo.ExecutableBehaviorType',
+        'nameMap': 'BehaviorTypes',
+        'remarks': (
+            'Python deliberately exposes only this documented subset of working behaviors '
+            '(behavior.py:206-215); <c>EnrollFace</c> stays internal, matching the private '
+            '<c>_EnrollFace</c> entry.'),
+    },
+    {
+        'name': 'AudioEvents',
+        'enum': 'Anki.AudioMetaData.GameEvent.Codelab',
+        'nameMap': 'AudioEvents',
+        'skip': {'Count'},
+        'remarks': (
+            "Python's public names are preserved exactly (audio.py); CLAD members it leaves "
+            'undeclared are auto-added under their CLAD names by <c>CladEnumWrapper</c> '
+            '(audio.py:379).'),
+    },
+    {
+        'name': 'NoteTypes',
+        'enum': 'Anki.Cozmo.ExternalInterface.SongNoteType',
+        'nameMap': 'NoteTypes',
+    },
+    {
+        'name': 'NoteDurations',
+        'enum': 'Anki.Cozmo.ExternalInterface.SongNoteDuration',
+        'nameMap': 'NoteDurations',
+    },
+    {
+        'name': 'CustomObjectTypes',
+        'enum': 'Anki.Cozmo.ObjectType',
+        'nameMap': 'CustomObjectTypes',
+        'list': {
+            'name': 'LightCubeIDs',
+            'members': ['LightCube1Id', 'LightCube2Id', 'LightCube3Id'],
+            'summary': 'An ordered list of the 3 light cube ids for convenience.',
+        },
+        'remarks': (
+            'Python declares the custom types in <c>CustomObjectTypes</c> and the LightCube '
+            'object ids as module-level constants (objects.py); both are grouped here. '
+            '<c>ChargerBasic</c> is the port\'s name for <c>ObjectType.Charger_Basic</c>, which '
+            'the world layer needs but Python has no module-level constant for.'),
+    },
+    {
+        'name': 'CustomObjectMarkers',
         'enum': 'Anki.Cozmo.CustomObjectMarker',
-        'entries': [
-            ('Circles2', 'Circles2'),
-            ('Circles3', 'Circles3'),
-            ('Circles4', 'Circles4'),
-            ('Circles5', 'Circles5'),
-            ('Diamonds2', 'Diamonds2'),
-            ('Diamonds3', 'Diamonds3'),
-            ('Diamonds4', 'Diamonds4'),
-            ('Diamonds5', 'Diamonds5'),
-            ('Hexagons2', 'Hexagons2'),
-            ('Hexagons3', 'Hexagons3'),
-            ('Hexagons4', 'Hexagons4'),
-            ('Hexagons5', 'Hexagons5'),
-            ('Triangles2', 'Triangles2'),
-            ('Triangles3', 'Triangles3'),
-            ('Triangles4', 'Triangles4'),
-            ('Triangles5', 'Triangles5'),
-        ],
+        'nameMap': 'CustomObjectMarkers',
+        'remarks': (
+            'Python custom object marker catalogue (objects.py); the CLAD <c>Count</c> '
+            'sentinel is not exposed.'),
     },
 ]
 
@@ -138,67 +125,171 @@ def pascal_case(name):
     return ''.join(out)
 
 
-def resolve_entries(wrapper, enum):
-    skip = wrapper.get('skip', set())
-    if 'entries' in wrapper:
-        declared = wrapper['entries']
-    else:
-        declared = [(pascal_case(name), name)
-                    for name in enum['values'] if name not in skip]
+def explicit_entries(wrapper, name_map, enum_values):
+    """Validate and return the explicit public-name mapping for one wrapper."""
+    mapped = name_map['wrappers'][wrapper['nameMap']]
+    entries = []
+    used = set()
+    for item in mapped['entries']:
+        public = item['public']
+        clad = item['clad']
+        if clad not in enum_values:
+            raise SystemExit('%s: CLAD member %s is not in the schema' % (wrapper['name'], clad))
+        if public in [entry['public'] for entry in entries]:
+            raise SystemExit('%s: duplicate public name %s' % (wrapper['name'], public))
+        if 'id' in item and int(item['id']) != int(enum_values[clad]):
+            raise SystemExit(
+                '%s: %s has id %d in the Python SDK but %d in the schema' %
+                (wrapper['name'], clad, int(item['id']), int(enum_values[clad])))
+        used.add(clad)
+        entries.append({
+            'public': public,
+            'clad': clad,
+            'id': enum_values[clad],
+            'internal': bool(item.get('internal')),
+            'auto': False,
+        })
+    return entries, used
+
+
+def build_entries(wrapper, enum, name_map):
+    enum_values = enum['values']
+    skip = wrapper.get('skip') or set()
+    if wrapper.get('nameMap'):
+        entries, used = explicit_entries(wrapper, name_map, enum_values)
+        if name_map['wrappers'][wrapper['nameMap']].get('addMissing'):
+            for clad, value in enum_values.items():
+                if clad in used or clad in skip:
+                    continue
+                entries.append({
+                    'public': clad,
+                    'clad': clad,
+                    'id': value,
+                    'internal': False,
+                    'auto': True,
+                })
+                used.add(clad)
+        return entries
 
     entries = []
     seen = {}
-    for public, member in declared:
-        if member not in enum['values']:
-            raise SystemExit('%s: CLAD member %s not found in %s'
-                             % (wrapper['class'], member, wrapper['enum']))
+    for clad, value in enum_values.items():
+        if clad in skip:
+            continue
+        if wrapper['memberStyle'] == 'pascal':
+            public = pascal_case(clad)
+        elif wrapper['memberStyle'] == 'clad':
+            public = clad
+        else:
+            raise SystemExit('unknown member style %s' % wrapper['memberStyle'])
         if public in seen:
-            raise SystemExit('%s: duplicate public name %s (%s and %s)'
-                             % (wrapper['class'], public, seen[public], member))
-        seen[public] = member
-        entries.append((public, member, enum['values'][member]))
+            raise SystemExit(
+                'collision in %s: %s and %s -> %s' %
+                (wrapper['name'], seen[public], clad, public))
+        seen[public] = clad
+        entries.append({
+            'public': public,
+            'clad': clad,
+            'id': value,
+            'internal': False,
+            'auto': False,
+        })
     return entries
+
+
+def list_spec(wrapper, entries):
+    """Return the normalized list member configuration, or None when there is none."""
+    spec = wrapper.get('list')
+    if not spec:
+        return None
+    default_summary = 'Every entry above, in CLAD declaration order.'
+    if isinstance(spec, str):
+        return {'name': spec, 'entries': entries, 'summary': default_summary}
+    if not isinstance(spec, dict):
+        raise SystemExit('%s: list must be a string or a mapping' % wrapper['name'])
+    name = spec.get('name')
+    if not name:
+        raise SystemExit('%s: list has no name' % wrapper['name'])
+    members = spec.get('members')
+    if members is None:
+        selected = entries
+    else:
+        by_public = {entry['public']: entry for entry in entries}
+        missing = [member for member in members if member not in by_public]
+        if missing:
+            raise SystemExit(
+                '%s: list member(s) %s are not in the catalogue' %
+                (wrapper['name'], ', '.join(missing)))
+        if len(set(members)) != len(members):
+            raise SystemExit('%s: duplicate list member' % wrapper['name'])
+        selected = [by_public[member] for member in members]
+    return {
+        'name': name,
+        'entries': selected,
+        'summary': spec.get('summary', default_summary),
+    }
+
+
+def emit_wrapper(lines, wrapper, enum_fqn, entries):
+    lines.append('/// <summary>Named %s values, mirroring the Python <c>%s</c> wrapper.</summary>'
+                 % (enum_fqn.rsplit('.', 1)[1], wrapper['name']))
+    if wrapper.get('remarks'):
+        lines.append('/// <remarks>%s</remarks>' % wrapper['remarks'])
+    lines.append('public static class %s' % wrapper['name'])
+    lines.append('{')
+    for entry in entries:
+        access = 'internal' if entry['internal'] else 'public'
+        suffix = ''
+        if entry['internal']:
+            suffix = ', internal to match the Python private entry'
+        elif entry['auto']:
+            suffix = ', auto-added by the Python CladEnumWrapper'
+        lines.append('    /// <summary>CLAD <c>%s</c> (%d)%s.</summary>'
+                     % (entry['clad'], entry['id'], suffix))
+        lines.append('    %s static readonly CladEnum<global::%s> %s = CladEnum<global::%s>.FromName("%s");'
+                     % (access, enum_fqn, entry['public'], enum_fqn, entry['clad']))
+        lines.append('')
+
+    list_member = list_spec(wrapper, entries)
+    if list_member:
+        lines.append('    /// <summary>%s</summary>' % list_member['summary'])
+        lines.append('    public static readonly IReadOnlyList<CladEnum<global::%s>> %s = new[]'
+                     % (enum_fqn, list_member['name']))
+        lines.append('    {')
+        for entry in list_member['entries']:
+            lines.append('        %s,' % entry['public'])
+        lines.append('    };')
+        lines.append('')
+
+    while lines[-1] == '':
+        lines.pop()
+    lines.append('}')
+    lines.append('')
 
 
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument('--schema', required=True)
+    parser.add_argument('--name-map', required=True,
+                        help='JSON mapping produced by extract_sdk_enum_names.py')
     parser.add_argument('--out', required=True)
     args = parser.parse_args()
 
     schema = json.load(open(args.schema, encoding='utf-8'))
+    name_map = json.load(open(args.name_map, encoding='utf-8'))
     types = schema['types']
+
+    for wrapper in WRAPPERS:
+        if wrapper.get('nameMap') and wrapper['nameMap'] not in name_map.get('wrappers', {}):
+            raise SystemExit('name map has no wrapper %s' % wrapper['nameMap'])
+
     lines = [HEADER.format(version=schema['cozmoclad']['version'])]
     for wrapper in WRAPPERS:
-        class_name = wrapper['class']
-        enum_fqn = wrapper['enum']
-        enum = types[enum_fqn]
-        entries = resolve_entries(wrapper, enum)
-
-        lines.append('/// <summary>Named %s values, mirroring the Python <c>%s</c> wrapper.</summary>'
-                     % (enum_fqn.rsplit('.', 1)[1], class_name))
-        lines.append('public static class %s' % class_name)
-        lines.append('{')
-        for index, (public, member, value) in enumerate(entries):
-            lines.append('    /// <summary>CLAD <c>%s</c> (%d).</summary>' % (member, value))
-            lines.append('    public static readonly CladEnum<global::%s> %s = CladEnum<global::%s>.FromName("%s");'
-                         % (enum_fqn, public, enum_fqn, member))
-            if index < len(entries) - 1 or 'lists' in wrapper:
-                lines.append('')
-
-        lists = wrapper.get('lists', [])
-        for list_index, list_spec in enumerate(lists):
-            ids = ', '.join(list_spec['entries'])
-            lines.append('    /// <summary>%s</summary>' % list_spec['summary'])
-            lines.append('    public static global::System.Collections.Generic.IReadOnlyList<'
-                         'CladEnum<global::%s>> %s { get; } = '
-                         'global::System.Array.AsReadOnly(new[] { %s });'
-                         % (enum_fqn, list_spec['name'], ids))
-            if list_index < len(lists) - 1:
-                lines.append('')
-
-        lines.append('}')
-        lines.append('')
+        enum = types.get(wrapper['enum'])
+        if enum is None:
+            raise SystemExit('%s: enum %s is not in the schema' % (wrapper['name'], wrapper['enum']))
+        entries = build_entries(wrapper, enum, name_map)
+        emit_wrapper(lines, wrapper, wrapper['enum'], entries)
 
     os.makedirs(os.path.dirname(args.out) or '.', exist_ok=True)
     with open(args.out, 'w', encoding='utf-8') as handle:

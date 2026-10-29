@@ -26,7 +26,25 @@ python3 tools/cladgen/emit_oracle_tests.py \
   --cozmoclad ../ddl-cozmo-python-sdk/cozmoclad/cozmoclad-3.6.6-py3-none-any.whl \
   --out tests/Cozmo.Tests/CladOracleTests.g.cs
 
-# 4. Verify.
+# 4. Emit the SDK enum wrappers.
+
+# 4a. Extract the Python CladEnumWrapper entries. This is a one-off command; re-run it
+#     when the Python SDK sources change. The Python wrappers rename some CLAD members
+#     (audio.py maps Music_Global_Stop to the public name MusicGlobalStop), so the
+#     mapping and the ids it verifies are committed rather than guessed.
+python3 tools/cladgen/extract_sdk_enum_names.py \
+  --python-src ../ddl-cozmo-python-sdk/src/cozmo \
+  --cozmoclad ../ddl-cozmo-python-sdk/cozmoclad/cozmoclad-3.6.6-py3-none-any.whl \
+  --schema tools/cladgen/clad_schema.json \
+  --out tools/cladgen/sdk_enum_names.json
+
+# 4b. Generate src/Cozmo/Generated/SdkEnums.g.cs.
+python3 tools/cladgen/emit_sdk_enums.py \
+  --schema tools/cladgen/clad_schema.json \
+  --name-map tools/cladgen/sdk_enum_names.json \
+  --out src/Cozmo/Generated/SdkEnums.g.cs
+
+# 5. Verify.
 dotnet test tests/Cozmo.Tests
 ```
 
@@ -36,6 +54,8 @@ dotnet test tests/Cozmo.Tests
 |---|---|
 | `src/Cozmo/Clad/Generated/*.g.cs` | 739 CLAD types in 18 namespaces: enums, structs, messages and unions with `Pack`/`Unpack` |
 | `src/Cozmo/Clad/Generated/CladIdentity.g.cs` | cozmoclad version, app build version and both 16-byte hashes in wire order |
+| `src/Cozmo/Generated/SdkEnums.g.cs` | `CladEnum<T>` catalogues: `ActionResults`, `Triggers` (with `TriggerList`), `BehaviorTypes`, `AudioEvents`, `NoteTypes`, `NoteDurations`, `CustomObjectTypes` (with `LightCubeIDs`), `CustomObjectMarkers` |
+| `tools/cladgen/sdk_enum_names.json` | Explicit Python wrapper and custom-object catalogue names/ids used by `emit_sdk_enums.py` |
 | `tests/Cozmo.Tests/CladOracleTests.g.cs` | one test per message in both top-level unions |
 
 The oracle test builds the same value in Python, packs it there, and asserts that the C#

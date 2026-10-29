@@ -467,7 +467,9 @@ public sealed class ObjectTests
     [Fact]
     public void CustomObjectCataloguesMatchTheCladEnums()
     {
-        Assert.Equal(24, typeof(CustomObjectTypes).GetFields(BindingFlags.Public | BindingFlags.Static).Length);
+        // 24 catalogue entries plus the LightCubeIDs list field.
+        Assert.Equal(25, typeof(CustomObjectTypes).GetFields(BindingFlags.Public | BindingFlags.Static).Length);
+        Assert.Equal(3, CustomObjectTypes.LightCubeIDs.Count);
         for (int index = 0; index < 20; index++)
         {
             string name = $"CustomType{index:D2}";
