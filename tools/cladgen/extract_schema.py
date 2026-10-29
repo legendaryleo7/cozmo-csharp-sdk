@@ -112,6 +112,45 @@ def parse_rhs(rhs, fqn, enums):
     raise ExtractError('%s: unsupported field expression %r' % (fqn, rhs))
 
 
+
+_IDENT_RE = re.compile(r'(?<![0-9A-Za-z_.])[A-Za-z_]\w*(?:\.[A-Za-z_]\w*)*')
+
+
+def evaluate_enum_value(expr, current_values, enums, fqn):
+    """Evaluates a CLAD enum value, which may reference other enums and members.
+
+    Generated CLAD enums express some members as expressions such as
+    ``ActionResultCategory.ABORT * ARCBitShift.SHIFT + 1``.
+    """
+    expr = expr.strip()
+    if re.fullmatch(r'-?(?:0x[0-9a-fA-F]+|\d+)', expr):
+        return int(expr, 0)
+
+    def substitute(match):
+        token = match.group(0)
+        if '.' in token:
+            owner, member = token.rsplit('.', 1)
+            candidates = [key for key in enums if key.rsplit('.', 1)[1] == owner]
+            if not candidates:
+                raise ExtractError('%s: unknown enum reference %r' % (fqn, token))
+            namespace = fqn.rsplit('.', 1)[0]
+            preferred = [key for key in candidates if key.rsplit('.', 1)[0] == namespace]
+            key = (preferred or candidates)[0]
+            if member not in enums[key]['values']:
+                raise ExtractError('%s: unknown member %r of %s' % (fqn, member, key))
+            return str(enums[key]['values'][member])
+
+        if token not in current_values:
+            raise ExtractError('%s: unknown member reference %r' % (fqn, token))
+        return str(current_values[token])
+
+    substituted = _IDENT_RE.sub(substitute, expr)
+    substituted = re.sub(r'0x[0-9a-fA-F]+', lambda m: str(int(m.group(0), 16)), substituted)
+    if not re.fullmatch(r'[-+*/%()<>|&^~ \t0-9]+', substituted):
+        raise ExtractError('%s: unsafe enum expression %r' % (fqn, expr))
+    return int(eval(substituted, {'__builtins__': {}}, {}))  # noqa: S307 - digits and operators only
+
+
 def collect_enums(path, types, enums, module):
     text = open(path, encoding='utf-8').read()
     fqns = {name: fqn for fqn, name in FQN_RE.findall(text)}
@@ -125,8 +164,12 @@ def collect_enums(path, types, enums, module):
             raise ExtractError('%s: class %s has no Anki assignment' % (path, name))
         body = body_of(text, m.start())
         values = {}
-        for vm in ENUM_RE.finditer(body):
-            values[vm.group(1)] = int(vm.group(2), 0)
+        for line in body.splitlines():
+            vm = re.match(r'^  ([A-Za-z_]\w*)\s+=\s+(.+?)\s*$', line)
+            if not vm:
+                continue
+            values[vm.group(1)] = evaluate_enum_value(
+                vm.group(2).split('#', 1)[0].strip(), values, enums, fqn)
         enums[fqn] = {'kind': 'enum', 'underlying': underlying, 'values': values, 'module': module}
         types[fqn] = enums[fqn]
 
