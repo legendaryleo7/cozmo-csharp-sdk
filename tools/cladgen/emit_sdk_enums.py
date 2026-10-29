@@ -65,6 +65,24 @@ WRAPPERS = [
         'nameMap': 'NoteDurations',
     },
     {
+        'name': 'RobotAlignmentTypes',
+        'enum': 'Anki.Cozmo.AlignmentType',
+        'nameMap': 'RobotAlignmentTypes',
+        'remarks': 'Alignment modes accepted by DockWithCube (robot_alignment.py:25-45).',
+    },
+    {
+        'name': 'UnexpectedMovementSide',
+        'enum': 'Anki.Cozmo.UnexpectedMovementSide',
+        'nameMap': 'UnexpectedMovementSide',
+        'remarks': 'Side of the obstruction reported by EvtUnexpectedMovement (robot.py:2289-2313).',
+    },
+    {
+        'name': 'UnexpectedMovementType',
+        'enum': 'Anki.Cozmo.UnexpectedMovementType',
+        'nameMap': 'UnexpectedMovementType',
+        'remarks': 'Kind of unexpected movement reported by EvtUnexpectedMovement (robot.py:2319-2338).',
+    },
+    {
         'name': 'CustomObjectTypes',
         'enum': 'Anki.Cozmo.ObjectType',
         'nameMap': 'CustomObjectTypes',

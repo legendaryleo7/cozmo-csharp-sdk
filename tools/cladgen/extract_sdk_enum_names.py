@@ -33,6 +33,9 @@ WRAPPERS = [
     ('AudioEvents', 'audio.py'),
     ('NoteTypes', 'song.py'),
     ('NoteDurations', 'song.py'),
+    ('RobotAlignmentTypes', 'robot_alignment.py'),
+    ('UnexpectedMovementSide', 'robot.py'),
+    ('UnexpectedMovementType', 'robot.py'),
 ]
 
 # objects.py's catalogues are namedtuple-style classes rather than CladEnumWrapper
