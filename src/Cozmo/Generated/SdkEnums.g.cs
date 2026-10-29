@@ -3080,6 +3080,57 @@ public static class NoteDurations
     public static readonly CladEnum<global::Anki.Cozmo.ExternalInterface.SongNoteDuration> Quarter = CladEnum<global::Anki.Cozmo.ExternalInterface.SongNoteDuration>.FromName("Quarter");
 }
 
+/// <summary>Named AlignmentType values, mirroring the Python <c>RobotAlignmentTypes</c> wrapper.</summary>
+/// <remarks>Alignment modes accepted by DockWithCube (robot_alignment.py:25-45).</remarks>
+public static class RobotAlignmentTypes
+{
+    /// <summary>CLAD <c>LIFT_FINGER</c> (0).</summary>
+    public static readonly CladEnum<global::Anki.Cozmo.AlignmentType> LiftFinger = CladEnum<global::Anki.Cozmo.AlignmentType>.FromName("LIFT_FINGER");
+
+    /// <summary>CLAD <c>LIFT_PLATE</c> (1).</summary>
+    public static readonly CladEnum<global::Anki.Cozmo.AlignmentType> LiftPlate = CladEnum<global::Anki.Cozmo.AlignmentType>.FromName("LIFT_PLATE");
+
+    /// <summary>CLAD <c>BODY</c> (2).</summary>
+    public static readonly CladEnum<global::Anki.Cozmo.AlignmentType> Body = CladEnum<global::Anki.Cozmo.AlignmentType>.FromName("BODY");
+
+    /// <summary>CLAD <c>CUSTOM</c> (3).</summary>
+    public static readonly CladEnum<global::Anki.Cozmo.AlignmentType> Custom = CladEnum<global::Anki.Cozmo.AlignmentType>.FromName("CUSTOM");
+}
+
+/// <summary>Named UnexpectedMovementSide values, mirroring the Python <c>UnexpectedMovementSide</c> wrapper.</summary>
+/// <remarks>Side of the obstruction reported by EvtUnexpectedMovement (robot.py:2289-2313).</remarks>
+public static class UnexpectedMovementSide
+{
+    /// <summary>CLAD <c>UNKNOWN</c> (0).</summary>
+    public static readonly CladEnum<global::Anki.Cozmo.UnexpectedMovementSide> Unknown = CladEnum<global::Anki.Cozmo.UnexpectedMovementSide>.FromName("UNKNOWN");
+
+    /// <summary>CLAD <c>FRONT</c> (1).</summary>
+    public static readonly CladEnum<global::Anki.Cozmo.UnexpectedMovementSide> Front = CladEnum<global::Anki.Cozmo.UnexpectedMovementSide>.FromName("FRONT");
+
+    /// <summary>CLAD <c>BACK</c> (2).</summary>
+    public static readonly CladEnum<global::Anki.Cozmo.UnexpectedMovementSide> Back = CladEnum<global::Anki.Cozmo.UnexpectedMovementSide>.FromName("BACK");
+
+    /// <summary>CLAD <c>LEFT</c> (3).</summary>
+    public static readonly CladEnum<global::Anki.Cozmo.UnexpectedMovementSide> Left = CladEnum<global::Anki.Cozmo.UnexpectedMovementSide>.FromName("LEFT");
+
+    /// <summary>CLAD <c>RIGHT</c> (4).</summary>
+    public static readonly CladEnum<global::Anki.Cozmo.UnexpectedMovementSide> Right = CladEnum<global::Anki.Cozmo.UnexpectedMovementSide>.FromName("RIGHT");
+}
+
+/// <summary>Named UnexpectedMovementType values, mirroring the Python <c>UnexpectedMovementType</c> wrapper.</summary>
+/// <remarks>Kind of unexpected movement reported by EvtUnexpectedMovement (robot.py:2319-2338).</remarks>
+public static class UnexpectedMovementType
+{
+    /// <summary>CLAD <c>TURNED_BUT_STOPPED</c> (0).</summary>
+    public static readonly CladEnum<global::Anki.Cozmo.UnexpectedMovementType> TurnedButStopped = CladEnum<global::Anki.Cozmo.UnexpectedMovementType>.FromName("TURNED_BUT_STOPPED");
+
+    /// <summary>CLAD <c>TURNED_IN_SAME_DIRECTION</c> (1), internal to match the Python private entry.</summary>
+    internal static readonly CladEnum<global::Anki.Cozmo.UnexpectedMovementType> TurnedInSameDirection = CladEnum<global::Anki.Cozmo.UnexpectedMovementType>.FromName("TURNED_IN_SAME_DIRECTION");
+
+    /// <summary>CLAD <c>TURNED_IN_OPPOSITE_DIRECTION</c> (2).</summary>
+    public static readonly CladEnum<global::Anki.Cozmo.UnexpectedMovementType> TurnedInOppositeDirection = CladEnum<global::Anki.Cozmo.UnexpectedMovementType>.FromName("TURNED_IN_OPPOSITE_DIRECTION");
+}
+
 /// <summary>Named ObjectType values, mirroring the Python <c>CustomObjectTypes</c> wrapper.</summary>
 /// <remarks>Python declares the custom types in <c>CustomObjectTypes</c> and the LightCube object ids as module-level constants (objects.py); both are grouped here. <c>ChargerBasic</c> is the port's name for <c>ObjectType.Charger_Basic</c>, which the world layer needs but Python has no module-level constant for.</remarks>
 public static class CustomObjectTypes

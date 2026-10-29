@@ -831,6 +831,89 @@
         }
       ]
     },
+    "RobotAlignmentTypes": {
+      "enum": "Anki.Cozmo.AlignmentType",
+      "source": "robot_alignment.py",
+      "addMissing": true,
+      "entries": [
+        {
+          "public": "LiftFinger",
+          "clad": "LIFT_FINGER",
+          "id": 0
+        },
+        {
+          "public": "LiftPlate",
+          "clad": "LIFT_PLATE",
+          "id": 1
+        },
+        {
+          "public": "Body",
+          "clad": "BODY",
+          "id": 2
+        },
+        {
+          "public": "Custom",
+          "clad": "CUSTOM",
+          "id": 3
+        }
+      ]
+    },
+    "UnexpectedMovementSide": {
+      "enum": "Anki.Cozmo.UnexpectedMovementSide",
+      "source": "robot.py",
+      "addMissing": true,
+      "entries": [
+        {
+          "public": "Unknown",
+          "clad": "UNKNOWN",
+          "id": 0
+        },
+        {
+          "public": "Front",
+          "clad": "FRONT",
+          "id": 1
+        },
+        {
+          "public": "Back",
+          "clad": "BACK",
+          "id": 2
+        },
+        {
+          "public": "Left",
+          "clad": "LEFT",
+          "id": 3
+        },
+        {
+          "public": "Right",
+          "clad": "RIGHT",
+          "id": 4
+        }
+      ]
+    },
+    "UnexpectedMovementType": {
+      "enum": "Anki.Cozmo.UnexpectedMovementType",
+      "source": "robot.py",
+      "addMissing": true,
+      "entries": [
+        {
+          "public": "TurnedButStopped",
+          "clad": "TURNED_BUT_STOPPED",
+          "id": 0
+        },
+        {
+          "public": "TurnedInSameDirection",
+          "clad": "TURNED_IN_SAME_DIRECTION",
+          "pythonAttribute": "_TurnedInSameDirection",
+          "internal": true,
+          "id": 1
+        },
+        {
+          "public": "TurnedInOppositeDirection",
+          "clad": "TURNED_IN_OPPOSITE_DIRECTION",
+          "id": 2
+        }
+      ]
+    },
     "CustomObjectTypes": {
       "enum": "Anki.Cozmo.ObjectType",
       "source": "objects.py",

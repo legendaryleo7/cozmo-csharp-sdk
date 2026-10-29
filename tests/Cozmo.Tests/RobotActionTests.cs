@@ -218,6 +218,28 @@ public sealed class RobotActionTests
     }
 
     [Fact]
+    public void RobotAlignmentAndMovementWrappersMatchCladIds()
+    {
+        Assert.Equal((long)CladCozmo.AlignmentType.LIFT_FINGER, RobotAlignmentTypes.LiftFinger.Id);
+        Assert.Equal((long)CladCozmo.AlignmentType.LIFT_PLATE, RobotAlignmentTypes.LiftPlate.Id);
+        Assert.Equal((long)CladCozmo.AlignmentType.BODY, RobotAlignmentTypes.Body.Id);
+        Assert.Equal((long)CladCozmo.AlignmentType.CUSTOM, RobotAlignmentTypes.Custom.Id);
+
+        Assert.Equal((long)CladCozmo.UnexpectedMovementSide.UNKNOWN, UnexpectedMovementSide.Unknown.Id);
+        Assert.Equal((long)CladCozmo.UnexpectedMovementSide.FRONT, UnexpectedMovementSide.Front.Id);
+        Assert.Equal((long)CladCozmo.UnexpectedMovementSide.BACK, UnexpectedMovementSide.Back.Id);
+        Assert.Equal((long)CladCozmo.UnexpectedMovementSide.LEFT, UnexpectedMovementSide.Left.Id);
+        Assert.Equal((long)CladCozmo.UnexpectedMovementSide.RIGHT, UnexpectedMovementSide.Right.Id);
+
+        Assert.Equal((long)CladCozmo.UnexpectedMovementType.TURNED_BUT_STOPPED,
+            UnexpectedMovementType.TurnedButStopped.Id);
+        Assert.Equal((long)CladCozmo.UnexpectedMovementType.TURNED_IN_SAME_DIRECTION,
+            UnexpectedMovementType.TurnedInSameDirection.Id);
+        Assert.Equal((long)CladCozmo.UnexpectedMovementType.TURNED_IN_OPPOSITE_DIRECTION,
+            UnexpectedMovementType.TurnedInOppositeDirection.Id);
+    }
+
+    [Fact]
     public void DriveOffChargerContactsEncodesUnionTag()
     {
         CladIface.RobotActionUnion union = Encode(new DriveOffChargerContacts());
