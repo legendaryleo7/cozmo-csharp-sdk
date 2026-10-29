@@ -91,18 +91,8 @@ public sealed class FakeTransport : ICladTransport
         GC.SuppressFinalize(this);
     }
 
-    /// <summary>Queues one complete frame for the consumer.</summary>
+    /// <summary>Queues one complete frame payload (no transport length prefix) for the consumer.</summary>
     public void EnqueueFrame(byte[] frame) => _inbound.Writer.TryWrite(frame);
-
-    /// <summary>Queues a frame built from a CLAD payload with the transport length prefix applied.</summary>
-    public void EnqueuePayload(byte[] payload)
-    {
-        var framed = new byte[2 + payload.Length];
-        framed[0] = (byte)(payload.Length & 0xFF);
-        framed[1] = (byte)((payload.Length >> 8) & 0xFF);
-        payload.CopyTo(framed, 2);
-        EnqueueFrame(framed);
-    }
 
     /// <summary>Signals the end of the inbound stream.</summary>
     public void CompleteInbound() => _inbound.Writer.TryComplete();
