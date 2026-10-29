@@ -505,6 +505,32 @@ public sealed class TurnInPlace : RobotAction
     private static float RadiansOrZero(Angle? angle) => angle is null ? 0.0f : (float)angle.Value.Radians;
 }
 
+/// <summary>Turns the robot towards a face.</summary>
+public sealed class TurnTowardsFace : RobotAction
+{
+    /// <summary>Creates the action.</summary>
+    /// <param name="face">The face to turn towards.</param>
+    /// <exception cref="InvalidOperationException">The face has no id yet.</exception>
+    public TurnTowardsFace(Face face)
+    {
+        Face = face ?? throw new ArgumentNullException(nameof(face));
+        FaceId = face.FaceId ?? throw new InvalidOperationException("The face has no face id.");
+    }
+
+    /// <summary>The face to turn towards.</summary>
+    public Face Face { get; }
+
+    /// <summary>Id of the face to turn towards.</summary>
+    public int FaceId { get; }
+
+    /// <inheritdoc />
+    public override void Encode(RobotActionUnion action) => action.turnTowardsFace = new global::Anki.Cozmo.ExternalInterface.TurnTowardsFace
+    {
+        faceID = FaceId,
+        maxTurnAngle_rad = (float)Math.PI, // robot.py:626 - 180 degrees.
+    };
+}
+
 /// <summary>Pops a wheelie using an object as leverage.</summary>
 public sealed class PopAWheelie : RobotAction
 {
