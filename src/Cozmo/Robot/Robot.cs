@@ -309,6 +309,7 @@ public sealed class Robot : Dispatcher, IWorldRobot
             await SetCubeLightStateAsync(false).ConfigureAwait(false);
 
             await _world.DeleteAllCustomObjectsAsync().ConfigureAwait(false);
+            await _animNames.RefreshAsync().ConfigureAwait(false);
             await _animNames.WaitForLoadedAsync().ConfigureAwait(false);
 
             await SendAsync(new MessageGameToEngine { GetBlockPoolMessage = new GetBlockPoolMessage() })

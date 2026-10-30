@@ -76,18 +76,6 @@ public sealed class RobotTests
         Task<EvtRobotReady> ready = harness.Robot.WaitFor<EvtRobotReady>(timeout: TestTimeout);
 
         Task initialization = harness.Robot.InitializeAsync();
-        harness.Enqueue(new MessageEngineToGame
-        {
-            RobotDeletedAllCustomObjects = new RobotDeletedAllCustomObjects(),
-        });
-        harness.Enqueue(new MessageEngineToGame
-        {
-            AnimationAvailable = new AnimationAvailable { animName = "anim_a" },
-        });
-        harness.Enqueue(new MessageEngineToGame
-        {
-            EndOfMessage = new EndOfMessage(),
-        });
 
         await initialization.WaitAsync(TestTimeout);
         await ready;
@@ -246,6 +234,7 @@ public sealed class RobotTests
         {
             Transport = new FakeTransport();
             Connection = new CozmoConnection(Transport);
+            Transport.FrameSent += OnFrameSent;
             Robot = new Robot(Connection, robotId: 1, isPrimary: true, autoInitialize: false);
         }
 
@@ -262,6 +251,32 @@ public sealed class RobotTests
             return harness;
         }
 
+        private void OnFrameSent(byte[] payload)
+        {
+            MessageGameToEngine message;
+            using (var stream = new MemoryStream(payload, writable: false))
+            {
+                message = MessageGameToEngine.UnpackFrom(new CladBinaryReader(stream));
+            }
+
+            switch (message.tag)
+            {
+                case MessageGameToEngine.Tag.DeleteAllCustomObjects:
+                    Enqueue(new MessageEngineToGame
+                    {
+                        RobotDeletedAllCustomObjects = new RobotDeletedAllCustomObjects(),
+                    });
+                    break;
+                case MessageGameToEngine.Tag.RequestAvailableAnimations:
+                    Enqueue(new MessageEngineToGame
+                    {
+                        AnimationAvailable = new AnimationAvailable { animName = "anim_a" },
+                    });
+                    Enqueue(new MessageEngineToGame { EndOfMessage = new EndOfMessage() });
+                    break;
+            }
+        }
+
         public void Enqueue(MessageEngineToGame message)
         {
             using var stream = new MemoryStream();
@@ -271,6 +286,7 @@ public sealed class RobotTests
 
         public async ValueTask DisposeAsync()
         {
+            Transport.FrameSent -= OnFrameSent;
             Robot.Dispose();
             await Connection.DisposeAsync();
             await Transport.DisposeAsync();

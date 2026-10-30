@@ -31,6 +31,9 @@ public sealed class FakeTransport : ICladTransport
     /// <summary>True once <see cref="CloseAsync"/> has been called.</summary>
     public bool CloseCalled { get; private set; }
 
+    /// <summary>Raised after a frame has been recorded by <see cref="SendAsync"/>.</summary>
+    public event Action<byte[]>? FrameSent;
+
     /// <summary>Frames captured from <see cref="SendAsync"/>, in order.</summary>
     public IReadOnlyList<byte[]> SentFrames
     {
@@ -58,11 +61,13 @@ public sealed class FakeTransport : ICladTransport
             return Task.CompletedTask;
         }
 
+        byte[] copy = frame.ToArray();
         lock (_gate)
         {
-            _sent.Add(frame.ToArray());
+            _sent.Add(copy);
         }
 
+        FrameSent?.Invoke(copy);
         return Task.CompletedTask;
     }
 
