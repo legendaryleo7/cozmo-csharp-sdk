@@ -86,6 +86,7 @@ public sealed class RobotTests
             .Select(Decode)
             .ToList();
         Assert.Contains(sent, message => message.tag == MessageGameToEngine.Tag.StopAllMotors);
+        Assert.Contains(sent, message => message.tag == MessageGameToEngine.Tag.RequestRobotSettings);
         Assert.Contains(sent, message => message.tag == MessageGameToEngine.Tag.DisableAllReactionsWithLock);
         Assert.Contains(sent, message => message.tag == MessageGameToEngine.Tag.EnableStopOnCliff);
         Assert.Contains(sent, message => message.tag == MessageGameToEngine.Tag.SetMemoryMapBroadcastFrequency_sec);

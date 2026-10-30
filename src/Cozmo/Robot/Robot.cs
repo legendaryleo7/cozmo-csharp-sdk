@@ -299,6 +299,12 @@ public sealed class Robot : Dispatcher, IWorldRobot
 
         try
         {
+            // The engine pushes PerRobotSettings exactly once, right after the SDK handshake.
+            // The runner creates the robot immediately afterwards, so that first message can be
+            // dispatched before this robot subscribes; ask again now that the handlers are wired.
+            await SendAsync(new MessageGameToEngine { RequestRobotSettings = new RequestRobotSettings() })
+                .ConfigureAwait(false);
+
             // robot.py:846-885 - the robot's state is reset on entering SDK mode.
             await StopAllMotorsAsync().ConfigureAwait(false);
             await EnableAllReactionTriggersAsync(false).ConfigureAwait(false);
