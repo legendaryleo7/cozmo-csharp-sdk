@@ -17,9 +17,9 @@ namespace Anki.Cozmo.Sdk;
 /// <summary>Connects to the first available device, trying TCP, Android and then iOS.</summary>
 /// <remarks>
 /// Disabled connectors are skipped. When every attempt fails, an
-/// <see cref="SdkVersionMismatchException"/> is rethrown with the Python precedence
-/// (TCP, then iOS, then Android) so the user sees the most relevant compatibility error;
-/// otherwise <see cref="NoDevicesFoundException"/> is thrown.
+/// <see cref="SdkVersionMismatchException"/> is rethrown using TCP, iOS and Android precedence
+/// so the user sees the most relevant compatibility error; otherwise
+/// <see cref="NoDevicesFoundException"/> is thrown.
 /// </remarks>
 public sealed class FirstAvailableConnector : IDeviceConnector
 {

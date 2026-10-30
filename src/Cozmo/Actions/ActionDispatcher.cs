@@ -20,9 +20,9 @@ namespace Anki.Cozmo.Sdk;
 
 /// <summary>Tracks in-progress actions and relays their completion messages.</summary>
 /// <remarks>
-/// Port of <c>cozmo/action.py::_ActionDispatcher</c>. The dispatcher subscribes to the
-/// connection for <see cref="EvtMessageReceived"/> and <see cref="EvtConnectionClosed"/>,
-/// so a lost connection fails every outstanding action instead of leaving it pending.
+/// The dispatcher listens for <see cref="EvtMessageReceived"/> and
+/// <see cref="EvtConnectionClosed"/>. If the connection closes, every outstanding action
+/// fails instead of remaining pending.
 /// </remarks>
 public sealed class ActionDispatcher : Dispatcher
 {

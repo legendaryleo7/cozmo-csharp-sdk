@@ -21,9 +21,8 @@ namespace Anki.Cozmo.Sdk;
 
 /// <summary>Property-list encoding used by the usbmux daemon protocol.</summary>
 /// <remarks>
-/// The Python client uses <c>plistlib.dumps</c>, which emits XML with sorted keys and tab
-/// indentation. This writer reproduces that format for the scalar, dictionary and array values
-/// the protocol uses, so the bytes match captured <c>plistlib</c> output.
+/// Dictionary keys are sorted and XML is tab-indented. The writer supports the scalar,
+/// dictionary and array values used by the protocol.
 /// </remarks>
 internal static class UsbMuxPlist
 {

@@ -19,8 +19,8 @@ namespace Anki.Cozmo.Sdk;
 
 /// <summary>Describes an actively-playing animation on a robot.</summary>
 /// <remarks>
-/// Port of <c>cozmo/anim.py::Animation</c>. Send it with
-/// <see cref="ActionDispatcher.SendSingleActionAsync"/> to play a named animation.
+/// Send an instance with <see cref="ActionDispatcher.SendSingleActionAsync"/> to play a
+/// named animation.
 /// </remarks>
 public sealed class Animation : CozmoAction
 {
@@ -66,7 +66,6 @@ public sealed class Animation : CozmoAction
     public bool IgnoreLiftTrack { get; }
 
     /// <summary>Creates a filter that matches completion events for animations only.</summary>
-    /// <remarks>Port of <c>cozmo/anim.py::animation_completed_filter</c>.</remarks>
     public static Filter<EvtActionCompleted> AnimationCompletedFilter()
         => Filter.For<EvtActionCompleted>().Where(evt => evt.Action is Animation);
 

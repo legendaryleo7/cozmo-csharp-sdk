@@ -38,8 +38,8 @@ public sealed record EvtMessageReceived(MessageEngineToGame Message) : CozmoEven
 /// <see cref="EvtMessageReceived"/> for higher layers to interpret.
 /// </para>
 /// <para>
-/// Robot creation and <c>WaitForRobot</c> live with <c>Robot</c> (WP-11) because they need
-/// the robot object model; this class stops at the transport and handshake boundary.
+/// Robot creation and <c>WaitForRobot</c> are handled by <c>Robot</c>; this class manages the
+/// transport and handshake.
 /// </para>
 /// </remarks>
 public sealed class CozmoConnection : Dispatcher, IAsyncDisposable

@@ -17,13 +17,9 @@ namespace Anki.Cozmo.Sdk;
 /// <summary>Connects to a Cozmo device, creates the robot and owns their lifetime.</summary>
 /// <remarks>
 /// <para>
-/// Port of the non-viewer half of <c>run.py</c>'s connect helpers. The Python module's
-/// synchronous/threaded <c>connect</c> variants and the Tk/OpenGL viewers are not ported;
-/// .NET callers use the async API directly.
-/// </para>
-/// <para>
 /// Typical use: <c>await using CozmoRunner runner = await CozmoRunner.ConnectAsync();</c>,
-/// then use <see cref="Robot"/>.
+/// then use <see cref="Robot"/>. Disposing the runner releases the robot, connection and
+/// connector resources it owns.
 /// </para>
 /// </remarks>
 public sealed class CozmoRunner : IAsyncDisposable

@@ -16,17 +16,9 @@ namespace Anki.Cozmo.Sdk;
 
 /// <summary>Utility class that tracks a timeout condition measured from the point of construction.</summary>
 /// <remarks>
-/// <para>Mirrors <c>Timeout</c> in <c>cozmo/util.py</c>.</para>
-/// <para>
-/// The C# type is named <c>TimeoutHelper</c> so that <see cref="System.Threading.Timeout"/>
-/// stays unambiguous for SDK consumers.
-/// </para>
-/// <para>
-/// Python exposes <c>start</c>, <c>timeout</c> and <c>use_inf</c> as mutable attributes.
-/// <see cref="Start"/> is kept as Unix-epoch seconds to stay comparable with Python's
-/// <c>time.time()</c>; <c>timeout</c> is renamed to <see cref="TimeoutSeconds"/> because a
-/// member cannot share the enclosing type's name in C#.
-/// </para>
+/// <see cref="Start"/> is the Unix-epoch time when the helper was created, and
+/// <see cref="TimeoutSeconds"/> is the configured duration. An infinite duration never
+/// expires.
 /// </remarks>
 public sealed class TimeoutHelper
 {

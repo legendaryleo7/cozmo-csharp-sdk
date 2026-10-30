@@ -17,15 +17,10 @@ namespace Anki.Cozmo.Sdk;
 /// <summary>Marker interface for the world that owns observable elements.</summary>
 /// <remarks>
 /// <para>
-/// Python's <c>ObservableElement</c> stores a reference to <c>cozmo.world.World</c>
-/// (objects.py:163). The C# objects layer is compiled before the world layer (WP-11), so it
-/// cannot name the concrete <c>World</c> type without introducing a dependency cycle. This
-/// empty interface lets an element keep that back-reference while WP-11's <c>World</c>
-/// implements the interface and remains the only type that knows how objects are routed.
+/// This interface lets an observable element refer to its owning world without depending on
+/// the concrete <see cref="World"/> implementation.
 /// </para>
-/// <para>
-/// The interface deliberately has no members: the objects layer never calls into the world.
-/// </para>
+/// <para>The interface has no members.</para>
 /// </remarks>
 public interface IWorldContext
 {

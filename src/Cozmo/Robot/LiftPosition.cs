@@ -16,22 +16,21 @@ namespace Anki.Cozmo.Sdk;
 
 /// <summary>Position of Cozmo's lift, expressed as a height.</summary>
 /// <remarks>
-/// Port of <c>robot.py::LiftPosition</c>. Python accepts exactly one of
-/// <c>height</c>, <c>ratio</c> or <c>angle</c>; the typed factories here make that
-/// choice explicit instead of raising at runtime.
+/// Use <see cref="FromHeight"/>, <see cref="FromRatio"/> or <see cref="FromAngle"/> to
+/// specify the lift position.
 /// </remarks>
 public sealed class LiftPosition
 {
-    /// <summary>Lowest lift height above the ground, in millimetres (robot.py:105).</summary>
+    /// <summary>Lowest lift height above the ground, in millimetres.</summary>
     public const double MinLiftHeightMillimeters = 32.0;
 
-    /// <summary>Highest lift height above the ground, in millimetres (robot.py:111).</summary>
+    /// <summary>Highest lift height above the ground, in millimetres.</summary>
     public const double MaxLiftHeightMillimeters = 92.0;
 
-    /// <summary>Length of the lift arm, in millimetres (robot.py:117).</summary>
+    /// <summary>Length of the lift arm, in millimetres.</summary>
     public const double LiftArmLengthMillimeters = 66.0;
 
-    /// <summary>Height of the lift pivot above the ground, in millimetres (robot.py:120).</summary>
+    /// <summary>Height of the lift pivot above the ground, in millimetres.</summary>
     public const double LiftPivotHeightMillimeters = 45.0;
 
     private readonly Distance _height;
@@ -41,17 +40,17 @@ public sealed class LiftPosition
         _height = height;
     }
 
-    /// <summary>Lowest lift height as a <see cref="Distance"/> (robot.py:108).</summary>
+    /// <summary>Lowest lift height as a <see cref="Distance"/>.</summary>
     public static Distance MinLiftHeight => Distance.FromMillimeters(MinLiftHeightMillimeters);
 
-    /// <summary>Highest lift height as a <see cref="Distance"/> (robot.py:114).</summary>
+    /// <summary>Highest lift height as a <see cref="Distance"/>.</summary>
     public static Distance MaxLiftHeight => Distance.FromMillimeters(MaxLiftHeightMillimeters);
 
-    /// <summary>Lift arm angle at the lowest height (robot.py:123).</summary>
+    /// <summary>Lift arm angle at the lowest height.</summary>
     public static Angle MinLiftAngle =>
         Angle.FromRadians(Math.Asin((MinLiftHeightMillimeters - LiftPivotHeightMillimeters) / LiftArmLengthMillimeters));
 
-    /// <summary>Lift arm angle at the highest height (robot.py:126).</summary>
+    /// <summary>Lift arm angle at the highest height.</summary>
     public static Angle MaxLiftAngle =>
         Angle.FromRadians(Math.Asin((MaxLiftHeightMillimeters - LiftPivotHeightMillimeters) / LiftArmLengthMillimeters));
 

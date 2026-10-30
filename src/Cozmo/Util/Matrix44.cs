@@ -16,21 +16,12 @@ namespace Anki.Cozmo.Sdk;
 
 /// <summary>A 4x4 matrix representing the rotation and/or position of an object in the world.</summary>
 /// <remarks>
-/// <para>Mirrors <c>Matrix44</c> in <c>cozmo/util.py</c>.</para>
-/// <para>
-/// Python exposes all sixteen components as writable attributes and provides
-/// <c>set_forward</c>/<c>set_left</c>/<c>set_up</c>/<c>set_pos</c> mutators. A class (rather
-/// than a readonly struct) preserves that mutable API faithfully.
-/// </para>
-/// <para>
-/// The constructor argument order follows Python exactly: components are grouped by column
-/// (<c>m00, m10, m20, m30, m01, ...</c>) even though <see cref="InRowOrder"/> exposes them in
-/// row order.
-/// </para>
+/// The matrix is mutable. Its constructor takes components in column order
+/// (<c>m00, m10, m20, m30, m01, ...</c>); <see cref="InRowOrder"/> exposes them in row order.
 /// </remarks>
 public sealed class Matrix44
 {
-    /// <summary>Creates a matrix from sixteen components in Python's constructor order.</summary>
+    /// <summary>Creates a matrix from sixteen components in column order.</summary>
     /// <param name="m00">Row 0, column 0.</param>
     /// <param name="m10">Row 1, column 0.</param>
     /// <param name="m20">Row 2, column 0.</param>
@@ -132,7 +123,7 @@ public sealed class Matrix44
     public double M33 { get; set; }
 
     /// <summary>The contents of the matrix in row order.</summary>
-    /// <remarks>A new array is allocated on every access, matching Python's tuple result.</remarks>
+    /// <remarks>A new array is allocated on every access.</remarks>
     public double[] InRowOrder =>
     [
         M00, M01, M02, M03,
@@ -142,7 +133,7 @@ public sealed class Matrix44
     ];
 
     /// <summary>The contents of the matrix in column order.</summary>
-    /// <remarks>A new array is allocated on every access, matching Python's tuple result.</remarks>
+    /// <remarks>A new array is allocated on every access.</remarks>
     public double[] InColumnOrder =>
     [
         M00, M10, M20, M30,
@@ -164,7 +155,6 @@ public sealed class Matrix44
     public (double X, double Y, double Z) PosXyz => (M30, M31, M32);
 
     /// <summary>A multi-line string formatted with tabs that shows the matrix contents.</summary>
-    /// <remarks>Mirrors Python's <c>Matrix44.tabulated_string</c> (util.py:541).</remarks>
     public string TabulatedString
     {
         get
@@ -223,7 +213,7 @@ public sealed class Matrix44
         M32 = z;
     }
 
-    /// <summary>Returns Python's <c>repr</c> representation of this matrix.</summary>
+    /// <summary>Returns a diagnostic string representation of this matrix.</summary>
     /// <returns>A single-line string containing all sixteen components in row order.</returns>
     public override string ToString() => // util.py:534-538
         FormattableString.Invariant(

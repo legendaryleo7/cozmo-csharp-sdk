@@ -16,19 +16,9 @@ namespace Anki.Cozmo.Sdk;
 
 /// <summary>Represents an angle.</summary>
 /// <remarks>
-/// <para>Mirrors <c>Angle</c> in <c>cozmo/util.py</c>.</para>
-/// <para>
-/// Python accepts either a <c>radians</c> or a <c>degrees</c> keyword argument and raises
-/// <c>ValueError</c> when neither is given. The C# port makes the unit explicit through
-/// <see cref="FromDegrees"/> and <see cref="FromRadians"/>; the single-argument constructor
-/// mirrors Python's positional <c>radians</c> argument. Supplying both units is therefore a
-/// compile-time error rather than a runtime exception.
-/// </para>
-/// <para>
-/// Python raises <c>TypeError</c> when an angle is compared with or added to a non-angle.
-/// C# overload resolution reports those mistakes at compile time; <see cref="Equals(object)"/>
-/// returns <see langword="false"/> for other types instead of throwing.
-/// </para>
+/// Use <see cref="FromRadians"/> or <see cref="FromDegrees"/> to make the unit explicit.
+/// The single-value constructor takes radians. Angles support comparison and arithmetic with
+/// other angles, as well as scaling by a scalar.
 /// </remarks>
 public readonly struct Angle : IEquatable<Angle>
 {
@@ -46,7 +36,6 @@ public readonly struct Angle : IEquatable<Angle>
     public double Degrees => Radians / Math.PI * 180.0; // util.py:170
 
     /// <summary>The absolute value of the angle.</summary>
-    /// <remarks>Mirrors Python's <c>Angle.abs_value</c> (util.py:173).</remarks>
     public Angle AbsValue => new(Math.Abs(Radians));
 
     /// <summary>Creates an angle from a value in degrees.</summary>
@@ -81,7 +70,7 @@ public readonly struct Angle : IEquatable<Angle>
     /// <param name="left">The angle.</param>
     /// <param name="right">The scalar divisor.</param>
     /// <returns>The scaled angle.</returns>
-    /// <exception cref="DivideByZeroException">The divisor is zero, as Python raises <c>ZeroDivisionError</c>.</exception>
+    /// <exception cref="DivideByZeroException">The divisor is zero.</exception>
     public static Angle operator /(Angle left, double right)
     {
         if (right == 0.0)
@@ -142,7 +131,7 @@ public readonly struct Angle : IEquatable<Angle>
     /// <returns>A hash code based on the radian value.</returns>
     public override int GetHashCode() => Radians.GetHashCode();
 
-    /// <summary>Returns Python's <c>repr</c> representation of this angle.</summary>
+    /// <summary>Returns a diagnostic string representation of this angle.</summary>
     /// <returns>A string such as <c>&lt;Angle 0.52 radians (30.00 degrees)&gt;</c>.</returns>
     public override string ToString() =>
         FormattableString.Invariant($"<{nameof(Angle)} {Radians:F2} radians ({Degrees:F2} degrees)>"); // util.py:117

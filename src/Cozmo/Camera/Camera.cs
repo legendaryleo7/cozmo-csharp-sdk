@@ -21,11 +21,8 @@ namespace Anki.Cozmo.Sdk;
 /// <summary>Raised when a new raw image is received from the robot's camera.</summary>
 /// <param name="Image">The raw image; its bytes are an unprocessed JPEG frame.</param>
 /// <remarks>
-/// The Python SDK dispatches a decoded <c>PIL.Image.Image</c> and the world layer wraps it
-/// in a <c>CameraImage</c>. This port has no imaging dependency, so the event carries a
-/// <see cref="CameraImage"/> whose <see cref="CameraImage.RawImage"/> is the JPEG sequence.
-/// See also <c>EvtNewCameraImage</c> in the Python world layer, which additionally provides
-/// an annotated image.
+/// The image data is carried as JPEG bytes in <see cref="CameraImage.RawImage"/>. No image
+/// decoder or annotation data is included.
 /// </remarks>
 public sealed record EvtNewRawCameraImage(CameraImage Image) : CozmoEvent;
 
@@ -57,22 +54,17 @@ public sealed record EvtRobotObservedMotion(
 /// <summary>Represents Cozmo's camera.</summary>
 /// <remarks>
 /// <para>
-/// Port of <c>cozmo/camera.py::Camera</c> and the camera half of
-/// <c>cozmo/robot.py</c> (the robot forwards the three camera messages to its camera).
-/// The robot normally owns the camera; this port binds it directly to a
-/// <see cref="CozmoConnection"/> so it can be used before the robot object model exists.
+/// The camera receives protocol messages through a <see cref="CozmoConnection"/>. A
+/// <see cref="Robot"/> normally owns its camera instance.
 /// </para>
 /// <para>
-/// The camera receives images only after <see cref="SetImageStreamEnabledAsync"/> has been
-/// called with <see langword="true"/>. On construction the camera sends the same initial
-/// <c>ImageRequest</c> and <c>EnableColorImages</c> messages that the Python SDK sends for
-/// its initial <c>False</c> property values. Python gates that initialization on NumPy and
-/// Pillow being importable; this port has no imaging dependency and always sends it.
+/// Images arrive after <see cref="SetImageStreamEnabledAsync"/> enables streaming. The
+/// camera sends initial <c>ImageRequest</c> and <c>EnableColorImages</c> settings when it is
+/// constructed.
 /// </para>
 /// <para>
-/// Image frames are reassembled from <c>ImageChunk</c> messages exactly as in the Python
-/// SDK. The resulting JPEG bytes are not decoded: <see cref="CameraImage.RawImage"/> holds
-/// the frame, and no imaging library is required.
+/// Frames are reassembled from <c>ImageChunk</c> messages. The resulting JPEG bytes are not
+/// decoded; <see cref="CameraImage.RawImage"/> holds the frame.
 /// </para>
 /// </remarks>
 public sealed class Camera : Dispatcher
@@ -154,23 +146,20 @@ public sealed class Camera : Dispatcher
 
     /// <summary>True when the robot is streaming camera images.</summary>
     /// <remarks>
-    /// This is the read-only half of Python's mutable <c>image_stream_enabled</c> property.
-    /// Change it with <see cref="SetImageStreamEnabledAsync"/>.
+    /// Use <see cref="SetImageStreamEnabledAsync"/> to change this setting.
     /// </remarks>
     public bool ImageStreamEnabled => _imageStreamEnabled;
 
     /// <summary>True when the robot is sending color camera images.</summary>
     /// <remarks>
-    /// This is the read-only half of Python's mutable <c>color_image_enabled</c> property.
-    /// Change it with <see cref="SetColorImageEnabledAsync"/>.
+    /// Use <see cref="SetColorImageEnabledAsync"/> to change this setting.
     /// </remarks>
     public bool ColorImageEnabled => _colorImageEnabled;
 
     /// <summary>The read-only calibration for the camera.</summary>
     /// <remarks>
     /// <see langword="null"/> until the robot's <c>PerRobotSettings</c> message has been
-    /// received. The Python robot performs the same assignment when it handles that message
-    /// (robot.py:1138-1145).
+    /// received.
     /// </remarks>
     public CameraConfig? Config => _config;
 
@@ -190,8 +179,7 @@ public sealed class Camera : Dispatcher
     /// <param name="cancellationToken">Cancellation token for the send.</param>
     /// <returns>A task that completes once the request has been sent.</returns>
     /// <remarks>
-    /// Python exposes this as the mutable <c>image_stream_enabled</c> property. Sending an
-    /// unchanged value is a no-op, matching the Python setter (camera.py:318-333).
+    /// Sending the current value is a no-op.
     /// </remarks>
     public async Task SetImageStreamEnabledAsync(bool enabled, CancellationToken cancellationToken = default)
     {
@@ -215,8 +203,7 @@ public sealed class Camera : Dispatcher
     /// <param name="cancellationToken">Cancellation token for the send.</param>
     /// <returns>A task that completes once the request has been sent.</returns>
     /// <remarks>
-    /// Python exposes this as the mutable <c>color_image_enabled</c> property. Sending an
-    /// unchanged value is a no-op, matching the Python setter (camera.py:344-353).
+    /// Sending the current value is a no-op.
     /// </remarks>
     public async Task SetColorImageEnabledAsync(bool enabled, CancellationToken cancellationToken = default)
     {
@@ -239,9 +226,8 @@ public sealed class Camera : Dispatcher
     /// <param name="cancellationToken">Cancellation token for the send.</param>
     /// <returns>A task that completes once the request has been sent.</returns>
     /// <remarks>
-    /// Mirrors <c>enable_auto_exposure</c> (camera.py:245-256). The local
-    /// <see cref="IsAutoExposureEnabled"/> value is updated only when the robot reports it
-    /// through <c>CurrentCameraParams</c>.
+    /// The local <see cref="IsAutoExposureEnabled"/> value is updated when the robot reports
+    /// the setting through <c>CurrentCameraParams</c>.
     /// </remarks>
     public async Task EnableAutoExposureAsync(
         bool enableAutoExposure = true,
@@ -265,7 +251,6 @@ public sealed class Camera : Dispatcher
     /// <paramref name="exposureMs"/> or <paramref name="gain"/> is outside the range in
     /// <see cref="Config"/>.
     /// </exception>
-    /// <remarks>Mirrors <c>set_manual_exposure</c> (camera.py:258-292).</remarks>
     public async Task SetManualExposureAsync(
         int exposureMs,
         double gain,
@@ -313,17 +298,16 @@ public sealed class Camera : Dispatcher
     /// <param name="miniGray">Mini-gray frame including its leading color flag byte.</param>
     /// <param name="width">Width to write into the JPEG frame header.</param>
     /// <param name="height">Height to write into the JPEG frame header.</param>
-    /// <returns>The repaired JPEG bytes, including Python's zero-filled tail padding.</returns>
+    /// <returns>The repaired JPEG bytes, including zero-filled tail padding.</returns>
     /// <exception cref="ArgumentNullException"><paramref name="miniGray"/> is <see langword="null"/>.</exception>
     /// <exception cref="ArgumentException"><paramref name="miniGray"/> is empty or only padding.</exception>
     /// <exception cref="ArgumentOutOfRangeException">A dimension does not fit in 16 bits.</exception>
     /// <remarks>
-    /// Port of <c>_minigray_to_jpeg</c> (camera.py:470-503): the mini format starts with a
-    /// color flag byte followed by unstuffed scan data, and <c>_mini_to_jpeg_helper</c>
-    /// (camera.py:546-579) prepends the fixed JPEG tables, restores byte stuffing, and
-    /// appends the end-of-image marker. The result is not decoded here. Like the Python
-    /// implementation, the returned array is sized for the full input (including removed
-    /// trailing 0xFF padding) and therefore has zero bytes after the marker.
+    /// The mini format starts with a color flag byte followed by unstuffed scan data. This
+    /// method prepends the fixed JPEG tables, restores byte stuffing, and appends the
+    /// end-of-image marker. The result is not decoded. The returned array is sized for the
+    /// full input, including removed trailing <c>0xFF</c> padding, so it contains zero bytes
+    /// after the marker.
     /// </remarks>
     public static byte[] MiniGrayToJpeg(byte[] miniGray, int width, int height) =>
         MiniToJpeg(miniGray, width, height, GrayHeader);
@@ -332,13 +316,13 @@ public sealed class Camera : Dispatcher
     /// <param name="miniColor">Mini-color frame including its leading color flag byte.</param>
     /// <param name="width">Width to write into the JPEG frame header.</param>
     /// <param name="height">Height to write into the JPEG frame header.</param>
-    /// <returns>The repaired JPEG bytes, including Python's zero-filled tail padding.</returns>
+    /// <returns>The repaired JPEG bytes, including zero-filled tail padding.</returns>
     /// <exception cref="ArgumentNullException"><paramref name="miniColor"/> is <see langword="null"/>.</exception>
     /// <exception cref="ArgumentException"><paramref name="miniColor"/> is empty or only padding.</exception>
     /// <exception cref="ArgumentOutOfRangeException">A dimension does not fit in 16 bits.</exception>
     /// <remarks>
-    /// Port of <c>_minicolor_to_jpeg</c> (camera.py:505-544). The color JPEG header declares
-    /// three components, so callers pass the half-width encoded size for color frames.
+    /// The color JPEG header declares three components, so callers pass the half-width
+    /// encoded size for color frames.
     /// </remarks>
     public static byte[] MiniColorToJpeg(byte[] miniColor, int width, int height) =>
         MiniToJpeg(miniColor, width, height, ColorHeader);
@@ -459,8 +443,7 @@ public sealed class Camera : Dispatcher
     /// <summary>Stores the camera calibration received from the robot.</summary>
     /// <param name="cladConfig">Camera configuration from a <c>PerRobotSettings</c> message.</param>
     /// <remarks>
-    /// Python's robot calls <c>Camera._set_config</c> for the same message
-    /// (robot.py:1145); WP-11 may call this directly when it owns the settings message.
+    /// Call this when handling a <c>PerRobotSettings</c> message.
     /// </remarks>
     internal void SetConfig(Anki.Cozmo.ExternalInterface.CameraConfig cladConfig) =>
         _config = CameraConfig.FromClad(cladConfig);

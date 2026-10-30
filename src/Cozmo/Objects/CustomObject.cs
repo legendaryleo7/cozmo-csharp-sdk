@@ -23,14 +23,11 @@ namespace Anki.Cozmo.Sdk;
 /// </summary>
 /// <remarks>
 /// <para>
-/// Port of <c>CustomObject</c> in <c>cozmo/objects.py</c>. The engine creates one of these
-/// for every unique object id it observes with the matching custom markers; instances are not
-/// added to the world until the robot sees them.
+/// The engine creates an instance for each observed object id that matches a custom object
+/// definition. An instance enters the world when the robot sees it.
 /// </para>
 /// <para>
-/// Python stores the dimensions and marker sizes as opaque floats supplied when the custom
-/// object was defined. The port exposes them unchanged so the world layer (WP-11) can create
-/// archetypes with exactly the values that were defined in the engine.
+/// Dimensions and marker sizes are the values supplied when the custom object was defined.
 /// </para>
 /// </remarks>
 public sealed class CustomObject : ObservableObject

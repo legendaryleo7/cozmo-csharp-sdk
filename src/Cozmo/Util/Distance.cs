@@ -16,12 +16,7 @@ namespace Anki.Cozmo.Sdk;
 
 /// <summary>Represents a distance.</summary>
 /// <remarks>
-/// <para>Mirrors <c>Distance</c> in <c>cozmo/util.py</c>.</para>
-/// <para>
-/// Python accepts <c>distance_mm</c> or <c>distance_inches</c> and raises <c>ValueError</c>
-/// when neither is given. The C# port exposes one factory per unit instead; supplying both
-/// units is a compile-time error.
-/// </para>
+/// Use <see cref="FromMillimeters"/> or <see cref="FromInches"/> to specify the unit.
 /// </remarks>
 public readonly struct Distance
 {
@@ -72,7 +67,7 @@ public readonly struct Distance
     /// <param name="left">The distance.</param>
     /// <param name="right">The scalar divisor.</param>
     /// <returns>The scaled distance.</returns>
-    /// <exception cref="DivideByZeroException">The divisor is zero, as Python raises <c>ZeroDivisionError</c>.</exception>
+    /// <exception cref="DivideByZeroException">The divisor is zero.</exception>
     public static Distance operator /(Distance left, double right)
     {
         if (right == 0.0)
@@ -83,7 +78,7 @@ public readonly struct Distance
         return new Distance(left.DistanceMillimeters / right);
     }
 
-    /// <summary>Returns Python's <c>repr</c> representation of this distance.</summary>
+    /// <summary>Returns a diagnostic string representation of this distance.</summary>
     /// <returns>A string such as <c>&lt;Distance 25.40 mm (1.00 inches)&gt;</c>.</returns>
     public override string ToString() =>
         FormattableString.Invariant(

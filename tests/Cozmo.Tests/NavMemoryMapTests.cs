@@ -17,7 +17,7 @@ using Anki.Cozmo.Sdk;
 
 namespace Cozmo.Tests;
 
-/// <summary>One node in a Python-generated pre-order dump of a quad-tree.</summary>
+/// <summary>One node in a pre-order dump of a quad-tree.</summary>
 internal sealed record NavNodeDump(
     int Depth,
     double Size,
@@ -27,7 +27,7 @@ internal sealed record NavNodeDump(
     int ChildCount,
     string? ContentName);
 
-/// <summary>A Python-generated point query against a quad-tree.</summary>
+/// <summary>A point query against a quad-tree.</summary>
 internal sealed record NavQuery(
     double X,
     double Y,
@@ -38,7 +38,7 @@ internal sealed record NavQuery(
     double NodeCenterZ,
     string? ContentName);
 
-/// <summary>Tests the WP-10 port of <c>cozmo.nav_memory_map</c>.</summary>
+/// <summary>Tests navigation memory maps and quad-tree behavior.</summary>
 public sealed class NavMemoryMapTests
 {
     [Fact]

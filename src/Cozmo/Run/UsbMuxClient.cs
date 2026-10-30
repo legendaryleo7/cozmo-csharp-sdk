@@ -26,13 +26,13 @@ namespace Anki.Cozmo.Sdk;
 /// </remarks>
 internal sealed class UsbMuxClient : IAsyncDisposable
 {
-    /// <summary>Client name sent in usbmux requests, matching the Python client.</summary>
+    /// <summary>Client name sent in usbmux requests.</summary>
     public const string ClientVersionString = "pyusbmux";
 
-    /// <summary>Program name sent in usbmux requests, matching the Python client.</summary>
+    /// <summary>Program name sent in usbmux requests.</summary>
     public const string ProgramName = "pyusbmux";
 
-    /// <summary>Default time to wait for a device, matching Python's <c>DEFAULT_MAX_WAIT</c>.</summary>
+    /// <summary>Default time to wait for a device.</summary>
     public static readonly TimeSpan DefaultWaitTimeout = TimeSpan.FromSeconds(2);
 
     private static readonly IReadOnlyDictionary<string, object?> EmptyProperties =

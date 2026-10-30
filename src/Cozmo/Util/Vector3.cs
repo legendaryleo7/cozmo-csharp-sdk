@@ -16,13 +16,8 @@ namespace Anki.Cozmo.Sdk;
 
 /// <summary>Represents a 3D vector whose type and units are unspecified.</summary>
 /// <remarks>
-/// <para>Mirrors <c>Vector3</c> in <c>cozmo/util.py</c>.</para>
-/// <para>
-/// Python allows the components to be replaced in place via <c>set_to</c>, so this type is a
-/// mutable reference type rather than a readonly struct. It is not sealed because
-/// <see cref="Position"/> derives from it, matching Python's <c>Position(Vector3)</c>
-/// inheritance.
-/// </para>
+/// Components are exposed through read-only properties and can be changed with
+/// <see cref="SetTo"/>. <see cref="Position"/> derives from this type.
 /// </remarks>
 public class Vector3
 {
@@ -51,7 +46,6 @@ public class Vector3
     public double Z => _z;
 
     /// <summary>The X, Y and Z elements of the vector (x, y, z).</summary>
-    /// <remarks>Mirrors Python's <c>x_y_z</c> property (util.py:945).</remarks>
     public (double X, double Y, double Z) Xyz => (_x, _y, _z);
 
     /// <summary>Copies the x, y and z components of the given vector into this vector.</summary>
@@ -105,7 +99,7 @@ public class Vector3
     /// <param name="right">The scalar divisor.</param>
     /// <returns>The scaled vector.</returns>
     /// <exception cref="ArgumentNullException"><paramref name="left"/> is <see langword="null"/>.</exception>
-    /// <exception cref="DivideByZeroException">The divisor is zero, as Python raises <c>ZeroDivisionError</c>.</exception>
+    /// <exception cref="DivideByZeroException">The divisor is zero.</exception>
     public static Vector3 operator /(Vector3 left, double right)
     {
         ArgumentNullException.ThrowIfNull(left);
@@ -117,7 +111,7 @@ public class Vector3
         return new Vector3(left.X / right, left.Y / right, left.Z / right);
     }
 
-    /// <summary>Returns Python's <c>repr</c> representation of this vector.</summary>
+    /// <summary>Returns a diagnostic string representation of this vector.</summary>
     /// <returns>A string such as <c>&lt;Vector3 x: 1.50 y: -2.00 z: 3.25&gt;</c>.</returns>
     public override string ToString() => // util.py:949-950
         FormattableString.Invariant($"<{GetType().Name} x: {X:F2} y: {Y:F2} z: {Z:F2}>");

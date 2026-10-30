@@ -18,8 +18,8 @@ namespace Cozmo.Tests;
 /// <remarks>
 /// <see cref="TimeProvider.CreateTimer"/> callbacks fire synchronously from
 /// <see cref="Advance"/>, so a test can assert on the dispatched event as soon as the advance
-/// returns. This is the same helper used by the WP-08 object tests, extracted so the WP-09
-/// face and pet tests can share it.
+/// returns. Object, face and pet tests use this helper to drive visibility timers without
+/// waiting for wall-clock time.
 /// </remarks>
 internal sealed class ManualTimeProvider : TimeProvider
 {

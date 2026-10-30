@@ -17,13 +17,12 @@ namespace Anki.Cozmo.Sdk;
 /// <summary>The robot surface the <see cref="World"/> needs.</summary>
 /// <remarks>
 /// <para>
-/// The real <c>Robot</c> (WP-11) implements this interface and also adds the
-/// <see cref="World"/> as a child dispatcher, so the world receives the robot's action and
-/// behavior events without an explicit subscription.
+/// <see cref="Robot"/> implements this interface and adds the <see cref="World"/> as a child
+/// dispatcher so it receives the robot's action and behavior events.
 /// </para>
 /// <para>
-/// Python's <c>World.__init__</c> takes the robot object directly (world.py:109-120); the
-/// interface keeps the world testable without a robot instance.
+/// The interface lets the world be used with lightweight robot implementations, including in
+/// tests.
 /// </para>
 /// </remarks>
 public interface IWorldRobot

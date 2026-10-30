@@ -17,11 +17,9 @@ namespace Anki.Cozmo.Sdk;
 /// <summary>Raised whenever an object is visually identified by the robot.</summary>
 /// <param name="Obj">The object that was observed.</param>
 /// <param name="Updated">
-/// The names of the object fields that were updated. Mirrors the Python event's
-/// <c>updated</c> set; the observation event always includes <c>pose</c>,
+/// Names of the object fields that were updated. The observation event always includes <c>pose</c>,
 /// <c>last_observed_time</c>, <c>last_observed_robot_timestamp</c>,
-/// <c>last_event_time</c> and <c>last_observed_image_box</c>, exactly as
-/// <c>ObservableElement._on_observed</c> does (objects.py:248-256).
+/// <c>last_event_time</c> and <c>last_observed_image_box</c>.
 /// </param>
 /// <param name="ImageBox">Where the object was last visible within Cozmo's camera view.</param>
 /// <param name="Pose">The pose of the object at the time of the observation.</param>
@@ -58,9 +56,7 @@ public sealed record EvtObjectAppeared(
 /// <summary>Raised when the engine reports that an object is connected.</summary>
 /// <param name="Obj">The object that is connected.</param>
 /// <param name="Connected">
-/// <see langword="true"/> because the connected-object-states message means the object exists.
-/// Python's event declaration documents this field, but its dispatch call passes only
-/// <c>obj</c> (objects.py:323-326); the port supplies the documented value.
+/// <see langword="true"/> because the connected-object-states message confirms the object exists.
 /// </param>
 public sealed record EvtObjectConnected(ObservableObject Obj, bool Connected) : CozmoEvent;
 
@@ -73,8 +69,7 @@ public sealed record EvtObjectConnectChanged(ObservableObject Obj, bool Connecte
 /// <param name="Obj">The object that is located.</param>
 /// <param name="Updated">
 /// The names of the object fields that were updated. An <see cref="EvtObjectLocated"/> event
-/// always reports <c>pose</c> and <c>last_observed_robot_timestamp</c>, matching the literal
-/// set in <c>ObservableObject._handle_located_object_state</c> (objects.py:336).
+/// always reports <c>pose</c> and <c>last_observed_robot_timestamp</c>.
 /// </param>
 /// <param name="Pose">The pose of the located object.</param>
 public sealed record EvtObjectLocated(

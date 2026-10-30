@@ -16,9 +16,7 @@ namespace Anki.Cozmo.Sdk;
 
 /// <summary>Cozmo's OLED face display helpers: dimensions and binary screen-data packing.</summary>
 /// <remarks>
-/// Port of <c>cozmo/oled_face.py</c>. The Python module converts a PIL image to grayscale
-/// first; this port takes the grayscale bytes directly so it has no imaging-library
-/// dependency.
+/// These helpers pack grayscale pixel data into the binary format expected by the display.
 /// </remarks>
 public static class OledFace
 {
@@ -27,8 +25,8 @@ public static class OledFace
 
     /// <summary>Half the physical screen height; the display is interlaced.</summary>
     /// <remarks>
-    /// Python file:line: cozmo/oled_face.py:26. The screen shows only every other line and
-    /// alternates the offset to prevent burn-in, so images use half the vertical resolution.
+    /// The screen shows every other line and alternates the offset to prevent burn-in, so
+    /// images use half the vertical resolution.
     /// </remarks>
     public const int ScreenHalfHeight = 32;
 
@@ -120,8 +118,7 @@ public static class OledFace
 
     /// <summary>Converts grayscale pixels to the packed format expected by the OLED screen.</summary>
     /// <remarks>
-    /// Equivalent to Python's <c>convert_image_to_screen_data</c> after its PIL image has
-    /// been converted to 8-bit grayscale: pixels at or above <paramref name="threshold"/>
+    /// Pixels at or above <paramref name="threshold"/>
     /// (or at or below it when <paramref name="invert"/> is true) become 1, and everything
     /// else becomes 0.
     /// </remarks>

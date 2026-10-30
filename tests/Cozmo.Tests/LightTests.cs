@@ -17,7 +17,7 @@ using Anki.Cozmo.Sdk;
 
 namespace Cozmo.Tests;
 
-/// <summary>Tests the WP-07 port of <c>cozmo.lights</c>.</summary>
+/// <summary>Tests light colors, timing settings and LED message packing.</summary>
 public sealed class LightTests
 {
     [Theory]

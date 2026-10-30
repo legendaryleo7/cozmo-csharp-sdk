@@ -21,7 +21,7 @@ namespace Anki.Cozmo.Sdk;
 /// <summary>Connects to an attached iOS device through the usbmux daemon.</summary>
 /// <remarks>
 /// On Unix the connector talks to <see cref="DefaultUsbMuxSocketPath"/>; on Windows it uses
-/// <c>127.0.0.1</c> and <see cref="DefaultUsbMuxPort"/>, matching the Python SDK. Once the
+/// <c>127.0.0.1</c> and <see cref="DefaultUsbMuxPort"/>. Once the
 /// usbmux daemon accepts the device connection, the stream carries raw Cozmo CLAD frames.
 /// </remarks>
 public sealed class IOSConnector : DeviceConnector
@@ -35,7 +35,7 @@ public sealed class IOSConnector : DeviceConnector
     /// <summary>Default usbmux daemon TCP port used on Windows.</summary>
     public const int DefaultUsbMuxPort = 27015;
 
-    /// <summary>Default time to wait for an iOS device, matching Python's <c>DEFAULT_MAX_WAIT</c>.</summary>
+    /// <summary>Default time to wait for an iOS device.</summary>
     public static readonly TimeSpan DefaultWaitTimeout = TimeSpan.FromSeconds(2);
 
     private readonly Func<Stream> _streamFactory;

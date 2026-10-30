@@ -16,12 +16,8 @@ namespace Anki.Cozmo.Sdk;
 
 /// <summary>Defines a bounding box within an image frame.</summary>
 /// <remarks>
-/// <para>Mirrors <c>ImageBox</c> in <c>cozmo/util.py</c>.</para>
-/// <para>
-/// Python implements this type as a <c>namedtuple</c>, so it is immutable and compares by
-/// value. The readonly struct keeps those semantics and exposes <see cref="FromCladRect"/>
-/// for Python's <c>_create_from_clad_rect</c> class method.
-/// </para>
+/// The box is immutable and compares by value. Use <see cref="FromCladRect"/> to create one
+/// from an engine-reported rectangle.
 /// </remarks>
 public readonly struct ImageBox : IEquatable<ImageBox>
 {
@@ -69,7 +65,6 @@ public readonly struct ImageBox : IEquatable<ImageBox>
     /// <summary>Creates an image box from a CLAD rectangle.</summary>
     /// <param name="imgRect">The CLAD rectangle, whose values are single-precision floats.</param>
     /// <returns>A new <see cref="ImageBox"/>.</returns>
-    /// <remarks>Mirrors Python's <c>ImageBox._create_from_clad_rect</c> (util.py:55).</remarks>
     /// <exception cref="ArgumentNullException"><paramref name="imgRect"/> is <see langword="null"/>.</exception>
     public static ImageBox FromCladRect(CladRect imgRect)
     {

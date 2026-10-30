@@ -16,12 +16,8 @@ namespace Anki.Cozmo.Sdk;
 
 /// <summary>Represents a 2D vector whose type and units are unspecified.</summary>
 /// <remarks>
-/// <para>Mirrors <c>Vector2</c> in <c>cozmo/util.py</c>.</para>
-/// <para>
-/// Python allows the components to be replaced in place via <c>set_to</c>, so this type is a
-/// mutable reference type rather than a readonly struct. Components are exposed through
-/// read-only properties; mutate them with <see cref="SetTo"/>.
-/// </para>
+/// Components are exposed through read-only properties and can be changed with
+/// <see cref="SetTo"/>.
 /// </remarks>
 public sealed class Vector2
 {
@@ -44,7 +40,6 @@ public sealed class Vector2
     public double Y => _y;
 
     /// <summary>The X and Y elements of the vector (x, y).</summary>
-    /// <remarks>Mirrors Python's <c>x_y</c> property (util.py:873).</remarks>
     public (double X, double Y) Xy => (_x, _y);
 
     /// <summary>Copies the x and y components of the given vector into this vector.</summary>
@@ -97,7 +92,7 @@ public sealed class Vector2
     /// <param name="right">The scalar divisor.</param>
     /// <returns>The scaled vector.</returns>
     /// <exception cref="ArgumentNullException"><paramref name="left"/> is <see langword="null"/>.</exception>
-    /// <exception cref="DivideByZeroException">The divisor is zero, as Python raises <c>ZeroDivisionError</c>.</exception>
+    /// <exception cref="DivideByZeroException">The divisor is zero.</exception>
     public static Vector2 operator /(Vector2 left, double right)
     {
         ArgumentNullException.ThrowIfNull(left);
@@ -109,7 +104,7 @@ public sealed class Vector2
         return new Vector2(left.X / right, left.Y / right);
     }
 
-    /// <summary>Returns Python's <c>repr</c> representation of this vector.</summary>
+    /// <summary>Returns a diagnostic string representation of this vector.</summary>
     /// <returns>A string such as <c>&lt;Vector2 x: 1.50 y: -2.00&gt;</c>.</returns>
     public override string ToString() => // util.py:878-879
         FormattableString.Invariant($"<{GetType().Name} x: {X:F2} y: {Y:F2}>");

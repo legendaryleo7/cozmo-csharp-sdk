@@ -14,12 +14,11 @@
 
 namespace Anki.Cozmo.Sdk;
 
-/// <summary>A named CLAD enumeration value, mirroring the Python SDK's <c>CladEnumWrapper</c>.</summary>
+/// <summary>A named CLAD enumeration value with its numeric id.</summary>
 /// <typeparam name="TEnum">Generated CLAD enumeration type.</typeparam>
 /// <remarks>
-/// Python wraps CLAD enums as classes of named entries with a numeric id. C# keeps the
-/// generated enum for wire use and exposes this lightweight name/id wrapper for the public
-/// API, for example <c>CladEnum&lt;ExecutableBehaviorType&gt;.FromName("Idle")</c>.
+/// The wrapper exposes a generated enum member's name and numeric id, for example
+/// <c>CladEnum&lt;ExecutableBehaviorType&gt;.FromName("Idle")</c>.
 /// </remarks>
 public sealed class CladEnum<TEnum> : IEquatable<CladEnum<TEnum>>
     where TEnum : struct, Enum
@@ -39,7 +38,7 @@ public sealed class CladEnum<TEnum> : IEquatable<CladEnum<TEnum>>
     /// <summary>Generated enumeration value.</summary>
     public TEnum Value { get; }
 
-    /// <summary>Numeric id of the entry, as used by the Python SDK.</summary>
+    /// <summary>Numeric id of the entry.</summary>
     public long Id { get; }
 
     /// <summary>Every named entry of the enumeration, in declaration order.</summary>

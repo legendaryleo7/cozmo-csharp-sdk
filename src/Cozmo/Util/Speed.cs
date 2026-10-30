@@ -15,7 +15,7 @@
 namespace Anki.Cozmo.Sdk;
 
 /// <summary>Represents a speed measured in millimeters per second.</summary>
-/// <remarks>Mirrors <c>Speed</c> in <c>cozmo/util.py</c>.</remarks>
+/// <remarks>Use <see cref="FromMillimetersPerSecond"/> to create a speed value.</remarks>
 public readonly struct Speed
 {
     /// <summary>Creates a speed from a value in millimeters per second.</summary>
@@ -55,7 +55,7 @@ public readonly struct Speed
     /// <param name="left">The speed.</param>
     /// <param name="right">The scalar divisor.</param>
     /// <returns>The scaled speed.</returns>
-    /// <exception cref="DivideByZeroException">The divisor is zero, as Python raises <c>ZeroDivisionError</c>.</exception>
+    /// <exception cref="DivideByZeroException">The divisor is zero.</exception>
     public static Speed operator /(Speed left, double right)
     {
         if (right == 0.0)
@@ -66,7 +66,7 @@ public readonly struct Speed
         return new Speed(left.SpeedMmps / right);
     }
 
-    /// <summary>Returns Python's <c>repr</c> representation of this speed.</summary>
+    /// <summary>Returns a diagnostic string representation of this speed.</summary>
     /// <returns>A string such as <c>&lt;Speed 10.00 mmps&gt;</c>.</returns>
     public override string ToString() =>
         FormattableString.Invariant($"<{nameof(Speed)} {SpeedMmps:F2} mmps>"); // util.py:283

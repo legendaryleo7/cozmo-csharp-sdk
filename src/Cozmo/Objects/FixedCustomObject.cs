@@ -19,18 +19,15 @@ namespace Anki.Cozmo.Sdk;
 /// <summary>A fixed object defined by the SDK, placed in the world at a known pose.</summary>
 /// <remarks>
 /// <para>
-/// Port of <c>FixedCustomObject</c> in <c>cozmo/objects.py</c> (objects.py:872-939). These
-/// objects cannot be observed by the robot, so their pose never changes; they let callers make
-/// Cozmo aware of obstacles that have no markers.
+/// These objects cannot be observed by the robot, so their pose does not change. They let
+/// callers add obstacles that have no markers.
 /// </para>
 /// <para>
-/// Unlike <see cref="ObservableObject"/>, this type is deliberately not a
-/// <see cref="Dispatcher"/>; Python does not derive it from <c>ObservableElement</c> either.
+/// Unlike <see cref="ObservableObject"/>, a fixed object is not observable and does not
+/// dispatch observation events.
 /// </para>
 /// <para>
-/// Python has no explicit definition flag: a fixed object is defined once the engine returns
-/// its object id, so <see cref="IsDefined"/> exposes that state without adding a field the
-/// source does not have.
+/// <see cref="IsDefined"/> is <see langword="true"/> once the engine has assigned the object id.
 /// </para>
 /// </remarks>
 public sealed class FixedCustomObject
@@ -60,13 +57,7 @@ public sealed class FixedCustomObject
     }
 
     /// <summary>The internal id assigned to the object.</summary>
-    /// <remarks>
-    /// Python raises <c>ValueError</c> when the id is changed after being set
-    /// (objects.py:912-918), unlike <see cref="ObservableObject.ObjectId"/>, which merely logs
-    /// a warning. This port raises <see cref="InvalidOperationException"/> for the same
-    /// condition because C# has no equivalent of Python's built-in <c>ValueError</c> used for
-    /// argument values.
-    /// </remarks>
+    /// <remarks>The object id can be assigned only once.</remarks>
     /// <exception cref="InvalidOperationException">The id has already been set.</exception>
     public int? ObjectId
     {
@@ -99,7 +90,6 @@ public sealed class FixedCustomObject
     public double ZSizeMm { get; }
 
     /// <summary>Always <see langword="false"/>: fixed objects cannot be observed.</summary>
-    /// <remarks>Python's <c>FixedCustomObject.is_visible</c> class attribute (objects.py:881).</remarks>
     public bool IsVisible => false;
 
     /// <summary>Returns a diagnostic representation of this fixed object.</summary>

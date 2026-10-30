@@ -20,10 +20,8 @@ namespace Anki.Cozmo.Sdk;
 /// <summary>Describes an actively-playing animation trigger on a robot.</summary>
 /// <remarks>
 /// <para>
-/// Port of <c>cozmo/anim.py::AnimationTrigger</c>. Asking Cozmo to play an animation
-/// trigger makes him pick one of the animations represented by the group, based on his
-/// mood or random weighting, so playing the same trigger twice may not play the exact
-/// same underlying animation.
+/// Playing a trigger asks Cozmo to choose one of the animations in its group. The selected
+/// animation can vary with the robot's mood or random weighting.
 /// </para>
 /// <para>To play an exact animation, use <see cref="Animation"/> with a name from <see cref="AnimationNames"/>.</para>
 /// </remarks>

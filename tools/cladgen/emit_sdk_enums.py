@@ -31,28 +31,20 @@ WRAPPERS = [
         'enum': 'Anki.Cozmo.AnimationTrigger',
         'memberStyle': 'clad',
         'list': 'TriggerList',
-        'remarks': (
-            'Python builds this catalogue at import time from every public CLAD member '
-            '(anim.py:206-211), including the <c>Count</c> sentinel.'),
+        'summary': 'Named animation trigger values.',
     },
     {
         'name': 'BehaviorTypes',
         'enum': 'Anki.Cozmo.ExecutableBehaviorType',
         'nameMap': 'BehaviorTypes',
-        'remarks': (
-            'Python deliberately exposes only this documented subset of working behaviors '
-            '(behavior.py:206-215); <c>EnrollFace</c> stays internal, matching the private '
-            '<c>_EnrollFace</c> entry.'),
+        'summary': 'Named executable behavior types.',
     },
     {
         'name': 'AudioEvents',
         'enum': 'Anki.AudioMetaData.GameEvent.Codelab',
         'nameMap': 'AudioEvents',
         'skip': {'Count'},
-        'remarks': (
-            "Python's public names are preserved exactly (audio.py); CLAD members it leaves "
-            'undeclared are auto-added under their CLAD names by <c>CladEnumWrapper</c> '
-            '(audio.py:379).'),
+        'summary': 'Named audio event values.',
     },
     {
         'name': 'NoteTypes',
@@ -68,19 +60,19 @@ WRAPPERS = [
         'name': 'RobotAlignmentTypes',
         'enum': 'Anki.Cozmo.AlignmentType',
         'nameMap': 'RobotAlignmentTypes',
-        'remarks': 'Alignment modes accepted by DockWithCube (robot_alignment.py:25-45).',
+        'remarks': 'Alignment modes used when docking with a light cube.',
     },
     {
         'name': 'UnexpectedMovementSide',
         'enum': 'Anki.Cozmo.UnexpectedMovementSide',
         'nameMap': 'UnexpectedMovementSide',
-        'remarks': 'Side of the obstruction reported by EvtUnexpectedMovement (robot.py:2289-2313).',
+        'remarks': 'Side of the obstruction reported by <c>EvtUnexpectedMovement</c>.',
     },
     {
         'name': 'UnexpectedMovementType',
         'enum': 'Anki.Cozmo.UnexpectedMovementType',
         'nameMap': 'UnexpectedMovementType',
-        'remarks': 'Kind of unexpected movement reported by EvtUnexpectedMovement (robot.py:2319-2338).',
+        'remarks': 'Kind of unexpected movement reported by <c>EvtUnexpectedMovement</c>.',
     },
     {
         'name': 'CustomObjectTypes',
@@ -91,19 +83,13 @@ WRAPPERS = [
             'members': ['LightCube1Id', 'LightCube2Id', 'LightCube3Id'],
             'summary': 'An ordered list of the 3 light cube ids for convenience.',
         },
-        'remarks': (
-            'Python declares the custom types in <c>CustomObjectTypes</c> and the LightCube '
-            'object ids as module-level constants (objects.py); both are grouped here. '
-            '<c>ChargerBasic</c> is the port\'s name for <c>ObjectType.Charger_Basic</c>, which '
-            'the world layer needs but Python has no module-level constant for.'),
+        'summary': 'Named custom object types and light cube ids.',
     },
     {
         'name': 'CustomObjectMarkers',
         'enum': 'Anki.Cozmo.CustomObjectMarker',
         'nameMap': 'CustomObjectMarkers',
-        'remarks': (
-            'Python custom object marker catalogue (objects.py); the CLAD <c>Count</c> '
-            'sentinel is not exposed.'),
+        'summary': 'Named markers used to define custom objects.',
     },
 ]
 
@@ -249,21 +235,17 @@ def list_spec(wrapper, entries):
 
 
 def emit_wrapper(lines, wrapper, enum_fqn, entries):
-    lines.append('/// <summary>Named %s values, mirroring the Python <c>%s</c> wrapper.</summary>'
-                 % (enum_fqn.rsplit('.', 1)[1], wrapper['name']))
+    summary = wrapper.get('summary') or 'Named %s values.' % enum_fqn.rsplit('.', 1)[1]
+    lines.append('/// <summary>%s</summary>' % summary)
     if wrapper.get('remarks'):
         lines.append('/// <remarks>%s</remarks>' % wrapper['remarks'])
     lines.append('public static class %s' % wrapper['name'])
     lines.append('{')
     for entry in entries:
         access = 'internal' if entry['internal'] else 'public'
-        suffix = ''
-        if entry['internal']:
-            suffix = ', internal to match the Python private entry'
-        elif entry['auto']:
-            suffix = ', auto-added by the Python CladEnumWrapper'
-        lines.append('    /// <summary>CLAD <c>%s</c> (%d)%s.</summary>'
-                     % (entry['clad'], entry['id'], suffix))
+        suffix = 'Internal CLAD member' if entry['internal'] else 'CLAD member'
+        lines.append('    /// <summary>%s <c>%s</c> (id %d).</summary>'
+                     % (suffix, entry['clad'], entry['id']))
         lines.append('    %s static readonly CladEnum<global::%s> %s = CladEnum<global::%s>.FromName("%s");'
                      % (access, enum_fqn, entry['public'], enum_fqn, entry['clad']))
         lines.append('')

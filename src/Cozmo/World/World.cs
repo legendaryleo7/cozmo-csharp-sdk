@@ -22,11 +22,10 @@ namespace Anki.Cozmo.Sdk;
 
 /// <summary>Represents the state of the world, as known to a Cozmo robot.</summary>
 /// <remarks>
-/// Port of <c>world.py::World</c>. The world owns the object, face and pet registries,
-/// routes inbound engine messages to them, assembles navigation memory maps and exposes the
-/// latest camera image. The robot adds the world as a child dispatcher, so action and
-/// behavior events propagate into <see cref="ActiveAction"/> and <see cref="ActiveBehavior"/>.
-/// Image annotation is not ported.
+/// The world owns the object, face and pet registries, routes inbound engine messages to them,
+/// assembles navigation memory maps and exposes the latest camera image. The robot adds the
+/// world as a child dispatcher, so action and behavior events propagate into
+/// <see cref="ActiveAction"/> and <see cref="ActiveBehavior"/>.
 /// </remarks>
 public sealed class World : Dispatcher, IWorldContext
 {

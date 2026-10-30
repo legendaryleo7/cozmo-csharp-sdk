@@ -18,8 +18,8 @@ namespace Anki.Cozmo.Sdk;
 
 /// <summary>The fixed properties and calibration of Cozmo's camera.</summary>
 /// <remarks>
-/// Port of <c>cozmo/camera.py::CameraConfig</c>. The focal length and optical center are
-/// expressed in floating point pixel values. Together they form the calibration matrix:
+/// The focal length and optical center are expressed in floating-point pixel values. Together
+/// they form the calibration matrix:
 /// <code>
 /// +--------------+--------------+---------------+
 /// | FocalLength.X|      0       |    Center.X   |

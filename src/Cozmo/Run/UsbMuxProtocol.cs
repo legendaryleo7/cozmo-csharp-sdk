@@ -23,13 +23,13 @@ internal static class UsbMuxProtocol
     /// <summary>Size of the fixed usbmux header that precedes every plist message.</summary>
     public const int HeaderSize = 16;
 
-    /// <summary>Protocol version understood by the client, matching <c>plistlib</c>'s usbmux use.</summary>
+    /// <summary>Protocol version used by usbmux requests.</summary>
     public const uint ProtocolVersion = 1;
 
     /// <summary>Header request type used for plist messages.</summary>
     public const uint PlistRequestType = 8;
 
-    /// <summary>Header tag value used by the Python client.</summary>
+    /// <summary>Default request tag value.</summary>
     public const uint DefaultTag = 1;
 
     private const int MaxMessageSize = 16 * 1024 * 1024;

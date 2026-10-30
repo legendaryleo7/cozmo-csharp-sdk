@@ -17,9 +17,7 @@ namespace Anki.Cozmo.Sdk;
 /// <summary>The pet types Cozmo can distinguish, as reported by the engine.</summary>
 /// <remarks>
 /// <para>
-/// Port of the <c>PET_TYPE_*</c> constants in <c>cozmo/pets.py</c> (pets.py:58-64). Python
-/// exposes them as plain strings; this port keeps the same string values in a static class so
-/// <see cref="Pet.PetType"/> can expose them directly.
+/// These string constants are returned by <see cref="Pet.PetType"/>.
 /// </para>
 /// <para>
 /// The engine can only tell whether something looks like a cat or a dog; it cannot identify a
@@ -29,28 +27,20 @@ namespace Anki.Cozmo.Sdk;
 public static class PetType
 {
     /// <summary>Pet type reported by Cozmo when unsure of the type of pet.</summary>
-    /// <remarks>Python <c>PET_TYPE_UNKNOWN</c> (pets.py:60).</remarks>
     public const string Unknown = "unknown";
 
     /// <summary>Pet type reported by Cozmo when he thinks it is a cat.</summary>
-    /// <remarks>Python <c>PET_TYPE_CAT</c> (pets.py:62).</remarks>
     public const string Cat = "cat";
 
     /// <summary>Pet type reported by Cozmo when he thinks it is a dog.</summary>
-    /// <remarks>Python <c>PET_TYPE_DOG</c> (pets.py:64).</remarks>
     public const string Dog = "dog";
 
     /// <summary>Converts a CLAD <c>Anki.Vision.PetType</c> value to its string form.</summary>
     /// <param name="cladPetType">The CLAD pet type reported by the engine.</param>
-    /// <returns>
-    /// One of the string constants on this class, or <see cref="Unknown"/> for the CLAD
-    /// <c>Unknown</c> value and for every value this port does not recognize.
-    /// </returns>
+    /// <returns>One of the string constants on this class, or <see cref="Unknown"/> if the CLAD value is unknown or unrecognized.</returns>
     /// <remarks>
-    /// Python's <c>_clad_pet_type_to_pet_type</c> raises a <c>ValueError</c> for an unexpected
-    /// value (pets.py:110-111). The port deliberately returns <see cref="Unknown"/> instead: an
-    /// unrecognized value can only come from a malformed or newer engine message, and one bad
-    /// observation must not abort the whole dispatch loop.
+    /// An unrecognized value is treated as unknown so a newer or malformed engine message
+    /// does not interrupt event dispatch.
     /// </remarks>
     public static string FromClad(Anki.Vision.PetType cladPetType) => cladPetType switch
     {

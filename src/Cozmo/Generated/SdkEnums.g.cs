@@ -21,1875 +21,1874 @@
 
 namespace Anki.Cozmo.Sdk;
 
-/// <summary>Named ActionResult values, mirroring the Python <c>ActionResults</c> wrapper.</summary>
+/// <summary>Named ActionResult values.</summary>
 public static class ActionResults
 {
-    /// <summary>CLAD <c>SUCCESS</c> (0).</summary>
+    /// <summary>CLAD member <c>SUCCESS</c> (id 0).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.ActionResult> Success = CladEnum<global::Anki.Cozmo.ActionResult>.FromName("SUCCESS");
 
-    /// <summary>CLAD <c>RUNNING</c> (16777216).</summary>
+    /// <summary>CLAD member <c>RUNNING</c> (id 16777216).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.ActionResult> Running = CladEnum<global::Anki.Cozmo.ActionResult>.FromName("RUNNING");
 
-    /// <summary>CLAD <c>CANCELLED_WHILE_RUNNING</c> (33554432).</summary>
+    /// <summary>CLAD member <c>CANCELLED_WHILE_RUNNING</c> (id 33554432).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.ActionResult> CancelledWhileRunning = CladEnum<global::Anki.Cozmo.ActionResult>.FromName("CANCELLED_WHILE_RUNNING");
 
-    /// <summary>CLAD <c>NOT_STARTED</c> (33554433).</summary>
+    /// <summary>CLAD member <c>NOT_STARTED</c> (id 33554433).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.ActionResult> NotStarted = CladEnum<global::Anki.Cozmo.ActionResult>.FromName("NOT_STARTED");
 
-    /// <summary>CLAD <c>ABORT</c> (50331648).</summary>
+    /// <summary>CLAD member <c>ABORT</c> (id 50331648).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.ActionResult> Abort = CladEnum<global::Anki.Cozmo.ActionResult>.FromName("ABORT");
 
-    /// <summary>CLAD <c>ANIM_ABORTED</c> (50331649).</summary>
+    /// <summary>CLAD member <c>ANIM_ABORTED</c> (id 50331649).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.ActionResult> AnimAborted = CladEnum<global::Anki.Cozmo.ActionResult>.FromName("ANIM_ABORTED");
 
-    /// <summary>CLAD <c>BAD_MARKER</c> (50331650).</summary>
+    /// <summary>CLAD member <c>BAD_MARKER</c> (id 50331650).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.ActionResult> BadMarker = CladEnum<global::Anki.Cozmo.ActionResult>.FromName("BAD_MARKER");
 
-    /// <summary>CLAD <c>BAD_MESSAGE_TAG</c> (50331651).</summary>
+    /// <summary>CLAD member <c>BAD_MESSAGE_TAG</c> (id 50331651).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.ActionResult> BadMessageTag = CladEnum<global::Anki.Cozmo.ActionResult>.FromName("BAD_MESSAGE_TAG");
 
-    /// <summary>CLAD <c>BAD_OBJECT</c> (50331652).</summary>
+    /// <summary>CLAD member <c>BAD_OBJECT</c> (id 50331652).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.ActionResult> BadObject = CladEnum<global::Anki.Cozmo.ActionResult>.FromName("BAD_OBJECT");
 
-    /// <summary>CLAD <c>BAD_POSE</c> (50331653).</summary>
+    /// <summary>CLAD member <c>BAD_POSE</c> (id 50331653).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.ActionResult> BadPose = CladEnum<global::Anki.Cozmo.ActionResult>.FromName("BAD_POSE");
 
-    /// <summary>CLAD <c>BAD_TAG</c> (50331654).</summary>
+    /// <summary>CLAD member <c>BAD_TAG</c> (id 50331654).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.ActionResult> BadTag = CladEnum<global::Anki.Cozmo.ActionResult>.FromName("BAD_TAG");
 
-    /// <summary>CLAD <c>FAILED_SETTING_CALIBRATION</c> (50331655).</summary>
+    /// <summary>CLAD member <c>FAILED_SETTING_CALIBRATION</c> (id 50331655).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.ActionResult> FailedSettingCalibration = CladEnum<global::Anki.Cozmo.ActionResult>.FromName("FAILED_SETTING_CALIBRATION");
 
-    /// <summary>CLAD <c>FOLLOWING_PATH_BUT_NOT_TRAVERSING</c> (50331656).</summary>
+    /// <summary>CLAD member <c>FOLLOWING_PATH_BUT_NOT_TRAVERSING</c> (id 50331656).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.ActionResult> FollowingPathButNotTraversing = CladEnum<global::Anki.Cozmo.ActionResult>.FromName("FOLLOWING_PATH_BUT_NOT_TRAVERSING");
 
-    /// <summary>CLAD <c>INTERRUPTED</c> (50331657).</summary>
+    /// <summary>CLAD member <c>INTERRUPTED</c> (id 50331657).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.ActionResult> Interrupted = CladEnum<global::Anki.Cozmo.ActionResult>.FromName("INTERRUPTED");
 
-    /// <summary>CLAD <c>INVALID_OFF_TREADS_STATE</c> (50331658).</summary>
+    /// <summary>CLAD member <c>INVALID_OFF_TREADS_STATE</c> (id 50331658).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.ActionResult> InvalidOffTreadsState = CladEnum<global::Anki.Cozmo.ActionResult>.FromName("INVALID_OFF_TREADS_STATE");
 
-    /// <summary>CLAD <c>MISMATCHED_UP_AXIS</c> (50331659).</summary>
+    /// <summary>CLAD member <c>MISMATCHED_UP_AXIS</c> (id 50331659).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.ActionResult> MismatchedUpAxis = CladEnum<global::Anki.Cozmo.ActionResult>.FromName("MISMATCHED_UP_AXIS");
 
-    /// <summary>CLAD <c>NO_ANIM_NAME</c> (50331660).</summary>
+    /// <summary>CLAD member <c>NO_ANIM_NAME</c> (id 50331660).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.ActionResult> NoAnimName = CladEnum<global::Anki.Cozmo.ActionResult>.FromName("NO_ANIM_NAME");
 
-    /// <summary>CLAD <c>NO_DISTANCE_SET</c> (50331661).</summary>
+    /// <summary>CLAD member <c>NO_DISTANCE_SET</c> (id 50331661).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.ActionResult> NoDistanceSet = CladEnum<global::Anki.Cozmo.ActionResult>.FromName("NO_DISTANCE_SET");
 
-    /// <summary>CLAD <c>NO_FACE</c> (50331662).</summary>
+    /// <summary>CLAD member <c>NO_FACE</c> (id 50331662).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.ActionResult> NoFace = CladEnum<global::Anki.Cozmo.ActionResult>.FromName("NO_FACE");
 
-    /// <summary>CLAD <c>NO_GOAL_SET</c> (50331663).</summary>
+    /// <summary>CLAD member <c>NO_GOAL_SET</c> (id 50331663).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.ActionResult> NoGoalSet = CladEnum<global::Anki.Cozmo.ActionResult>.FromName("NO_GOAL_SET");
 
-    /// <summary>CLAD <c>NO_PREACTION_POSES</c> (50331664).</summary>
+    /// <summary>CLAD member <c>NO_PREACTION_POSES</c> (id 50331664).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.ActionResult> NoPreactionPoses = CladEnum<global::Anki.Cozmo.ActionResult>.FromName("NO_PREACTION_POSES");
 
-    /// <summary>CLAD <c>NOT_CARRYING_OBJECT_ABORT</c> (50331665).</summary>
+    /// <summary>CLAD member <c>NOT_CARRYING_OBJECT_ABORT</c> (id 50331665).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.ActionResult> NotCarryingObjectAbort = CladEnum<global::Anki.Cozmo.ActionResult>.FromName("NOT_CARRYING_OBJECT_ABORT");
 
-    /// <summary>CLAD <c>NULL_SUBACTION</c> (50331666).</summary>
+    /// <summary>CLAD member <c>NULL_SUBACTION</c> (id 50331666).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.ActionResult> NullSubaction = CladEnum<global::Anki.Cozmo.ActionResult>.FromName("NULL_SUBACTION");
 
-    /// <summary>CLAD <c>PATH_PLANNING_FAILED_ABORT</c> (50331667).</summary>
+    /// <summary>CLAD member <c>PATH_PLANNING_FAILED_ABORT</c> (id 50331667).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.ActionResult> PathPlanningFailedAbort = CladEnum<global::Anki.Cozmo.ActionResult>.FromName("PATH_PLANNING_FAILED_ABORT");
 
-    /// <summary>CLAD <c>PICKUP_OBJECT_UNEXPECTEDLY_MOVING</c> (50331668).</summary>
+    /// <summary>CLAD member <c>PICKUP_OBJECT_UNEXPECTEDLY_MOVING</c> (id 50331668).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.ActionResult> PickupObjectUnexpectedlyMoving = CladEnum<global::Anki.Cozmo.ActionResult>.FromName("PICKUP_OBJECT_UNEXPECTEDLY_MOVING");
 
-    /// <summary>CLAD <c>PICKUP_OBJECT_UNEXPECTEDLY_NOT_MOVING</c> (50331669).</summary>
+    /// <summary>CLAD member <c>PICKUP_OBJECT_UNEXPECTEDLY_NOT_MOVING</c> (id 50331669).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.ActionResult> PickupObjectUnexpectedlyNotMoving = CladEnum<global::Anki.Cozmo.ActionResult>.FromName("PICKUP_OBJECT_UNEXPECTEDLY_NOT_MOVING");
 
-    /// <summary>CLAD <c>SEND_MESSAGE_TO_ROBOT_FAILED</c> (50331670).</summary>
+    /// <summary>CLAD member <c>SEND_MESSAGE_TO_ROBOT_FAILED</c> (id 50331670).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.ActionResult> SendMessageToRobotFailed = CladEnum<global::Anki.Cozmo.ActionResult>.FromName("SEND_MESSAGE_TO_ROBOT_FAILED");
 
-    /// <summary>CLAD <c>STILL_CARRYING_OBJECT</c> (50331671).</summary>
+    /// <summary>CLAD member <c>STILL_CARRYING_OBJECT</c> (id 50331671).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.ActionResult> StillCarryingObject = CladEnum<global::Anki.Cozmo.ActionResult>.FromName("STILL_CARRYING_OBJECT");
 
-    /// <summary>CLAD <c>TIMEOUT</c> (50331672).</summary>
+    /// <summary>CLAD member <c>TIMEOUT</c> (id 50331672).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.ActionResult> Timeout = CladEnum<global::Anki.Cozmo.ActionResult>.FromName("TIMEOUT");
 
-    /// <summary>CLAD <c>TRACKS_LOCKED</c> (50331673).</summary>
+    /// <summary>CLAD member <c>TRACKS_LOCKED</c> (id 50331673).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.ActionResult> TracksLocked = CladEnum<global::Anki.Cozmo.ActionResult>.FromName("TRACKS_LOCKED");
 
-    /// <summary>CLAD <c>UNEXPECTED_DOCK_ACTION</c> (50331674).</summary>
+    /// <summary>CLAD member <c>UNEXPECTED_DOCK_ACTION</c> (id 50331674).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.ActionResult> UnexpectedDockAction = CladEnum<global::Anki.Cozmo.ActionResult>.FromName("UNEXPECTED_DOCK_ACTION");
 
-    /// <summary>CLAD <c>UNKNOWN_TOOL_CODE</c> (50331675).</summary>
+    /// <summary>CLAD member <c>UNKNOWN_TOOL_CODE</c> (id 50331675).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.ActionResult> UnknownToolCode = CladEnum<global::Anki.Cozmo.ActionResult>.FromName("UNKNOWN_TOOL_CODE");
 
-    /// <summary>CLAD <c>UPDATE_DERIVED_FAILED</c> (50331676).</summary>
+    /// <summary>CLAD member <c>UPDATE_DERIVED_FAILED</c> (id 50331676).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.ActionResult> UpdateDerivedFailed = CladEnum<global::Anki.Cozmo.ActionResult>.FromName("UPDATE_DERIVED_FAILED");
 
-    /// <summary>CLAD <c>VISUAL_OBSERVATION_FAILED</c> (50331677).</summary>
+    /// <summary>CLAD member <c>VISUAL_OBSERVATION_FAILED</c> (id 50331677).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.ActionResult> VisualObservationFailed = CladEnum<global::Anki.Cozmo.ActionResult>.FromName("VISUAL_OBSERVATION_FAILED");
 
-    /// <summary>CLAD <c>RETRY</c> (67108864).</summary>
+    /// <summary>CLAD member <c>RETRY</c> (id 67108864).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.ActionResult> Retry = CladEnum<global::Anki.Cozmo.ActionResult>.FromName("RETRY");
 
-    /// <summary>CLAD <c>DID_NOT_REACH_PREACTION_POSE</c> (67108865).</summary>
+    /// <summary>CLAD member <c>DID_NOT_REACH_PREACTION_POSE</c> (id 67108865).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.ActionResult> DidNotReachPreactionPose = CladEnum<global::Anki.Cozmo.ActionResult>.FromName("DID_NOT_REACH_PREACTION_POSE");
 
-    /// <summary>CLAD <c>FAILED_TRAVERSING_PATH</c> (67108866).</summary>
+    /// <summary>CLAD member <c>FAILED_TRAVERSING_PATH</c> (id 67108866).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.ActionResult> FailedTraversingPath = CladEnum<global::Anki.Cozmo.ActionResult>.FromName("FAILED_TRAVERSING_PATH");
 
-    /// <summary>CLAD <c>LAST_PICK_AND_PLACE_FAILED</c> (67108867).</summary>
+    /// <summary>CLAD member <c>LAST_PICK_AND_PLACE_FAILED</c> (id 67108867).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.ActionResult> LastPickAndPlaceFailed = CladEnum<global::Anki.Cozmo.ActionResult>.FromName("LAST_PICK_AND_PLACE_FAILED");
 
-    /// <summary>CLAD <c>MOTOR_STOPPED_MAKING_PROGRESS</c> (67108868).</summary>
+    /// <summary>CLAD member <c>MOTOR_STOPPED_MAKING_PROGRESS</c> (id 67108868).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.ActionResult> MotorStoppedMakingProgress = CladEnum<global::Anki.Cozmo.ActionResult>.FromName("MOTOR_STOPPED_MAKING_PROGRESS");
 
-    /// <summary>CLAD <c>NOT_CARRYING_OBJECT_RETRY</c> (67108869).</summary>
+    /// <summary>CLAD member <c>NOT_CARRYING_OBJECT_RETRY</c> (id 67108869).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.ActionResult> NotCarryingObjectRetry = CladEnum<global::Anki.Cozmo.ActionResult>.FromName("NOT_CARRYING_OBJECT_RETRY");
 
-    /// <summary>CLAD <c>NOT_ON_CHARGER</c> (67108870).</summary>
+    /// <summary>CLAD member <c>NOT_ON_CHARGER</c> (id 67108870).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.ActionResult> NotOnCharger = CladEnum<global::Anki.Cozmo.ActionResult>.FromName("NOT_ON_CHARGER");
 
-    /// <summary>CLAD <c>PATH_PLANNING_FAILED_RETRY</c> (67108871).</summary>
+    /// <summary>CLAD member <c>PATH_PLANNING_FAILED_RETRY</c> (id 67108871).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.ActionResult> PathPlanningFailedRetry = CladEnum<global::Anki.Cozmo.ActionResult>.FromName("PATH_PLANNING_FAILED_RETRY");
 
-    /// <summary>CLAD <c>PLACEMENT_GOAL_NOT_FREE</c> (67108872).</summary>
+    /// <summary>CLAD member <c>PLACEMENT_GOAL_NOT_FREE</c> (id 67108872).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.ActionResult> PlacementGoalNotFree = CladEnum<global::Anki.Cozmo.ActionResult>.FromName("PLACEMENT_GOAL_NOT_FREE");
 
-    /// <summary>CLAD <c>STILL_ON_CHARGER</c> (67108873).</summary>
+    /// <summary>CLAD member <c>STILL_ON_CHARGER</c> (id 67108873).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.ActionResult> StillOnCharger = CladEnum<global::Anki.Cozmo.ActionResult>.FromName("STILL_ON_CHARGER");
 
-    /// <summary>CLAD <c>UNEXPECTED_PITCH_ANGLE</c> (67108874).</summary>
+    /// <summary>CLAD member <c>UNEXPECTED_PITCH_ANGLE</c> (id 67108874).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.ActionResult> UnexpectedPitchAngle = CladEnum<global::Anki.Cozmo.ActionResult>.FromName("UNEXPECTED_PITCH_ANGLE");
 }
 
-/// <summary>Named AnimationTrigger values, mirroring the Python <c>Triggers</c> wrapper.</summary>
-/// <remarks>Python builds this catalogue at import time from every public CLAD member (anim.py:206-211), including the <c>Count</c> sentinel.</remarks>
+/// <summary>Named animation trigger values.</summary>
 public static class Triggers
 {
-    /// <summary>CLAD <c>AcknowledgeFaceInitPause</c> (0).</summary>
+    /// <summary>CLAD member <c>AcknowledgeFaceInitPause</c> (id 0).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.AnimationTrigger> AcknowledgeFaceInitPause = CladEnum<global::Anki.Cozmo.AnimationTrigger>.FromName("AcknowledgeFaceInitPause");
 
-    /// <summary>CLAD <c>AcknowledgeFaceNamed</c> (1).</summary>
+    /// <summary>CLAD member <c>AcknowledgeFaceNamed</c> (id 1).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.AnimationTrigger> AcknowledgeFaceNamed = CladEnum<global::Anki.Cozmo.AnimationTrigger>.FromName("AcknowledgeFaceNamed");
 
-    /// <summary>CLAD <c>AcknowledgeFaceUnnamed</c> (2).</summary>
+    /// <summary>CLAD member <c>AcknowledgeFaceUnnamed</c> (id 2).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.AnimationTrigger> AcknowledgeFaceUnnamed = CladEnum<global::Anki.Cozmo.AnimationTrigger>.FromName("AcknowledgeFaceUnnamed");
 
-    /// <summary>CLAD <c>AcknowledgeObject</c> (3).</summary>
+    /// <summary>CLAD member <c>AcknowledgeObject</c> (id 3).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.AnimationTrigger> AcknowledgeObject = CladEnum<global::Anki.Cozmo.AnimationTrigger>.FromName("AcknowledgeObject");
 
-    /// <summary>CLAD <c>AskToBeRightedLeft</c> (4).</summary>
+    /// <summary>CLAD member <c>AskToBeRightedLeft</c> (id 4).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.AnimationTrigger> AskToBeRightedLeft = CladEnum<global::Anki.Cozmo.AnimationTrigger>.FromName("AskToBeRightedLeft");
 
-    /// <summary>CLAD <c>AskToBeRightedRight</c> (5).</summary>
+    /// <summary>CLAD member <c>AskToBeRightedRight</c> (id 5).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.AnimationTrigger> AskToBeRightedRight = CladEnum<global::Anki.Cozmo.AnimationTrigger>.FromName("AskToBeRightedRight");
 
-    /// <summary>CLAD <c>AudioTestAnim</c> (6).</summary>
+    /// <summary>CLAD member <c>AudioTestAnim</c> (id 6).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.AnimationTrigger> AudioTestAnim = CladEnum<global::Anki.Cozmo.AnimationTrigger>.FromName("AudioTestAnim");
 
-    /// <summary>CLAD <c>BlockReact</c> (7).</summary>
+    /// <summary>CLAD member <c>BlockReact</c> (id 7).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.AnimationTrigger> BlockReact = CladEnum<global::Anki.Cozmo.AnimationTrigger>.FromName("BlockReact");
 
-    /// <summary>CLAD <c>BouncerGetIn</c> (8).</summary>
+    /// <summary>CLAD member <c>BouncerGetIn</c> (id 8).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.AnimationTrigger> BouncerGetIn = CladEnum<global::Anki.Cozmo.AnimationTrigger>.FromName("BouncerGetIn");
 
-    /// <summary>CLAD <c>BouncerGetOut</c> (9).</summary>
+    /// <summary>CLAD member <c>BouncerGetOut</c> (id 9).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.AnimationTrigger> BouncerGetOut = CladEnum<global::Anki.Cozmo.AnimationTrigger>.FromName("BouncerGetOut");
 
-    /// <summary>CLAD <c>BouncerIdeaToPlay</c> (10).</summary>
+    /// <summary>CLAD member <c>BouncerIdeaToPlay</c> (id 10).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.AnimationTrigger> BouncerIdeaToPlay = CladEnum<global::Anki.Cozmo.AnimationTrigger>.FromName("BouncerIdeaToPlay");
 
-    /// <summary>CLAD <c>BouncerIntoScore1</c> (11).</summary>
+    /// <summary>CLAD member <c>BouncerIntoScore1</c> (id 11).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.AnimationTrigger> BouncerIntoScore1 = CladEnum<global::Anki.Cozmo.AnimationTrigger>.FromName("BouncerIntoScore1");
 
-    /// <summary>CLAD <c>BouncerIntoScore2</c> (12).</summary>
+    /// <summary>CLAD member <c>BouncerIntoScore2</c> (id 12).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.AnimationTrigger> BouncerIntoScore2 = CladEnum<global::Anki.Cozmo.AnimationTrigger>.FromName("BouncerIntoScore2");
 
-    /// <summary>CLAD <c>BouncerIntoScore3</c> (13).</summary>
+    /// <summary>CLAD member <c>BouncerIntoScore3</c> (id 13).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.AnimationTrigger> BouncerIntoScore3 = CladEnum<global::Anki.Cozmo.AnimationTrigger>.FromName("BouncerIntoScore3");
 
-    /// <summary>CLAD <c>BouncerRequestToPlay</c> (14).</summary>
+    /// <summary>CLAD member <c>BouncerRequestToPlay</c> (id 14).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.AnimationTrigger> BouncerRequestToPlay = CladEnum<global::Anki.Cozmo.AnimationTrigger>.FromName("BouncerRequestToPlay");
 
-    /// <summary>CLAD <c>BouncerTimeout</c> (15).</summary>
+    /// <summary>CLAD member <c>BouncerTimeout</c> (id 15).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.AnimationTrigger> BouncerTimeout = CladEnum<global::Anki.Cozmo.AnimationTrigger>.FromName("BouncerTimeout");
 
-    /// <summary>CLAD <c>BouncerWait</c> (16).</summary>
+    /// <summary>CLAD member <c>BouncerWait</c> (id 16).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.AnimationTrigger> BouncerWait = CladEnum<global::Anki.Cozmo.AnimationTrigger>.FromName("BouncerWait");
 
-    /// <summary>CLAD <c>BuildPyramidFirstBlockOnSide</c> (17).</summary>
+    /// <summary>CLAD member <c>BuildPyramidFirstBlockOnSide</c> (id 17).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.AnimationTrigger> BuildPyramidFirstBlockOnSide = CladEnum<global::Anki.Cozmo.AnimationTrigger>.FromName("BuildPyramidFirstBlockOnSide");
 
-    /// <summary>CLAD <c>BuildPyramidFirstBlockUpright</c> (18).</summary>
+    /// <summary>CLAD member <c>BuildPyramidFirstBlockUpright</c> (id 18).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.AnimationTrigger> BuildPyramidFirstBlockUpright = CladEnum<global::Anki.Cozmo.AnimationTrigger>.FromName("BuildPyramidFirstBlockUpright");
 
-    /// <summary>CLAD <c>BuildPyramidLookForFace</c> (19).</summary>
+    /// <summary>CLAD member <c>BuildPyramidLookForFace</c> (id 19).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.AnimationTrigger> BuildPyramidLookForFace = CladEnum<global::Anki.Cozmo.AnimationTrigger>.FromName("BuildPyramidLookForFace");
 
-    /// <summary>CLAD <c>BuildPyramidReactToBase</c> (20).</summary>
+    /// <summary>CLAD member <c>BuildPyramidReactToBase</c> (id 20).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.AnimationTrigger> BuildPyramidReactToBase = CladEnum<global::Anki.Cozmo.AnimationTrigger>.FromName("BuildPyramidReactToBase");
 
-    /// <summary>CLAD <c>BuildPyramidSecondBlockOnSide</c> (21).</summary>
+    /// <summary>CLAD member <c>BuildPyramidSecondBlockOnSide</c> (id 21).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.AnimationTrigger> BuildPyramidSecondBlockOnSide = CladEnum<global::Anki.Cozmo.AnimationTrigger>.FromName("BuildPyramidSecondBlockOnSide");
 
-    /// <summary>CLAD <c>BuildPyramidSecondBlockUpright</c> (22).</summary>
+    /// <summary>CLAD member <c>BuildPyramidSecondBlockUpright</c> (id 22).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.AnimationTrigger> BuildPyramidSecondBlockUpright = CladEnum<global::Anki.Cozmo.AnimationTrigger>.FromName("BuildPyramidSecondBlockUpright");
 
-    /// <summary>CLAD <c>BuildPyramidSuccess</c> (23).</summary>
+    /// <summary>CLAD member <c>BuildPyramidSuccess</c> (id 23).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.AnimationTrigger> BuildPyramidSuccess = CladEnum<global::Anki.Cozmo.AnimationTrigger>.FromName("BuildPyramidSuccess");
 
-    /// <summary>CLAD <c>BuildPyramidThankUser</c> (24).</summary>
+    /// <summary>CLAD member <c>BuildPyramidThankUser</c> (id 24).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.AnimationTrigger> BuildPyramidThankUser = CladEnum<global::Anki.Cozmo.AnimationTrigger>.FromName("BuildPyramidThankUser");
 
-    /// <summary>CLAD <c>BuildPyramidThirdBlockOnSide</c> (25).</summary>
+    /// <summary>CLAD member <c>BuildPyramidThirdBlockOnSide</c> (id 25).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.AnimationTrigger> BuildPyramidThirdBlockOnSide = CladEnum<global::Anki.Cozmo.AnimationTrigger>.FromName("BuildPyramidThirdBlockOnSide");
 
-    /// <summary>CLAD <c>BuildPyramidThirdBlockUpright</c> (26).</summary>
+    /// <summary>CLAD member <c>BuildPyramidThirdBlockUpright</c> (id 26).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.AnimationTrigger> BuildPyramidThirdBlockUpright = CladEnum<global::Anki.Cozmo.AnimationTrigger>.FromName("BuildPyramidThirdBlockUpright");
 
-    /// <summary>CLAD <c>CantHandleTallStack</c> (27).</summary>
+    /// <summary>CLAD member <c>CantHandleTallStack</c> (id 27).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.AnimationTrigger> CantHandleTallStack = CladEnum<global::Anki.Cozmo.AnimationTrigger>.FromName("CantHandleTallStack");
 
-    /// <summary>CLAD <c>PatternGuessNewIdea</c> (28).</summary>
+    /// <summary>CLAD member <c>PatternGuessNewIdea</c> (id 28).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.AnimationTrigger> PatternGuessNewIdea = CladEnum<global::Anki.Cozmo.AnimationTrigger>.FromName("PatternGuessNewIdea");
 
-    /// <summary>CLAD <c>PatternGuessThinking</c> (29).</summary>
+    /// <summary>CLAD member <c>PatternGuessThinking</c> (id 29).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.AnimationTrigger> PatternGuessThinking = CladEnum<global::Anki.Cozmo.AnimationTrigger>.FromName("PatternGuessThinking");
 
-    /// <summary>CLAD <c>CodeLab123Go</c> (30).</summary>
+    /// <summary>CLAD member <c>CodeLab123Go</c> (id 30).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.AnimationTrigger> CodeLab123Go = CladEnum<global::Anki.Cozmo.AnimationTrigger>.FromName("CodeLab123Go");
 
-    /// <summary>CLAD <c>CodeLabAmazed</c> (31).</summary>
+    /// <summary>CLAD member <c>CodeLabAmazed</c> (id 31).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.AnimationTrigger> CodeLabAmazed = CladEnum<global::Anki.Cozmo.AnimationTrigger>.FromName("CodeLabAmazed");
 
-    /// <summary>CLAD <c>CodeLabBlink</c> (32).</summary>
+    /// <summary>CLAD member <c>CodeLabBlink</c> (id 32).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.AnimationTrigger> CodeLabBlink = CladEnum<global::Anki.Cozmo.AnimationTrigger>.FromName("CodeLabBlink");
 
-    /// <summary>CLAD <c>CodeLabBored</c> (33).</summary>
+    /// <summary>CLAD member <c>CodeLabBored</c> (id 33).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.AnimationTrigger> CodeLabBored = CladEnum<global::Anki.Cozmo.AnimationTrigger>.FromName("CodeLabBored");
 
-    /// <summary>CLAD <c>CodeLabCat</c> (34).</summary>
+    /// <summary>CLAD member <c>CodeLabCat</c> (id 34).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.AnimationTrigger> CodeLabCat = CladEnum<global::Anki.Cozmo.AnimationTrigger>.FromName("CodeLabCat");
 
-    /// <summary>CLAD <c>CodeLabCelebrate</c> (35).</summary>
+    /// <summary>CLAD member <c>CodeLabCelebrate</c> (id 35).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.AnimationTrigger> CodeLabCelebrate = CladEnum<global::Anki.Cozmo.AnimationTrigger>.FromName("CodeLabCelebrate");
 
-    /// <summary>CLAD <c>CodeLabChatty</c> (36).</summary>
+    /// <summary>CLAD member <c>CodeLabChatty</c> (id 36).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.AnimationTrigger> CodeLabChatty = CladEnum<global::Anki.Cozmo.AnimationTrigger>.FromName("CodeLabChatty");
 
-    /// <summary>CLAD <c>CodeLabChicken</c> (37).</summary>
+    /// <summary>CLAD member <c>CodeLabChicken</c> (id 37).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.AnimationTrigger> CodeLabChicken = CladEnum<global::Anki.Cozmo.AnimationTrigger>.FromName("CodeLabChicken");
 
-    /// <summary>CLAD <c>CodeLabConducting</c> (38).</summary>
+    /// <summary>CLAD member <c>CodeLabConducting</c> (id 38).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.AnimationTrigger> CodeLabConducting = CladEnum<global::Anki.Cozmo.AnimationTrigger>.FromName("CodeLabConducting");
 
-    /// <summary>CLAD <c>CodeLabCow</c> (39).</summary>
+    /// <summary>CLAD member <c>CodeLabCow</c> (id 39).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.AnimationTrigger> CodeLabCow = CladEnum<global::Anki.Cozmo.AnimationTrigger>.FromName("CodeLabCow");
 
-    /// <summary>CLAD <c>CodeLabCurious</c> (40).</summary>
+    /// <summary>CLAD member <c>CodeLabCurious</c> (id 40).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.AnimationTrigger> CodeLabCurious = CladEnum<global::Anki.Cozmo.AnimationTrigger>.FromName("CodeLabCurious");
 
-    /// <summary>CLAD <c>CodeLabDancingMambo</c> (41).</summary>
+    /// <summary>CLAD member <c>CodeLabDancingMambo</c> (id 41).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.AnimationTrigger> CodeLabDancingMambo = CladEnum<global::Anki.Cozmo.AnimationTrigger>.FromName("CodeLabDancingMambo");
 
-    /// <summary>CLAD <c>CodeLabDejected</c> (42).</summary>
+    /// <summary>CLAD member <c>CodeLabDejected</c> (id 42).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.AnimationTrigger> CodeLabDejected = CladEnum<global::Anki.Cozmo.AnimationTrigger>.FromName("CodeLabDejected");
 
-    /// <summary>CLAD <c>CodeLabDizzy</c> (43).</summary>
+    /// <summary>CLAD member <c>CodeLabDizzy</c> (id 43).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.AnimationTrigger> CodeLabDizzy = CladEnum<global::Anki.Cozmo.AnimationTrigger>.FromName("CodeLabDizzy");
 
-    /// <summary>CLAD <c>CodeLabDizzyEnd</c> (44).</summary>
+    /// <summary>CLAD member <c>CodeLabDizzyEnd</c> (id 44).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.AnimationTrigger> CodeLabDizzyEnd = CladEnum<global::Anki.Cozmo.AnimationTrigger>.FromName("CodeLabDizzyEnd");
 
-    /// <summary>CLAD <c>CodeLabDog</c> (45).</summary>
+    /// <summary>CLAD member <c>CodeLabDog</c> (id 45).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.AnimationTrigger> CodeLabDog = CladEnum<global::Anki.Cozmo.AnimationTrigger>.FromName("CodeLabDog");
 
-    /// <summary>CLAD <c>CodeLabDuck</c> (46).</summary>
+    /// <summary>CLAD member <c>CodeLabDuck</c> (id 46).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.AnimationTrigger> CodeLabDuck = CladEnum<global::Anki.Cozmo.AnimationTrigger>.FromName("CodeLabDuck");
 
-    /// <summary>CLAD <c>CodeLabElephant</c> (47).</summary>
+    /// <summary>CLAD member <c>CodeLabElephant</c> (id 47).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.AnimationTrigger> CodeLabElephant = CladEnum<global::Anki.Cozmo.AnimationTrigger>.FromName("CodeLabElephant");
 
-    /// <summary>CLAD <c>CodeLabEnergyEat</c> (48).</summary>
+    /// <summary>CLAD member <c>CodeLabEnergyEat</c> (id 48).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.AnimationTrigger> CodeLabEnergyEat = CladEnum<global::Anki.Cozmo.AnimationTrigger>.FromName("CodeLabEnergyEat");
 
-    /// <summary>CLAD <c>CodeLabEnter</c> (49).</summary>
+    /// <summary>CLAD member <c>CodeLabEnter</c> (id 49).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.AnimationTrigger> CodeLabEnter = CladEnum<global::Anki.Cozmo.AnimationTrigger>.FromName("CodeLabEnter");
 
-    /// <summary>CLAD <c>CodeLabExcited</c> (50).</summary>
+    /// <summary>CLAD member <c>CodeLabExcited</c> (id 50).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.AnimationTrigger> CodeLabExcited = CladEnum<global::Anki.Cozmo.AnimationTrigger>.FromName("CodeLabExcited");
 
-    /// <summary>CLAD <c>CodeLabExit</c> (51).</summary>
+    /// <summary>CLAD member <c>CodeLabExit</c> (id 51).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.AnimationTrigger> CodeLabExit = CladEnum<global::Anki.Cozmo.AnimationTrigger>.FromName("CodeLabExit");
 
-    /// <summary>CLAD <c>CodeLabFireTruck</c> (52).</summary>
+    /// <summary>CLAD member <c>CodeLabFireTruck</c> (id 52).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.AnimationTrigger> CodeLabFireTruck = CladEnum<global::Anki.Cozmo.AnimationTrigger>.FromName("CodeLabFireTruck");
 
-    /// <summary>CLAD <c>CodeLabFrog</c> (53).</summary>
+    /// <summary>CLAD member <c>CodeLabFrog</c> (id 53).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.AnimationTrigger> CodeLabFrog = CladEnum<global::Anki.Cozmo.AnimationTrigger>.FromName("CodeLabFrog");
 
-    /// <summary>CLAD <c>CodeLabFrustrated</c> (54).</summary>
+    /// <summary>CLAD member <c>CodeLabFrustrated</c> (id 54).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.AnimationTrigger> CodeLabFrustrated = CladEnum<global::Anki.Cozmo.AnimationTrigger>.FromName("CodeLabFrustrated");
 
-    /// <summary>CLAD <c>CodeLabGetInPos</c> (55).</summary>
+    /// <summary>CLAD member <c>CodeLabGetInPos</c> (id 55).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.AnimationTrigger> CodeLabGetInPos = CladEnum<global::Anki.Cozmo.AnimationTrigger>.FromName("CodeLabGetInPos");
 
-    /// <summary>CLAD <c>CodeLabGhoul</c> (56).</summary>
+    /// <summary>CLAD member <c>CodeLabGhoul</c> (id 56).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.AnimationTrigger> CodeLabGhoul = CladEnum<global::Anki.Cozmo.AnimationTrigger>.FromName("CodeLabGhoul");
 
-    /// <summary>CLAD <c>CodeLabHappy</c> (57).</summary>
+    /// <summary>CLAD member <c>CodeLabHappy</c> (id 57).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.AnimationTrigger> CodeLabHappy = CladEnum<global::Anki.Cozmo.AnimationTrigger>.FromName("CodeLabHappy");
 
-    /// <summary>CLAD <c>CodeLabHeadsUp</c> (58).</summary>
+    /// <summary>CLAD member <c>CodeLabHeadsUp</c> (id 58).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.AnimationTrigger> CodeLabHeadsUp = CladEnum<global::Anki.Cozmo.AnimationTrigger>.FromName("CodeLabHeadsUp");
 
-    /// <summary>CLAD <c>CodeLabHelium</c> (59).</summary>
+    /// <summary>CLAD member <c>CodeLabHelium</c> (id 59).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.AnimationTrigger> CodeLabHelium = CladEnum<global::Anki.Cozmo.AnimationTrigger>.FromName("CodeLabHelium");
 
-    /// <summary>CLAD <c>CodeLabHiccup</c> (60).</summary>
+    /// <summary>CLAD member <c>CodeLabHiccup</c> (id 60).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.AnimationTrigger> CodeLabHiccup = CladEnum<global::Anki.Cozmo.AnimationTrigger>.FromName("CodeLabHiccup");
 
-    /// <summary>CLAD <c>CodeLabIDK</c> (61).</summary>
+    /// <summary>CLAD member <c>CodeLabIDK</c> (id 61).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.AnimationTrigger> CodeLabIDK = CladEnum<global::Anki.Cozmo.AnimationTrigger>.FromName("CodeLabIDK");
 
-    /// <summary>CLAD <c>CodeLabIdle</c> (62).</summary>
+    /// <summary>CLAD member <c>CodeLabIdle</c> (id 62).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.AnimationTrigger> CodeLabIdle = CladEnum<global::Anki.Cozmo.AnimationTrigger>.FromName("CodeLabIdle");
 
-    /// <summary>CLAD <c>CodeLabLose</c> (63).</summary>
+    /// <summary>CLAD member <c>CodeLabLose</c> (id 63).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.AnimationTrigger> CodeLabLose = CladEnum<global::Anki.Cozmo.AnimationTrigger>.FromName("CodeLabLose");
 
-    /// <summary>CLAD <c>CodeLabNo</c> (64).</summary>
+    /// <summary>CLAD member <c>CodeLabNo</c> (id 64).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.AnimationTrigger> CodeLabNo = CladEnum<global::Anki.Cozmo.AnimationTrigger>.FromName("CodeLabNo");
 
-    /// <summary>CLAD <c>CodeLabPartyTime</c> (65).</summary>
+    /// <summary>CLAD member <c>CodeLabPartyTime</c> (id 65).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.AnimationTrigger> CodeLabPartyTime = CladEnum<global::Anki.Cozmo.AnimationTrigger>.FromName("CodeLabPartyTime");
 
-    /// <summary>CLAD <c>CodeLabRattleSnake</c> (66).</summary>
+    /// <summary>CLAD member <c>CodeLabRattleSnake</c> (id 66).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.AnimationTrigger> CodeLabRattleSnake = CladEnum<global::Anki.Cozmo.AnimationTrigger>.FromName("CodeLabRattleSnake");
 
-    /// <summary>CLAD <c>CodeLabReactHappy</c> (67).</summary>
+    /// <summary>CLAD member <c>CodeLabReactHappy</c> (id 67).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.AnimationTrigger> CodeLabReactHappy = CladEnum<global::Anki.Cozmo.AnimationTrigger>.FromName("CodeLabReactHappy");
 
-    /// <summary>CLAD <c>CodeLabRooster</c> (68).</summary>
+    /// <summary>CLAD member <c>CodeLabRooster</c> (id 68).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.AnimationTrigger> CodeLabRooster = CladEnum<global::Anki.Cozmo.AnimationTrigger>.FromName("CodeLabRooster");
 
-    /// <summary>CLAD <c>CodeLabScaredCozmo</c> (69).</summary>
+    /// <summary>CLAD member <c>CodeLabScaredCozmo</c> (id 69).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.AnimationTrigger> CodeLabScaredCozmo = CladEnum<global::Anki.Cozmo.AnimationTrigger>.FromName("CodeLabScaredCozmo");
 
-    /// <summary>CLAD <c>CodeLabScaryCozmo</c> (70).</summary>
+    /// <summary>CLAD member <c>CodeLabScaryCozmo</c> (id 70).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.AnimationTrigger> CodeLabScaryCozmo = CladEnum<global::Anki.Cozmo.AnimationTrigger>.FromName("CodeLabScaryCozmo");
 
-    /// <summary>CLAD <c>CodeLabSheep</c> (71).</summary>
+    /// <summary>CLAD member <c>CodeLabSheep</c> (id 71).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.AnimationTrigger> CodeLabSheep = CladEnum<global::Anki.Cozmo.AnimationTrigger>.FromName("CodeLabSheep");
 
-    /// <summary>CLAD <c>CodeLabSleep</c> (72).</summary>
+    /// <summary>CLAD member <c>CodeLabSleep</c> (id 72).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.AnimationTrigger> CodeLabSleep = CladEnum<global::Anki.Cozmo.AnimationTrigger>.FromName("CodeLabSleep");
 
-    /// <summary>CLAD <c>CodeLabSneeze</c> (73).</summary>
+    /// <summary>CLAD member <c>CodeLabSneeze</c> (id 73).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.AnimationTrigger> CodeLabSneeze = CladEnum<global::Anki.Cozmo.AnimationTrigger>.FromName("CodeLabSneeze");
 
-    /// <summary>CLAD <c>CodeLabSquint1</c> (74).</summary>
+    /// <summary>CLAD member <c>CodeLabSquint1</c> (id 74).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.AnimationTrigger> CodeLabSquint1 = CladEnum<global::Anki.Cozmo.AnimationTrigger>.FromName("CodeLabSquint1");
 
-    /// <summary>CLAD <c>CodeLabSquint2</c> (75).</summary>
+    /// <summary>CLAD member <c>CodeLabSquint2</c> (id 75).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.AnimationTrigger> CodeLabSquint2 = CladEnum<global::Anki.Cozmo.AnimationTrigger>.FromName("CodeLabSquint2");
 
-    /// <summary>CLAD <c>CodeLabStaring</c> (76).</summary>
+    /// <summary>CLAD member <c>CodeLabStaring</c> (id 76).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.AnimationTrigger> CodeLabStaring = CladEnum<global::Anki.Cozmo.AnimationTrigger>.FromName("CodeLabStaring");
 
-    /// <summary>CLAD <c>CodeLabSurprise</c> (77).</summary>
+    /// <summary>CLAD member <c>CodeLabSurprise</c> (id 77).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.AnimationTrigger> CodeLabSurprise = CladEnum<global::Anki.Cozmo.AnimationTrigger>.FromName("CodeLabSurprise");
 
-    /// <summary>CLAD <c>CodeLabTakaTaka</c> (78).</summary>
+    /// <summary>CLAD member <c>CodeLabTakaTaka</c> (id 78).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.AnimationTrigger> CodeLabTakaTaka = CladEnum<global::Anki.Cozmo.AnimationTrigger>.FromName("CodeLabTakaTaka");
 
-    /// <summary>CLAD <c>CodeLabTapCube</c> (79).</summary>
+    /// <summary>CLAD member <c>CodeLabTapCube</c> (id 79).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.AnimationTrigger> CodeLabTapCube = CladEnum<global::Anki.Cozmo.AnimationTrigger>.FromName("CodeLabTapCube");
 
-    /// <summary>CLAD <c>CodeLabThinking</c> (80).</summary>
+    /// <summary>CLAD member <c>CodeLabThinking</c> (id 80).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.AnimationTrigger> CodeLabThinking = CladEnum<global::Anki.Cozmo.AnimationTrigger>.FromName("CodeLabThinking");
 
-    /// <summary>CLAD <c>CodeLabTiger</c> (81).</summary>
+    /// <summary>CLAD member <c>CodeLabTiger</c> (id 81).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.AnimationTrigger> CodeLabTiger = CladEnum<global::Anki.Cozmo.AnimationTrigger>.FromName("CodeLabTiger");
 
-    /// <summary>CLAD <c>CodeLabTwitch</c> (82).</summary>
+    /// <summary>CLAD member <c>CodeLabTwitch</c> (id 82).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.AnimationTrigger> CodeLabTwitch = CladEnum<global::Anki.Cozmo.AnimationTrigger>.FromName("CodeLabTwitch");
 
-    /// <summary>CLAD <c>CodeLabUnhappy</c> (83).</summary>
+    /// <summary>CLAD member <c>CodeLabUnhappy</c> (id 83).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.AnimationTrigger> CodeLabUnhappy = CladEnum<global::Anki.Cozmo.AnimationTrigger>.FromName("CodeLabUnhappy");
 
-    /// <summary>CLAD <c>CodeLabVampire</c> (84).</summary>
+    /// <summary>CLAD member <c>CodeLabVampire</c> (id 84).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.AnimationTrigger> CodeLabVampire = CladEnum<global::Anki.Cozmo.AnimationTrigger>.FromName("CodeLabVampire");
 
-    /// <summary>CLAD <c>CodeLabVictory</c> (85).</summary>
+    /// <summary>CLAD member <c>CodeLabVictory</c> (id 85).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.AnimationTrigger> CodeLabVictory = CladEnum<global::Anki.Cozmo.AnimationTrigger>.FromName("CodeLabVictory");
 
-    /// <summary>CLAD <c>CodeLabWhee1</c> (86).</summary>
+    /// <summary>CLAD member <c>CodeLabWhee1</c> (id 86).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.AnimationTrigger> CodeLabWhee1 = CladEnum<global::Anki.Cozmo.AnimationTrigger>.FromName("CodeLabWhee1");
 
-    /// <summary>CLAD <c>CodeLabWhee2</c> (87).</summary>
+    /// <summary>CLAD member <c>CodeLabWhee2</c> (id 87).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.AnimationTrigger> CodeLabWhee2 = CladEnum<global::Anki.Cozmo.AnimationTrigger>.FromName("CodeLabWhee2");
 
-    /// <summary>CLAD <c>CodeLabWhee3</c> (88).</summary>
+    /// <summary>CLAD member <c>CodeLabWhee3</c> (id 88).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.AnimationTrigger> CodeLabWhee3 = CladEnum<global::Anki.Cozmo.AnimationTrigger>.FromName("CodeLabWhee3");
 
-    /// <summary>CLAD <c>CodeLabWhee4</c> (89).</summary>
+    /// <summary>CLAD member <c>CodeLabWhee4</c> (id 89).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.AnimationTrigger> CodeLabWhee4 = CladEnum<global::Anki.Cozmo.AnimationTrigger>.FromName("CodeLabWhee4");
 
-    /// <summary>CLAD <c>CodeLabWhew</c> (90).</summary>
+    /// <summary>CLAD member <c>CodeLabWhew</c> (id 90).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.AnimationTrigger> CodeLabWhew = CladEnum<global::Anki.Cozmo.AnimationTrigger>.FromName("CodeLabWhew");
 
-    /// <summary>CLAD <c>CodeLabWhoa</c> (91).</summary>
+    /// <summary>CLAD member <c>CodeLabWhoa</c> (id 91).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.AnimationTrigger> CodeLabWhoa = CladEnum<global::Anki.Cozmo.AnimationTrigger>.FromName("CodeLabWhoa");
 
-    /// <summary>CLAD <c>CodeLabWin</c> (92).</summary>
+    /// <summary>CLAD member <c>CodeLabWin</c> (id 92).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.AnimationTrigger> CodeLabWin = CladEnum<global::Anki.Cozmo.AnimationTrigger>.FromName("CodeLabWin");
 
-    /// <summary>CLAD <c>CodeLabWondering</c> (93).</summary>
+    /// <summary>CLAD member <c>CodeLabWondering</c> (id 93).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.AnimationTrigger> CodeLabWondering = CladEnum<global::Anki.Cozmo.AnimationTrigger>.FromName("CodeLabWondering");
 
-    /// <summary>CLAD <c>CodeLabYes</c> (94).</summary>
+    /// <summary>CLAD member <c>CodeLabYes</c> (id 94).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.AnimationTrigger> CodeLabYes = CladEnum<global::Anki.Cozmo.AnimationTrigger>.FromName("CodeLabYes");
 
-    /// <summary>CLAD <c>CodeLabYuck</c> (95).</summary>
+    /// <summary>CLAD member <c>CodeLabYuck</c> (id 95).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.AnimationTrigger> CodeLabYuck = CladEnum<global::Anki.Cozmo.AnimationTrigger>.FromName("CodeLabYuck");
 
-    /// <summary>CLAD <c>CodeLabZombie</c> (96).</summary>
+    /// <summary>CLAD member <c>CodeLabZombie</c> (id 96).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.AnimationTrigger> CodeLabZombie = CladEnum<global::Anki.Cozmo.AnimationTrigger>.FromName("CodeLabZombie");
 
-    /// <summary>CLAD <c>ConnectWakeUp</c> (97).</summary>
+    /// <summary>CLAD member <c>ConnectWakeUp</c> (id 97).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.AnimationTrigger> ConnectWakeUp = CladEnum<global::Anki.Cozmo.AnimationTrigger>.FromName("ConnectWakeUp");
 
-    /// <summary>CLAD <c>ConnectWakeUp_SevereEnergy</c> (98).</summary>
+    /// <summary>CLAD member <c>ConnectWakeUp_SevereEnergy</c> (id 98).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.AnimationTrigger> ConnectWakeUp_SevereEnergy = CladEnum<global::Anki.Cozmo.AnimationTrigger>.FromName("ConnectWakeUp_SevereEnergy");
 
-    /// <summary>CLAD <c>ConnectWakeUp_SevereRepair</c> (99).</summary>
+    /// <summary>CLAD member <c>ConnectWakeUp_SevereRepair</c> (id 99).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.AnimationTrigger> ConnectWakeUp_SevereRepair = CladEnum<global::Anki.Cozmo.AnimationTrigger>.FromName("ConnectWakeUp_SevereRepair");
 
-    /// <summary>CLAD <c>ComeHere_AlreadyHere</c> (100).</summary>
+    /// <summary>CLAD member <c>ComeHere_AlreadyHere</c> (id 100).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.AnimationTrigger> ComeHere_AlreadyHere = CladEnum<global::Anki.Cozmo.AnimationTrigger>.FromName("ComeHere_AlreadyHere");
 
-    /// <summary>CLAD <c>ComeHere_SearchForFace</c> (101).</summary>
+    /// <summary>CLAD member <c>ComeHere_SearchForFace</c> (id 101).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.AnimationTrigger> ComeHere_SearchForFace = CladEnum<global::Anki.Cozmo.AnimationTrigger>.FromName("ComeHere_SearchForFace");
 
-    /// <summary>CLAD <c>ComeHere_SearchForFace_FoundFace</c> (102).</summary>
+    /// <summary>CLAD member <c>ComeHere_SearchForFace_FoundFace</c> (id 102).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.AnimationTrigger> ComeHere_SearchForFace_FoundFace = CladEnum<global::Anki.Cozmo.AnimationTrigger>.FromName("ComeHere_SearchForFace_FoundFace");
 
-    /// <summary>CLAD <c>CozmoSaysGetIn</c> (103).</summary>
+    /// <summary>CLAD member <c>CozmoSaysGetIn</c> (id 103).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.AnimationTrigger> CozmoSaysGetIn = CladEnum<global::Anki.Cozmo.AnimationTrigger>.FromName("CozmoSaysGetIn");
 
-    /// <summary>CLAD <c>CozmoSaysGetOut</c> (104).</summary>
+    /// <summary>CLAD member <c>CozmoSaysGetOut</c> (id 104).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.AnimationTrigger> CozmoSaysGetOut = CladEnum<global::Anki.Cozmo.AnimationTrigger>.FromName("CozmoSaysGetOut");
 
-    /// <summary>CLAD <c>CozmoSaysSpeakGetInShort</c> (105).</summary>
+    /// <summary>CLAD member <c>CozmoSaysSpeakGetInShort</c> (id 105).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.AnimationTrigger> CozmoSaysSpeakGetInShort = CladEnum<global::Anki.Cozmo.AnimationTrigger>.FromName("CozmoSaysSpeakGetInShort");
 
-    /// <summary>CLAD <c>CozmoSaysSpeakGetInMedium</c> (106).</summary>
+    /// <summary>CLAD member <c>CozmoSaysSpeakGetInMedium</c> (id 106).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.AnimationTrigger> CozmoSaysSpeakGetInMedium = CladEnum<global::Anki.Cozmo.AnimationTrigger>.FromName("CozmoSaysSpeakGetInMedium");
 
-    /// <summary>CLAD <c>CozmoSaysSpeakGetInLong</c> (107).</summary>
+    /// <summary>CLAD member <c>CozmoSaysSpeakGetInLong</c> (id 107).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.AnimationTrigger> CozmoSaysSpeakGetInLong = CladEnum<global::Anki.Cozmo.AnimationTrigger>.FromName("CozmoSaysSpeakGetInLong");
 
-    /// <summary>CLAD <c>CozmoSaysSpeakGetOutShort</c> (108).</summary>
+    /// <summary>CLAD member <c>CozmoSaysSpeakGetOutShort</c> (id 108).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.AnimationTrigger> CozmoSaysSpeakGetOutShort = CladEnum<global::Anki.Cozmo.AnimationTrigger>.FromName("CozmoSaysSpeakGetOutShort");
 
-    /// <summary>CLAD <c>CozmoSaysSpeakGetOutMedium</c> (109).</summary>
+    /// <summary>CLAD member <c>CozmoSaysSpeakGetOutMedium</c> (id 109).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.AnimationTrigger> CozmoSaysSpeakGetOutMedium = CladEnum<global::Anki.Cozmo.AnimationTrigger>.FromName("CozmoSaysSpeakGetOutMedium");
 
-    /// <summary>CLAD <c>CozmoSaysSpeakGetOutLong</c> (110).</summary>
+    /// <summary>CLAD member <c>CozmoSaysSpeakGetOutLong</c> (id 110).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.AnimationTrigger> CozmoSaysSpeakGetOutLong = CladEnum<global::Anki.Cozmo.AnimationTrigger>.FromName("CozmoSaysSpeakGetOutLong");
 
-    /// <summary>CLAD <c>CozmoSaysSpeakLoop</c> (111).</summary>
+    /// <summary>CLAD member <c>CozmoSaysSpeakLoop</c> (id 111).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.AnimationTrigger> CozmoSaysSpeakLoop = CladEnum<global::Anki.Cozmo.AnimationTrigger>.FromName("CozmoSaysSpeakLoop");
 
-    /// <summary>CLAD <c>CozmoSaysBadWord</c> (112).</summary>
+    /// <summary>CLAD member <c>CozmoSaysBadWord</c> (id 112).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.AnimationTrigger> CozmoSaysBadWord = CladEnum<global::Anki.Cozmo.AnimationTrigger>.FromName("CozmoSaysBadWord");
 
-    /// <summary>CLAD <c>CozmoSaysIdle</c> (113).</summary>
+    /// <summary>CLAD member <c>CozmoSaysIdle</c> (id 113).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.AnimationTrigger> CozmoSaysIdle = CladEnum<global::Anki.Cozmo.AnimationTrigger>.FromName("CozmoSaysIdle");
 
-    /// <summary>CLAD <c>CubeMovedSense</c> (114).</summary>
+    /// <summary>CLAD member <c>CubeMovedSense</c> (id 114).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.AnimationTrigger> CubeMovedSense = CladEnum<global::Anki.Cozmo.AnimationTrigger>.FromName("CubeMovedSense");
 
-    /// <summary>CLAD <c>CubeMovedUpset</c> (115).</summary>
+    /// <summary>CLAD member <c>CubeMovedUpset</c> (id 115).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.AnimationTrigger> CubeMovedUpset = CladEnum<global::Anki.Cozmo.AnimationTrigger>.FromName("CubeMovedUpset");
 
-    /// <summary>CLAD <c>CubePounceFake</c> (116).</summary>
+    /// <summary>CLAD member <c>CubePounceFake</c> (id 116).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.AnimationTrigger> CubePounceFake = CladEnum<global::Anki.Cozmo.AnimationTrigger>.FromName("CubePounceFake");
 
-    /// <summary>CLAD <c>CubePounceGetIn</c> (117).</summary>
+    /// <summary>CLAD member <c>CubePounceGetIn</c> (id 117).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.AnimationTrigger> CubePounceGetIn = CladEnum<global::Anki.Cozmo.AnimationTrigger>.FromName("CubePounceGetIn");
 
-    /// <summary>CLAD <c>CubePounceGetOut</c> (118).</summary>
+    /// <summary>CLAD member <c>CubePounceGetOut</c> (id 118).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.AnimationTrigger> CubePounceGetOut = CladEnum<global::Anki.Cozmo.AnimationTrigger>.FromName("CubePounceGetOut");
 
-    /// <summary>CLAD <c>CubePounceGetReady</c> (119).</summary>
+    /// <summary>CLAD member <c>CubePounceGetReady</c> (id 119).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.AnimationTrigger> CubePounceGetReady = CladEnum<global::Anki.Cozmo.AnimationTrigger>.FromName("CubePounceGetReady");
 
-    /// <summary>CLAD <c>CubePounceGetUnready</c> (120).</summary>
+    /// <summary>CLAD member <c>CubePounceGetUnready</c> (id 120).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.AnimationTrigger> CubePounceGetUnready = CladEnum<global::Anki.Cozmo.AnimationTrigger>.FromName("CubePounceGetUnready");
 
-    /// <summary>CLAD <c>CubePounceIdleLiftDown</c> (121).</summary>
+    /// <summary>CLAD member <c>CubePounceIdleLiftDown</c> (id 121).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.AnimationTrigger> CubePounceIdleLiftDown = CladEnum<global::Anki.Cozmo.AnimationTrigger>.FromName("CubePounceIdleLiftDown");
 
-    /// <summary>CLAD <c>CubePounceIdleLiftUp</c> (122).</summary>
+    /// <summary>CLAD member <c>CubePounceIdleLiftUp</c> (id 122).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.AnimationTrigger> CubePounceIdleLiftUp = CladEnum<global::Anki.Cozmo.AnimationTrigger>.FromName("CubePounceIdleLiftUp");
 
-    /// <summary>CLAD <c>CubePounceLoseHand</c> (123).</summary>
+    /// <summary>CLAD member <c>CubePounceLoseHand</c> (id 123).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.AnimationTrigger> CubePounceLoseHand = CladEnum<global::Anki.Cozmo.AnimationTrigger>.FromName("CubePounceLoseHand");
 
-    /// <summary>CLAD <c>CubePounceLoseRound</c> (124).</summary>
+    /// <summary>CLAD member <c>CubePounceLoseRound</c> (id 124).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.AnimationTrigger> CubePounceLoseRound = CladEnum<global::Anki.Cozmo.AnimationTrigger>.FromName("CubePounceLoseRound");
 
-    /// <summary>CLAD <c>CubePounceLoseSession</c> (125).</summary>
+    /// <summary>CLAD member <c>CubePounceLoseSession</c> (id 125).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.AnimationTrigger> CubePounceLoseSession = CladEnum<global::Anki.Cozmo.AnimationTrigger>.FromName("CubePounceLoseSession");
 
-    /// <summary>CLAD <c>CubePouncePounceClose</c> (126).</summary>
+    /// <summary>CLAD member <c>CubePouncePounceClose</c> (id 126).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.AnimationTrigger> CubePouncePounceClose = CladEnum<global::Anki.Cozmo.AnimationTrigger>.FromName("CubePouncePounceClose");
 
-    /// <summary>CLAD <c>CubePouncePounceNormal</c> (127).</summary>
+    /// <summary>CLAD member <c>CubePouncePounceNormal</c> (id 127).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.AnimationTrigger> CubePouncePounceNormal = CladEnum<global::Anki.Cozmo.AnimationTrigger>.FromName("CubePouncePounceNormal");
 
-    /// <summary>CLAD <c>CubePounceWinHand</c> (128).</summary>
+    /// <summary>CLAD member <c>CubePounceWinHand</c> (id 128).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.AnimationTrigger> CubePounceWinHand = CladEnum<global::Anki.Cozmo.AnimationTrigger>.FromName("CubePounceWinHand");
 
-    /// <summary>CLAD <c>CubePounceWinRound</c> (129).</summary>
+    /// <summary>CLAD member <c>CubePounceWinRound</c> (id 129).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.AnimationTrigger> CubePounceWinRound = CladEnum<global::Anki.Cozmo.AnimationTrigger>.FromName("CubePounceWinRound");
 
-    /// <summary>CLAD <c>CubePounceWinSession</c> (130).</summary>
+    /// <summary>CLAD member <c>CubePounceWinSession</c> (id 130).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.AnimationTrigger> CubePounceWinSession = CladEnum<global::Anki.Cozmo.AnimationTrigger>.FromName("CubePounceWinSession");
 
-    /// <summary>CLAD <c>DanceMambo</c> (131).</summary>
+    /// <summary>CLAD member <c>DanceMambo</c> (id 131).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.AnimationTrigger> DanceMambo = CladEnum<global::Anki.Cozmo.AnimationTrigger>.FromName("DanceMambo");
 
-    /// <summary>CLAD <c>DemoSpeedTapCozmoWin</c> (132).</summary>
+    /// <summary>CLAD member <c>DemoSpeedTapCozmoWin</c> (id 132).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.AnimationTrigger> DemoSpeedTapCozmoWin = CladEnum<global::Anki.Cozmo.AnimationTrigger>.FromName("DemoSpeedTapCozmoWin");
 
-    /// <summary>CLAD <c>DemoSpeedTapCozmoLose</c> (133).</summary>
+    /// <summary>CLAD member <c>DemoSpeedTapCozmoLose</c> (id 133).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.AnimationTrigger> DemoSpeedTapCozmoLose = CladEnum<global::Anki.Cozmo.AnimationTrigger>.FromName("DemoSpeedTapCozmoLose");
 
-    /// <summary>CLAD <c>DizzyReactionHard</c> (134).</summary>
+    /// <summary>CLAD member <c>DizzyReactionHard</c> (id 134).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.AnimationTrigger> DizzyReactionHard = CladEnum<global::Anki.Cozmo.AnimationTrigger>.FromName("DizzyReactionHard");
 
-    /// <summary>CLAD <c>DizzyReactionMedium</c> (135).</summary>
+    /// <summary>CLAD member <c>DizzyReactionMedium</c> (id 135).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.AnimationTrigger> DizzyReactionMedium = CladEnum<global::Anki.Cozmo.AnimationTrigger>.FromName("DizzyReactionMedium");
 
-    /// <summary>CLAD <c>DizzyReactionSoft</c> (136).</summary>
+    /// <summary>CLAD member <c>DizzyReactionSoft</c> (id 136).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.AnimationTrigger> DizzyReactionSoft = CladEnum<global::Anki.Cozmo.AnimationTrigger>.FromName("DizzyReactionSoft");
 
-    /// <summary>CLAD <c>DizzyShakeLoop</c> (137).</summary>
+    /// <summary>CLAD member <c>DizzyShakeLoop</c> (id 137).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.AnimationTrigger> DizzyShakeLoop = CladEnum<global::Anki.Cozmo.AnimationTrigger>.FromName("DizzyShakeLoop");
 
-    /// <summary>CLAD <c>DizzyShakeStop</c> (138).</summary>
+    /// <summary>CLAD member <c>DizzyShakeStop</c> (id 138).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.AnimationTrigger> DizzyShakeStop = CladEnum<global::Anki.Cozmo.AnimationTrigger>.FromName("DizzyShakeStop");
 
-    /// <summary>CLAD <c>DizzyStillPickedUp</c> (139).</summary>
+    /// <summary>CLAD member <c>DizzyStillPickedUp</c> (id 139).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.AnimationTrigger> DizzyStillPickedUp = CladEnum<global::Anki.Cozmo.AnimationTrigger>.FromName("DizzyStillPickedUp");
 
-    /// <summary>CLAD <c>DriveEndAngry</c> (140).</summary>
+    /// <summary>CLAD member <c>DriveEndAngry</c> (id 140).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.AnimationTrigger> DriveEndAngry = CladEnum<global::Anki.Cozmo.AnimationTrigger>.FromName("DriveEndAngry");
 
-    /// <summary>CLAD <c>DriveEndDefault</c> (141).</summary>
+    /// <summary>CLAD member <c>DriveEndDefault</c> (id 141).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.AnimationTrigger> DriveEndDefault = CladEnum<global::Anki.Cozmo.AnimationTrigger>.FromName("DriveEndDefault");
 
-    /// <summary>CLAD <c>DriveEndHappy</c> (142).</summary>
+    /// <summary>CLAD member <c>DriveEndHappy</c> (id 142).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.AnimationTrigger> DriveEndHappy = CladEnum<global::Anki.Cozmo.AnimationTrigger>.FromName("DriveEndHappy");
 
-    /// <summary>CLAD <c>DriveEndLaunch</c> (143).</summary>
+    /// <summary>CLAD member <c>DriveEndLaunch</c> (id 143).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.AnimationTrigger> DriveEndLaunch = CladEnum<global::Anki.Cozmo.AnimationTrigger>.FromName("DriveEndLaunch");
 
-    /// <summary>CLAD <c>DriveLoopAngry</c> (144).</summary>
+    /// <summary>CLAD member <c>DriveLoopAngry</c> (id 144).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.AnimationTrigger> DriveLoopAngry = CladEnum<global::Anki.Cozmo.AnimationTrigger>.FromName("DriveLoopAngry");
 
-    /// <summary>CLAD <c>DriveLoopDefault</c> (145).</summary>
+    /// <summary>CLAD member <c>DriveLoopDefault</c> (id 145).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.AnimationTrigger> DriveLoopDefault = CladEnum<global::Anki.Cozmo.AnimationTrigger>.FromName("DriveLoopDefault");
 
-    /// <summary>CLAD <c>DriveLoopHappy</c> (146).</summary>
+    /// <summary>CLAD member <c>DriveLoopHappy</c> (id 146).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.AnimationTrigger> DriveLoopHappy = CladEnum<global::Anki.Cozmo.AnimationTrigger>.FromName("DriveLoopHappy");
 
-    /// <summary>CLAD <c>DriveLoopLaunch</c> (147).</summary>
+    /// <summary>CLAD member <c>DriveLoopLaunch</c> (id 147).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.AnimationTrigger> DriveLoopLaunch = CladEnum<global::Anki.Cozmo.AnimationTrigger>.FromName("DriveLoopLaunch");
 
-    /// <summary>CLAD <c>DriveStartAngry</c> (148).</summary>
+    /// <summary>CLAD member <c>DriveStartAngry</c> (id 148).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.AnimationTrigger> DriveStartAngry = CladEnum<global::Anki.Cozmo.AnimationTrigger>.FromName("DriveStartAngry");
 
-    /// <summary>CLAD <c>DriveStartDefault</c> (149).</summary>
+    /// <summary>CLAD member <c>DriveStartDefault</c> (id 149).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.AnimationTrigger> DriveStartDefault = CladEnum<global::Anki.Cozmo.AnimationTrigger>.FromName("DriveStartDefault");
 
-    /// <summary>CLAD <c>DriveStartHappy</c> (150).</summary>
+    /// <summary>CLAD member <c>DriveStartHappy</c> (id 150).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.AnimationTrigger> DriveStartHappy = CladEnum<global::Anki.Cozmo.AnimationTrigger>.FromName("DriveStartHappy");
 
-    /// <summary>CLAD <c>DriveStartLaunch</c> (151).</summary>
+    /// <summary>CLAD member <c>DriveStartLaunch</c> (id 151).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.AnimationTrigger> DriveStartLaunch = CladEnum<global::Anki.Cozmo.AnimationTrigger>.FromName("DriveStartLaunch");
 
-    /// <summary>CLAD <c>DroneModeBackwardDrivingEnd</c> (152).</summary>
+    /// <summary>CLAD member <c>DroneModeBackwardDrivingEnd</c> (id 152).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.AnimationTrigger> DroneModeBackwardDrivingEnd = CladEnum<global::Anki.Cozmo.AnimationTrigger>.FromName("DroneModeBackwardDrivingEnd");
 
-    /// <summary>CLAD <c>DroneModeBackwardDrivingLoop</c> (153).</summary>
+    /// <summary>CLAD member <c>DroneModeBackwardDrivingLoop</c> (id 153).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.AnimationTrigger> DroneModeBackwardDrivingLoop = CladEnum<global::Anki.Cozmo.AnimationTrigger>.FromName("DroneModeBackwardDrivingLoop");
 
-    /// <summary>CLAD <c>DroneModeBackwardDrivingStart</c> (154).</summary>
+    /// <summary>CLAD member <c>DroneModeBackwardDrivingStart</c> (id 154).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.AnimationTrigger> DroneModeBackwardDrivingStart = CladEnum<global::Anki.Cozmo.AnimationTrigger>.FromName("DroneModeBackwardDrivingStart");
 
-    /// <summary>CLAD <c>DroneModeCliffEvent</c> (155).</summary>
+    /// <summary>CLAD member <c>DroneModeCliffEvent</c> (id 155).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.AnimationTrigger> DroneModeCliffEvent = CladEnum<global::Anki.Cozmo.AnimationTrigger>.FromName("DroneModeCliffEvent");
 
-    /// <summary>CLAD <c>DroneModeForwardDrivingEnd</c> (156).</summary>
+    /// <summary>CLAD member <c>DroneModeForwardDrivingEnd</c> (id 156).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.AnimationTrigger> DroneModeForwardDrivingEnd = CladEnum<global::Anki.Cozmo.AnimationTrigger>.FromName("DroneModeForwardDrivingEnd");
 
-    /// <summary>CLAD <c>DroneModeForwardDrivingLoop</c> (157).</summary>
+    /// <summary>CLAD member <c>DroneModeForwardDrivingLoop</c> (id 157).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.AnimationTrigger> DroneModeForwardDrivingLoop = CladEnum<global::Anki.Cozmo.AnimationTrigger>.FromName("DroneModeForwardDrivingLoop");
 
-    /// <summary>CLAD <c>DroneModeForwardDrivingStart</c> (158).</summary>
+    /// <summary>CLAD member <c>DroneModeForwardDrivingStart</c> (id 158).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.AnimationTrigger> DroneModeForwardDrivingStart = CladEnum<global::Anki.Cozmo.AnimationTrigger>.FromName("DroneModeForwardDrivingStart");
 
-    /// <summary>CLAD <c>DroneModeGetIn</c> (159).</summary>
+    /// <summary>CLAD member <c>DroneModeGetIn</c> (id 159).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.AnimationTrigger> DroneModeGetIn = CladEnum<global::Anki.Cozmo.AnimationTrigger>.FromName("DroneModeGetIn");
 
-    /// <summary>CLAD <c>DroneModeGetOut</c> (160).</summary>
+    /// <summary>CLAD member <c>DroneModeGetOut</c> (id 160).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.AnimationTrigger> DroneModeGetOut = CladEnum<global::Anki.Cozmo.AnimationTrigger>.FromName("DroneModeGetOut");
 
-    /// <summary>CLAD <c>DroneModeIdle</c> (161).</summary>
+    /// <summary>CLAD member <c>DroneModeIdle</c> (id 161).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.AnimationTrigger> DroneModeIdle = CladEnum<global::Anki.Cozmo.AnimationTrigger>.FromName("DroneModeIdle");
 
-    /// <summary>CLAD <c>DroneModeKeepAlive</c> (162).</summary>
+    /// <summary>CLAD member <c>DroneModeKeepAlive</c> (id 162).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.AnimationTrigger> DroneModeKeepAlive = CladEnum<global::Anki.Cozmo.AnimationTrigger>.FromName("DroneModeKeepAlive");
 
-    /// <summary>CLAD <c>DroneModeTurboDrivingStart</c> (163).</summary>
+    /// <summary>CLAD member <c>DroneModeTurboDrivingStart</c> (id 163).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.AnimationTrigger> DroneModeTurboDrivingStart = CladEnum<global::Anki.Cozmo.AnimationTrigger>.FromName("DroneModeTurboDrivingStart");
 
-    /// <summary>CLAD <c>EarnedSparks</c> (164).</summary>
+    /// <summary>CLAD member <c>EarnedSparks</c> (id 164).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.AnimationTrigger> EarnedSparks = CladEnum<global::Anki.Cozmo.AnimationTrigger>.FromName("EarnedSparks");
 
-    /// <summary>CLAD <c>FacePlantRoll</c> (165).</summary>
+    /// <summary>CLAD member <c>FacePlantRoll</c> (id 165).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.AnimationTrigger> FacePlantRoll = CladEnum<global::Anki.Cozmo.AnimationTrigger>.FromName("FacePlantRoll");
 
-    /// <summary>CLAD <c>FacePlantRollArmUp</c> (166).</summary>
+    /// <summary>CLAD member <c>FacePlantRollArmUp</c> (id 166).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.AnimationTrigger> FacePlantRollArmUp = CladEnum<global::Anki.Cozmo.AnimationTrigger>.FromName("FacePlantRollArmUp");
 
-    /// <summary>CLAD <c>FailedToRightFromFace</c> (167).</summary>
+    /// <summary>CLAD member <c>FailedToRightFromFace</c> (id 167).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.AnimationTrigger> FailedToRightFromFace = CladEnum<global::Anki.Cozmo.AnimationTrigger>.FromName("FailedToRightFromFace");
 
-    /// <summary>CLAD <c>FeedingAteFullEnough_Normal</c> (168).</summary>
+    /// <summary>CLAD member <c>FeedingAteFullEnough_Normal</c> (id 168).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.AnimationTrigger> FeedingAteFullEnough_Normal = CladEnum<global::Anki.Cozmo.AnimationTrigger>.FromName("FeedingAteFullEnough_Normal");
 
-    /// <summary>CLAD <c>FeedingAteFullEnough_Severe</c> (169).</summary>
+    /// <summary>CLAD member <c>FeedingAteFullEnough_Severe</c> (id 169).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.AnimationTrigger> FeedingAteFullEnough_Severe = CladEnum<global::Anki.Cozmo.AnimationTrigger>.FromName("FeedingAteFullEnough_Severe");
 
-    /// <summary>CLAD <c>FeedingAteNotFullEnough_Normal</c> (170).</summary>
+    /// <summary>CLAD member <c>FeedingAteNotFullEnough_Normal</c> (id 170).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.AnimationTrigger> FeedingAteNotFullEnough_Normal = CladEnum<global::Anki.Cozmo.AnimationTrigger>.FromName("FeedingAteNotFullEnough_Normal");
 
-    /// <summary>CLAD <c>FeedingAteNotFullEnough_Severe</c> (171).</summary>
+    /// <summary>CLAD member <c>FeedingAteNotFullEnough_Severe</c> (id 171).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.AnimationTrigger> FeedingAteNotFullEnough_Severe = CladEnum<global::Anki.Cozmo.AnimationTrigger>.FromName("FeedingAteNotFullEnough_Severe");
 
-    /// <summary>CLAD <c>FeedingDrivingGetIn_Severe</c> (172).</summary>
+    /// <summary>CLAD member <c>FeedingDrivingGetIn_Severe</c> (id 172).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.AnimationTrigger> FeedingDrivingGetIn_Severe = CladEnum<global::Anki.Cozmo.AnimationTrigger>.FromName("FeedingDrivingGetIn_Severe");
 
-    /// <summary>CLAD <c>FeedingDrivingGetOut_Severe</c> (173).</summary>
+    /// <summary>CLAD member <c>FeedingDrivingGetOut_Severe</c> (id 173).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.AnimationTrigger> FeedingDrivingGetOut_Severe = CladEnum<global::Anki.Cozmo.AnimationTrigger>.FromName("FeedingDrivingGetOut_Severe");
 
-    /// <summary>CLAD <c>FeedingDrivingLoop_Severe</c> (174).</summary>
+    /// <summary>CLAD member <c>FeedingDrivingLoop_Severe</c> (id 174).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.AnimationTrigger> FeedingDrivingLoop_Severe = CladEnum<global::Anki.Cozmo.AnimationTrigger>.FromName("FeedingDrivingLoop_Severe");
 
-    /// <summary>CLAD <c>FeedingPlaceLiftOnCube_Normal</c> (175).</summary>
+    /// <summary>CLAD member <c>FeedingPlaceLiftOnCube_Normal</c> (id 175).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.AnimationTrigger> FeedingPlaceLiftOnCube_Normal = CladEnum<global::Anki.Cozmo.AnimationTrigger>.FromName("FeedingPlaceLiftOnCube_Normal");
 
-    /// <summary>CLAD <c>FeedingPlaceLiftOnCube_Severe</c> (176).</summary>
+    /// <summary>CLAD member <c>FeedingPlaceLiftOnCube_Severe</c> (id 176).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.AnimationTrigger> FeedingPlaceLiftOnCube_Severe = CladEnum<global::Anki.Cozmo.AnimationTrigger>.FromName("FeedingPlaceLiftOnCube_Severe");
 
-    /// <summary>CLAD <c>FeedingIdleSearch_Normal</c> (177).</summary>
+    /// <summary>CLAD member <c>FeedingIdleSearch_Normal</c> (id 177).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.AnimationTrigger> FeedingIdleSearch_Normal = CladEnum<global::Anki.Cozmo.AnimationTrigger>.FromName("FeedingIdleSearch_Normal");
 
-    /// <summary>CLAD <c>FeedingIdleSearch_Severe</c> (178).</summary>
+    /// <summary>CLAD member <c>FeedingIdleSearch_Severe</c> (id 178).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.AnimationTrigger> FeedingIdleSearch_Severe = CladEnum<global::Anki.Cozmo.AnimationTrigger>.FromName("FeedingIdleSearch_Severe");
 
-    /// <summary>CLAD <c>FeedingIdleSearchForFaces_Normal</c> (179).</summary>
+    /// <summary>CLAD member <c>FeedingIdleSearchForFaces_Normal</c> (id 179).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.AnimationTrigger> FeedingIdleSearchForFaces_Normal = CladEnum<global::Anki.Cozmo.AnimationTrigger>.FromName("FeedingIdleSearchForFaces_Normal");
 
-    /// <summary>CLAD <c>FeedingIdleSearchForFaces_Severe</c> (180).</summary>
+    /// <summary>CLAD member <c>FeedingIdleSearchForFaces_Severe</c> (id 180).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.AnimationTrigger> FeedingIdleSearchForFaces_Severe = CladEnum<global::Anki.Cozmo.AnimationTrigger>.FromName("FeedingIdleSearchForFaces_Severe");
 
-    /// <summary>CLAD <c>FeedingIdleWaitForFullCube_Normal</c> (181).</summary>
+    /// <summary>CLAD member <c>FeedingIdleWaitForFullCube_Normal</c> (id 181).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.AnimationTrigger> FeedingIdleWaitForFullCube_Normal = CladEnum<global::Anki.Cozmo.AnimationTrigger>.FromName("FeedingIdleWaitForFullCube_Normal");
 
-    /// <summary>CLAD <c>FeedingIdleWaitForFullCube_Severe</c> (182).</summary>
+    /// <summary>CLAD member <c>FeedingIdleWaitForFullCube_Severe</c> (id 182).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.AnimationTrigger> FeedingIdleWaitForFullCube_Severe = CladEnum<global::Anki.Cozmo.AnimationTrigger>.FromName("FeedingIdleWaitForFullCube_Severe");
 
-    /// <summary>CLAD <c>FeedingIdleWaitForShakeNoHead_Severe</c> (183).</summary>
+    /// <summary>CLAD member <c>FeedingIdleWaitForShakeNoHead_Severe</c> (id 183).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.AnimationTrigger> FeedingIdleWaitForShakeNoHead_Severe = CladEnum<global::Anki.Cozmo.AnimationTrigger>.FromName("FeedingIdleWaitForShakeNoHead_Severe");
 
-    /// <summary>CLAD <c>FeedingIdleWaitForShake_Normal</c> (184).</summary>
+    /// <summary>CLAD member <c>FeedingIdleWaitForShake_Normal</c> (id 184).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.AnimationTrigger> FeedingIdleWaitForShake_Normal = CladEnum<global::Anki.Cozmo.AnimationTrigger>.FromName("FeedingIdleWaitForShake_Normal");
 
-    /// <summary>CLAD <c>FeedingIdleWaitForShake_Severe</c> (185).</summary>
+    /// <summary>CLAD member <c>FeedingIdleWaitForShake_Severe</c> (id 185).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.AnimationTrigger> FeedingIdleWaitForShake_Severe = CladEnum<global::Anki.Cozmo.AnimationTrigger>.FromName("FeedingIdleWaitForShake_Severe");
 
-    /// <summary>CLAD <c>FeedingInterrupted</c> (186).</summary>
+    /// <summary>CLAD member <c>FeedingInterrupted</c> (id 186).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.AnimationTrigger> FeedingInterrupted = CladEnum<global::Anki.Cozmo.AnimationTrigger>.FromName("FeedingInterrupted");
 
-    /// <summary>CLAD <c>FeedingInterrupted_Severe</c> (187).</summary>
+    /// <summary>CLAD member <c>FeedingInterrupted_Severe</c> (id 187).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.AnimationTrigger> FeedingInterrupted_Severe = CladEnum<global::Anki.Cozmo.AnimationTrigger>.FromName("FeedingInterrupted_Severe");
 
-    /// <summary>CLAD <c>FeedingSearchRequest</c> (188).</summary>
+    /// <summary>CLAD member <c>FeedingSearchRequest</c> (id 188).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.AnimationTrigger> FeedingSearchRequest = CladEnum<global::Anki.Cozmo.AnimationTrigger>.FromName("FeedingSearchRequest");
 
-    /// <summary>CLAD <c>FeedingSearchRequest_Severe</c> (189).</summary>
+    /// <summary>CLAD member <c>FeedingSearchRequest_Severe</c> (id 189).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.AnimationTrigger> FeedingSearchRequest_Severe = CladEnum<global::Anki.Cozmo.AnimationTrigger>.FromName("FeedingSearchRequest_Severe");
 
-    /// <summary>CLAD <c>FeedingSearchFailure</c> (190).</summary>
+    /// <summary>CLAD member <c>FeedingSearchFailure</c> (id 190).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.AnimationTrigger> FeedingSearchFailure = CladEnum<global::Anki.Cozmo.AnimationTrigger>.FromName("FeedingSearchFailure");
 
-    /// <summary>CLAD <c>FeedingSearchFailure_Severe</c> (191).</summary>
+    /// <summary>CLAD member <c>FeedingSearchFailure_Severe</c> (id 191).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.AnimationTrigger> FeedingSearchFailure_Severe = CladEnum<global::Anki.Cozmo.AnimationTrigger>.FromName("FeedingSearchFailure_Severe");
 
-    /// <summary>CLAD <c>FeedingReactToFullCube_Normal</c> (192).</summary>
+    /// <summary>CLAD member <c>FeedingReactToFullCube_Normal</c> (id 192).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.AnimationTrigger> FeedingReactToFullCube_Normal = CladEnum<global::Anki.Cozmo.AnimationTrigger>.FromName("FeedingReactToFullCube_Normal");
 
-    /// <summary>CLAD <c>FeedingReactToFullCube_Severe</c> (193).</summary>
+    /// <summary>CLAD member <c>FeedingReactToFullCube_Severe</c> (id 193).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.AnimationTrigger> FeedingReactToFullCube_Severe = CladEnum<global::Anki.Cozmo.AnimationTrigger>.FromName("FeedingReactToFullCube_Severe");
 
-    /// <summary>CLAD <c>FeedingReactToSeeCube_Normal</c> (194).</summary>
+    /// <summary>CLAD member <c>FeedingReactToSeeCube_Normal</c> (id 194).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.AnimationTrigger> FeedingReactToSeeCube_Normal = CladEnum<global::Anki.Cozmo.AnimationTrigger>.FromName("FeedingReactToSeeCube_Normal");
 
-    /// <summary>CLAD <c>FeedingReactToSeeCube_Severe</c> (195).</summary>
+    /// <summary>CLAD member <c>FeedingReactToSeeCube_Severe</c> (id 195).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.AnimationTrigger> FeedingReactToSeeCube_Severe = CladEnum<global::Anki.Cozmo.AnimationTrigger>.FromName("FeedingReactToSeeCube_Severe");
 
-    /// <summary>CLAD <c>FeedingReactToShake_Normal</c> (196).</summary>
+    /// <summary>CLAD member <c>FeedingReactToShake_Normal</c> (id 196).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.AnimationTrigger> FeedingReactToShake_Normal = CladEnum<global::Anki.Cozmo.AnimationTrigger>.FromName("FeedingReactToShake_Normal");
 
-    /// <summary>CLAD <c>FeedingReactToShake_Severe</c> (197).</summary>
+    /// <summary>CLAD member <c>FeedingReactToShake_Severe</c> (id 197).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.AnimationTrigger> FeedingReactToShake_Severe = CladEnum<global::Anki.Cozmo.AnimationTrigger>.FromName("FeedingReactToShake_Severe");
 
-    /// <summary>CLAD <c>FistBumpIdle</c> (198).</summary>
+    /// <summary>CLAD member <c>FistBumpIdle</c> (id 198).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.AnimationTrigger> FistBumpIdle = CladEnum<global::Anki.Cozmo.AnimationTrigger>.FromName("FistBumpIdle");
 
-    /// <summary>CLAD <c>FistBumpRequestOnce</c> (199).</summary>
+    /// <summary>CLAD member <c>FistBumpRequestOnce</c> (id 199).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.AnimationTrigger> FistBumpRequestOnce = CladEnum<global::Anki.Cozmo.AnimationTrigger>.FromName("FistBumpRequestOnce");
 
-    /// <summary>CLAD <c>FistBumpRequestRetry</c> (200).</summary>
+    /// <summary>CLAD member <c>FistBumpRequestRetry</c> (id 200).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.AnimationTrigger> FistBumpRequestRetry = CladEnum<global::Anki.Cozmo.AnimationTrigger>.FromName("FistBumpRequestRetry");
 
-    /// <summary>CLAD <c>FistBumpSuccess</c> (201).</summary>
+    /// <summary>CLAD member <c>FistBumpSuccess</c> (id 201).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.AnimationTrigger> FistBumpSuccess = CladEnum<global::Anki.Cozmo.AnimationTrigger>.FromName("FistBumpSuccess");
 
-    /// <summary>CLAD <c>FistBumpLeftHanging</c> (202).</summary>
+    /// <summary>CLAD member <c>FistBumpLeftHanging</c> (id 202).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.AnimationTrigger> FistBumpLeftHanging = CladEnum<global::Anki.Cozmo.AnimationTrigger>.FromName("FistBumpLeftHanging");
 
-    /// <summary>CLAD <c>FlipDownFromBack</c> (203).</summary>
+    /// <summary>CLAD member <c>FlipDownFromBack</c> (id 203).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.AnimationTrigger> FlipDownFromBack = CladEnum<global::Anki.Cozmo.AnimationTrigger>.FromName("FlipDownFromBack");
 
-    /// <summary>CLAD <c>FrustratedByFailure</c> (204).</summary>
+    /// <summary>CLAD member <c>FrustratedByFailure</c> (id 204).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.AnimationTrigger> FrustratedByFailure = CladEnum<global::Anki.Cozmo.AnimationTrigger>.FromName("FrustratedByFailure");
 
-    /// <summary>CLAD <c>FrustratedByFailureMajor</c> (205).</summary>
+    /// <summary>CLAD member <c>FrustratedByFailureMajor</c> (id 205).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.AnimationTrigger> FrustratedByFailureMajor = CladEnum<global::Anki.Cozmo.AnimationTrigger>.FromName("FrustratedByFailureMajor");
 
-    /// <summary>CLAD <c>GameSetupGetIn</c> (206).</summary>
+    /// <summary>CLAD member <c>GameSetupGetIn</c> (id 206).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.AnimationTrigger> GameSetupGetIn = CladEnum<global::Anki.Cozmo.AnimationTrigger>.FromName("GameSetupGetIn");
 
-    /// <summary>CLAD <c>GameSetupGetOut</c> (207).</summary>
+    /// <summary>CLAD member <c>GameSetupGetOut</c> (id 207).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.AnimationTrigger> GameSetupGetOut = CladEnum<global::Anki.Cozmo.AnimationTrigger>.FromName("GameSetupGetOut");
 
-    /// <summary>CLAD <c>GameSetupIdle</c> (208).</summary>
+    /// <summary>CLAD member <c>GameSetupIdle</c> (id 208).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.AnimationTrigger> GameSetupIdle = CladEnum<global::Anki.Cozmo.AnimationTrigger>.FromName("GameSetupIdle");
 
-    /// <summary>CLAD <c>GameSetupReaction</c> (209).</summary>
+    /// <summary>CLAD member <c>GameSetupReaction</c> (id 209).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.AnimationTrigger> GameSetupReaction = CladEnum<global::Anki.Cozmo.AnimationTrigger>.FromName("GameSetupReaction");
 
-    /// <summary>CLAD <c>GoToSleepGetIn</c> (210).</summary>
+    /// <summary>CLAD member <c>GoToSleepGetIn</c> (id 210).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.AnimationTrigger> GoToSleepGetIn = CladEnum<global::Anki.Cozmo.AnimationTrigger>.FromName("GoToSleepGetIn");
 
-    /// <summary>CLAD <c>GoToSleepGetOut</c> (211).</summary>
+    /// <summary>CLAD member <c>GoToSleepGetOut</c> (id 211).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.AnimationTrigger> GoToSleepGetOut = CladEnum<global::Anki.Cozmo.AnimationTrigger>.FromName("GoToSleepGetOut");
 
-    /// <summary>CLAD <c>GoToSleepOff</c> (212).</summary>
+    /// <summary>CLAD member <c>GoToSleepOff</c> (id 212).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.AnimationTrigger> GoToSleepOff = CladEnum<global::Anki.Cozmo.AnimationTrigger>.FromName("GoToSleepOff");
 
-    /// <summary>CLAD <c>GoToSleepSleeping</c> (213).</summary>
+    /// <summary>CLAD member <c>GoToSleepSleeping</c> (id 213).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.AnimationTrigger> GoToSleepSleeping = CladEnum<global::Anki.Cozmo.AnimationTrigger>.FromName("GoToSleepSleeping");
 
-    /// <summary>CLAD <c>GuardDogBusted</c> (214).</summary>
+    /// <summary>CLAD member <c>GuardDogBusted</c> (id 214).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.AnimationTrigger> GuardDogBusted = CladEnum<global::Anki.Cozmo.AnimationTrigger>.FromName("GuardDogBusted");
 
-    /// <summary>CLAD <c>GuardDogCubeDisconnect</c> (215).</summary>
+    /// <summary>CLAD member <c>GuardDogCubeDisconnect</c> (id 215).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.AnimationTrigger> GuardDogCubeDisconnect = CladEnum<global::Anki.Cozmo.AnimationTrigger>.FromName("GuardDogCubeDisconnect");
 
-    /// <summary>CLAD <c>GuardDogFakeout</c> (216).</summary>
+    /// <summary>CLAD member <c>GuardDogFakeout</c> (id 216).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.AnimationTrigger> GuardDogFakeout = CladEnum<global::Anki.Cozmo.AnimationTrigger>.FromName("GuardDogFakeout");
 
-    /// <summary>CLAD <c>GuardDogInterruption</c> (217).</summary>
+    /// <summary>CLAD member <c>GuardDogInterruption</c> (id 217).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.AnimationTrigger> GuardDogInterruption = CladEnum<global::Anki.Cozmo.AnimationTrigger>.FromName("GuardDogInterruption");
 
-    /// <summary>CLAD <c>GuardDogPlayerSuccess</c> (218).</summary>
+    /// <summary>CLAD member <c>GuardDogPlayerSuccess</c> (id 218).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.AnimationTrigger> GuardDogPlayerSuccess = CladEnum<global::Anki.Cozmo.AnimationTrigger>.FromName("GuardDogPlayerSuccess");
 
-    /// <summary>CLAD <c>GuardDogPulse</c> (219).</summary>
+    /// <summary>CLAD member <c>GuardDogPulse</c> (id 219).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.AnimationTrigger> GuardDogPulse = CladEnum<global::Anki.Cozmo.AnimationTrigger>.FromName("GuardDogPulse");
 
-    /// <summary>CLAD <c>GuardDogSettle</c> (220).</summary>
+    /// <summary>CLAD member <c>GuardDogSettle</c> (id 220).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.AnimationTrigger> GuardDogSettle = CladEnum<global::Anki.Cozmo.AnimationTrigger>.FromName("GuardDogSettle");
 
-    /// <summary>CLAD <c>GuardDogSleepLoop</c> (221).</summary>
+    /// <summary>CLAD member <c>GuardDogSleepLoop</c> (id 221).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.AnimationTrigger> GuardDogSleepLoop = CladEnum<global::Anki.Cozmo.AnimationTrigger>.FromName("GuardDogSleepLoop");
 
-    /// <summary>CLAD <c>GuardDogTimeout</c> (222).</summary>
+    /// <summary>CLAD member <c>GuardDogTimeout</c> (id 222).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.AnimationTrigger> GuardDogTimeout = CladEnum<global::Anki.Cozmo.AnimationTrigger>.FromName("GuardDogTimeout");
 
-    /// <summary>CLAD <c>GuardDogTimeoutCubesTouched</c> (223).</summary>
+    /// <summary>CLAD member <c>GuardDogTimeoutCubesTouched</c> (id 223).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.AnimationTrigger> GuardDogTimeoutCubesTouched = CladEnum<global::Anki.Cozmo.AnimationTrigger>.FromName("GuardDogTimeoutCubesTouched");
 
-    /// <summary>CLAD <c>GuardDogTimeoutCubesUntouched</c> (224).</summary>
+    /// <summary>CLAD member <c>GuardDogTimeoutCubesUntouched</c> (id 224).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.AnimationTrigger> GuardDogTimeoutCubesUntouched = CladEnum<global::Anki.Cozmo.AnimationTrigger>.FromName("GuardDogTimeoutCubesUntouched");
 
-    /// <summary>CLAD <c>Hiccup</c> (225).</summary>
+    /// <summary>CLAD member <c>Hiccup</c> (id 225).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.AnimationTrigger> Hiccup = CladEnum<global::Anki.Cozmo.AnimationTrigger>.FromName("Hiccup");
 
-    /// <summary>CLAD <c>HiccupGetIn</c> (226).</summary>
+    /// <summary>CLAD member <c>HiccupGetIn</c> (id 226).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.AnimationTrigger> HiccupGetIn = CladEnum<global::Anki.Cozmo.AnimationTrigger>.FromName("HiccupGetIn");
 
-    /// <summary>CLAD <c>HiccupPlayerCure</c> (227).</summary>
+    /// <summary>CLAD member <c>HiccupPlayerCure</c> (id 227).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.AnimationTrigger> HiccupPlayerCure = CladEnum<global::Anki.Cozmo.AnimationTrigger>.FromName("HiccupPlayerCure");
 
-    /// <summary>CLAD <c>HiccupRobotOnBack</c> (228).</summary>
+    /// <summary>CLAD member <c>HiccupRobotOnBack</c> (id 228).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.AnimationTrigger> HiccupRobotOnBack = CladEnum<global::Anki.Cozmo.AnimationTrigger>.FromName("HiccupRobotOnBack");
 
-    /// <summary>CLAD <c>HiccupRobotOnFace</c> (229).</summary>
+    /// <summary>CLAD member <c>HiccupRobotOnFace</c> (id 229).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.AnimationTrigger> HiccupRobotOnFace = CladEnum<global::Anki.Cozmo.AnimationTrigger>.FromName("HiccupRobotOnFace");
 
-    /// <summary>CLAD <c>HiccupRobotPickedUp</c> (230).</summary>
+    /// <summary>CLAD member <c>HiccupRobotPickedUp</c> (id 230).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.AnimationTrigger> HiccupRobotPickedUp = CladEnum<global::Anki.Cozmo.AnimationTrigger>.FromName("HiccupRobotPickedUp");
 
-    /// <summary>CLAD <c>HiccupSelfCure</c> (231).</summary>
+    /// <summary>CLAD member <c>HiccupSelfCure</c> (id 231).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.AnimationTrigger> HiccupSelfCure = CladEnum<global::Anki.Cozmo.AnimationTrigger>.FromName("HiccupSelfCure");
 
-    /// <summary>CLAD <c>HikingDrivingEnd</c> (232).</summary>
+    /// <summary>CLAD member <c>HikingDrivingEnd</c> (id 232).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.AnimationTrigger> HikingDrivingEnd = CladEnum<global::Anki.Cozmo.AnimationTrigger>.FromName("HikingDrivingEnd");
 
-    /// <summary>CLAD <c>HikingDrivingLoop</c> (233).</summary>
+    /// <summary>CLAD member <c>HikingDrivingLoop</c> (id 233).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.AnimationTrigger> HikingDrivingLoop = CladEnum<global::Anki.Cozmo.AnimationTrigger>.FromName("HikingDrivingLoop");
 
-    /// <summary>CLAD <c>HikingDrivingStart</c> (234).</summary>
+    /// <summary>CLAD member <c>HikingDrivingStart</c> (id 234).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.AnimationTrigger> HikingDrivingStart = CladEnum<global::Anki.Cozmo.AnimationTrigger>.FromName("HikingDrivingStart");
 
-    /// <summary>CLAD <c>HikingInterestingEdgeThought</c> (235).</summary>
+    /// <summary>CLAD member <c>HikingInterestingEdgeThought</c> (id 235).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.AnimationTrigger> HikingInterestingEdgeThought = CladEnum<global::Anki.Cozmo.AnimationTrigger>.FromName("HikingInterestingEdgeThought");
 
-    /// <summary>CLAD <c>HikingIntro</c> (236).</summary>
+    /// <summary>CLAD member <c>HikingIntro</c> (id 236).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.AnimationTrigger> HikingIntro = CladEnum<global::Anki.Cozmo.AnimationTrigger>.FromName("HikingIntro");
 
-    /// <summary>CLAD <c>HikingLookAround</c> (237).</summary>
+    /// <summary>CLAD member <c>HikingLookAround</c> (id 237).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.AnimationTrigger> HikingLookAround = CladEnum<global::Anki.Cozmo.AnimationTrigger>.FromName("HikingLookAround");
 
-    /// <summary>CLAD <c>HikingObserve</c> (238).</summary>
+    /// <summary>CLAD member <c>HikingObserve</c> (id 238).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.AnimationTrigger> HikingObserve = CladEnum<global::Anki.Cozmo.AnimationTrigger>.FromName("HikingObserve");
 
-    /// <summary>CLAD <c>HikingReactToEdge</c> (239).</summary>
+    /// <summary>CLAD member <c>HikingReactToEdge</c> (id 239).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.AnimationTrigger> HikingReactToEdge = CladEnum<global::Anki.Cozmo.AnimationTrigger>.FromName("HikingReactToEdge");
 
-    /// <summary>CLAD <c>HikingReactToNewArea</c> (240).</summary>
+    /// <summary>CLAD member <c>HikingReactToNewArea</c> (id 240).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.AnimationTrigger> HikingReactToNewArea = CladEnum<global::Anki.Cozmo.AnimationTrigger>.FromName("HikingReactToNewArea");
 
-    /// <summary>CLAD <c>HikingReactToPossibleMarker</c> (241).</summary>
+    /// <summary>CLAD member <c>HikingReactToPossibleMarker</c> (id 241).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.AnimationTrigger> HikingReactToPossibleMarker = CladEnum<global::Anki.Cozmo.AnimationTrigger>.FromName("HikingReactToPossibleMarker");
 
-    /// <summary>CLAD <c>HikingSquintEnd</c> (242).</summary>
+    /// <summary>CLAD member <c>HikingSquintEnd</c> (id 242).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.AnimationTrigger> HikingSquintEnd = CladEnum<global::Anki.Cozmo.AnimationTrigger>.FromName("HikingSquintEnd");
 
-    /// <summary>CLAD <c>HikingSquintLoop</c> (243).</summary>
+    /// <summary>CLAD member <c>HikingSquintLoop</c> (id 243).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.AnimationTrigger> HikingSquintLoop = CladEnum<global::Anki.Cozmo.AnimationTrigger>.FromName("HikingSquintLoop");
 
-    /// <summary>CLAD <c>HikingSquintStart</c> (244).</summary>
+    /// <summary>CLAD member <c>HikingSquintStart</c> (id 244).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.AnimationTrigger> HikingSquintStart = CladEnum<global::Anki.Cozmo.AnimationTrigger>.FromName("HikingSquintStart");
 
-    /// <summary>CLAD <c>HikingWakeUpOffCharger</c> (245).</summary>
+    /// <summary>CLAD member <c>HikingWakeUpOffCharger</c> (id 245).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.AnimationTrigger> HikingWakeUpOffCharger = CladEnum<global::Anki.Cozmo.AnimationTrigger>.FromName("HikingWakeUpOffCharger");
 
-    /// <summary>CLAD <c>IdleOnCharger</c> (246).</summary>
+    /// <summary>CLAD member <c>IdleOnCharger</c> (id 246).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.AnimationTrigger> IdleOnCharger = CladEnum<global::Anki.Cozmo.AnimationTrigger>.FromName("IdleOnCharger");
 
-    /// <summary>CLAD <c>InteractWithFaceTrackingIdle</c> (247).</summary>
+    /// <summary>CLAD member <c>InteractWithFaceTrackingIdle</c> (id 247).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.AnimationTrigger> InteractWithFaceTrackingIdle = CladEnum<global::Anki.Cozmo.AnimationTrigger>.FromName("InteractWithFaceTrackingIdle");
 
-    /// <summary>CLAD <c>InteractWithFacesInitialNamed</c> (248).</summary>
+    /// <summary>CLAD member <c>InteractWithFacesInitialNamed</c> (id 248).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.AnimationTrigger> InteractWithFacesInitialNamed = CladEnum<global::Anki.Cozmo.AnimationTrigger>.FromName("InteractWithFacesInitialNamed");
 
-    /// <summary>CLAD <c>InteractWithFacesInitialUnnamed</c> (249).</summary>
+    /// <summary>CLAD member <c>InteractWithFacesInitialUnnamed</c> (id 249).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.AnimationTrigger> InteractWithFacesInitialUnnamed = CladEnum<global::Anki.Cozmo.AnimationTrigger>.FromName("InteractWithFacesInitialUnnamed");
 
-    /// <summary>CLAD <c>KnockOverEyes</c> (250).</summary>
+    /// <summary>CLAD member <c>KnockOverEyes</c> (id 250).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.AnimationTrigger> KnockOverEyes = CladEnum<global::Anki.Cozmo.AnimationTrigger>.FromName("KnockOverEyes");
 
-    /// <summary>CLAD <c>KnockOverFailure</c> (251).</summary>
+    /// <summary>CLAD member <c>KnockOverFailure</c> (id 251).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.AnimationTrigger> KnockOverFailure = CladEnum<global::Anki.Cozmo.AnimationTrigger>.FromName("KnockOverFailure");
 
-    /// <summary>CLAD <c>KnockOverGrabAttempt</c> (252).</summary>
+    /// <summary>CLAD member <c>KnockOverGrabAttempt</c> (id 252).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.AnimationTrigger> KnockOverGrabAttempt = CladEnum<global::Anki.Cozmo.AnimationTrigger>.FromName("KnockOverGrabAttempt");
 
-    /// <summary>CLAD <c>KnockOverPreActionNamedFace</c> (253).</summary>
+    /// <summary>CLAD member <c>KnockOverPreActionNamedFace</c> (id 253).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.AnimationTrigger> KnockOverPreActionNamedFace = CladEnum<global::Anki.Cozmo.AnimationTrigger>.FromName("KnockOverPreActionNamedFace");
 
-    /// <summary>CLAD <c>KnockOverPreActionUnnamedFace</c> (254).</summary>
+    /// <summary>CLAD member <c>KnockOverPreActionUnnamedFace</c> (id 254).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.AnimationTrigger> KnockOverPreActionUnnamedFace = CladEnum<global::Anki.Cozmo.AnimationTrigger>.FromName("KnockOverPreActionUnnamedFace");
 
-    /// <summary>CLAD <c>KnockOverSuccess</c> (255).</summary>
+    /// <summary>CLAD member <c>KnockOverSuccess</c> (id 255).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.AnimationTrigger> KnockOverSuccess = CladEnum<global::Anki.Cozmo.AnimationTrigger>.FromName("KnockOverSuccess");
 
-    /// <summary>CLAD <c>LaserAcknowledge</c> (256).</summary>
+    /// <summary>CLAD member <c>LaserAcknowledge</c> (id 256).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.AnimationTrigger> LaserAcknowledge = CladEnum<global::Anki.Cozmo.AnimationTrigger>.FromName("LaserAcknowledge");
 
-    /// <summary>CLAD <c>LaserDriveEnd</c> (257).</summary>
+    /// <summary>CLAD member <c>LaserDriveEnd</c> (id 257).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.AnimationTrigger> LaserDriveEnd = CladEnum<global::Anki.Cozmo.AnimationTrigger>.FromName("LaserDriveEnd");
 
-    /// <summary>CLAD <c>LaserDriveLoop</c> (258).</summary>
+    /// <summary>CLAD member <c>LaserDriveLoop</c> (id 258).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.AnimationTrigger> LaserDriveLoop = CladEnum<global::Anki.Cozmo.AnimationTrigger>.FromName("LaserDriveLoop");
 
-    /// <summary>CLAD <c>LaserDriveStart</c> (259).</summary>
+    /// <summary>CLAD member <c>LaserDriveStart</c> (id 259).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.AnimationTrigger> LaserDriveStart = CladEnum<global::Anki.Cozmo.AnimationTrigger>.FromName("LaserDriveStart");
 
-    /// <summary>CLAD <c>LaserFace</c> (260).</summary>
+    /// <summary>CLAD member <c>LaserFace</c> (id 260).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.AnimationTrigger> LaserFace = CladEnum<global::Anki.Cozmo.AnimationTrigger>.FromName("LaserFace");
 
-    /// <summary>CLAD <c>LaserGetOut</c> (261).</summary>
+    /// <summary>CLAD member <c>LaserGetOut</c> (id 261).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.AnimationTrigger> LaserGetOut = CladEnum<global::Anki.Cozmo.AnimationTrigger>.FromName("LaserGetOut");
 
-    /// <summary>CLAD <c>LaserPounce</c> (262).</summary>
+    /// <summary>CLAD member <c>LaserPounce</c> (id 262).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.AnimationTrigger> LaserPounce = CladEnum<global::Anki.Cozmo.AnimationTrigger>.FromName("LaserPounce");
 
-    /// <summary>CLAD <c>LookInPlaceForFacesBodyPause</c> (263).</summary>
+    /// <summary>CLAD member <c>LookInPlaceForFacesBodyPause</c> (id 263).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.AnimationTrigger> LookInPlaceForFacesBodyPause = CladEnum<global::Anki.Cozmo.AnimationTrigger>.FromName("LookInPlaceForFacesBodyPause");
 
-    /// <summary>CLAD <c>LookInPlaceForFacesHeadMovePause</c> (264).</summary>
+    /// <summary>CLAD member <c>LookInPlaceForFacesHeadMovePause</c> (id 264).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.AnimationTrigger> LookInPlaceForFacesHeadMovePause = CladEnum<global::Anki.Cozmo.AnimationTrigger>.FromName("LookInPlaceForFacesHeadMovePause");
 
-    /// <summary>CLAD <c>MajorFail</c> (265).</summary>
+    /// <summary>CLAD member <c>MajorFail</c> (id 265).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.AnimationTrigger> MajorFail = CladEnum<global::Anki.Cozmo.AnimationTrigger>.FromName("MajorFail");
 
-    /// <summary>CLAD <c>MajorWin</c> (266).</summary>
+    /// <summary>CLAD member <c>MajorWin</c> (id 266).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.AnimationTrigger> MajorWin = CladEnum<global::Anki.Cozmo.AnimationTrigger>.FromName("MajorWin");
 
-    /// <summary>CLAD <c>MeetCozmoGetIn</c> (267).</summary>
+    /// <summary>CLAD member <c>MeetCozmoGetIn</c> (id 267).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.AnimationTrigger> MeetCozmoGetIn = CladEnum<global::Anki.Cozmo.AnimationTrigger>.FromName("MeetCozmoGetIn");
 
-    /// <summary>CLAD <c>MeetCozmoLookFaceGetIn</c> (268).</summary>
+    /// <summary>CLAD member <c>MeetCozmoLookFaceGetIn</c> (id 268).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.AnimationTrigger> MeetCozmoLookFaceGetIn = CladEnum<global::Anki.Cozmo.AnimationTrigger>.FromName("MeetCozmoLookFaceGetIn");
 
-    /// <summary>CLAD <c>MeetCozmoLookFaceGetOut</c> (269).</summary>
+    /// <summary>CLAD member <c>MeetCozmoLookFaceGetOut</c> (id 269).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.AnimationTrigger> MeetCozmoLookFaceGetOut = CladEnum<global::Anki.Cozmo.AnimationTrigger>.FromName("MeetCozmoLookFaceGetOut");
 
-    /// <summary>CLAD <c>MeetCozmoScanningIdle</c> (270).</summary>
+    /// <summary>CLAD member <c>MeetCozmoScanningIdle</c> (id 270).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.AnimationTrigger> MeetCozmoScanningIdle = CladEnum<global::Anki.Cozmo.AnimationTrigger>.FromName("MeetCozmoScanningIdle");
 
-    /// <summary>CLAD <c>MeetCozmoFirstEnrollmentSayName</c> (271).</summary>
+    /// <summary>CLAD member <c>MeetCozmoFirstEnrollmentSayName</c> (id 271).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.AnimationTrigger> MeetCozmoFirstEnrollmentSayName = CladEnum<global::Anki.Cozmo.AnimationTrigger>.FromName("MeetCozmoFirstEnrollmentSayName");
 
-    /// <summary>CLAD <c>MeetCozmoFirstEnrollmentRepeatName</c> (272).</summary>
+    /// <summary>CLAD member <c>MeetCozmoFirstEnrollmentRepeatName</c> (id 272).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.AnimationTrigger> MeetCozmoFirstEnrollmentRepeatName = CladEnum<global::Anki.Cozmo.AnimationTrigger>.FromName("MeetCozmoFirstEnrollmentRepeatName");
 
-    /// <summary>CLAD <c>MeetCozmoFirstEnrollmentCelebration</c> (273).</summary>
+    /// <summary>CLAD member <c>MeetCozmoFirstEnrollmentCelebration</c> (id 273).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.AnimationTrigger> MeetCozmoFirstEnrollmentCelebration = CladEnum<global::Anki.Cozmo.AnimationTrigger>.FromName("MeetCozmoFirstEnrollmentCelebration");
 
-    /// <summary>CLAD <c>MeetCozmoReEnrollmentSayName</c> (274).</summary>
+    /// <summary>CLAD member <c>MeetCozmoReEnrollmentSayName</c> (id 274).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.AnimationTrigger> MeetCozmoReEnrollmentSayName = CladEnum<global::Anki.Cozmo.AnimationTrigger>.FromName("MeetCozmoReEnrollmentSayName");
 
-    /// <summary>CLAD <c>MeetCozmoRenameFaceSayName</c> (275).</summary>
+    /// <summary>CLAD member <c>MeetCozmoRenameFaceSayName</c> (id 275).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.AnimationTrigger> MeetCozmoRenameFaceSayName = CladEnum<global::Anki.Cozmo.AnimationTrigger>.FromName("MeetCozmoRenameFaceSayName");
 
-    /// <summary>CLAD <c>MeetCozmoLookFaceInterrupt</c> (276).</summary>
+    /// <summary>CLAD member <c>MeetCozmoLookFaceInterrupt</c> (id 276).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.AnimationTrigger> MeetCozmoLookFaceInterrupt = CladEnum<global::Anki.Cozmo.AnimationTrigger>.FromName("MeetCozmoLookFaceInterrupt");
 
-    /// <summary>CLAD <c>MemoryMatchPlayerWinHand</c> (277).</summary>
+    /// <summary>CLAD member <c>MemoryMatchPlayerWinHand</c> (id 277).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.AnimationTrigger> MemoryMatchPlayerWinHand = CladEnum<global::Anki.Cozmo.AnimationTrigger>.FromName("MemoryMatchPlayerWinHand");
 
-    /// <summary>CLAD <c>MemoryMatchPlayerWinHandLong</c> (278).</summary>
+    /// <summary>CLAD member <c>MemoryMatchPlayerWinHandLong</c> (id 278).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.AnimationTrigger> MemoryMatchPlayerWinHandLong = CladEnum<global::Anki.Cozmo.AnimationTrigger>.FromName("MemoryMatchPlayerWinHandLong");
 
-    /// <summary>CLAD <c>MemoryMatchPlayerWinHandSolo</c> (279).</summary>
+    /// <summary>CLAD member <c>MemoryMatchPlayerWinHandSolo</c> (id 279).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.AnimationTrigger> MemoryMatchPlayerWinHandSolo = CladEnum<global::Anki.Cozmo.AnimationTrigger>.FromName("MemoryMatchPlayerWinHandSolo");
 
-    /// <summary>CLAD <c>MemoryMatchPlayerLoseHand</c> (280).</summary>
+    /// <summary>CLAD member <c>MemoryMatchPlayerLoseHand</c> (id 280).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.AnimationTrigger> MemoryMatchPlayerLoseHand = CladEnum<global::Anki.Cozmo.AnimationTrigger>.FromName("MemoryMatchPlayerLoseHand");
 
-    /// <summary>CLAD <c>MemoryMatchPlayerLoseHandSolo</c> (281).</summary>
+    /// <summary>CLAD member <c>MemoryMatchPlayerLoseHandSolo</c> (id 281).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.AnimationTrigger> MemoryMatchPlayerLoseHandSolo = CladEnum<global::Anki.Cozmo.AnimationTrigger>.FromName("MemoryMatchPlayerLoseHandSolo");
 
-    /// <summary>CLAD <c>MemoryMatchCozmoWinHand</c> (282).</summary>
+    /// <summary>CLAD member <c>MemoryMatchCozmoWinHand</c> (id 282).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.AnimationTrigger> MemoryMatchCozmoWinHand = CladEnum<global::Anki.Cozmo.AnimationTrigger>.FromName("MemoryMatchCozmoWinHand");
 
-    /// <summary>CLAD <c>MemoryMatchCozmoLoseHand</c> (283).</summary>
+    /// <summary>CLAD member <c>MemoryMatchCozmoLoseHand</c> (id 283).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.AnimationTrigger> MemoryMatchCozmoLoseHand = CladEnum<global::Anki.Cozmo.AnimationTrigger>.FromName("MemoryMatchCozmoLoseHand");
 
-    /// <summary>CLAD <c>MemoryMatchCozmoWinGame</c> (284).</summary>
+    /// <summary>CLAD member <c>MemoryMatchCozmoWinGame</c> (id 284).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.AnimationTrigger> MemoryMatchCozmoWinGame = CladEnum<global::Anki.Cozmo.AnimationTrigger>.FromName("MemoryMatchCozmoWinGame");
 
-    /// <summary>CLAD <c>MemoryMatchPlayerWinGame</c> (285).</summary>
+    /// <summary>CLAD member <c>MemoryMatchPlayerWinGame</c> (id 285).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.AnimationTrigger> MemoryMatchPlayerWinGame = CladEnum<global::Anki.Cozmo.AnimationTrigger>.FromName("MemoryMatchPlayerWinGame");
 
-    /// <summary>CLAD <c>MemoryMatchSoloGameOver</c> (286).</summary>
+    /// <summary>CLAD member <c>MemoryMatchSoloGameOver</c> (id 286).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.AnimationTrigger> MemoryMatchSoloGameOver = CladEnum<global::Anki.Cozmo.AnimationTrigger>.FromName("MemoryMatchSoloGameOver");
 
-    /// <summary>CLAD <c>MemoryMatchReactToPattern</c> (287).</summary>
+    /// <summary>CLAD member <c>MemoryMatchReactToPattern</c> (id 287).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.AnimationTrigger> MemoryMatchReactToPattern = CladEnum<global::Anki.Cozmo.AnimationTrigger>.FromName("MemoryMatchReactToPattern");
 
-    /// <summary>CLAD <c>MemoryMatchReactToPatternSolo</c> (288).</summary>
+    /// <summary>CLAD member <c>MemoryMatchReactToPatternSolo</c> (id 288).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.AnimationTrigger> MemoryMatchReactToPatternSolo = CladEnum<global::Anki.Cozmo.AnimationTrigger>.FromName("MemoryMatchReactToPatternSolo");
 
-    /// <summary>CLAD <c>MemoryMatchPointCenter</c> (289).</summary>
+    /// <summary>CLAD member <c>MemoryMatchPointCenter</c> (id 289).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.AnimationTrigger> MemoryMatchPointCenter = CladEnum<global::Anki.Cozmo.AnimationTrigger>.FromName("MemoryMatchPointCenter");
 
-    /// <summary>CLAD <c>MemoryMatchPointLeftBig</c> (290).</summary>
+    /// <summary>CLAD member <c>MemoryMatchPointLeftBig</c> (id 290).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.AnimationTrigger> MemoryMatchPointLeftBig = CladEnum<global::Anki.Cozmo.AnimationTrigger>.FromName("MemoryMatchPointLeftBig");
 
-    /// <summary>CLAD <c>MemoryMatchPointLeftSmall</c> (291).</summary>
+    /// <summary>CLAD member <c>MemoryMatchPointLeftSmall</c> (id 291).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.AnimationTrigger> MemoryMatchPointLeftSmall = CladEnum<global::Anki.Cozmo.AnimationTrigger>.FromName("MemoryMatchPointLeftSmall");
 
-    /// <summary>CLAD <c>MemoryMatchPointRightBig</c> (292).</summary>
+    /// <summary>CLAD member <c>MemoryMatchPointRightBig</c> (id 292).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.AnimationTrigger> MemoryMatchPointRightBig = CladEnum<global::Anki.Cozmo.AnimationTrigger>.FromName("MemoryMatchPointRightBig");
 
-    /// <summary>CLAD <c>MemoryMatchPointRightSmall</c> (293).</summary>
+    /// <summary>CLAD member <c>MemoryMatchPointRightSmall</c> (id 293).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.AnimationTrigger> MemoryMatchPointRightSmall = CladEnum<global::Anki.Cozmo.AnimationTrigger>.FromName("MemoryMatchPointRightSmall");
 
-    /// <summary>CLAD <c>MemoryMatchPointCenterFast</c> (294).</summary>
+    /// <summary>CLAD member <c>MemoryMatchPointCenterFast</c> (id 294).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.AnimationTrigger> MemoryMatchPointCenterFast = CladEnum<global::Anki.Cozmo.AnimationTrigger>.FromName("MemoryMatchPointCenterFast");
 
-    /// <summary>CLAD <c>MemoryMatchPointLeftBigFast</c> (295).</summary>
+    /// <summary>CLAD member <c>MemoryMatchPointLeftBigFast</c> (id 295).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.AnimationTrigger> MemoryMatchPointLeftBigFast = CladEnum<global::Anki.Cozmo.AnimationTrigger>.FromName("MemoryMatchPointLeftBigFast");
 
-    /// <summary>CLAD <c>MemoryMatchPointLeftSmallFast</c> (296).</summary>
+    /// <summary>CLAD member <c>MemoryMatchPointLeftSmallFast</c> (id 296).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.AnimationTrigger> MemoryMatchPointLeftSmallFast = CladEnum<global::Anki.Cozmo.AnimationTrigger>.FromName("MemoryMatchPointLeftSmallFast");
 
-    /// <summary>CLAD <c>MemoryMatchPointRightBigFast</c> (297).</summary>
+    /// <summary>CLAD member <c>MemoryMatchPointRightBigFast</c> (id 297).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.AnimationTrigger> MemoryMatchPointRightBigFast = CladEnum<global::Anki.Cozmo.AnimationTrigger>.FromName("MemoryMatchPointRightBigFast");
 
-    /// <summary>CLAD <c>MemoryMatchPointRightSmallFast</c> (298).</summary>
+    /// <summary>CLAD member <c>MemoryMatchPointRightSmallFast</c> (id 298).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.AnimationTrigger> MemoryMatchPointRightSmallFast = CladEnum<global::Anki.Cozmo.AnimationTrigger>.FromName("MemoryMatchPointRightSmallFast");
 
-    /// <summary>CLAD <c>MemoryMatchCozmoGetOut</c> (299).</summary>
+    /// <summary>CLAD member <c>MemoryMatchCozmoGetOut</c> (id 299).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.AnimationTrigger> MemoryMatchCozmoGetOut = CladEnum<global::Anki.Cozmo.AnimationTrigger>.FromName("MemoryMatchCozmoGetOut");
 
-    /// <summary>CLAD <c>MemoryMatchCozmoFollowTapsSoundOnly</c> (300).</summary>
+    /// <summary>CLAD member <c>MemoryMatchCozmoFollowTapsSoundOnly</c> (id 300).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.AnimationTrigger> MemoryMatchCozmoFollowTapsSoundOnly = CladEnum<global::Anki.Cozmo.AnimationTrigger>.FromName("MemoryMatchCozmoFollowTapsSoundOnly");
 
-    /// <summary>CLAD <c>NamedFaceInitialGreeting</c> (301).</summary>
+    /// <summary>CLAD member <c>NamedFaceInitialGreeting</c> (id 301).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.AnimationTrigger> NamedFaceInitialGreeting = CladEnum<global::Anki.Cozmo.AnimationTrigger>.FromName("NamedFaceInitialGreeting");
 
-    /// <summary>CLAD <c>NeedsMildLowEnergyRequest</c> (302).</summary>
+    /// <summary>CLAD member <c>NeedsMildLowEnergyRequest</c> (id 302).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.AnimationTrigger> NeedsMildLowEnergyRequest = CladEnum<global::Anki.Cozmo.AnimationTrigger>.FromName("NeedsMildLowEnergyRequest");
 
-    /// <summary>CLAD <c>NeedsMildLowPlayRequest</c> (303).</summary>
+    /// <summary>CLAD member <c>NeedsMildLowPlayRequest</c> (id 303).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.AnimationTrigger> NeedsMildLowPlayRequest = CladEnum<global::Anki.Cozmo.AnimationTrigger>.FromName("NeedsMildLowPlayRequest");
 
-    /// <summary>CLAD <c>NeedsMildLowRepairRequest</c> (304).</summary>
+    /// <summary>CLAD member <c>NeedsMildLowRepairRequest</c> (id 304).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.AnimationTrigger> NeedsMildLowRepairRequest = CladEnum<global::Anki.Cozmo.AnimationTrigger>.FromName("NeedsMildLowRepairRequest");
 
-    /// <summary>CLAD <c>NeedsSevereLowEnergyCliffReact</c> (305).</summary>
+    /// <summary>CLAD member <c>NeedsSevereLowEnergyCliffReact</c> (id 305).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.AnimationTrigger> NeedsSevereLowEnergyCliffReact = CladEnum<global::Anki.Cozmo.AnimationTrigger>.FromName("NeedsSevereLowEnergyCliffReact");
 
-    /// <summary>CLAD <c>NeedsSevereLowEnergyDrivingEnd</c> (306).</summary>
+    /// <summary>CLAD member <c>NeedsSevereLowEnergyDrivingEnd</c> (id 306).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.AnimationTrigger> NeedsSevereLowEnergyDrivingEnd = CladEnum<global::Anki.Cozmo.AnimationTrigger>.FromName("NeedsSevereLowEnergyDrivingEnd");
 
-    /// <summary>CLAD <c>NeedsSevereLowEnergyDrivingLoop</c> (307).</summary>
+    /// <summary>CLAD member <c>NeedsSevereLowEnergyDrivingLoop</c> (id 307).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.AnimationTrigger> NeedsSevereLowEnergyDrivingLoop = CladEnum<global::Anki.Cozmo.AnimationTrigger>.FromName("NeedsSevereLowEnergyDrivingLoop");
 
-    /// <summary>CLAD <c>NeedsSevereLowEnergyDrivingStart</c> (308).</summary>
+    /// <summary>CLAD member <c>NeedsSevereLowEnergyDrivingStart</c> (id 308).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.AnimationTrigger> NeedsSevereLowEnergyDrivingStart = CladEnum<global::Anki.Cozmo.AnimationTrigger>.FromName("NeedsSevereLowEnergyDrivingStart");
 
-    /// <summary>CLAD <c>NeedsSevereLowEnergyForceGetOut</c> (309).</summary>
+    /// <summary>CLAD member <c>NeedsSevereLowEnergyForceGetOut</c> (id 309).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.AnimationTrigger> NeedsSevereLowEnergyForceGetOut = CladEnum<global::Anki.Cozmo.AnimationTrigger>.FromName("NeedsSevereLowEnergyForceGetOut");
 
-    /// <summary>CLAD <c>NeedsSevereLowEnergyGetIn</c> (310).</summary>
+    /// <summary>CLAD member <c>NeedsSevereLowEnergyGetIn</c> (id 310).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.AnimationTrigger> NeedsSevereLowEnergyGetIn = CladEnum<global::Anki.Cozmo.AnimationTrigger>.FromName("NeedsSevereLowEnergyGetIn");
 
-    /// <summary>CLAD <c>NeedsSevereLowEnergyIdle</c> (311).</summary>
+    /// <summary>CLAD member <c>NeedsSevereLowEnergyIdle</c> (id 311).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.AnimationTrigger> NeedsSevereLowEnergyIdle = CladEnum<global::Anki.Cozmo.AnimationTrigger>.FromName("NeedsSevereLowEnergyIdle");
 
-    /// <summary>CLAD <c>NeedsSevereLowEnergyRequest</c> (312).</summary>
+    /// <summary>CLAD member <c>NeedsSevereLowEnergyRequest</c> (id 312).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.AnimationTrigger> NeedsSevereLowEnergyRequest = CladEnum<global::Anki.Cozmo.AnimationTrigger>.FromName("NeedsSevereLowEnergyRequest");
 
-    /// <summary>CLAD <c>NeedsSevereLowEnergySlopeReact</c> (313).</summary>
+    /// <summary>CLAD member <c>NeedsSevereLowEnergySlopeReact</c> (id 313).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.AnimationTrigger> NeedsSevereLowEnergySlopeReact = CladEnum<global::Anki.Cozmo.AnimationTrigger>.FromName("NeedsSevereLowEnergySlopeReact");
 
-    /// <summary>CLAD <c>NeedsSevereLowPlayForceGetOut</c> (314).</summary>
+    /// <summary>CLAD member <c>NeedsSevereLowPlayForceGetOut</c> (id 314).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.AnimationTrigger> NeedsSevereLowPlayForceGetOut = CladEnum<global::Anki.Cozmo.AnimationTrigger>.FromName("NeedsSevereLowPlayForceGetOut");
 
-    /// <summary>CLAD <c>NeedsSevereLowPlayGetIn</c> (315).</summary>
+    /// <summary>CLAD member <c>NeedsSevereLowPlayGetIn</c> (id 315).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.AnimationTrigger> NeedsSevereLowPlayGetIn = CladEnum<global::Anki.Cozmo.AnimationTrigger>.FromName("NeedsSevereLowPlayGetIn");
 
-    /// <summary>CLAD <c>NeedsSevereLowPlayRequest</c> (316).</summary>
+    /// <summary>CLAD member <c>NeedsSevereLowPlayRequest</c> (id 316).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.AnimationTrigger> NeedsSevereLowPlayRequest = CladEnum<global::Anki.Cozmo.AnimationTrigger>.FromName("NeedsSevereLowPlayRequest");
 
-    /// <summary>CLAD <c>NeedsSevereLowRepairCliffReact</c> (317).</summary>
+    /// <summary>CLAD member <c>NeedsSevereLowRepairCliffReact</c> (id 317).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.AnimationTrigger> NeedsSevereLowRepairCliffReact = CladEnum<global::Anki.Cozmo.AnimationTrigger>.FromName("NeedsSevereLowRepairCliffReact");
 
-    /// <summary>CLAD <c>NeedsSevereLowRepairDrivingEnd</c> (318).</summary>
+    /// <summary>CLAD member <c>NeedsSevereLowRepairDrivingEnd</c> (id 318).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.AnimationTrigger> NeedsSevereLowRepairDrivingEnd = CladEnum<global::Anki.Cozmo.AnimationTrigger>.FromName("NeedsSevereLowRepairDrivingEnd");
 
-    /// <summary>CLAD <c>NeedsSevereLowRepairDrivingLoop</c> (319).</summary>
+    /// <summary>CLAD member <c>NeedsSevereLowRepairDrivingLoop</c> (id 319).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.AnimationTrigger> NeedsSevereLowRepairDrivingLoop = CladEnum<global::Anki.Cozmo.AnimationTrigger>.FromName("NeedsSevereLowRepairDrivingLoop");
 
-    /// <summary>CLAD <c>NeedsSevereLowRepairDrivingStart</c> (320).</summary>
+    /// <summary>CLAD member <c>NeedsSevereLowRepairDrivingStart</c> (id 320).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.AnimationTrigger> NeedsSevereLowRepairDrivingStart = CladEnum<global::Anki.Cozmo.AnimationTrigger>.FromName("NeedsSevereLowRepairDrivingStart");
 
-    /// <summary>CLAD <c>NeedsSevereLowRepairForceGetOut</c> (321).</summary>
+    /// <summary>CLAD member <c>NeedsSevereLowRepairForceGetOut</c> (id 321).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.AnimationTrigger> NeedsSevereLowRepairForceGetOut = CladEnum<global::Anki.Cozmo.AnimationTrigger>.FromName("NeedsSevereLowRepairForceGetOut");
 
-    /// <summary>CLAD <c>NeedsSevereLowRepairGetIn</c> (322).</summary>
+    /// <summary>CLAD member <c>NeedsSevereLowRepairGetIn</c> (id 322).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.AnimationTrigger> NeedsSevereLowRepairGetIn = CladEnum<global::Anki.Cozmo.AnimationTrigger>.FromName("NeedsSevereLowRepairGetIn");
 
-    /// <summary>CLAD <c>NeedsSevereLowRepairIdle</c> (323).</summary>
+    /// <summary>CLAD member <c>NeedsSevereLowRepairIdle</c> (id 323).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.AnimationTrigger> NeedsSevereLowRepairIdle = CladEnum<global::Anki.Cozmo.AnimationTrigger>.FromName("NeedsSevereLowRepairIdle");
 
-    /// <summary>CLAD <c>NeedsSevereLowRepairRequest</c> (324).</summary>
+    /// <summary>CLAD member <c>NeedsSevereLowRepairRequest</c> (id 324).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.AnimationTrigger> NeedsSevereLowRepairRequest = CladEnum<global::Anki.Cozmo.AnimationTrigger>.FromName("NeedsSevereLowRepairRequest");
 
-    /// <summary>CLAD <c>NeedsSevereLowRepairSlopeReact</c> (325).</summary>
+    /// <summary>CLAD member <c>NeedsSevereLowRepairSlopeReact</c> (id 325).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.AnimationTrigger> NeedsSevereLowRepairSlopeReact = CladEnum<global::Anki.Cozmo.AnimationTrigger>.FromName("NeedsSevereLowRepairSlopeReact");
 
-    /// <summary>CLAD <c>NeutralFace</c> (326).</summary>
+    /// <summary>CLAD member <c>NeutralFace</c> (id 326).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.AnimationTrigger> NeutralFace = CladEnum<global::Anki.Cozmo.AnimationTrigger>.FromName("NeutralFace");
 
-    /// <summary>CLAD <c>NothingToDoBoredEvent</c> (327).</summary>
+    /// <summary>CLAD member <c>NothingToDoBoredEvent</c> (id 327).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.AnimationTrigger> NothingToDoBoredEvent = CladEnum<global::Anki.Cozmo.AnimationTrigger>.FromName("NothingToDoBoredEvent");
 
-    /// <summary>CLAD <c>NothingToDoBoredIdle</c> (328).</summary>
+    /// <summary>CLAD member <c>NothingToDoBoredIdle</c> (id 328).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.AnimationTrigger> NothingToDoBoredIdle = CladEnum<global::Anki.Cozmo.AnimationTrigger>.FromName("NothingToDoBoredIdle");
 
-    /// <summary>CLAD <c>NothingToDoBoredIntro</c> (329).</summary>
+    /// <summary>CLAD member <c>NothingToDoBoredIntro</c> (id 329).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.AnimationTrigger> NothingToDoBoredIntro = CladEnum<global::Anki.Cozmo.AnimationTrigger>.FromName("NothingToDoBoredIntro");
 
-    /// <summary>CLAD <c>NothingToDoBoredOutro</c> (330).</summary>
+    /// <summary>CLAD member <c>NothingToDoBoredOutro</c> (id 330).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.AnimationTrigger> NothingToDoBoredOutro = CladEnum<global::Anki.Cozmo.AnimationTrigger>.FromName("NothingToDoBoredOutro");
 
-    /// <summary>CLAD <c>OnLearnedPlayerName</c> (331).</summary>
+    /// <summary>CLAD member <c>OnLearnedPlayerName</c> (id 331).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.AnimationTrigger> OnLearnedPlayerName = CladEnum<global::Anki.Cozmo.AnimationTrigger>.FromName("OnLearnedPlayerName");
 
-    /// <summary>CLAD <c>OnSawNewNamedFace</c> (332).</summary>
+    /// <summary>CLAD member <c>OnSawNewNamedFace</c> (id 332).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.AnimationTrigger> OnSawNewNamedFace = CladEnum<global::Anki.Cozmo.AnimationTrigger>.FromName("OnSawNewNamedFace");
 
-    /// <summary>CLAD <c>OnSawNewUnnamedFace</c> (333).</summary>
+    /// <summary>CLAD member <c>OnSawNewUnnamedFace</c> (id 333).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.AnimationTrigger> OnSawNewUnnamedFace = CladEnum<global::Anki.Cozmo.AnimationTrigger>.FromName("OnSawNewUnnamedFace");
 
-    /// <summary>CLAD <c>OnSawOldNamedFace</c> (334).</summary>
+    /// <summary>CLAD member <c>OnSawOldNamedFace</c> (id 334).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.AnimationTrigger> OnSawOldNamedFace = CladEnum<global::Anki.Cozmo.AnimationTrigger>.FromName("OnSawOldNamedFace");
 
-    /// <summary>CLAD <c>OnSawOldUnnamedFace</c> (335).</summary>
+    /// <summary>CLAD member <c>OnSawOldUnnamedFace</c> (id 335).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.AnimationTrigger> OnSawOldUnnamedFace = CladEnum<global::Anki.Cozmo.AnimationTrigger>.FromName("OnSawOldUnnamedFace");
 
-    /// <summary>CLAD <c>OnSpeedtapCozmoConfirm</c> (336).</summary>
+    /// <summary>CLAD member <c>OnSpeedtapCozmoConfirm</c> (id 336).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.AnimationTrigger> OnSpeedtapCozmoConfirm = CladEnum<global::Anki.Cozmo.AnimationTrigger>.FromName("OnSpeedtapCozmoConfirm");
 
-    /// <summary>CLAD <c>OnSpeedtapFakeout</c> (337).</summary>
+    /// <summary>CLAD member <c>OnSpeedtapFakeout</c> (id 337).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.AnimationTrigger> OnSpeedtapFakeout = CladEnum<global::Anki.Cozmo.AnimationTrigger>.FromName("OnSpeedtapFakeout");
 
-    /// <summary>CLAD <c>OnSpeedtapGameCozmoWinHighIntensity</c> (338).</summary>
+    /// <summary>CLAD member <c>OnSpeedtapGameCozmoWinHighIntensity</c> (id 338).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.AnimationTrigger> OnSpeedtapGameCozmoWinHighIntensity = CladEnum<global::Anki.Cozmo.AnimationTrigger>.FromName("OnSpeedtapGameCozmoWinHighIntensity");
 
-    /// <summary>CLAD <c>OnSpeedtapGameCozmoWinLowIntensity</c> (339).</summary>
+    /// <summary>CLAD member <c>OnSpeedtapGameCozmoWinLowIntensity</c> (id 339).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.AnimationTrigger> OnSpeedtapGameCozmoWinLowIntensity = CladEnum<global::Anki.Cozmo.AnimationTrigger>.FromName("OnSpeedtapGameCozmoWinLowIntensity");
 
-    /// <summary>CLAD <c>OnSpeedtapGamePlayerWinHighIntensity</c> (340).</summary>
+    /// <summary>CLAD member <c>OnSpeedtapGamePlayerWinHighIntensity</c> (id 340).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.AnimationTrigger> OnSpeedtapGamePlayerWinHighIntensity = CladEnum<global::Anki.Cozmo.AnimationTrigger>.FromName("OnSpeedtapGamePlayerWinHighIntensity");
 
-    /// <summary>CLAD <c>OnSpeedtapGamePlayerWinLowIntensity</c> (341).</summary>
+    /// <summary>CLAD member <c>OnSpeedtapGamePlayerWinLowIntensity</c> (id 341).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.AnimationTrigger> OnSpeedtapGamePlayerWinLowIntensity = CladEnum<global::Anki.Cozmo.AnimationTrigger>.FromName("OnSpeedtapGamePlayerWinLowIntensity");
 
-    /// <summary>CLAD <c>OnSpeedtapGetOut</c> (342).</summary>
+    /// <summary>CLAD member <c>OnSpeedtapGetOut</c> (id 342).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.AnimationTrigger> OnSpeedtapGetOut = CladEnum<global::Anki.Cozmo.AnimationTrigger>.FromName("OnSpeedtapGetOut");
 
-    /// <summary>CLAD <c>OnSpeedtapHandCozmoWin</c> (343).</summary>
+    /// <summary>CLAD member <c>OnSpeedtapHandCozmoWin</c> (id 343).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.AnimationTrigger> OnSpeedtapHandCozmoWin = CladEnum<global::Anki.Cozmo.AnimationTrigger>.FromName("OnSpeedtapHandCozmoWin");
 
-    /// <summary>CLAD <c>OnSpeedtapHandPlayerWin</c> (344).</summary>
+    /// <summary>CLAD member <c>OnSpeedtapHandPlayerWin</c> (id 344).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.AnimationTrigger> OnSpeedtapHandPlayerWin = CladEnum<global::Anki.Cozmo.AnimationTrigger>.FromName("OnSpeedtapHandPlayerWin");
 
-    /// <summary>CLAD <c>OnSpeedtapIdle</c> (345).</summary>
+    /// <summary>CLAD member <c>OnSpeedtapIdle</c> (id 345).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.AnimationTrigger> OnSpeedtapIdle = CladEnum<global::Anki.Cozmo.AnimationTrigger>.FromName("OnSpeedtapIdle");
 
-    /// <summary>CLAD <c>OnSpeedtapRoundCozmoWinHighIntensity</c> (346).</summary>
+    /// <summary>CLAD member <c>OnSpeedtapRoundCozmoWinHighIntensity</c> (id 346).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.AnimationTrigger> OnSpeedtapRoundCozmoWinHighIntensity = CladEnum<global::Anki.Cozmo.AnimationTrigger>.FromName("OnSpeedtapRoundCozmoWinHighIntensity");
 
-    /// <summary>CLAD <c>OnSpeedtapRoundCozmoWinLowIntensity</c> (347).</summary>
+    /// <summary>CLAD member <c>OnSpeedtapRoundCozmoWinLowIntensity</c> (id 347).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.AnimationTrigger> OnSpeedtapRoundCozmoWinLowIntensity = CladEnum<global::Anki.Cozmo.AnimationTrigger>.FromName("OnSpeedtapRoundCozmoWinLowIntensity");
 
-    /// <summary>CLAD <c>OnSpeedtapRoundPlayerWinHighIntensity</c> (348).</summary>
+    /// <summary>CLAD member <c>OnSpeedtapRoundPlayerWinHighIntensity</c> (id 348).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.AnimationTrigger> OnSpeedtapRoundPlayerWinHighIntensity = CladEnum<global::Anki.Cozmo.AnimationTrigger>.FromName("OnSpeedtapRoundPlayerWinHighIntensity");
 
-    /// <summary>CLAD <c>OnSpeedtapRoundPlayerWinLowIntensity</c> (349).</summary>
+    /// <summary>CLAD member <c>OnSpeedtapRoundPlayerWinLowIntensity</c> (id 349).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.AnimationTrigger> OnSpeedtapRoundPlayerWinLowIntensity = CladEnum<global::Anki.Cozmo.AnimationTrigger>.FromName("OnSpeedtapRoundPlayerWinLowIntensity");
 
-    /// <summary>CLAD <c>OnSpeedtapTap</c> (350).</summary>
+    /// <summary>CLAD member <c>OnSpeedtapTap</c> (id 350).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.AnimationTrigger> OnSpeedtapTap = CladEnum<global::Anki.Cozmo.AnimationTrigger>.FromName("OnSpeedtapTap");
 
-    /// <summary>CLAD <c>OnWaitForCubesMinigameSetup</c> (351).</summary>
+    /// <summary>CLAD member <c>OnWaitForCubesMinigameSetup</c> (id 351).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.AnimationTrigger> OnWaitForCubesMinigameSetup = CladEnum<global::Anki.Cozmo.AnimationTrigger>.FromName("OnWaitForCubesMinigameSetup");
 
-    /// <summary>CLAD <c>OnWiggle</c> (352).</summary>
+    /// <summary>CLAD member <c>OnWiggle</c> (id 352).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.AnimationTrigger> OnWiggle = CladEnum<global::Anki.Cozmo.AnimationTrigger>.FromName("OnWiggle");
 
-    /// <summary>CLAD <c>OnboardingBirth</c> (353).</summary>
+    /// <summary>CLAD member <c>OnboardingBirth</c> (id 353).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.AnimationTrigger> OnboardingBirth = CladEnum<global::Anki.Cozmo.AnimationTrigger>.FromName("OnboardingBirth");
 
-    /// <summary>CLAD <c>OnboardingCubeDockFail</c> (354).</summary>
+    /// <summary>CLAD member <c>OnboardingCubeDockFail</c> (id 354).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.AnimationTrigger> OnboardingCubeDockFail = CladEnum<global::Anki.Cozmo.AnimationTrigger>.FromName("OnboardingCubeDockFail");
 
-    /// <summary>CLAD <c>OnboardingDiscoverCube</c> (355).</summary>
+    /// <summary>CLAD member <c>OnboardingDiscoverCube</c> (id 355).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.AnimationTrigger> OnboardingDiscoverCube = CladEnum<global::Anki.Cozmo.AnimationTrigger>.FromName("OnboardingDiscoverCube");
 
-    /// <summary>CLAD <c>OnboardingDriveEnd</c> (356).</summary>
+    /// <summary>CLAD member <c>OnboardingDriveEnd</c> (id 356).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.AnimationTrigger> OnboardingDriveEnd = CladEnum<global::Anki.Cozmo.AnimationTrigger>.FromName("OnboardingDriveEnd");
 
-    /// <summary>CLAD <c>OnboardingDriveLoop</c> (357).</summary>
+    /// <summary>CLAD member <c>OnboardingDriveLoop</c> (id 357).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.AnimationTrigger> OnboardingDriveLoop = CladEnum<global::Anki.Cozmo.AnimationTrigger>.FromName("OnboardingDriveLoop");
 
-    /// <summary>CLAD <c>OnboardingDriveStart</c> (358).</summary>
+    /// <summary>CLAD member <c>OnboardingDriveStart</c> (id 358).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.AnimationTrigger> OnboardingDriveStart = CladEnum<global::Anki.Cozmo.AnimationTrigger>.FromName("OnboardingDriveStart");
 
-    /// <summary>CLAD <c>OnboardingEyesOn</c> (359).</summary>
+    /// <summary>CLAD member <c>OnboardingEyesOn</c> (id 359).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.AnimationTrigger> OnboardingEyesOn = CladEnum<global::Anki.Cozmo.AnimationTrigger>.FromName("OnboardingEyesOn");
 
-    /// <summary>CLAD <c>OnboardingHelloPlayer</c> (360).</summary>
+    /// <summary>CLAD member <c>OnboardingHelloPlayer</c> (id 360).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.AnimationTrigger> OnboardingHelloPlayer = CladEnum<global::Anki.Cozmo.AnimationTrigger>.FromName("OnboardingHelloPlayer");
 
-    /// <summary>CLAD <c>OnboardingHelloWorld</c> (361).</summary>
+    /// <summary>CLAD member <c>OnboardingHelloWorld</c> (id 361).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.AnimationTrigger> OnboardingHelloWorld = CladEnum<global::Anki.Cozmo.AnimationTrigger>.FromName("OnboardingHelloWorld");
 
-    /// <summary>CLAD <c>OnboardingIdle</c> (362).</summary>
+    /// <summary>CLAD member <c>OnboardingIdle</c> (id 362).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.AnimationTrigger> OnboardingIdle = CladEnum<global::Anki.Cozmo.AnimationTrigger>.FromName("OnboardingIdle");
 
-    /// <summary>CLAD <c>OnboardingIdleEnergy</c> (363).</summary>
+    /// <summary>CLAD member <c>OnboardingIdleEnergy</c> (id 363).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.AnimationTrigger> OnboardingIdleEnergy = CladEnum<global::Anki.Cozmo.AnimationTrigger>.FromName("OnboardingIdleEnergy");
 
-    /// <summary>CLAD <c>OnboardingIdlePlay</c> (364).</summary>
+    /// <summary>CLAD member <c>OnboardingIdlePlay</c> (id 364).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.AnimationTrigger> OnboardingIdlePlay = CladEnum<global::Anki.Cozmo.AnimationTrigger>.FromName("OnboardingIdlePlay");
 
-    /// <summary>CLAD <c>OnboardingIdleRepair</c> (365).</summary>
+    /// <summary>CLAD member <c>OnboardingIdleRepair</c> (id 365).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.AnimationTrigger> OnboardingIdleRepair = CladEnum<global::Anki.Cozmo.AnimationTrigger>.FromName("OnboardingIdleRepair");
 
-    /// <summary>CLAD <c>OnboardingInteractWithCube</c> (366).</summary>
+    /// <summary>CLAD member <c>OnboardingInteractWithCube</c> (id 366).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.AnimationTrigger> OnboardingInteractWithCube = CladEnum<global::Anki.Cozmo.AnimationTrigger>.FromName("OnboardingInteractWithCube");
 
-    /// <summary>CLAD <c>OnboardingPreBirth</c> (367).</summary>
+    /// <summary>CLAD member <c>OnboardingPreBirth</c> (id 367).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.AnimationTrigger> OnboardingPreBirth = CladEnum<global::Anki.Cozmo.AnimationTrigger>.FromName("OnboardingPreBirth");
 
-    /// <summary>CLAD <c>OnboardingReactToCube</c> (368).</summary>
+    /// <summary>CLAD member <c>OnboardingReactToCube</c> (id 368).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.AnimationTrigger> OnboardingReactToCube = CladEnum<global::Anki.Cozmo.AnimationTrigger>.FromName("OnboardingReactToCube");
 
-    /// <summary>CLAD <c>OnboardingReactToCubePutDown</c> (369).</summary>
+    /// <summary>CLAD member <c>OnboardingReactToCubePutDown</c> (id 369).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.AnimationTrigger> OnboardingReactToCubePutDown = CladEnum<global::Anki.Cozmo.AnimationTrigger>.FromName("OnboardingReactToCubePutDown");
 
-    /// <summary>CLAD <c>OnboardingReactToFace</c> (370).</summary>
+    /// <summary>CLAD member <c>OnboardingReactToFace</c> (id 370).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.AnimationTrigger> OnboardingReactToFace = CladEnum<global::Anki.Cozmo.AnimationTrigger>.FromName("OnboardingReactToFace");
 
-    /// <summary>CLAD <c>OnboardingSoundOnlyLiftEffortPickup</c> (371).</summary>
+    /// <summary>CLAD member <c>OnboardingSoundOnlyLiftEffortPickup</c> (id 371).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.AnimationTrigger> OnboardingSoundOnlyLiftEffortPickup = CladEnum<global::Anki.Cozmo.AnimationTrigger>.FromName("OnboardingSoundOnlyLiftEffortPickup");
 
-    /// <summary>CLAD <c>OnboardingSoundOnlyLiftEffortPlaceLow</c> (372).</summary>
+    /// <summary>CLAD member <c>OnboardingSoundOnlyLiftEffortPlaceLow</c> (id 372).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.AnimationTrigger> OnboardingSoundOnlyLiftEffortPlaceLow = CladEnum<global::Anki.Cozmo.AnimationTrigger>.FromName("OnboardingSoundOnlyLiftEffortPlaceLow");
 
-    /// <summary>CLAD <c>OnboardingGetOut</c> (373).</summary>
+    /// <summary>CLAD member <c>OnboardingGetOut</c> (id 373).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.AnimationTrigger> OnboardingGetOut = CladEnum<global::Anki.Cozmo.AnimationTrigger>.FromName("OnboardingGetOut");
 
-    /// <summary>CLAD <c>OnboardingWakeUpDriveOffCharger</c> (374).</summary>
+    /// <summary>CLAD member <c>OnboardingWakeUpDriveOffCharger</c> (id 374).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.AnimationTrigger> OnboardingWakeUpDriveOffCharger = CladEnum<global::Anki.Cozmo.AnimationTrigger>.FromName("OnboardingWakeUpDriveOffCharger");
 
-    /// <summary>CLAD <c>PeekABooGetIn</c> (375).</summary>
+    /// <summary>CLAD member <c>PeekABooGetIn</c> (id 375).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.AnimationTrigger> PeekABooGetIn = CladEnum<global::Anki.Cozmo.AnimationTrigger>.FromName("PeekABooGetIn");
 
-    /// <summary>CLAD <c>PeekABooGetOutHappy</c> (376).</summary>
+    /// <summary>CLAD member <c>PeekABooGetOutHappy</c> (id 376).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.AnimationTrigger> PeekABooGetOutHappy = CladEnum<global::Anki.Cozmo.AnimationTrigger>.FromName("PeekABooGetOutHappy");
 
-    /// <summary>CLAD <c>PeekABooGetOutSad</c> (377).</summary>
+    /// <summary>CLAD member <c>PeekABooGetOutSad</c> (id 377).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.AnimationTrigger> PeekABooGetOutSad = CladEnum<global::Anki.Cozmo.AnimationTrigger>.FromName("PeekABooGetOutSad");
 
-    /// <summary>CLAD <c>PeekABooHighIntensity</c> (378).</summary>
+    /// <summary>CLAD member <c>PeekABooHighIntensity</c> (id 378).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.AnimationTrigger> PeekABooHighIntensity = CladEnum<global::Anki.Cozmo.AnimationTrigger>.FromName("PeekABooHighIntensity");
 
-    /// <summary>CLAD <c>PeekABooIdle</c> (379).</summary>
+    /// <summary>CLAD member <c>PeekABooIdle</c> (id 379).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.AnimationTrigger> PeekABooIdle = CladEnum<global::Anki.Cozmo.AnimationTrigger>.FromName("PeekABooIdle");
 
-    /// <summary>CLAD <c>PeekABooLowIntensity</c> (380).</summary>
+    /// <summary>CLAD member <c>PeekABooLowIntensity</c> (id 380).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.AnimationTrigger> PeekABooLowIntensity = CladEnum<global::Anki.Cozmo.AnimationTrigger>.FromName("PeekABooLowIntensity");
 
-    /// <summary>CLAD <c>PeekABooMedIntensity</c> (381).</summary>
+    /// <summary>CLAD member <c>PeekABooMedIntensity</c> (id 381).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.AnimationTrigger> PeekABooMedIntensity = CladEnum<global::Anki.Cozmo.AnimationTrigger>.FromName("PeekABooMedIntensity");
 
-    /// <summary>CLAD <c>PeekABooNoUserInteraction</c> (382).</summary>
+    /// <summary>CLAD member <c>PeekABooNoUserInteraction</c> (id 382).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.AnimationTrigger> PeekABooNoUserInteraction = CladEnum<global::Anki.Cozmo.AnimationTrigger>.FromName("PeekABooNoUserInteraction");
 
-    /// <summary>CLAD <c>PeekABooShort</c> (383).</summary>
+    /// <summary>CLAD member <c>PeekABooShort</c> (id 383).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.AnimationTrigger> PeekABooShort = CladEnum<global::Anki.Cozmo.AnimationTrigger>.FromName("PeekABooShort");
 
-    /// <summary>CLAD <c>PeekABooSurprised</c> (384).</summary>
+    /// <summary>CLAD member <c>PeekABooSurprised</c> (id 384).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.AnimationTrigger> PeekABooSurprised = CladEnum<global::Anki.Cozmo.AnimationTrigger>.FromName("PeekABooSurprised");
 
-    /// <summary>CLAD <c>PetDetectionCat</c> (385).</summary>
+    /// <summary>CLAD member <c>PetDetectionCat</c> (id 385).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.AnimationTrigger> PetDetectionCat = CladEnum<global::Anki.Cozmo.AnimationTrigger>.FromName("PetDetectionCat");
 
-    /// <summary>CLAD <c>PetDetectionDog</c> (386).</summary>
+    /// <summary>CLAD member <c>PetDetectionDog</c> (id 386).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.AnimationTrigger> PetDetectionDog = CladEnum<global::Anki.Cozmo.AnimationTrigger>.FromName("PetDetectionDog");
 
-    /// <summary>CLAD <c>PetDetectionShort</c> (387).</summary>
+    /// <summary>CLAD member <c>PetDetectionShort</c> (id 387).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.AnimationTrigger> PetDetectionShort = CladEnum<global::Anki.Cozmo.AnimationTrigger>.FromName("PetDetectionShort");
 
-    /// <summary>CLAD <c>PetDetectionShort_Cat</c> (388).</summary>
+    /// <summary>CLAD member <c>PetDetectionShort_Cat</c> (id 388).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.AnimationTrigger> PetDetectionShort_Cat = CladEnum<global::Anki.Cozmo.AnimationTrigger>.FromName("PetDetectionShort_Cat");
 
-    /// <summary>CLAD <c>PetDetectionShort_Dog</c> (389).</summary>
+    /// <summary>CLAD member <c>PetDetectionShort_Dog</c> (id 389).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.AnimationTrigger> PetDetectionShort_Dog = CladEnum<global::Anki.Cozmo.AnimationTrigger>.FromName("PetDetectionShort_Dog");
 
-    /// <summary>CLAD <c>PetDetectionSneeze</c> (390).</summary>
+    /// <summary>CLAD member <c>PetDetectionSneeze</c> (id 390).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.AnimationTrigger> PetDetectionSneeze = CladEnum<global::Anki.Cozmo.AnimationTrigger>.FromName("PetDetectionSneeze");
 
-    /// <summary>CLAD <c>PickupHelperPreActionNamedFace</c> (391).</summary>
+    /// <summary>CLAD member <c>PickupHelperPreActionNamedFace</c> (id 391).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.AnimationTrigger> PickupHelperPreActionNamedFace = CladEnum<global::Anki.Cozmo.AnimationTrigger>.FromName("PickupHelperPreActionNamedFace");
 
-    /// <summary>CLAD <c>PickupHelperPreActionUnnamedFace</c> (392).</summary>
+    /// <summary>CLAD member <c>PickupHelperPreActionUnnamedFace</c> (id 392).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.AnimationTrigger> PickupHelperPreActionUnnamedFace = CladEnum<global::Anki.Cozmo.AnimationTrigger>.FromName("PickupHelperPreActionUnnamedFace");
 
-    /// <summary>CLAD <c>PlacedOnCharger</c> (393).</summary>
+    /// <summary>CLAD member <c>PlacedOnCharger</c> (id 393).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.AnimationTrigger> PlacedOnCharger = CladEnum<global::Anki.Cozmo.AnimationTrigger>.FromName("PlacedOnCharger");
 
-    /// <summary>CLAD <c>PopAWheelieInitial</c> (394).</summary>
+    /// <summary>CLAD member <c>PopAWheelieInitial</c> (id 394).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.AnimationTrigger> PopAWheelieInitial = CladEnum<global::Anki.Cozmo.AnimationTrigger>.FromName("PopAWheelieInitial");
 
-    /// <summary>CLAD <c>PopAWheeliePreActionNamedFace</c> (395).</summary>
+    /// <summary>CLAD member <c>PopAWheeliePreActionNamedFace</c> (id 395).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.AnimationTrigger> PopAWheeliePreActionNamedFace = CladEnum<global::Anki.Cozmo.AnimationTrigger>.FromName("PopAWheeliePreActionNamedFace");
 
-    /// <summary>CLAD <c>PopAWheeliePreActionUnnamedFace</c> (396).</summary>
+    /// <summary>CLAD member <c>PopAWheeliePreActionUnnamedFace</c> (id 396).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.AnimationTrigger> PopAWheeliePreActionUnnamedFace = CladEnum<global::Anki.Cozmo.AnimationTrigger>.FromName("PopAWheeliePreActionUnnamedFace");
 
-    /// <summary>CLAD <c>PopAWheelieRealign</c> (397).</summary>
+    /// <summary>CLAD member <c>PopAWheelieRealign</c> (id 397).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.AnimationTrigger> PopAWheelieRealign = CladEnum<global::Anki.Cozmo.AnimationTrigger>.FromName("PopAWheelieRealign");
 
-    /// <summary>CLAD <c>PopAWheelieRetry</c> (398).</summary>
+    /// <summary>CLAD member <c>PopAWheelieRetry</c> (id 398).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.AnimationTrigger> PopAWheelieRetry = CladEnum<global::Anki.Cozmo.AnimationTrigger>.FromName("PopAWheelieRetry");
 
-    /// <summary>CLAD <c>PounceDriveEnd</c> (399).</summary>
+    /// <summary>CLAD member <c>PounceDriveEnd</c> (id 399).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.AnimationTrigger> PounceDriveEnd = CladEnum<global::Anki.Cozmo.AnimationTrigger>.FromName("PounceDriveEnd");
 
-    /// <summary>CLAD <c>PounceDriveLoop</c> (400).</summary>
+    /// <summary>CLAD member <c>PounceDriveLoop</c> (id 400).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.AnimationTrigger> PounceDriveLoop = CladEnum<global::Anki.Cozmo.AnimationTrigger>.FromName("PounceDriveLoop");
 
-    /// <summary>CLAD <c>PounceDriveStart</c> (401).</summary>
+    /// <summary>CLAD member <c>PounceDriveStart</c> (id 401).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.AnimationTrigger> PounceDriveStart = CladEnum<global::Anki.Cozmo.AnimationTrigger>.FromName("PounceDriveStart");
 
-    /// <summary>CLAD <c>PounceFace</c> (402).</summary>
+    /// <summary>CLAD member <c>PounceFace</c> (id 402).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.AnimationTrigger> PounceFace = CladEnum<global::Anki.Cozmo.AnimationTrigger>.FromName("PounceFace");
 
-    /// <summary>CLAD <c>PounceFail</c> (403).</summary>
+    /// <summary>CLAD member <c>PounceFail</c> (id 403).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.AnimationTrigger> PounceFail = CladEnum<global::Anki.Cozmo.AnimationTrigger>.FromName("PounceFail");
 
-    /// <summary>CLAD <c>PounceGetOut</c> (404).</summary>
+    /// <summary>CLAD member <c>PounceGetOut</c> (id 404).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.AnimationTrigger> PounceGetOut = CladEnum<global::Anki.Cozmo.AnimationTrigger>.FromName("PounceGetOut");
 
-    /// <summary>CLAD <c>PounceInitial</c> (405).</summary>
+    /// <summary>CLAD member <c>PounceInitial</c> (id 405).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.AnimationTrigger> PounceInitial = CladEnum<global::Anki.Cozmo.AnimationTrigger>.FromName("PounceInitial");
 
-    /// <summary>CLAD <c>PouncePounce</c> (406).</summary>
+    /// <summary>CLAD member <c>PouncePounce</c> (id 406).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.AnimationTrigger> PouncePounce = CladEnum<global::Anki.Cozmo.AnimationTrigger>.FromName("PouncePounce");
 
-    /// <summary>CLAD <c>PounceSuccess</c> (407).</summary>
+    /// <summary>CLAD member <c>PounceSuccess</c> (id 407).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.AnimationTrigger> PounceSuccess = CladEnum<global::Anki.Cozmo.AnimationTrigger>.FromName("PounceSuccess");
 
-    /// <summary>CLAD <c>ProceduralLive</c> (408).</summary>
+    /// <summary>CLAD member <c>ProceduralLive</c> (id 408).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.AnimationTrigger> ProceduralLive = CladEnum<global::Anki.Cozmo.AnimationTrigger>.FromName("ProceduralLive");
 
-    /// <summary>CLAD <c>PutDownBlockKeepAlive</c> (409).</summary>
+    /// <summary>CLAD member <c>PutDownBlockKeepAlive</c> (id 409).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.AnimationTrigger> PutDownBlockKeepAlive = CladEnum<global::Anki.Cozmo.AnimationTrigger>.FromName("PutDownBlockKeepAlive");
 
-    /// <summary>CLAD <c>PutDownBlockPutDown</c> (410).</summary>
+    /// <summary>CLAD member <c>PutDownBlockPutDown</c> (id 410).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.AnimationTrigger> PutDownBlockPutDown = CladEnum<global::Anki.Cozmo.AnimationTrigger>.FromName("PutDownBlockPutDown");
 
-    /// <summary>CLAD <c>ReactToBlockPickupSuccess</c> (411).</summary>
+    /// <summary>CLAD member <c>ReactToBlockPickupSuccess</c> (id 411).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.AnimationTrigger> ReactToBlockPickupSuccess = CladEnum<global::Anki.Cozmo.AnimationTrigger>.FromName("ReactToBlockPickupSuccess");
 
-    /// <summary>CLAD <c>ReactToBlockRetryPickup</c> (412).</summary>
+    /// <summary>CLAD member <c>ReactToBlockRetryPickup</c> (id 412).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.AnimationTrigger> ReactToBlockRetryPickup = CladEnum<global::Anki.Cozmo.AnimationTrigger>.FromName("ReactToBlockRetryPickup");
 
-    /// <summary>CLAD <c>ReactToCliff</c> (413).</summary>
+    /// <summary>CLAD member <c>ReactToCliff</c> (id 413).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.AnimationTrigger> ReactToCliff = CladEnum<global::Anki.Cozmo.AnimationTrigger>.FromName("ReactToCliff");
 
-    /// <summary>CLAD <c>ReactToCliffDetectorStop</c> (414).</summary>
+    /// <summary>CLAD member <c>ReactToCliffDetectorStop</c> (id 414).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.AnimationTrigger> ReactToCliffDetectorStop = CladEnum<global::Anki.Cozmo.AnimationTrigger>.FromName("ReactToCliffDetectorStop");
 
-    /// <summary>CLAD <c>ReactToFalling</c> (415).</summary>
+    /// <summary>CLAD member <c>ReactToFalling</c> (id 415).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.AnimationTrigger> ReactToFalling = CladEnum<global::Anki.Cozmo.AnimationTrigger>.FromName("ReactToFalling");
 
-    /// <summary>CLAD <c>ReactToImpact</c> (416).</summary>
+    /// <summary>CLAD member <c>ReactToImpact</c> (id 416).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.AnimationTrigger> ReactToImpact = CladEnum<global::Anki.Cozmo.AnimationTrigger>.FromName("ReactToImpact");
 
-    /// <summary>CLAD <c>ReactToObstacle</c> (417).</summary>
+    /// <summary>CLAD member <c>ReactToObstacle</c> (id 417).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.AnimationTrigger> ReactToObstacle = CladEnum<global::Anki.Cozmo.AnimationTrigger>.FromName("ReactToObstacle");
 
-    /// <summary>CLAD <c>ReactToMotorCalibration</c> (418).</summary>
+    /// <summary>CLAD member <c>ReactToMotorCalibration</c> (id 418).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.AnimationTrigger> ReactToMotorCalibration = CladEnum<global::Anki.Cozmo.AnimationTrigger>.FromName("ReactToMotorCalibration");
 
-    /// <summary>CLAD <c>ReactToNewBlockAsk</c> (419).</summary>
+    /// <summary>CLAD member <c>ReactToNewBlockAsk</c> (id 419).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.AnimationTrigger> ReactToNewBlockAsk = CladEnum<global::Anki.Cozmo.AnimationTrigger>.FromName("ReactToNewBlockAsk");
 
-    /// <summary>CLAD <c>ReactToNewBlockBig</c> (420).</summary>
+    /// <summary>CLAD member <c>ReactToNewBlockBig</c> (id 420).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.AnimationTrigger> ReactToNewBlockBig = CladEnum<global::Anki.Cozmo.AnimationTrigger>.FromName("ReactToNewBlockBig");
 
-    /// <summary>CLAD <c>ReactToNewBlockSmall</c> (421).</summary>
+    /// <summary>CLAD member <c>ReactToNewBlockSmall</c> (id 421).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.AnimationTrigger> ReactToNewBlockSmall = CladEnum<global::Anki.Cozmo.AnimationTrigger>.FromName("ReactToNewBlockSmall");
 
-    /// <summary>CLAD <c>ReactToOnLeftSide</c> (422).</summary>
+    /// <summary>CLAD member <c>ReactToOnLeftSide</c> (id 422).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.AnimationTrigger> ReactToOnLeftSide = CladEnum<global::Anki.Cozmo.AnimationTrigger>.FromName("ReactToOnLeftSide");
 
-    /// <summary>CLAD <c>ReactToOnRightSide</c> (423).</summary>
+    /// <summary>CLAD member <c>ReactToOnRightSide</c> (id 423).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.AnimationTrigger> ReactToOnRightSide = CladEnum<global::Anki.Cozmo.AnimationTrigger>.FromName("ReactToOnRightSide");
 
-    /// <summary>CLAD <c>ReactToPerchedOnBlock</c> (424).</summary>
+    /// <summary>CLAD member <c>ReactToPerchedOnBlock</c> (id 424).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.AnimationTrigger> ReactToPerchedOnBlock = CladEnum<global::Anki.Cozmo.AnimationTrigger>.FromName("ReactToPerchedOnBlock");
 
-    /// <summary>CLAD <c>ReactToPickup</c> (425).</summary>
+    /// <summary>CLAD member <c>ReactToPickup</c> (id 425).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.AnimationTrigger> ReactToPickup = CladEnum<global::Anki.Cozmo.AnimationTrigger>.FromName("ReactToPickup");
 
-    /// <summary>CLAD <c>ReactToPokeReaction</c> (426).</summary>
+    /// <summary>CLAD member <c>ReactToPokeReaction</c> (id 426).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.AnimationTrigger> ReactToPokeReaction = CladEnum<global::Anki.Cozmo.AnimationTrigger>.FromName("ReactToPokeReaction");
 
-    /// <summary>CLAD <c>ReactToPokeStartled</c> (427).</summary>
+    /// <summary>CLAD member <c>ReactToPokeStartled</c> (id 427).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.AnimationTrigger> ReactToPokeStartled = CladEnum<global::Anki.Cozmo.AnimationTrigger>.FromName("ReactToPokeStartled");
 
-    /// <summary>CLAD <c>ReactToUnexpectedMovement</c> (428).</summary>
+    /// <summary>CLAD member <c>ReactToUnexpectedMovement</c> (id 428).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.AnimationTrigger> ReactToUnexpectedMovement = CladEnum<global::Anki.Cozmo.AnimationTrigger>.FromName("ReactToUnexpectedMovement");
 
-    /// <summary>CLAD <c>ReactToUnexpectedMovement_Severe_Energy</c> (429).</summary>
+    /// <summary>CLAD member <c>ReactToUnexpectedMovement_Severe_Energy</c> (id 429).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.AnimationTrigger> ReactToUnexpectedMovement_Severe_Energy = CladEnum<global::Anki.Cozmo.AnimationTrigger>.FromName("ReactToUnexpectedMovement_Severe_Energy");
 
-    /// <summary>CLAD <c>ReactToUnexpectedMovement_Severe_Repair</c> (430).</summary>
+    /// <summary>CLAD member <c>ReactToUnexpectedMovement_Severe_Repair</c> (id 430).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.AnimationTrigger> ReactToUnexpectedMovement_Severe_Repair = CladEnum<global::Anki.Cozmo.AnimationTrigger>.FromName("ReactToUnexpectedMovement_Severe_Repair");
 
-    /// <summary>CLAD <c>RepairFailMild</c> (431).</summary>
+    /// <summary>CLAD member <c>RepairFailMild</c> (id 431).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.AnimationTrigger> RepairFailMild = CladEnum<global::Anki.Cozmo.AnimationTrigger>.FromName("RepairFailMild");
 
-    /// <summary>CLAD <c>RepairFailSevere</c> (432).</summary>
+    /// <summary>CLAD member <c>RepairFailSevere</c> (id 432).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.AnimationTrigger> RepairFailSevere = CladEnum<global::Anki.Cozmo.AnimationTrigger>.FromName("RepairFailSevere");
 
-    /// <summary>CLAD <c>RepairFixMildGetIn</c> (433).</summary>
+    /// <summary>CLAD member <c>RepairFixMildGetIn</c> (id 433).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.AnimationTrigger> RepairFixMildGetIn = CladEnum<global::Anki.Cozmo.AnimationTrigger>.FromName("RepairFixMildGetIn");
 
-    /// <summary>CLAD <c>RepairFixMildGetOut</c> (434).</summary>
+    /// <summary>CLAD member <c>RepairFixMildGetOut</c> (id 434).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.AnimationTrigger> RepairFixMildGetOut = CladEnum<global::Anki.Cozmo.AnimationTrigger>.FromName("RepairFixMildGetOut");
 
-    /// <summary>CLAD <c>RepairFixMildGetReady</c> (435).</summary>
+    /// <summary>CLAD member <c>RepairFixMildGetReady</c> (id 435).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.AnimationTrigger> RepairFixMildGetReady = CladEnum<global::Anki.Cozmo.AnimationTrigger>.FromName("RepairFixMildGetReady");
 
-    /// <summary>CLAD <c>RepairFixMildHeadDown</c> (436).</summary>
+    /// <summary>CLAD member <c>RepairFixMildHeadDown</c> (id 436).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.AnimationTrigger> RepairFixMildHeadDown = CladEnum<global::Anki.Cozmo.AnimationTrigger>.FromName("RepairFixMildHeadDown");
 
-    /// <summary>CLAD <c>RepairFixMildHeadUp</c> (437).</summary>
+    /// <summary>CLAD member <c>RepairFixMildHeadUp</c> (id 437).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.AnimationTrigger> RepairFixMildHeadUp = CladEnum<global::Anki.Cozmo.AnimationTrigger>.FromName("RepairFixMildHeadUp");
 
-    /// <summary>CLAD <c>RepairFixMildIdle</c> (438).</summary>
+    /// <summary>CLAD member <c>RepairFixMildIdle</c> (id 438).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.AnimationTrigger> RepairFixMildIdle = CladEnum<global::Anki.Cozmo.AnimationTrigger>.FromName("RepairFixMildIdle");
 
-    /// <summary>CLAD <c>RepairFixMildLiftDown</c> (439).</summary>
+    /// <summary>CLAD member <c>RepairFixMildLiftDown</c> (id 439).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.AnimationTrigger> RepairFixMildLiftDown = CladEnum<global::Anki.Cozmo.AnimationTrigger>.FromName("RepairFixMildLiftDown");
 
-    /// <summary>CLAD <c>RepairFixMildLiftUp</c> (440).</summary>
+    /// <summary>CLAD member <c>RepairFixMildLiftUp</c> (id 440).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.AnimationTrigger> RepairFixMildLiftUp = CladEnum<global::Anki.Cozmo.AnimationTrigger>.FromName("RepairFixMildLiftUp");
 
-    /// <summary>CLAD <c>RepairFixMildLowerLift</c> (441).</summary>
+    /// <summary>CLAD member <c>RepairFixMildLowerLift</c> (id 441).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.AnimationTrigger> RepairFixMildLowerLift = CladEnum<global::Anki.Cozmo.AnimationTrigger>.FromName("RepairFixMildLowerLift");
 
-    /// <summary>CLAD <c>RepairFixMildRaiseLift</c> (442).</summary>
+    /// <summary>CLAD member <c>RepairFixMildRaiseLift</c> (id 442).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.AnimationTrigger> RepairFixMildRaiseLift = CladEnum<global::Anki.Cozmo.AnimationTrigger>.FromName("RepairFixMildRaiseLift");
 
-    /// <summary>CLAD <c>RepairFixMildRoundReact</c> (443).</summary>
+    /// <summary>CLAD member <c>RepairFixMildRoundReact</c> (id 443).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.AnimationTrigger> RepairFixMildRoundReact = CladEnum<global::Anki.Cozmo.AnimationTrigger>.FromName("RepairFixMildRoundReact");
 
-    /// <summary>CLAD <c>RepairFixMildWheelsBack</c> (444).</summary>
+    /// <summary>CLAD member <c>RepairFixMildWheelsBack</c> (id 444).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.AnimationTrigger> RepairFixMildWheelsBack = CladEnum<global::Anki.Cozmo.AnimationTrigger>.FromName("RepairFixMildWheelsBack");
 
-    /// <summary>CLAD <c>RepairFixMildWheelsForward</c> (445).</summary>
+    /// <summary>CLAD member <c>RepairFixMildWheelsForward</c> (id 445).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.AnimationTrigger> RepairFixMildWheelsForward = CladEnum<global::Anki.Cozmo.AnimationTrigger>.FromName("RepairFixMildWheelsForward");
 
-    /// <summary>CLAD <c>RepairFixSevereGetIn</c> (446).</summary>
+    /// <summary>CLAD member <c>RepairFixSevereGetIn</c> (id 446).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.AnimationTrigger> RepairFixSevereGetIn = CladEnum<global::Anki.Cozmo.AnimationTrigger>.FromName("RepairFixSevereGetIn");
 
-    /// <summary>CLAD <c>RepairFixSevereGetOut</c> (447).</summary>
+    /// <summary>CLAD member <c>RepairFixSevereGetOut</c> (id 447).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.AnimationTrigger> RepairFixSevereGetOut = CladEnum<global::Anki.Cozmo.AnimationTrigger>.FromName("RepairFixSevereGetOut");
 
-    /// <summary>CLAD <c>RepairFixSevereGetReady</c> (448).</summary>
+    /// <summary>CLAD member <c>RepairFixSevereGetReady</c> (id 448).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.AnimationTrigger> RepairFixSevereGetReady = CladEnum<global::Anki.Cozmo.AnimationTrigger>.FromName("RepairFixSevereGetReady");
 
-    /// <summary>CLAD <c>RepairFixSevereHeadDown</c> (449).</summary>
+    /// <summary>CLAD member <c>RepairFixSevereHeadDown</c> (id 449).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.AnimationTrigger> RepairFixSevereHeadDown = CladEnum<global::Anki.Cozmo.AnimationTrigger>.FromName("RepairFixSevereHeadDown");
 
-    /// <summary>CLAD <c>RepairFixSevereHeadUp</c> (450).</summary>
+    /// <summary>CLAD member <c>RepairFixSevereHeadUp</c> (id 450).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.AnimationTrigger> RepairFixSevereHeadUp = CladEnum<global::Anki.Cozmo.AnimationTrigger>.FromName("RepairFixSevereHeadUp");
 
-    /// <summary>CLAD <c>RepairFixSevereIdle</c> (451).</summary>
+    /// <summary>CLAD member <c>RepairFixSevereIdle</c> (id 451).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.AnimationTrigger> RepairFixSevereIdle = CladEnum<global::Anki.Cozmo.AnimationTrigger>.FromName("RepairFixSevereIdle");
 
-    /// <summary>CLAD <c>RepairFixSevereLiftDown</c> (452).</summary>
+    /// <summary>CLAD member <c>RepairFixSevereLiftDown</c> (id 452).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.AnimationTrigger> RepairFixSevereLiftDown = CladEnum<global::Anki.Cozmo.AnimationTrigger>.FromName("RepairFixSevereLiftDown");
 
-    /// <summary>CLAD <c>RepairFixSevereLiftUp</c> (453).</summary>
+    /// <summary>CLAD member <c>RepairFixSevereLiftUp</c> (id 453).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.AnimationTrigger> RepairFixSevereLiftUp = CladEnum<global::Anki.Cozmo.AnimationTrigger>.FromName("RepairFixSevereLiftUp");
 
-    /// <summary>CLAD <c>RepairFixSevereLowerLift</c> (454).</summary>
+    /// <summary>CLAD member <c>RepairFixSevereLowerLift</c> (id 454).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.AnimationTrigger> RepairFixSevereLowerLift = CladEnum<global::Anki.Cozmo.AnimationTrigger>.FromName("RepairFixSevereLowerLift");
 
-    /// <summary>CLAD <c>RepairFixSevereRaiseLift</c> (455).</summary>
+    /// <summary>CLAD member <c>RepairFixSevereRaiseLift</c> (id 455).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.AnimationTrigger> RepairFixSevereRaiseLift = CladEnum<global::Anki.Cozmo.AnimationTrigger>.FromName("RepairFixSevereRaiseLift");
 
-    /// <summary>CLAD <c>RepairFixSevereRoundReact</c> (456).</summary>
+    /// <summary>CLAD member <c>RepairFixSevereRoundReact</c> (id 456).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.AnimationTrigger> RepairFixSevereRoundReact = CladEnum<global::Anki.Cozmo.AnimationTrigger>.FromName("RepairFixSevereRoundReact");
 
-    /// <summary>CLAD <c>RepairFixSevereWheelsBack</c> (457).</summary>
+    /// <summary>CLAD member <c>RepairFixSevereWheelsBack</c> (id 457).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.AnimationTrigger> RepairFixSevereWheelsBack = CladEnum<global::Anki.Cozmo.AnimationTrigger>.FromName("RepairFixSevereWheelsBack");
 
-    /// <summary>CLAD <c>RepairFixSevereWheelsForward</c> (458).</summary>
+    /// <summary>CLAD member <c>RepairFixSevereWheelsForward</c> (id 458).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.AnimationTrigger> RepairFixSevereWheelsForward = CladEnum<global::Anki.Cozmo.AnimationTrigger>.FromName("RepairFixSevereWheelsForward");
 
-    /// <summary>CLAD <c>RepairIdleFullyRepaired</c> (459).</summary>
+    /// <summary>CLAD member <c>RepairIdleFullyRepaired</c> (id 459).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.AnimationTrigger> RepairIdleFullyRepaired = CladEnum<global::Anki.Cozmo.AnimationTrigger>.FromName("RepairIdleFullyRepaired");
 
-    /// <summary>CLAD <c>RepairPartRepaired_Head_Mild</c> (460).</summary>
+    /// <summary>CLAD member <c>RepairPartRepaired_Head_Mild</c> (id 460).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.AnimationTrigger> RepairPartRepaired_Head_Mild = CladEnum<global::Anki.Cozmo.AnimationTrigger>.FromName("RepairPartRepaired_Head_Mild");
 
-    /// <summary>CLAD <c>RepairPartRepaired_Lift_Mild</c> (461).</summary>
+    /// <summary>CLAD member <c>RepairPartRepaired_Lift_Mild</c> (id 461).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.AnimationTrigger> RepairPartRepaired_Lift_Mild = CladEnum<global::Anki.Cozmo.AnimationTrigger>.FromName("RepairPartRepaired_Lift_Mild");
 
-    /// <summary>CLAD <c>RepairPartRepaired_Tread_Mild</c> (462).</summary>
+    /// <summary>CLAD member <c>RepairPartRepaired_Tread_Mild</c> (id 462).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.AnimationTrigger> RepairPartRepaired_Tread_Mild = CladEnum<global::Anki.Cozmo.AnimationTrigger>.FromName("RepairPartRepaired_Tread_Mild");
 
-    /// <summary>CLAD <c>RequestGameInterrupt</c> (463).</summary>
+    /// <summary>CLAD member <c>RequestGameInterrupt</c> (id 463).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.AnimationTrigger> RequestGameInterrupt = CladEnum<global::Anki.Cozmo.AnimationTrigger>.FromName("RequestGameInterrupt");
 
-    /// <summary>CLAD <c>RequestGameKeepAwayAccept0</c> (464).</summary>
+    /// <summary>CLAD member <c>RequestGameKeepAwayAccept0</c> (id 464).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.AnimationTrigger> RequestGameKeepAwayAccept0 = CladEnum<global::Anki.Cozmo.AnimationTrigger>.FromName("RequestGameKeepAwayAccept0");
 
-    /// <summary>CLAD <c>RequestGameKeepAwayAccept1</c> (465).</summary>
+    /// <summary>CLAD member <c>RequestGameKeepAwayAccept1</c> (id 465).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.AnimationTrigger> RequestGameKeepAwayAccept1 = CladEnum<global::Anki.Cozmo.AnimationTrigger>.FromName("RequestGameKeepAwayAccept1");
 
-    /// <summary>CLAD <c>RequestGameKeepAwayDeny0</c> (466).</summary>
+    /// <summary>CLAD member <c>RequestGameKeepAwayDeny0</c> (id 466).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.AnimationTrigger> RequestGameKeepAwayDeny0 = CladEnum<global::Anki.Cozmo.AnimationTrigger>.FromName("RequestGameKeepAwayDeny0");
 
-    /// <summary>CLAD <c>RequestGameKeepAwayDeny1</c> (467).</summary>
+    /// <summary>CLAD member <c>RequestGameKeepAwayDeny1</c> (id 467).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.AnimationTrigger> RequestGameKeepAwayDeny1 = CladEnum<global::Anki.Cozmo.AnimationTrigger>.FromName("RequestGameKeepAwayDeny1");
 
-    /// <summary>CLAD <c>RequestGameKeepAwayIdle0</c> (468).</summary>
+    /// <summary>CLAD member <c>RequestGameKeepAwayIdle0</c> (id 468).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.AnimationTrigger> RequestGameKeepAwayIdle0 = CladEnum<global::Anki.Cozmo.AnimationTrigger>.FromName("RequestGameKeepAwayIdle0");
 
-    /// <summary>CLAD <c>RequestGameKeepAwayIdle1</c> (469).</summary>
+    /// <summary>CLAD member <c>RequestGameKeepAwayIdle1</c> (id 469).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.AnimationTrigger> RequestGameKeepAwayIdle1 = CladEnum<global::Anki.Cozmo.AnimationTrigger>.FromName("RequestGameKeepAwayIdle1");
 
-    /// <summary>CLAD <c>RequestGameKeepAwayInitial0</c> (470).</summary>
+    /// <summary>CLAD member <c>RequestGameKeepAwayInitial0</c> (id 470).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.AnimationTrigger> RequestGameKeepAwayInitial0 = CladEnum<global::Anki.Cozmo.AnimationTrigger>.FromName("RequestGameKeepAwayInitial0");
 
-    /// <summary>CLAD <c>RequestGameKeepAwayInitial1</c> (471).</summary>
+    /// <summary>CLAD member <c>RequestGameKeepAwayInitial1</c> (id 471).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.AnimationTrigger> RequestGameKeepAwayInitial1 = CladEnum<global::Anki.Cozmo.AnimationTrigger>.FromName("RequestGameKeepAwayInitial1");
 
-    /// <summary>CLAD <c>RequestGameKeepAwayPreDrive0</c> (472).</summary>
+    /// <summary>CLAD member <c>RequestGameKeepAwayPreDrive0</c> (id 472).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.AnimationTrigger> RequestGameKeepAwayPreDrive0 = CladEnum<global::Anki.Cozmo.AnimationTrigger>.FromName("RequestGameKeepAwayPreDrive0");
 
-    /// <summary>CLAD <c>RequestGameKeepAwayPreDrive1</c> (473).</summary>
+    /// <summary>CLAD member <c>RequestGameKeepAwayPreDrive1</c> (id 473).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.AnimationTrigger> RequestGameKeepAwayPreDrive1 = CladEnum<global::Anki.Cozmo.AnimationTrigger>.FromName("RequestGameKeepAwayPreDrive1");
 
-    /// <summary>CLAD <c>RequestGameKeepAwayRequest0</c> (474).</summary>
+    /// <summary>CLAD member <c>RequestGameKeepAwayRequest0</c> (id 474).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.AnimationTrigger> RequestGameKeepAwayRequest0 = CladEnum<global::Anki.Cozmo.AnimationTrigger>.FromName("RequestGameKeepAwayRequest0");
 
-    /// <summary>CLAD <c>RequestGameKeepAwayRequest1</c> (475).</summary>
+    /// <summary>CLAD member <c>RequestGameKeepAwayRequest1</c> (id 475).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.AnimationTrigger> RequestGameKeepAwayRequest1 = CladEnum<global::Anki.Cozmo.AnimationTrigger>.FromName("RequestGameKeepAwayRequest1");
 
-    /// <summary>CLAD <c>RequestGameMemoryMatchAccept0</c> (476).</summary>
+    /// <summary>CLAD member <c>RequestGameMemoryMatchAccept0</c> (id 476).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.AnimationTrigger> RequestGameMemoryMatchAccept0 = CladEnum<global::Anki.Cozmo.AnimationTrigger>.FromName("RequestGameMemoryMatchAccept0");
 
-    /// <summary>CLAD <c>RequestGameMemoryMatchAccept1</c> (477).</summary>
+    /// <summary>CLAD member <c>RequestGameMemoryMatchAccept1</c> (id 477).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.AnimationTrigger> RequestGameMemoryMatchAccept1 = CladEnum<global::Anki.Cozmo.AnimationTrigger>.FromName("RequestGameMemoryMatchAccept1");
 
-    /// <summary>CLAD <c>RequestGameMemoryMatchDeny0</c> (478).</summary>
+    /// <summary>CLAD member <c>RequestGameMemoryMatchDeny0</c> (id 478).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.AnimationTrigger> RequestGameMemoryMatchDeny0 = CladEnum<global::Anki.Cozmo.AnimationTrigger>.FromName("RequestGameMemoryMatchDeny0");
 
-    /// <summary>CLAD <c>RequestGameMemoryMatchDeny1</c> (479).</summary>
+    /// <summary>CLAD member <c>RequestGameMemoryMatchDeny1</c> (id 479).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.AnimationTrigger> RequestGameMemoryMatchDeny1 = CladEnum<global::Anki.Cozmo.AnimationTrigger>.FromName("RequestGameMemoryMatchDeny1");
 
-    /// <summary>CLAD <c>RequestGameMemoryMatchIdle0</c> (480).</summary>
+    /// <summary>CLAD member <c>RequestGameMemoryMatchIdle0</c> (id 480).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.AnimationTrigger> RequestGameMemoryMatchIdle0 = CladEnum<global::Anki.Cozmo.AnimationTrigger>.FromName("RequestGameMemoryMatchIdle0");
 
-    /// <summary>CLAD <c>RequestGameMemoryMatchIdle1</c> (481).</summary>
+    /// <summary>CLAD member <c>RequestGameMemoryMatchIdle1</c> (id 481).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.AnimationTrigger> RequestGameMemoryMatchIdle1 = CladEnum<global::Anki.Cozmo.AnimationTrigger>.FromName("RequestGameMemoryMatchIdle1");
 
-    /// <summary>CLAD <c>RequestGameMemoryMatchInitial0</c> (482).</summary>
+    /// <summary>CLAD member <c>RequestGameMemoryMatchInitial0</c> (id 482).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.AnimationTrigger> RequestGameMemoryMatchInitial0 = CladEnum<global::Anki.Cozmo.AnimationTrigger>.FromName("RequestGameMemoryMatchInitial0");
 
-    /// <summary>CLAD <c>RequestGameMemoryMatchInitial1</c> (483).</summary>
+    /// <summary>CLAD member <c>RequestGameMemoryMatchInitial1</c> (id 483).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.AnimationTrigger> RequestGameMemoryMatchInitial1 = CladEnum<global::Anki.Cozmo.AnimationTrigger>.FromName("RequestGameMemoryMatchInitial1");
 
-    /// <summary>CLAD <c>RequestGameMemoryMatchPreDrive0</c> (484).</summary>
+    /// <summary>CLAD member <c>RequestGameMemoryMatchPreDrive0</c> (id 484).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.AnimationTrigger> RequestGameMemoryMatchPreDrive0 = CladEnum<global::Anki.Cozmo.AnimationTrigger>.FromName("RequestGameMemoryMatchPreDrive0");
 
-    /// <summary>CLAD <c>RequestGameMemoryMatchPreDrive1</c> (485).</summary>
+    /// <summary>CLAD member <c>RequestGameMemoryMatchPreDrive1</c> (id 485).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.AnimationTrigger> RequestGameMemoryMatchPreDrive1 = CladEnum<global::Anki.Cozmo.AnimationTrigger>.FromName("RequestGameMemoryMatchPreDrive1");
 
-    /// <summary>CLAD <c>RequestGameMemoryMatchRequest0</c> (486).</summary>
+    /// <summary>CLAD member <c>RequestGameMemoryMatchRequest0</c> (id 486).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.AnimationTrigger> RequestGameMemoryMatchRequest0 = CladEnum<global::Anki.Cozmo.AnimationTrigger>.FromName("RequestGameMemoryMatchRequest0");
 
-    /// <summary>CLAD <c>RequestGameMemoryMatchRequest1</c> (487).</summary>
+    /// <summary>CLAD member <c>RequestGameMemoryMatchRequest1</c> (id 487).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.AnimationTrigger> RequestGameMemoryMatchRequest1 = CladEnum<global::Anki.Cozmo.AnimationTrigger>.FromName("RequestGameMemoryMatchRequest1");
 
-    /// <summary>CLAD <c>RequestGamePickupFail</c> (488).</summary>
+    /// <summary>CLAD member <c>RequestGamePickupFail</c> (id 488).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.AnimationTrigger> RequestGamePickupFail = CladEnum<global::Anki.Cozmo.AnimationTrigger>.FromName("RequestGamePickupFail");
 
-    /// <summary>CLAD <c>RequestGameSpeedTapAccept0</c> (489).</summary>
+    /// <summary>CLAD member <c>RequestGameSpeedTapAccept0</c> (id 489).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.AnimationTrigger> RequestGameSpeedTapAccept0 = CladEnum<global::Anki.Cozmo.AnimationTrigger>.FromName("RequestGameSpeedTapAccept0");
 
-    /// <summary>CLAD <c>RequestGameSpeedTapAccept1</c> (490).</summary>
+    /// <summary>CLAD member <c>RequestGameSpeedTapAccept1</c> (id 490).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.AnimationTrigger> RequestGameSpeedTapAccept1 = CladEnum<global::Anki.Cozmo.AnimationTrigger>.FromName("RequestGameSpeedTapAccept1");
 
-    /// <summary>CLAD <c>RequestGameSpeedTapDeny0</c> (491).</summary>
+    /// <summary>CLAD member <c>RequestGameSpeedTapDeny0</c> (id 491).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.AnimationTrigger> RequestGameSpeedTapDeny0 = CladEnum<global::Anki.Cozmo.AnimationTrigger>.FromName("RequestGameSpeedTapDeny0");
 
-    /// <summary>CLAD <c>RequestGameSpeedTapDeny1</c> (492).</summary>
+    /// <summary>CLAD member <c>RequestGameSpeedTapDeny1</c> (id 492).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.AnimationTrigger> RequestGameSpeedTapDeny1 = CladEnum<global::Anki.Cozmo.AnimationTrigger>.FromName("RequestGameSpeedTapDeny1");
 
-    /// <summary>CLAD <c>RequestGameSpeedTapIdle0</c> (493).</summary>
+    /// <summary>CLAD member <c>RequestGameSpeedTapIdle0</c> (id 493).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.AnimationTrigger> RequestGameSpeedTapIdle0 = CladEnum<global::Anki.Cozmo.AnimationTrigger>.FromName("RequestGameSpeedTapIdle0");
 
-    /// <summary>CLAD <c>RequestGameSpeedTapIdle1</c> (494).</summary>
+    /// <summary>CLAD member <c>RequestGameSpeedTapIdle1</c> (id 494).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.AnimationTrigger> RequestGameSpeedTapIdle1 = CladEnum<global::Anki.Cozmo.AnimationTrigger>.FromName("RequestGameSpeedTapIdle1");
 
-    /// <summary>CLAD <c>RequestGameSpeedTapInitial0</c> (495).</summary>
+    /// <summary>CLAD member <c>RequestGameSpeedTapInitial0</c> (id 495).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.AnimationTrigger> RequestGameSpeedTapInitial0 = CladEnum<global::Anki.Cozmo.AnimationTrigger>.FromName("RequestGameSpeedTapInitial0");
 
-    /// <summary>CLAD <c>RequestGameSpeedTapInitial1</c> (496).</summary>
+    /// <summary>CLAD member <c>RequestGameSpeedTapInitial1</c> (id 496).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.AnimationTrigger> RequestGameSpeedTapInitial1 = CladEnum<global::Anki.Cozmo.AnimationTrigger>.FromName("RequestGameSpeedTapInitial1");
 
-    /// <summary>CLAD <c>RequestGameSpeedTapPreDrive0</c> (497).</summary>
+    /// <summary>CLAD member <c>RequestGameSpeedTapPreDrive0</c> (id 497).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.AnimationTrigger> RequestGameSpeedTapPreDrive0 = CladEnum<global::Anki.Cozmo.AnimationTrigger>.FromName("RequestGameSpeedTapPreDrive0");
 
-    /// <summary>CLAD <c>RequestGameSpeedTapPreDrive1</c> (498).</summary>
+    /// <summary>CLAD member <c>RequestGameSpeedTapPreDrive1</c> (id 498).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.AnimationTrigger> RequestGameSpeedTapPreDrive1 = CladEnum<global::Anki.Cozmo.AnimationTrigger>.FromName("RequestGameSpeedTapPreDrive1");
 
-    /// <summary>CLAD <c>RequestGameSpeedTapRequest0</c> (499).</summary>
+    /// <summary>CLAD member <c>RequestGameSpeedTapRequest0</c> (id 499).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.AnimationTrigger> RequestGameSpeedTapRequest0 = CladEnum<global::Anki.Cozmo.AnimationTrigger>.FromName("RequestGameSpeedTapRequest0");
 
-    /// <summary>CLAD <c>RequestGameSpeedTapRequest1</c> (500).</summary>
+    /// <summary>CLAD member <c>RequestGameSpeedTapRequest1</c> (id 500).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.AnimationTrigger> RequestGameSpeedTapRequest1 = CladEnum<global::Anki.Cozmo.AnimationTrigger>.FromName("RequestGameSpeedTapRequest1");
 
-    /// <summary>CLAD <c>RollBlockInitial</c> (501).</summary>
+    /// <summary>CLAD member <c>RollBlockInitial</c> (id 501).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.AnimationTrigger> RollBlockInitial = CladEnum<global::Anki.Cozmo.AnimationTrigger>.FromName("RollBlockInitial");
 
-    /// <summary>CLAD <c>RollBlockPreActionNamedFace</c> (502).</summary>
+    /// <summary>CLAD member <c>RollBlockPreActionNamedFace</c> (id 502).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.AnimationTrigger> RollBlockPreActionNamedFace = CladEnum<global::Anki.Cozmo.AnimationTrigger>.FromName("RollBlockPreActionNamedFace");
 
-    /// <summary>CLAD <c>RollBlockPreActionUnnamedFace</c> (503).</summary>
+    /// <summary>CLAD member <c>RollBlockPreActionUnnamedFace</c> (id 503).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.AnimationTrigger> RollBlockPreActionUnnamedFace = CladEnum<global::Anki.Cozmo.AnimationTrigger>.FromName("RollBlockPreActionUnnamedFace");
 
-    /// <summary>CLAD <c>RollBlockPutDown</c> (504).</summary>
+    /// <summary>CLAD member <c>RollBlockPutDown</c> (id 504).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.AnimationTrigger> RollBlockPutDown = CladEnum<global::Anki.Cozmo.AnimationTrigger>.FromName("RollBlockPutDown");
 
-    /// <summary>CLAD <c>RollBlockRealign</c> (505).</summary>
+    /// <summary>CLAD member <c>RollBlockRealign</c> (id 505).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.AnimationTrigger> RollBlockRealign = CladEnum<global::Anki.Cozmo.AnimationTrigger>.FromName("RollBlockRealign");
 
-    /// <summary>CLAD <c>RollBlockRetry</c> (506).</summary>
+    /// <summary>CLAD member <c>RollBlockRetry</c> (id 506).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.AnimationTrigger> RollBlockRetry = CladEnum<global::Anki.Cozmo.AnimationTrigger>.FromName("RollBlockRetry");
 
-    /// <summary>CLAD <c>RollBlockSuccess</c> (507).</summary>
+    /// <summary>CLAD member <c>RollBlockSuccess</c> (id 507).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.AnimationTrigger> RollBlockSuccess = CladEnum<global::Anki.Cozmo.AnimationTrigger>.FromName("RollBlockSuccess");
 
-    /// <summary>CLAD <c>SdkTextToSpeech</c> (508).</summary>
+    /// <summary>CLAD member <c>SdkTextToSpeech</c> (id 508).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.AnimationTrigger> SdkTextToSpeech = CladEnum<global::Anki.Cozmo.AnimationTrigger>.FromName("SdkTextToSpeech");
 
-    /// <summary>CLAD <c>Shiver</c> (509).</summary>
+    /// <summary>CLAD member <c>Shiver</c> (id 509).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.AnimationTrigger> Shiver = CladEnum<global::Anki.Cozmo.AnimationTrigger>.FromName("Shiver");
 
-    /// <summary>CLAD <c>Shocked</c> (510).</summary>
+    /// <summary>CLAD member <c>Shocked</c> (id 510).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.AnimationTrigger> Shocked = CladEnum<global::Anki.Cozmo.AnimationTrigger>.FromName("Shocked");
 
-    /// <summary>CLAD <c>Singing_80bpm</c> (511).</summary>
+    /// <summary>CLAD member <c>Singing_80bpm</c> (id 511).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.AnimationTrigger> Singing_80bpm = CladEnum<global::Anki.Cozmo.AnimationTrigger>.FromName("Singing_80bpm");
 
-    /// <summary>CLAD <c>Singing_100bpm</c> (512).</summary>
+    /// <summary>CLAD member <c>Singing_100bpm</c> (id 512).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.AnimationTrigger> Singing_100bpm = CladEnum<global::Anki.Cozmo.AnimationTrigger>.FromName("Singing_100bpm");
 
-    /// <summary>CLAD <c>Singing_120bpm</c> (513).</summary>
+    /// <summary>CLAD member <c>Singing_120bpm</c> (id 513).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.AnimationTrigger> Singing_120bpm = CladEnum<global::Anki.Cozmo.AnimationTrigger>.FromName("Singing_120bpm");
 
-    /// <summary>CLAD <c>Singing_GetIn</c> (514).</summary>
+    /// <summary>CLAD member <c>Singing_GetIn</c> (id 514).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.AnimationTrigger> Singing_GetIn = CladEnum<global::Anki.Cozmo.AnimationTrigger>.FromName("Singing_GetIn");
 
-    /// <summary>CLAD <c>Singing_GetOut</c> (515).</summary>
+    /// <summary>CLAD member <c>Singing_GetOut</c> (id 515).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.AnimationTrigger> Singing_GetOut = CladEnum<global::Anki.Cozmo.AnimationTrigger>.FromName("Singing_GetOut");
 
-    /// <summary>CLAD <c>Sleeping</c> (516).</summary>
+    /// <summary>CLAD member <c>Sleeping</c> (id 516).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.AnimationTrigger> Sleeping = CladEnum<global::Anki.Cozmo.AnimationTrigger>.FromName("Sleeping");
 
-    /// <summary>CLAD <c>SoftSparkUpgradeLift</c> (517).</summary>
+    /// <summary>CLAD member <c>SoftSparkUpgradeLift</c> (id 517).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.AnimationTrigger> SoftSparkUpgradeLift = CladEnum<global::Anki.Cozmo.AnimationTrigger>.FromName("SoftSparkUpgradeLift");
 
-    /// <summary>CLAD <c>SoftSparkUpgradeTracks</c> (518).</summary>
+    /// <summary>CLAD member <c>SoftSparkUpgradeTracks</c> (id 518).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.AnimationTrigger> SoftSparkUpgradeTracks = CladEnum<global::Anki.Cozmo.AnimationTrigger>.FromName("SoftSparkUpgradeTracks");
 
-    /// <summary>CLAD <c>SoundOnlyLiftEffortPickup</c> (519).</summary>
+    /// <summary>CLAD member <c>SoundOnlyLiftEffortPickup</c> (id 519).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.AnimationTrigger> SoundOnlyLiftEffortPickup = CladEnum<global::Anki.Cozmo.AnimationTrigger>.FromName("SoundOnlyLiftEffortPickup");
 
-    /// <summary>CLAD <c>SoundOnlyLiftEffortPlaceHigh</c> (520).</summary>
+    /// <summary>CLAD member <c>SoundOnlyLiftEffortPlaceHigh</c> (id 520).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.AnimationTrigger> SoundOnlyLiftEffortPlaceHigh = CladEnum<global::Anki.Cozmo.AnimationTrigger>.FromName("SoundOnlyLiftEffortPlaceHigh");
 
-    /// <summary>CLAD <c>SoundOnlyLiftEffortPlaceLow</c> (521).</summary>
+    /// <summary>CLAD member <c>SoundOnlyLiftEffortPlaceLow</c> (id 521).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.AnimationTrigger> SoundOnlyLiftEffortPlaceLow = CladEnum<global::Anki.Cozmo.AnimationTrigger>.FromName("SoundOnlyLiftEffortPlaceLow");
 
-    /// <summary>CLAD <c>SoundOnlyLiftEffortPlaceRoll</c> (522).</summary>
+    /// <summary>CLAD member <c>SoundOnlyLiftEffortPlaceRoll</c> (id 522).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.AnimationTrigger> SoundOnlyLiftEffortPlaceRoll = CladEnum<global::Anki.Cozmo.AnimationTrigger>.FromName("SoundOnlyLiftEffortPlaceRoll");
 
-    /// <summary>CLAD <c>SoundOnlyRamIntoBlock</c> (523).</summary>
+    /// <summary>CLAD member <c>SoundOnlyRamIntoBlock</c> (id 523).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.AnimationTrigger> SoundOnlyRamIntoBlock = CladEnum<global::Anki.Cozmo.AnimationTrigger>.FromName("SoundOnlyRamIntoBlock");
 
-    /// <summary>CLAD <c>SoundOnlyTurnSmall</c> (524).</summary>
+    /// <summary>CLAD member <c>SoundOnlyTurnSmall</c> (id 524).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.AnimationTrigger> SoundOnlyTurnSmall = CladEnum<global::Anki.Cozmo.AnimationTrigger>.FromName("SoundOnlyTurnSmall");
 
-    /// <summary>CLAD <c>SparkDrivingLoop</c> (525).</summary>
+    /// <summary>CLAD member <c>SparkDrivingLoop</c> (id 525).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.AnimationTrigger> SparkDrivingLoop = CladEnum<global::Anki.Cozmo.AnimationTrigger>.FromName("SparkDrivingLoop");
 
-    /// <summary>CLAD <c>SparkDrivingStart</c> (526).</summary>
+    /// <summary>CLAD member <c>SparkDrivingStart</c> (id 526).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.AnimationTrigger> SparkDrivingStart = CladEnum<global::Anki.Cozmo.AnimationTrigger>.FromName("SparkDrivingStart");
 
-    /// <summary>CLAD <c>SparkDrivingStop</c> (527).</summary>
+    /// <summary>CLAD member <c>SparkDrivingStop</c> (id 527).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.AnimationTrigger> SparkDrivingStop = CladEnum<global::Anki.Cozmo.AnimationTrigger>.FromName("SparkDrivingStop");
 
-    /// <summary>CLAD <c>SparkFailure</c> (528).</summary>
+    /// <summary>CLAD member <c>SparkFailure</c> (id 528).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.AnimationTrigger> SparkFailure = CladEnum<global::Anki.Cozmo.AnimationTrigger>.FromName("SparkFailure");
 
-    /// <summary>CLAD <c>SparkGetIn</c> (529).</summary>
+    /// <summary>CLAD member <c>SparkGetIn</c> (id 529).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.AnimationTrigger> SparkGetIn = CladEnum<global::Anki.Cozmo.AnimationTrigger>.FromName("SparkGetIn");
 
-    /// <summary>CLAD <c>SparkGetOut</c> (530).</summary>
+    /// <summary>CLAD member <c>SparkGetOut</c> (id 530).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.AnimationTrigger> SparkGetOut = CladEnum<global::Anki.Cozmo.AnimationTrigger>.FromName("SparkGetOut");
 
-    /// <summary>CLAD <c>SparkIdle</c> (531).</summary>
+    /// <summary>CLAD member <c>SparkIdle</c> (id 531).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.AnimationTrigger> SparkIdle = CladEnum<global::Anki.Cozmo.AnimationTrigger>.FromName("SparkIdle");
 
-    /// <summary>CLAD <c>SparkPickupFinalCubeReaction</c> (532).</summary>
+    /// <summary>CLAD member <c>SparkPickupFinalCubeReaction</c> (id 532).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.AnimationTrigger> SparkPickupFinalCubeReaction = CladEnum<global::Anki.Cozmo.AnimationTrigger>.FromName("SparkPickupFinalCubeReaction");
 
-    /// <summary>CLAD <c>SparkPickupInitialCubeReaction</c> (533).</summary>
+    /// <summary>CLAD member <c>SparkPickupInitialCubeReaction</c> (id 533).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.AnimationTrigger> SparkPickupInitialCubeReaction = CladEnum<global::Anki.Cozmo.AnimationTrigger>.FromName("SparkPickupInitialCubeReaction");
 
-    /// <summary>CLAD <c>SparkSuccess</c> (534).</summary>
+    /// <summary>CLAD member <c>SparkSuccess</c> (id 534).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.AnimationTrigger> SparkSuccess = CladEnum<global::Anki.Cozmo.AnimationTrigger>.FromName("SparkSuccess");
 
-    /// <summary>CLAD <c>SpeedTapDrivingEnd</c> (535).</summary>
+    /// <summary>CLAD member <c>SpeedTapDrivingEnd</c> (id 535).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.AnimationTrigger> SpeedTapDrivingEnd = CladEnum<global::Anki.Cozmo.AnimationTrigger>.FromName("SpeedTapDrivingEnd");
 
-    /// <summary>CLAD <c>SpeedTapDrivingLoop</c> (536).</summary>
+    /// <summary>CLAD member <c>SpeedTapDrivingLoop</c> (id 536).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.AnimationTrigger> SpeedTapDrivingLoop = CladEnum<global::Anki.Cozmo.AnimationTrigger>.FromName("SpeedTapDrivingLoop");
 
-    /// <summary>CLAD <c>SpeedTapDrivingStart</c> (537).</summary>
+    /// <summary>CLAD member <c>SpeedTapDrivingStart</c> (id 537).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.AnimationTrigger> SpeedTapDrivingStart = CladEnum<global::Anki.Cozmo.AnimationTrigger>.FromName("SpeedTapDrivingStart");
 
-    /// <summary>CLAD <c>StackBlocksSuccess</c> (538).</summary>
+    /// <summary>CLAD member <c>StackBlocksSuccess</c> (id 538).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.AnimationTrigger> StackBlocksSuccess = CladEnum<global::Anki.Cozmo.AnimationTrigger>.FromName("StackBlocksSuccess");
 
-    /// <summary>CLAD <c>StartSleeping</c> (539).</summary>
+    /// <summary>CLAD member <c>StartSleeping</c> (id 539).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.AnimationTrigger> StartSleeping = CladEnum<global::Anki.Cozmo.AnimationTrigger>.FromName("StartSleeping");
 
-    /// <summary>CLAD <c>SuccessfulWheelie</c> (540).</summary>
+    /// <summary>CLAD member <c>SuccessfulWheelie</c> (id 540).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.AnimationTrigger> SuccessfulWheelie = CladEnum<global::Anki.Cozmo.AnimationTrigger>.FromName("SuccessfulWheelie");
 
-    /// <summary>CLAD <c>Surprise</c> (541).</summary>
+    /// <summary>CLAD member <c>Surprise</c> (id 541).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.AnimationTrigger> Surprise = CladEnum<global::Anki.Cozmo.AnimationTrigger>.FromName("Surprise");
 
-    /// <summary>CLAD <c>TurtleRoll</c> (542).</summary>
+    /// <summary>CLAD member <c>TurtleRoll</c> (id 542).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.AnimationTrigger> TurtleRoll = CladEnum<global::Anki.Cozmo.AnimationTrigger>.FromName("TurtleRoll");
 
-    /// <summary>CLAD <c>UnitTestAnim</c> (543).</summary>
+    /// <summary>CLAD member <c>UnitTestAnim</c> (id 543).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.AnimationTrigger> UnitTestAnim = CladEnum<global::Anki.Cozmo.AnimationTrigger>.FromName("UnitTestAnim");
 
-    /// <summary>CLAD <c>VC_Alrighty</c> (544).</summary>
+    /// <summary>CLAD member <c>VC_Alrighty</c> (id 544).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.AnimationTrigger> VC_Alrighty = CladEnum<global::Anki.Cozmo.AnimationTrigger>.FromName("VC_Alrighty");
 
-    /// <summary>CLAD <c>VC_HowAreYouDoing_AllGood</c> (545).</summary>
+    /// <summary>CLAD member <c>VC_HowAreYouDoing_AllGood</c> (id 545).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.AnimationTrigger> VC_HowAreYouDoing_AllGood = CladEnum<global::Anki.Cozmo.AnimationTrigger>.FromName("VC_HowAreYouDoing_AllGood");
 
-    /// <summary>CLAD <c>VC_Listening</c> (546).</summary>
+    /// <summary>CLAD member <c>VC_Listening</c> (id 546).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.AnimationTrigger> VC_Listening = CladEnum<global::Anki.Cozmo.AnimationTrigger>.FromName("VC_Listening");
 
-    /// <summary>CLAD <c>VC_LookDownForLaser</c> (547).</summary>
+    /// <summary>CLAD member <c>VC_LookDownForLaser</c> (id 547).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.AnimationTrigger> VC_LookDownForLaser = CladEnum<global::Anki.Cozmo.AnimationTrigger>.FromName("VC_LookDownForLaser");
 
-    /// <summary>CLAD <c>VC_LookDownNoLaser</c> (548).</summary>
+    /// <summary>CLAD member <c>VC_LookDownNoLaser</c> (id 548).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.AnimationTrigger> VC_LookDownNoLaser = CladEnum<global::Anki.Cozmo.AnimationTrigger>.FromName("VC_LookDownNoLaser");
 
-    /// <summary>CLAD <c>VC_NoFollowupCommand_NoFace</c> (549).</summary>
+    /// <summary>CLAD member <c>VC_NoFollowupCommand_NoFace</c> (id 549).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.AnimationTrigger> VC_NoFollowupCommand_NoFace = CladEnum<global::Anki.Cozmo.AnimationTrigger>.FromName("VC_NoFollowupCommand_NoFace");
 
-    /// <summary>CLAD <c>VC_NoFollowupCommand_WithFace</c> (550).</summary>
+    /// <summary>CLAD member <c>VC_NoFollowupCommand_WithFace</c> (id 550).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.AnimationTrigger> VC_NoFollowupCommand_WithFace = CladEnum<global::Anki.Cozmo.AnimationTrigger>.FromName("VC_NoFollowupCommand_WithFace");
 
-    /// <summary>CLAD <c>VC_Refuse_energy</c> (551).</summary>
+    /// <summary>CLAD member <c>VC_Refuse_energy</c> (id 551).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.AnimationTrigger> VC_Refuse_energy = CladEnum<global::Anki.Cozmo.AnimationTrigger>.FromName("VC_Refuse_energy");
 
-    /// <summary>CLAD <c>VC_Refuse_repair</c> (552).</summary>
+    /// <summary>CLAD member <c>VC_Refuse_repair</c> (id 552).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.AnimationTrigger> VC_Refuse_repair = CladEnum<global::Anki.Cozmo.AnimationTrigger>.FromName("VC_Refuse_repair");
 
-    /// <summary>CLAD <c>VC_Refuse_sparks</c> (553).</summary>
+    /// <summary>CLAD member <c>VC_Refuse_sparks</c> (id 553).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.AnimationTrigger> VC_Refuse_sparks = CladEnum<global::Anki.Cozmo.AnimationTrigger>.FromName("VC_Refuse_sparks");
 
-    /// <summary>CLAD <c>VC_StartledWakeup</c> (554).</summary>
+    /// <summary>CLAD member <c>VC_StartledWakeup</c> (id 554).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.AnimationTrigger> VC_StartledWakeup = CladEnum<global::Anki.Cozmo.AnimationTrigger>.FromName("VC_StartledWakeup");
 
-    /// <summary>CLAD <c>WaitOnSideLoop</c> (555).</summary>
+    /// <summary>CLAD member <c>WaitOnSideLoop</c> (id 555).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.AnimationTrigger> WaitOnSideLoop = CladEnum<global::Anki.Cozmo.AnimationTrigger>.FromName("WaitOnSideLoop");
 
-    /// <summary>CLAD <c>WorkoutPostLift_highEnergy</c> (556).</summary>
+    /// <summary>CLAD member <c>WorkoutPostLift_highEnergy</c> (id 556).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.AnimationTrigger> WorkoutPostLift_highEnergy = CladEnum<global::Anki.Cozmo.AnimationTrigger>.FromName("WorkoutPostLift_highEnergy");
 
-    /// <summary>CLAD <c>WorkoutPostLift_lowEnergy</c> (557).</summary>
+    /// <summary>CLAD member <c>WorkoutPostLift_lowEnergy</c> (id 557).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.AnimationTrigger> WorkoutPostLift_lowEnergy = CladEnum<global::Anki.Cozmo.AnimationTrigger>.FromName("WorkoutPostLift_lowEnergy");
 
-    /// <summary>CLAD <c>WorkoutPostLift_mediumEnergy</c> (558).</summary>
+    /// <summary>CLAD member <c>WorkoutPostLift_mediumEnergy</c> (id 558).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.AnimationTrigger> WorkoutPostLift_mediumEnergy = CladEnum<global::Anki.Cozmo.AnimationTrigger>.FromName("WorkoutPostLift_mediumEnergy");
 
-    /// <summary>CLAD <c>WorkoutPreLift_highEnergy</c> (559).</summary>
+    /// <summary>CLAD member <c>WorkoutPreLift_highEnergy</c> (id 559).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.AnimationTrigger> WorkoutPreLift_highEnergy = CladEnum<global::Anki.Cozmo.AnimationTrigger>.FromName("WorkoutPreLift_highEnergy");
 
-    /// <summary>CLAD <c>WorkoutPreLift_lowEnergy</c> (560).</summary>
+    /// <summary>CLAD member <c>WorkoutPreLift_lowEnergy</c> (id 560).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.AnimationTrigger> WorkoutPreLift_lowEnergy = CladEnum<global::Anki.Cozmo.AnimationTrigger>.FromName("WorkoutPreLift_lowEnergy");
 
-    /// <summary>CLAD <c>WorkoutPreLift_mediumEnergy</c> (561).</summary>
+    /// <summary>CLAD member <c>WorkoutPreLift_mediumEnergy</c> (id 561).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.AnimationTrigger> WorkoutPreLift_mediumEnergy = CladEnum<global::Anki.Cozmo.AnimationTrigger>.FromName("WorkoutPreLift_mediumEnergy");
 
-    /// <summary>CLAD <c>WorkoutPutDown_highEnergy</c> (562).</summary>
+    /// <summary>CLAD member <c>WorkoutPutDown_highEnergy</c> (id 562).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.AnimationTrigger> WorkoutPutDown_highEnergy = CladEnum<global::Anki.Cozmo.AnimationTrigger>.FromName("WorkoutPutDown_highEnergy");
 
-    /// <summary>CLAD <c>WorkoutPutDown_lowEnergy</c> (563).</summary>
+    /// <summary>CLAD member <c>WorkoutPutDown_lowEnergy</c> (id 563).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.AnimationTrigger> WorkoutPutDown_lowEnergy = CladEnum<global::Anki.Cozmo.AnimationTrigger>.FromName("WorkoutPutDown_lowEnergy");
 
-    /// <summary>CLAD <c>WorkoutPutDown_lowEnergy_simple</c> (564).</summary>
+    /// <summary>CLAD member <c>WorkoutPutDown_lowEnergy_simple</c> (id 564).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.AnimationTrigger> WorkoutPutDown_lowEnergy_simple = CladEnum<global::Anki.Cozmo.AnimationTrigger>.FromName("WorkoutPutDown_lowEnergy_simple");
 
-    /// <summary>CLAD <c>WorkoutPutDown_mediumEnergy</c> (565).</summary>
+    /// <summary>CLAD member <c>WorkoutPutDown_mediumEnergy</c> (id 565).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.AnimationTrigger> WorkoutPutDown_mediumEnergy = CladEnum<global::Anki.Cozmo.AnimationTrigger>.FromName("WorkoutPutDown_mediumEnergy");
 
-    /// <summary>CLAD <c>WorkoutStrongLift_highEnergy</c> (566).</summary>
+    /// <summary>CLAD member <c>WorkoutStrongLift_highEnergy</c> (id 566).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.AnimationTrigger> WorkoutStrongLift_highEnergy = CladEnum<global::Anki.Cozmo.AnimationTrigger>.FromName("WorkoutStrongLift_highEnergy");
 
-    /// <summary>CLAD <c>WorkoutStrongLift_lowEnergy</c> (567).</summary>
+    /// <summary>CLAD member <c>WorkoutStrongLift_lowEnergy</c> (id 567).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.AnimationTrigger> WorkoutStrongLift_lowEnergy = CladEnum<global::Anki.Cozmo.AnimationTrigger>.FromName("WorkoutStrongLift_lowEnergy");
 
-    /// <summary>CLAD <c>WorkoutStrongLift_mediumEnergy</c> (568).</summary>
+    /// <summary>CLAD member <c>WorkoutStrongLift_mediumEnergy</c> (id 568).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.AnimationTrigger> WorkoutStrongLift_mediumEnergy = CladEnum<global::Anki.Cozmo.AnimationTrigger>.FromName("WorkoutStrongLift_mediumEnergy");
 
-    /// <summary>CLAD <c>WorkoutTransition_highEnergy</c> (569).</summary>
+    /// <summary>CLAD member <c>WorkoutTransition_highEnergy</c> (id 569).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.AnimationTrigger> WorkoutTransition_highEnergy = CladEnum<global::Anki.Cozmo.AnimationTrigger>.FromName("WorkoutTransition_highEnergy");
 
-    /// <summary>CLAD <c>WorkoutTransition_lowEnergy</c> (570).</summary>
+    /// <summary>CLAD member <c>WorkoutTransition_lowEnergy</c> (id 570).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.AnimationTrigger> WorkoutTransition_lowEnergy = CladEnum<global::Anki.Cozmo.AnimationTrigger>.FromName("WorkoutTransition_lowEnergy");
 
-    /// <summary>CLAD <c>WorkoutTransition_mediumEnergy</c> (571).</summary>
+    /// <summary>CLAD member <c>WorkoutTransition_mediumEnergy</c> (id 571).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.AnimationTrigger> WorkoutTransition_mediumEnergy = CladEnum<global::Anki.Cozmo.AnimationTrigger>.FromName("WorkoutTransition_mediumEnergy");
 
-    /// <summary>CLAD <c>WorkoutWeakLift_highEnergy</c> (572).</summary>
+    /// <summary>CLAD member <c>WorkoutWeakLift_highEnergy</c> (id 572).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.AnimationTrigger> WorkoutWeakLift_highEnergy = CladEnum<global::Anki.Cozmo.AnimationTrigger>.FromName("WorkoutWeakLift_highEnergy");
 
-    /// <summary>CLAD <c>WorkoutWeakLift_lowEnergy</c> (573).</summary>
+    /// <summary>CLAD member <c>WorkoutWeakLift_lowEnergy</c> (id 573).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.AnimationTrigger> WorkoutWeakLift_lowEnergy = CladEnum<global::Anki.Cozmo.AnimationTrigger>.FromName("WorkoutWeakLift_lowEnergy");
 
-    /// <summary>CLAD <c>WorkoutWeakLift_mediumEnergy</c> (574).</summary>
+    /// <summary>CLAD member <c>WorkoutWeakLift_mediumEnergy</c> (id 574).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.AnimationTrigger> WorkoutWeakLift_mediumEnergy = CladEnum<global::Anki.Cozmo.AnimationTrigger>.FromName("WorkoutWeakLift_mediumEnergy");
 
-    /// <summary>CLAD <c>Count</c> (575).</summary>
+    /// <summary>CLAD member <c>Count</c> (id 575).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.AnimationTrigger> Count = CladEnum<global::Anki.Cozmo.AnimationTrigger>.FromName("Count");
 
     /// <summary>Every entry above, in CLAD declaration order.</summary>
@@ -2474,737 +2473,734 @@ public static class Triggers
     };
 }
 
-/// <summary>Named ExecutableBehaviorType values, mirroring the Python <c>BehaviorTypes</c> wrapper.</summary>
-/// <remarks>Python deliberately exposes only this documented subset of working behaviors (behavior.py:206-215); <c>EnrollFace</c> stays internal, matching the private <c>_EnrollFace</c> entry.</remarks>
+/// <summary>Named executable behavior types.</summary>
 public static class BehaviorTypes
 {
-    /// <summary>CLAD <c>FindFaces</c> (1).</summary>
+    /// <summary>CLAD member <c>FindFaces</c> (id 1).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.ExecutableBehaviorType> FindFaces = CladEnum<global::Anki.Cozmo.ExecutableBehaviorType>.FromName("FindFaces");
 
-    /// <summary>CLAD <c>KnockOverCubes</c> (4).</summary>
+    /// <summary>CLAD member <c>KnockOverCubes</c> (id 4).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.ExecutableBehaviorType> KnockOverCubes = CladEnum<global::Anki.Cozmo.ExecutableBehaviorType>.FromName("KnockOverCubes");
 
-    /// <summary>CLAD <c>LookAroundInPlace</c> (6).</summary>
+    /// <summary>CLAD member <c>LookAroundInPlace</c> (id 6).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.ExecutableBehaviorType> LookAroundInPlace = CladEnum<global::Anki.Cozmo.ExecutableBehaviorType>.FromName("LookAroundInPlace");
 
-    /// <summary>CLAD <c>PounceOnMotion</c> (7).</summary>
+    /// <summary>CLAD member <c>PounceOnMotion</c> (id 7).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.ExecutableBehaviorType> PounceOnMotion = CladEnum<global::Anki.Cozmo.ExecutableBehaviorType>.FromName("PounceOnMotion");
 
-    /// <summary>CLAD <c>RollBlock</c> (8).</summary>
+    /// <summary>CLAD member <c>RollBlock</c> (id 8).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.ExecutableBehaviorType> RollBlock = CladEnum<global::Anki.Cozmo.ExecutableBehaviorType>.FromName("RollBlock");
 
-    /// <summary>CLAD <c>StackBlocks</c> (9).</summary>
+    /// <summary>CLAD member <c>StackBlocks</c> (id 9).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.ExecutableBehaviorType> StackBlocks = CladEnum<global::Anki.Cozmo.ExecutableBehaviorType>.FromName("StackBlocks");
 
-    /// <summary>CLAD <c>EnrollFace</c> (0), internal to match the Python private entry.</summary>
+    /// <summary>Internal CLAD member <c>EnrollFace</c> (id 0).</summary>
     internal static readonly CladEnum<global::Anki.Cozmo.ExecutableBehaviorType> EnrollFace = CladEnum<global::Anki.Cozmo.ExecutableBehaviorType>.FromName("EnrollFace");
 }
 
-/// <summary>Named Codelab values, mirroring the Python <c>AudioEvents</c> wrapper.</summary>
-/// <remarks>Python's public names are preserved exactly (audio.py); CLAD members it leaves undeclared are auto-added under their CLAD names by <c>CladEnumWrapper</c> (audio.py:379).</remarks>
+/// <summary>Named audio event values.</summary>
 public static class AudioEvents
 {
-    /// <summary>CLAD <c>Invalid</c> (0).</summary>
+    /// <summary>CLAD member <c>Invalid</c> (id 0).</summary>
     public static readonly CladEnum<global::Anki.AudioMetaData.GameEvent.Codelab> Invalid = CladEnum<global::Anki.AudioMetaData.GameEvent.Codelab>.FromName("Invalid");
 
-    /// <summary>CLAD <c>Music_Global_Stop</c> (2512535841).</summary>
+    /// <summary>CLAD member <c>Music_Global_Stop</c> (id 2512535841).</summary>
     public static readonly CladEnum<global::Anki.AudioMetaData.GameEvent.Codelab> MusicGlobalStop = CladEnum<global::Anki.AudioMetaData.GameEvent.Codelab>.FromName("Music_Global_Stop");
 
-    /// <summary>CLAD <c>Music_Background_Silence_On</c> (4207184651).</summary>
+    /// <summary>CLAD member <c>Music_Background_Silence_On</c> (id 4207184651).</summary>
     public static readonly CladEnum<global::Anki.AudioMetaData.GameEvent.Codelab> MusicBackgroundSilenceOn = CladEnum<global::Anki.AudioMetaData.GameEvent.Codelab>.FromName("Music_Background_Silence_On");
 
-    /// <summary>CLAD <c>Music_Background_Silence_Off</c> (3328628191).</summary>
+    /// <summary>CLAD member <c>Music_Background_Silence_Off</c> (id 3328628191).</summary>
     public static readonly CladEnum<global::Anki.AudioMetaData.GameEvent.Codelab> MusicBackgroundSilenceOff = CladEnum<global::Anki.AudioMetaData.GameEvent.Codelab>.FromName("Music_Background_Silence_Off");
 
-    /// <summary>CLAD <c>Music_Tiny_Orchestra_Init</c> (4134268600).</summary>
+    /// <summary>CLAD member <c>Music_Tiny_Orchestra_Init</c> (id 4134268600).</summary>
     public static readonly CladEnum<global::Anki.AudioMetaData.GameEvent.Codelab> MusicTinyOrchestraInit = CladEnum<global::Anki.AudioMetaData.GameEvent.Codelab>.FromName("Music_Tiny_Orchestra_Init");
 
-    /// <summary>CLAD <c>Music_Tiny_Orchestra_Stop</c> (4261649076).</summary>
+    /// <summary>CLAD member <c>Music_Tiny_Orchestra_Stop</c> (id 4261649076).</summary>
     public static readonly CladEnum<global::Anki.AudioMetaData.GameEvent.Codelab> MusicTinyOrchestraStop = CladEnum<global::Anki.AudioMetaData.GameEvent.Codelab>.FromName("Music_Tiny_Orchestra_Stop");
 
-    /// <summary>CLAD <c>Music_Tiny_Orchestra_Bass_Mode_1</c> (2111780371).</summary>
+    /// <summary>CLAD member <c>Music_Tiny_Orchestra_Bass_Mode_1</c> (id 2111780371).</summary>
     public static readonly CladEnum<global::Anki.AudioMetaData.GameEvent.Codelab> MusicTinyOrchestraBassMode1 = CladEnum<global::Anki.AudioMetaData.GameEvent.Codelab>.FromName("Music_Tiny_Orchestra_Bass_Mode_1");
 
-    /// <summary>CLAD <c>Music_Tiny_Orchestra_Bass_Mode_1_Stop</c> (222737888).</summary>
+    /// <summary>CLAD member <c>Music_Tiny_Orchestra_Bass_Mode_1_Stop</c> (id 222737888).</summary>
     public static readonly CladEnum<global::Anki.AudioMetaData.GameEvent.Codelab> MusicTinyOrchestraBassMode1Stop = CladEnum<global::Anki.AudioMetaData.GameEvent.Codelab>.FromName("Music_Tiny_Orchestra_Bass_Mode_1_Stop");
 
-    /// <summary>CLAD <c>Music_Tiny_Orchestra_Bass_Mode_2</c> (2111780368).</summary>
+    /// <summary>CLAD member <c>Music_Tiny_Orchestra_Bass_Mode_2</c> (id 2111780368).</summary>
     public static readonly CladEnum<global::Anki.AudioMetaData.GameEvent.Codelab> MusicTinyOrchestraBassMode2 = CladEnum<global::Anki.AudioMetaData.GameEvent.Codelab>.FromName("Music_Tiny_Orchestra_Bass_Mode_2");
 
-    /// <summary>CLAD <c>Music_Tiny_Orchestra_Bass_Mode_2_Stop</c> (1587327405).</summary>
+    /// <summary>CLAD member <c>Music_Tiny_Orchestra_Bass_Mode_2_Stop</c> (id 1587327405).</summary>
     public static readonly CladEnum<global::Anki.AudioMetaData.GameEvent.Codelab> MusicTinyOrchestraBassMode2Stop = CladEnum<global::Anki.AudioMetaData.GameEvent.Codelab>.FromName("Music_Tiny_Orchestra_Bass_Mode_2_Stop");
 
-    /// <summary>CLAD <c>Music_Tiny_Orchestra_Bass_Mode_3</c> (2111780369).</summary>
+    /// <summary>CLAD member <c>Music_Tiny_Orchestra_Bass_Mode_3</c> (id 2111780369).</summary>
     public static readonly CladEnum<global::Anki.AudioMetaData.GameEvent.Codelab> MusicTinyOrchestraBassMode3 = CladEnum<global::Anki.AudioMetaData.GameEvent.Codelab>.FromName("Music_Tiny_Orchestra_Bass_Mode_3");
 
-    /// <summary>CLAD <c>Music_Tiny_Orchestra_Bass_Mode_3_Stop</c> (1731643034).</summary>
+    /// <summary>CLAD member <c>Music_Tiny_Orchestra_Bass_Mode_3_Stop</c> (id 1731643034).</summary>
     public static readonly CladEnum<global::Anki.AudioMetaData.GameEvent.Codelab> MusicTinyOrchestraBassMode3Stop = CladEnum<global::Anki.AudioMetaData.GameEvent.Codelab>.FromName("Music_Tiny_Orchestra_Bass_Mode_3_Stop");
 
-    /// <summary>CLAD <c>Music_Tiny_Orchestra_Bass_Stop</c> (1011028768).</summary>
+    /// <summary>CLAD member <c>Music_Tiny_Orchestra_Bass_Stop</c> (id 1011028768).</summary>
     public static readonly CladEnum<global::Anki.AudioMetaData.GameEvent.Codelab> MusicTinyOrchestraBassStop = CladEnum<global::Anki.AudioMetaData.GameEvent.Codelab>.FromName("Music_Tiny_Orchestra_Bass_Stop");
 
-    /// <summary>CLAD <c>Music_Tiny_Orchestra_Glock_Pluck_Mode_1</c> (1774266660).</summary>
+    /// <summary>CLAD member <c>Music_Tiny_Orchestra_Glock_Pluck_Mode_1</c> (id 1774266660).</summary>
     public static readonly CladEnum<global::Anki.AudioMetaData.GameEvent.Codelab> MusicTinyOrchestraGlockPluckMode1 = CladEnum<global::Anki.AudioMetaData.GameEvent.Codelab>.FromName("Music_Tiny_Orchestra_Glock_Pluck_Mode_1");
 
-    /// <summary>CLAD <c>Music_Tiny_Orchestra_Glock_Pluck_Mode_1_Stop</c> (1662844729).</summary>
+    /// <summary>CLAD member <c>Music_Tiny_Orchestra_Glock_Pluck_Mode_1_Stop</c> (id 1662844729).</summary>
     public static readonly CladEnum<global::Anki.AudioMetaData.GameEvent.Codelab> MusicTinyOrchestraGlockPluckMode1Stop = CladEnum<global::Anki.AudioMetaData.GameEvent.Codelab>.FromName("Music_Tiny_Orchestra_Glock_Pluck_Mode_1_Stop");
 
-    /// <summary>CLAD <c>Music_Tiny_Orchestra_Glock_Pluck_Mode_2</c> (1774266663).</summary>
+    /// <summary>CLAD member <c>Music_Tiny_Orchestra_Glock_Pluck_Mode_2</c> (id 1774266663).</summary>
     public static readonly CladEnum<global::Anki.AudioMetaData.GameEvent.Codelab> MusicTinyOrchestraGlockPluckMode2 = CladEnum<global::Anki.AudioMetaData.GameEvent.Codelab>.FromName("Music_Tiny_Orchestra_Glock_Pluck_Mode_2");
 
-    /// <summary>CLAD <c>Music_Tiny_Orchestra_Glock_Pluck_Mode_2_Stop</c> (2287415996).</summary>
+    /// <summary>CLAD member <c>Music_Tiny_Orchestra_Glock_Pluck_Mode_2_Stop</c> (id 2287415996).</summary>
     public static readonly CladEnum<global::Anki.AudioMetaData.GameEvent.Codelab> MusicTinyOrchestraGlockPluckMode2Stop = CladEnum<global::Anki.AudioMetaData.GameEvent.Codelab>.FromName("Music_Tiny_Orchestra_Glock_Pluck_Mode_2_Stop");
 
-    /// <summary>CLAD <c>Music_Tiny_Orchestra_Glock_Pluck_Mode_3</c> (1774266662).</summary>
+    /// <summary>CLAD member <c>Music_Tiny_Orchestra_Glock_Pluck_Mode_3</c> (id 1774266662).</summary>
     public static readonly CladEnum<global::Anki.AudioMetaData.GameEvent.Codelab> MusicTinyOrchestraGlockPluckMode3 = CladEnum<global::Anki.AudioMetaData.GameEvent.Codelab>.FromName("Music_Tiny_Orchestra_Glock_Pluck_Mode_3");
 
-    /// <summary>CLAD <c>Music_Tiny_Orchestra_Glock_Pluck_Mode_3_Stop</c> (3420658727).</summary>
+    /// <summary>CLAD member <c>Music_Tiny_Orchestra_Glock_Pluck_Mode_3_Stop</c> (id 3420658727).</summary>
     public static readonly CladEnum<global::Anki.AudioMetaData.GameEvent.Codelab> MusicTinyOrchestraGlockPluckMode3Stop = CladEnum<global::Anki.AudioMetaData.GameEvent.Codelab>.FromName("Music_Tiny_Orchestra_Glock_Pluck_Mode_3_Stop");
 
-    /// <summary>CLAD <c>Music_Tiny_Orchestra_Glock_Pluck_Stop</c> (3644877187).</summary>
+    /// <summary>CLAD member <c>Music_Tiny_Orchestra_Glock_Pluck_Stop</c> (id 3644877187).</summary>
     public static readonly CladEnum<global::Anki.AudioMetaData.GameEvent.Codelab> MusicTinyOrchestraGlockPluckStop = CladEnum<global::Anki.AudioMetaData.GameEvent.Codelab>.FromName("Music_Tiny_Orchestra_Glock_Pluck_Stop");
 
-    /// <summary>CLAD <c>Music_Tiny_Orchestra_Strings_Mode_1</c> (3175211494).</summary>
+    /// <summary>CLAD member <c>Music_Tiny_Orchestra_Strings_Mode_1</c> (id 3175211494).</summary>
     public static readonly CladEnum<global::Anki.AudioMetaData.GameEvent.Codelab> MusicTinyOrchestraStringsMode1 = CladEnum<global::Anki.AudioMetaData.GameEvent.Codelab>.FromName("Music_Tiny_Orchestra_Strings_Mode_1");
 
-    /// <summary>CLAD <c>Music_Tiny_Orchestra_Strings_Mode_1_Stop</c> (2836526843).</summary>
+    /// <summary>CLAD member <c>Music_Tiny_Orchestra_Strings_Mode_1_Stop</c> (id 2836526843).</summary>
     public static readonly CladEnum<global::Anki.AudioMetaData.GameEvent.Codelab> MusicTinyOrchestraStringsMode1Stop = CladEnum<global::Anki.AudioMetaData.GameEvent.Codelab>.FromName("Music_Tiny_Orchestra_Strings_Mode_1_Stop");
 
-    /// <summary>CLAD <c>Music_Tiny_Orchestra_Strings_Mode_2</c> (3175211493).</summary>
+    /// <summary>CLAD member <c>Music_Tiny_Orchestra_Strings_Mode_2</c> (id 3175211493).</summary>
     public static readonly CladEnum<global::Anki.AudioMetaData.GameEvent.Codelab> MusicTinyOrchestraStringsMode2 = CladEnum<global::Anki.AudioMetaData.GameEvent.Codelab>.FromName("Music_Tiny_Orchestra_Strings_Mode_2");
 
-    /// <summary>CLAD <c>Music_Tiny_Orchestra_Strings_Mode_2_Stop</c> (3381154170).</summary>
+    /// <summary>CLAD member <c>Music_Tiny_Orchestra_Strings_Mode_2_Stop</c> (id 3381154170).</summary>
     public static readonly CladEnum<global::Anki.AudioMetaData.GameEvent.Codelab> MusicTinyOrchestraStringsMode2Stop = CladEnum<global::Anki.AudioMetaData.GameEvent.Codelab>.FromName("Music_Tiny_Orchestra_Strings_Mode_2_Stop");
 
-    /// <summary>CLAD <c>Music_Tiny_Orchestra_Strings_Mode_3</c> (3175211492).</summary>
+    /// <summary>CLAD member <c>Music_Tiny_Orchestra_Strings_Mode_3</c> (id 3175211492).</summary>
     public static readonly CladEnum<global::Anki.AudioMetaData.GameEvent.Codelab> MusicTinyOrchestraStringsMode3 = CladEnum<global::Anki.AudioMetaData.GameEvent.Codelab>.FromName("Music_Tiny_Orchestra_Strings_Mode_3");
 
-    /// <summary>CLAD <c>Music_Tiny_Orchestra_Strings_Mode_3_Stop</c> (2812380813).</summary>
+    /// <summary>CLAD member <c>Music_Tiny_Orchestra_Strings_Mode_3_Stop</c> (id 2812380813).</summary>
     public static readonly CladEnum<global::Anki.AudioMetaData.GameEvent.Codelab> MusicTinyOrchestraStringsMode3Stop = CladEnum<global::Anki.AudioMetaData.GameEvent.Codelab>.FromName("Music_Tiny_Orchestra_Strings_Mode_3_Stop");
 
-    /// <summary>CLAD <c>Music_Tiny_Orchestra_Strings_Stop</c> (3805843413).</summary>
+    /// <summary>CLAD member <c>Music_Tiny_Orchestra_Strings_Stop</c> (id 3805843413).</summary>
     public static readonly CladEnum<global::Anki.AudioMetaData.GameEvent.Codelab> MusicTinyOrchestraStringsStop = CladEnum<global::Anki.AudioMetaData.GameEvent.Codelab>.FromName("Music_Tiny_Orchestra_Strings_Stop");
 
-    /// <summary>CLAD <c>Music_Tiny_Orchestra_Bass_01_Loop</c> (1352943452).</summary>
+    /// <summary>CLAD member <c>Music_Tiny_Orchestra_Bass_01_Loop</c> (id 1352943452).</summary>
     public static readonly CladEnum<global::Anki.AudioMetaData.GameEvent.Codelab> MusicTinyOrchestraBass01Loop = CladEnum<global::Anki.AudioMetaData.GameEvent.Codelab>.FromName("Music_Tiny_Orchestra_Bass_01_Loop");
 
-    /// <summary>CLAD <c>Music_Tiny_Orchestra_Bass_01_Loop_Stop</c> (1353021637).</summary>
+    /// <summary>CLAD member <c>Music_Tiny_Orchestra_Bass_01_Loop_Stop</c> (id 1353021637).</summary>
     public static readonly CladEnum<global::Anki.AudioMetaData.GameEvent.Codelab> MusicTinyOrchestraBass01LoopStop = CladEnum<global::Anki.AudioMetaData.GameEvent.Codelab>.FromName("Music_Tiny_Orchestra_Bass_01_Loop_Stop");
 
-    /// <summary>CLAD <c>Music_Tiny_Orchestra_Bass_02_Loop</c> (3270107901).</summary>
+    /// <summary>CLAD member <c>Music_Tiny_Orchestra_Bass_02_Loop</c> (id 3270107901).</summary>
     public static readonly CladEnum<global::Anki.AudioMetaData.GameEvent.Codelab> MusicTinyOrchestraBass02Loop = CladEnum<global::Anki.AudioMetaData.GameEvent.Codelab>.FromName("Music_Tiny_Orchestra_Bass_02_Loop");
 
-    /// <summary>CLAD <c>Music_Tiny_Orchestra_Bass_02_Loop_Stop</c> (3636979286).</summary>
+    /// <summary>CLAD member <c>Music_Tiny_Orchestra_Bass_02_Loop_Stop</c> (id 3636979286).</summary>
     public static readonly CladEnum<global::Anki.AudioMetaData.GameEvent.Codelab> MusicTinyOrchestraBass02LoopStop = CladEnum<global::Anki.AudioMetaData.GameEvent.Codelab>.FromName("Music_Tiny_Orchestra_Bass_02_Loop_Stop");
 
-    /// <summary>CLAD <c>Music_Tiny_Orchestra_Bass_03_Loop</c> (3677506218).</summary>
+    /// <summary>CLAD member <c>Music_Tiny_Orchestra_Bass_03_Loop</c> (id 3677506218).</summary>
     public static readonly CladEnum<global::Anki.AudioMetaData.GameEvent.Codelab> MusicTinyOrchestraBass03Loop = CladEnum<global::Anki.AudioMetaData.GameEvent.Codelab>.FromName("Music_Tiny_Orchestra_Bass_03_Loop");
 
-    /// <summary>CLAD <c>Music_Tiny_Orchestra_Bass_03_Loop_Stop</c> (1838210855).</summary>
+    /// <summary>CLAD member <c>Music_Tiny_Orchestra_Bass_03_Loop_Stop</c> (id 1838210855).</summary>
     public static readonly CladEnum<global::Anki.AudioMetaData.GameEvent.Codelab> MusicTinyOrchestraBass03LoopStop = CladEnum<global::Anki.AudioMetaData.GameEvent.Codelab>.FromName("Music_Tiny_Orchestra_Bass_03_Loop_Stop");
 
-    /// <summary>CLAD <c>Music_Tiny_Orchestra_Glock_Pluck_01_Loop</c> (2091022501).</summary>
+    /// <summary>CLAD member <c>Music_Tiny_Orchestra_Glock_Pluck_01_Loop</c> (id 2091022501).</summary>
     public static readonly CladEnum<global::Anki.AudioMetaData.GameEvent.Codelab> MusicTinyOrchestraGlockPluck01Loop = CladEnum<global::Anki.AudioMetaData.GameEvent.Codelab>.FromName("Music_Tiny_Orchestra_Glock_Pluck_01_Loop");
 
-    /// <summary>CLAD <c>Music_Tiny_Orchestra_Glock_Pluck_01_Loop_Stop</c> (1371551766).</summary>
+    /// <summary>CLAD member <c>Music_Tiny_Orchestra_Glock_Pluck_01_Loop_Stop</c> (id 1371551766).</summary>
     public static readonly CladEnum<global::Anki.AudioMetaData.GameEvent.Codelab> MusicTinyOrchestraGlockPluck01LoopStop = CladEnum<global::Anki.AudioMetaData.GameEvent.Codelab>.FromName("Music_Tiny_Orchestra_Glock_Pluck_01_Loop_Stop");
 
-    /// <summary>CLAD <c>Music_Tiny_Orchestra_Glock_Pluck_02_Loop</c> (1416718788).</summary>
+    /// <summary>CLAD member <c>Music_Tiny_Orchestra_Glock_Pluck_02_Loop</c> (id 1416718788).</summary>
     public static readonly CladEnum<global::Anki.AudioMetaData.GameEvent.Codelab> MusicTinyOrchestraGlockPluck02Loop = CladEnum<global::Anki.AudioMetaData.GameEvent.Codelab>.FromName("Music_Tiny_Orchestra_Glock_Pluck_02_Loop");
 
-    /// <summary>CLAD <c>Music_Tiny_Orchestra_Glock_Pluck_02_Loop_Stop</c> (1925511301).</summary>
+    /// <summary>CLAD member <c>Music_Tiny_Orchestra_Glock_Pluck_02_Loop_Stop</c> (id 1925511301).</summary>
     public static readonly CladEnum<global::Anki.AudioMetaData.GameEvent.Codelab> MusicTinyOrchestraGlockPluck02LoopStop = CladEnum<global::Anki.AudioMetaData.GameEvent.Codelab>.FromName("Music_Tiny_Orchestra_Glock_Pluck_02_Loop_Stop");
 
-    /// <summary>CLAD <c>Music_Tiny_Orchestra_Glock_Pluck_03_Loop</c> (668702647).</summary>
+    /// <summary>CLAD member <c>Music_Tiny_Orchestra_Glock_Pluck_03_Loop</c> (id 668702647).</summary>
     public static readonly CladEnum<global::Anki.AudioMetaData.GameEvent.Codelab> MusicTinyOrchestraGlockPluck03Loop = CladEnum<global::Anki.AudioMetaData.GameEvent.Codelab>.FromName("Music_Tiny_Orchestra_Glock_Pluck_03_Loop");
 
-    /// <summary>CLAD <c>Music_Tiny_Orchestra_Glock_Pluck_03_Loop_Stop</c> (2578133564).</summary>
+    /// <summary>CLAD member <c>Music_Tiny_Orchestra_Glock_Pluck_03_Loop_Stop</c> (id 2578133564).</summary>
     public static readonly CladEnum<global::Anki.AudioMetaData.GameEvent.Codelab> MusicTinyOrchestraGlockPluck03LoopStop = CladEnum<global::Anki.AudioMetaData.GameEvent.Codelab>.FromName("Music_Tiny_Orchestra_Glock_Pluck_03_Loop_Stop");
 
-    /// <summary>CLAD <c>Music_Tiny_Orchestra_Strings_01_Loop</c> (846761783).</summary>
+    /// <summary>CLAD member <c>Music_Tiny_Orchestra_Strings_01_Loop</c> (id 846761783).</summary>
     public static readonly CladEnum<global::Anki.AudioMetaData.GameEvent.Codelab> MusicTinyOrchestraStrings01Loop = CladEnum<global::Anki.AudioMetaData.GameEvent.Codelab>.FromName("Music_Tiny_Orchestra_Strings_01_Loop");
 
-    /// <summary>CLAD <c>Music_Tiny_Orchestra_Strings_01_Loop_Stop</c> (3051334784).</summary>
+    /// <summary>CLAD member <c>Music_Tiny_Orchestra_Strings_01_Loop_Stop</c> (id 3051334784).</summary>
     public static readonly CladEnum<global::Anki.AudioMetaData.GameEvent.Codelab> MusicTinyOrchestraStrings01LoopStop = CladEnum<global::Anki.AudioMetaData.GameEvent.Codelab>.FromName("Music_Tiny_Orchestra_Strings_01_Loop_Stop");
 
-    /// <summary>CLAD <c>Music_Tiny_Orchestra_Strings_02_Loop</c> (363664914).</summary>
+    /// <summary>CLAD member <c>Music_Tiny_Orchestra_Strings_02_Loop</c> (id 363664914).</summary>
     public static readonly CladEnum<global::Anki.AudioMetaData.GameEvent.Codelab> MusicTinyOrchestraStrings02Loop = CladEnum<global::Anki.AudioMetaData.GameEvent.Codelab>.FromName("Music_Tiny_Orchestra_Strings_02_Loop");
 
-    /// <summary>CLAD <c>Music_Tiny_Orchestra_Strings_02_Loop_Stop</c> (3105309531).</summary>
+    /// <summary>CLAD member <c>Music_Tiny_Orchestra_Strings_02_Loop_Stop</c> (id 3105309531).</summary>
     public static readonly CladEnum<global::Anki.AudioMetaData.GameEvent.Codelab> MusicTinyOrchestraStrings02LoopStop = CladEnum<global::Anki.AudioMetaData.GameEvent.Codelab>.FromName("Music_Tiny_Orchestra_Strings_02_Loop_Stop");
 
-    /// <summary>CLAD <c>Music_Tiny_Orchestra_Strings_03_Loop</c> (2269081637).</summary>
+    /// <summary>CLAD member <c>Music_Tiny_Orchestra_Strings_03_Loop</c> (id 2269081637).</summary>
     public static readonly CladEnum<global::Anki.AudioMetaData.GameEvent.Codelab> MusicTinyOrchestraStrings03Loop = CladEnum<global::Anki.AudioMetaData.GameEvent.Codelab>.FromName("Music_Tiny_Orchestra_Strings_03_Loop");
 
-    /// <summary>CLAD <c>Music_Tiny_Orchestra_Strings_03_Loop_Stop</c> (4031668042).</summary>
+    /// <summary>CLAD member <c>Music_Tiny_Orchestra_Strings_03_Loop_Stop</c> (id 4031668042).</summary>
     public static readonly CladEnum<global::Anki.AudioMetaData.GameEvent.Codelab> MusicTinyOrchestraStrings03LoopStop = CladEnum<global::Anki.AudioMetaData.GameEvent.Codelab>.FromName("Music_Tiny_Orchestra_Strings_03_Loop_Stop");
 
-    /// <summary>CLAD <c>Music_Cube_Whack</c> (3324716189).</summary>
+    /// <summary>CLAD member <c>Music_Cube_Whack</c> (id 3324716189).</summary>
     public static readonly CladEnum<global::Anki.AudioMetaData.GameEvent.Codelab> MusicCubeWhack = CladEnum<global::Anki.AudioMetaData.GameEvent.Codelab>.FromName("Music_Cube_Whack");
 
-    /// <summary>CLAD <c>Music_Hot_Potato_Level_1_Loop</c> (716489468).</summary>
+    /// <summary>CLAD member <c>Music_Hot_Potato_Level_1_Loop</c> (id 716489468).</summary>
     public static readonly CladEnum<global::Anki.AudioMetaData.GameEvent.Codelab> MusicHotPotatoLevel1Loop = CladEnum<global::Anki.AudioMetaData.GameEvent.Codelab>.FromName("Music_Hot_Potato_Level_1_Loop");
 
-    /// <summary>CLAD <c>Music_Hot_Potato_Level_1_Loop_Stop</c> (2689778401).</summary>
+    /// <summary>CLAD member <c>Music_Hot_Potato_Level_1_Loop_Stop</c> (id 2689778401).</summary>
     public static readonly CladEnum<global::Anki.AudioMetaData.GameEvent.Codelab> MusicHotPotatoLevel1LoopStop = CladEnum<global::Anki.AudioMetaData.GameEvent.Codelab>.FromName("Music_Hot_Potato_Level_1_Loop_Stop");
 
-    /// <summary>CLAD <c>Music_Hot_Potato_Level_2_Loop</c> (2357357213).</summary>
+    /// <summary>CLAD member <c>Music_Hot_Potato_Level_2_Loop</c> (id 2357357213).</summary>
     public static readonly CladEnum<global::Anki.AudioMetaData.GameEvent.Codelab> MusicHotPotatoLevel2Loop = CladEnum<global::Anki.AudioMetaData.GameEvent.Codelab>.FromName("Music_Hot_Potato_Level_2_Loop");
 
-    /// <summary>CLAD <c>Music_Hot_Potato_Level_2_Loop_Stop</c> (3058241090).</summary>
+    /// <summary>CLAD member <c>Music_Hot_Potato_Level_2_Loop_Stop</c> (id 3058241090).</summary>
     public static readonly CladEnum<global::Anki.AudioMetaData.GameEvent.Codelab> MusicHotPotatoLevel2LoopStop = CladEnum<global::Anki.AudioMetaData.GameEvent.Codelab>.FromName("Music_Hot_Potato_Level_2_Loop_Stop");
 
-    /// <summary>CLAD <c>Music_Hot_Potato_Level_3_Loop</c> (2340195146).</summary>
+    /// <summary>CLAD member <c>Music_Hot_Potato_Level_3_Loop</c> (id 2340195146).</summary>
     public static readonly CladEnum<global::Anki.AudioMetaData.GameEvent.Codelab> MusicHotPotatoLevel3Loop = CladEnum<global::Anki.AudioMetaData.GameEvent.Codelab>.FromName("Music_Hot_Potato_Level_3_Loop");
 
-    /// <summary>CLAD <c>Music_Hot_Potato_Level_3_Loop_Stop</c> (2301371667).</summary>
+    /// <summary>CLAD member <c>Music_Hot_Potato_Level_3_Loop_Stop</c> (id 2301371667).</summary>
     public static readonly CladEnum<global::Anki.AudioMetaData.GameEvent.Codelab> MusicHotPotatoLevel3LoopStop = CladEnum<global::Anki.AudioMetaData.GameEvent.Codelab>.FromName("Music_Hot_Potato_Level_3_Loop_Stop");
 
-    /// <summary>CLAD <c>Music_Hot_Potato_Level_4_Loop</c> (4097176099).</summary>
+    /// <summary>CLAD member <c>Music_Hot_Potato_Level_4_Loop</c> (id 4097176099).</summary>
     public static readonly CladEnum<global::Anki.AudioMetaData.GameEvent.Codelab> MusicHotPotatoLevel4Loop = CladEnum<global::Anki.AudioMetaData.GameEvent.Codelab>.FromName("Music_Hot_Potato_Level_4_Loop");
 
-    /// <summary>CLAD <c>Music_Hot_Potato_Level_4_Loop_Stop</c> (3129138908).</summary>
+    /// <summary>CLAD member <c>Music_Hot_Potato_Level_4_Loop_Stop</c> (id 3129138908).</summary>
     public static readonly CladEnum<global::Anki.AudioMetaData.GameEvent.Codelab> MusicHotPotatoLevel4LoopStop = CladEnum<global::Anki.AudioMetaData.GameEvent.Codelab>.FromName("Music_Hot_Potato_Level_4_Loop_Stop");
 
-    /// <summary>CLAD <c>Music_Magic8_Reveal_Stinger</c> (1998467689).</summary>
+    /// <summary>CLAD member <c>Music_Magic8_Reveal_Stinger</c> (id 1998467689).</summary>
     public static readonly CladEnum<global::Anki.AudioMetaData.GameEvent.Codelab> MusicMagic8RevealStinger = CladEnum<global::Anki.AudioMetaData.GameEvent.Codelab>.FromName("Music_Magic8_Reveal_Stinger");
 
-    /// <summary>CLAD <c>Music_Magic8_Reveal_Stinger_Stop</c> (16687378).</summary>
+    /// <summary>CLAD member <c>Music_Magic8_Reveal_Stinger_Stop</c> (id 16687378).</summary>
     public static readonly CladEnum<global::Anki.AudioMetaData.GameEvent.Codelab> MusicMagic8RevealStingerStop = CladEnum<global::Anki.AudioMetaData.GameEvent.Codelab>.FromName("Music_Magic8_Reveal_Stinger_Stop");
 
-    /// <summary>CLAD <c>Music_Style_80S_1_159Bpm_Loop</c> (1808088864).</summary>
+    /// <summary>CLAD member <c>Music_Style_80S_1_159Bpm_Loop</c> (id 1808088864).</summary>
     public static readonly CladEnum<global::Anki.AudioMetaData.GameEvent.Codelab> MusicStyle80S1159BpmLoop = CladEnum<global::Anki.AudioMetaData.GameEvent.Codelab>.FromName("Music_Style_80S_1_159Bpm_Loop");
 
-    /// <summary>CLAD <c>Music_Style_80S_1_159Bpm_Loop_Stop</c> (1451276801).</summary>
+    /// <summary>CLAD member <c>Music_Style_80S_1_159Bpm_Loop_Stop</c> (id 1451276801).</summary>
     public static readonly CladEnum<global::Anki.AudioMetaData.GameEvent.Codelab> MusicStyle80S1159BpmLoopStop = CladEnum<global::Anki.AudioMetaData.GameEvent.Codelab>.FromName("Music_Style_80S_1_159Bpm_Loop_Stop");
 
-    /// <summary>CLAD <c>Music_Style_Disco_1_135Bpm_Loop</c> (2717741607).</summary>
+    /// <summary>CLAD member <c>Music_Style_Disco_1_135Bpm_Loop</c> (id 2717741607).</summary>
     public static readonly CladEnum<global::Anki.AudioMetaData.GameEvent.Codelab> MusicStyleDisco1135BpmLoop = CladEnum<global::Anki.AudioMetaData.GameEvent.Codelab>.FromName("Music_Style_Disco_1_135Bpm_Loop");
 
-    /// <summary>CLAD <c>Music_Style_Disco_1_135Bpm_Loop_Stop</c> (3069781320).</summary>
+    /// <summary>CLAD member <c>Music_Style_Disco_1_135Bpm_Loop_Stop</c> (id 3069781320).</summary>
     public static readonly CladEnum<global::Anki.AudioMetaData.GameEvent.Codelab> MusicStyleDisco1135BpmLoopStop = CladEnum<global::Anki.AudioMetaData.GameEvent.Codelab>.FromName("Music_Style_Disco_1_135Bpm_Loop_Stop");
 
-    /// <summary>CLAD <c>Music_Style_Mambo_1_183Bpm_Loop</c> (1905159696).</summary>
+    /// <summary>CLAD member <c>Music_Style_Mambo_1_183Bpm_Loop</c> (id 1905159696).</summary>
     public static readonly CladEnum<global::Anki.AudioMetaData.GameEvent.Codelab> MusicStyleMambo1183BpmLoop = CladEnum<global::Anki.AudioMetaData.GameEvent.Codelab>.FromName("Music_Style_Mambo_1_183Bpm_Loop");
 
-    /// <summary>CLAD <c>Music_Style_Mambo_1_183Bpm_Loop_Stop</c> (1709157641).</summary>
+    /// <summary>CLAD member <c>Music_Style_Mambo_1_183Bpm_Loop_Stop</c> (id 1709157641).</summary>
     public static readonly CladEnum<global::Anki.AudioMetaData.GameEvent.Codelab> MusicStyleMambo1183BpmLoopStop = CladEnum<global::Anki.AudioMetaData.GameEvent.Codelab>.FromName("Music_Style_Mambo_1_183Bpm_Loop_Stop");
 
-    /// <summary>CLAD <c>Sfx_Global_Stop</c> (2451909313).</summary>
+    /// <summary>CLAD member <c>Sfx_Global_Stop</c> (id 2451909313).</summary>
     public static readonly CladEnum<global::Anki.AudioMetaData.GameEvent.Codelab> SfxGlobalStop = CladEnum<global::Anki.AudioMetaData.GameEvent.Codelab>.FromName("Sfx_Global_Stop");
 
-    /// <summary>CLAD <c>Sfx_Cube_Light</c> (1237348851).</summary>
+    /// <summary>CLAD member <c>Sfx_Cube_Light</c> (id 1237348851).</summary>
     public static readonly CladEnum<global::Anki.AudioMetaData.GameEvent.Codelab> SfxCubeLight = CladEnum<global::Anki.AudioMetaData.GameEvent.Codelab>.FromName("Sfx_Cube_Light");
 
-    /// <summary>CLAD <c>Sfx_Cube_Light_Stop</c> (2096539976).</summary>
+    /// <summary>CLAD member <c>Sfx_Cube_Light_Stop</c> (id 2096539976).</summary>
     public static readonly CladEnum<global::Anki.AudioMetaData.GameEvent.Codelab> SfxCubeLightStop = CladEnum<global::Anki.AudioMetaData.GameEvent.Codelab>.FromName("Sfx_Cube_Light_Stop");
 
-    /// <summary>CLAD <c>Sfx_Firetruck_Timer_Start</c> (2969457917).</summary>
+    /// <summary>CLAD member <c>Sfx_Firetruck_Timer_Start</c> (id 2969457917).</summary>
     public static readonly CladEnum<global::Anki.AudioMetaData.GameEvent.Codelab> SfxFiretruckTimerStart = CladEnum<global::Anki.AudioMetaData.GameEvent.Codelab>.FromName("Sfx_Firetruck_Timer_Start");
 
-    /// <summary>CLAD <c>Sfx_Firetruck_Timer_Start_Stop</c> (494556302).</summary>
+    /// <summary>CLAD member <c>Sfx_Firetruck_Timer_Start_Stop</c> (id 494556302).</summary>
     public static readonly CladEnum<global::Anki.AudioMetaData.GameEvent.Codelab> SfxFiretruckTimerStartStop = CladEnum<global::Anki.AudioMetaData.GameEvent.Codelab>.FromName("Sfx_Firetruck_Timer_Start_Stop");
 
-    /// <summary>CLAD <c>Sfx_Firetruck_Timer_End</c> (2490749974).</summary>
+    /// <summary>CLAD member <c>Sfx_Firetruck_Timer_End</c> (id 2490749974).</summary>
     public static readonly CladEnum<global::Anki.AudioMetaData.GameEvent.Codelab> SfxFiretruckTimerEnd = CladEnum<global::Anki.AudioMetaData.GameEvent.Codelab>.FromName("Sfx_Firetruck_Timer_End");
 
-    /// <summary>CLAD <c>Sfx_Firetruck_Timer_End_Stop</c> (421166967).</summary>
+    /// <summary>CLAD member <c>Sfx_Firetruck_Timer_End_Stop</c> (id 421166967).</summary>
     public static readonly CladEnum<global::Anki.AudioMetaData.GameEvent.Codelab> SfxFiretruckTimerEndStop = CladEnum<global::Anki.AudioMetaData.GameEvent.Codelab>.FromName("Sfx_Firetruck_Timer_End_Stop");
 
-    /// <summary>CLAD <c>Sfx_Game_Win</c> (2440620400).</summary>
+    /// <summary>CLAD member <c>Sfx_Game_Win</c> (id 2440620400).</summary>
     public static readonly CladEnum<global::Anki.AudioMetaData.GameEvent.Codelab> SfxGameWin = CladEnum<global::Anki.AudioMetaData.GameEvent.Codelab>.FromName("Sfx_Game_Win");
 
-    /// <summary>CLAD <c>Sfx_Game_Win_Stop</c> (1156077641).</summary>
+    /// <summary>CLAD member <c>Sfx_Game_Win_Stop</c> (id 1156077641).</summary>
     public static readonly CladEnum<global::Anki.AudioMetaData.GameEvent.Codelab> SfxGameWinStop = CladEnum<global::Anki.AudioMetaData.GameEvent.Codelab>.FromName("Sfx_Game_Win_Stop");
 
-    /// <summary>CLAD <c>Sfx_Game_Lose</c> (1551222965).</summary>
+    /// <summary>CLAD member <c>Sfx_Game_Lose</c> (id 1551222965).</summary>
     public static readonly CladEnum<global::Anki.AudioMetaData.GameEvent.Codelab> SfxGameLose = CladEnum<global::Anki.AudioMetaData.GameEvent.Codelab>.FromName("Sfx_Game_Lose");
 
-    /// <summary>CLAD <c>Sfx_Game_Lose_Stop</c> (347471374).</summary>
+    /// <summary>CLAD member <c>Sfx_Game_Lose_Stop</c> (id 347471374).</summary>
     public static readonly CladEnum<global::Anki.AudioMetaData.GameEvent.Codelab> SfxGameLoseStop = CladEnum<global::Anki.AudioMetaData.GameEvent.Codelab>.FromName("Sfx_Game_Lose_Stop");
 
-    /// <summary>CLAD <c>Sfx_Hot_Potato_Cube_Charge</c> (1053690875).</summary>
+    /// <summary>CLAD member <c>Sfx_Hot_Potato_Cube_Charge</c> (id 1053690875).</summary>
     public static readonly CladEnum<global::Anki.AudioMetaData.GameEvent.Codelab> SfxHotPotatoCubeCharge = CladEnum<global::Anki.AudioMetaData.GameEvent.Codelab>.FromName("Sfx_Hot_Potato_Cube_Charge");
 
-    /// <summary>CLAD <c>Sfx_Hot_Potato_Cube_Charge_Stop</c> (3280818964).</summary>
+    /// <summary>CLAD member <c>Sfx_Hot_Potato_Cube_Charge_Stop</c> (id 3280818964).</summary>
     public static readonly CladEnum<global::Anki.AudioMetaData.GameEvent.Codelab> SfxHotPotatoCubeChargeStop = CladEnum<global::Anki.AudioMetaData.GameEvent.Codelab>.FromName("Sfx_Hot_Potato_Cube_Charge_Stop");
 
-    /// <summary>CLAD <c>Sfx_Hot_Potato_Cube_Ready</c> (1379908684).</summary>
+    /// <summary>CLAD member <c>Sfx_Hot_Potato_Cube_Ready</c> (id 1379908684).</summary>
     public static readonly CladEnum<global::Anki.AudioMetaData.GameEvent.Codelab> SfxHotPotatoCubeReady = CladEnum<global::Anki.AudioMetaData.GameEvent.Codelab>.FromName("Sfx_Hot_Potato_Cube_Ready");
 
-    /// <summary>CLAD <c>Sfx_Hot_Potato_Cube_Ready_Stop</c> (3293236253).</summary>
+    /// <summary>CLAD member <c>Sfx_Hot_Potato_Cube_Ready_Stop</c> (id 3293236253).</summary>
     public static readonly CladEnum<global::Anki.AudioMetaData.GameEvent.Codelab> SfxHotPotatoCubeReadyStop = CladEnum<global::Anki.AudioMetaData.GameEvent.Codelab>.FromName("Sfx_Hot_Potato_Cube_Ready_Stop");
 
-    /// <summary>CLAD <c>Sfx_Hot_Potato_Pass</c> (17262752).</summary>
+    /// <summary>CLAD member <c>Sfx_Hot_Potato_Pass</c> (id 17262752).</summary>
     public static readonly CladEnum<global::Anki.AudioMetaData.GameEvent.Codelab> SfxHotPotatoPass = CladEnum<global::Anki.AudioMetaData.GameEvent.Codelab>.FromName("Sfx_Hot_Potato_Pass");
 
-    /// <summary>CLAD <c>Sfx_Hot_Potato_Pass_Stop</c> (2579746409).</summary>
+    /// <summary>CLAD member <c>Sfx_Hot_Potato_Pass_Stop</c> (id 2579746409).</summary>
     public static readonly CladEnum<global::Anki.AudioMetaData.GameEvent.Codelab> SfxHotPotatoPassStop = CladEnum<global::Anki.AudioMetaData.GameEvent.Codelab>.FromName("Sfx_Hot_Potato_Pass_Stop");
 
-    /// <summary>CLAD <c>Sfx_Hot_Potato_Timer_End</c> (1167243172).</summary>
+    /// <summary>CLAD member <c>Sfx_Hot_Potato_Timer_End</c> (id 1167243172).</summary>
     public static readonly CladEnum<global::Anki.AudioMetaData.GameEvent.Codelab> SfxHotPotatoTimerEnd = CladEnum<global::Anki.AudioMetaData.GameEvent.Codelab>.FromName("Sfx_Hot_Potato_Timer_End");
 
-    /// <summary>CLAD <c>Sfx_Hot_Potato_Timer_End_Stop</c> (1930994181).</summary>
+    /// <summary>CLAD member <c>Sfx_Hot_Potato_Timer_End_Stop</c> (id 1930994181).</summary>
     public static readonly CladEnum<global::Anki.AudioMetaData.GameEvent.Codelab> SfxHotPotatoTimerEndStop = CladEnum<global::Anki.AudioMetaData.GameEvent.Codelab>.FromName("Sfx_Hot_Potato_Timer_End_Stop");
 
-    /// <summary>CLAD <c>Sfx_Magic8_Message_Reveal</c> (4071915446).</summary>
+    /// <summary>CLAD member <c>Sfx_Magic8_Message_Reveal</c> (id 4071915446).</summary>
     public static readonly CladEnum<global::Anki.AudioMetaData.GameEvent.Codelab> SfxMagic8MessageReveal = CladEnum<global::Anki.AudioMetaData.GameEvent.Codelab>.FromName("Sfx_Magic8_Message_Reveal");
 
-    /// <summary>CLAD <c>Sfx_Magic8_Message_Reveal_Stop</c> (3951709903).</summary>
+    /// <summary>CLAD member <c>Sfx_Magic8_Message_Reveal_Stop</c> (id 3951709903).</summary>
     public static readonly CladEnum<global::Anki.AudioMetaData.GameEvent.Codelab> SfxMagic8MessageRevealStop = CladEnum<global::Anki.AudioMetaData.GameEvent.Codelab>.FromName("Sfx_Magic8_Message_Reveal_Stop");
 
-    /// <summary>CLAD <c>Sfx_Magnet_Attract</c> (3253652261).</summary>
+    /// <summary>CLAD member <c>Sfx_Magnet_Attract</c> (id 3253652261).</summary>
     public static readonly CladEnum<global::Anki.AudioMetaData.GameEvent.Codelab> SfxMagnetAttract = CladEnum<global::Anki.AudioMetaData.GameEvent.Codelab>.FromName("Sfx_Magnet_Attract");
 
-    /// <summary>CLAD <c>Sfx_Magnet_Attract_Stop</c> (1573765534).</summary>
+    /// <summary>CLAD member <c>Sfx_Magnet_Attract_Stop</c> (id 1573765534).</summary>
     public static readonly CladEnum<global::Anki.AudioMetaData.GameEvent.Codelab> SfxMagnetAttractStop = CladEnum<global::Anki.AudioMetaData.GameEvent.Codelab>.FromName("Sfx_Magnet_Attract_Stop");
 
-    /// <summary>CLAD <c>Sfx_Magnet_Repel</c> (131125164).</summary>
+    /// <summary>CLAD member <c>Sfx_Magnet_Repel</c> (id 131125164).</summary>
     public static readonly CladEnum<global::Anki.AudioMetaData.GameEvent.Codelab> SfxMagnetRepel = CladEnum<global::Anki.AudioMetaData.GameEvent.Codelab>.FromName("Sfx_Magnet_Repel");
 
-    /// <summary>CLAD <c>Sfx_Magnet_Repel_Stop</c> (827939469).</summary>
+    /// <summary>CLAD member <c>Sfx_Magnet_Repel_Stop</c> (id 827939469).</summary>
     public static readonly CladEnum<global::Anki.AudioMetaData.GameEvent.Codelab> SfxMagnetRepelStop = CladEnum<global::Anki.AudioMetaData.GameEvent.Codelab>.FromName("Sfx_Magnet_Repel_Stop");
 
-    /// <summary>CLAD <c>Sfx_Shared_Countdown</c> (3959673678).</summary>
+    /// <summary>CLAD member <c>Sfx_Shared_Countdown</c> (id 3959673678).</summary>
     public static readonly CladEnum<global::Anki.AudioMetaData.GameEvent.Codelab> SfxSharedCountdown = CladEnum<global::Anki.AudioMetaData.GameEvent.Codelab>.FromName("Sfx_Shared_Countdown");
 
-    /// <summary>CLAD <c>Sfx_Shared_Countdown_Stop</c> (769770611).</summary>
+    /// <summary>CLAD member <c>Sfx_Shared_Countdown_Stop</c> (id 769770611).</summary>
     public static readonly CladEnum<global::Anki.AudioMetaData.GameEvent.Codelab> SfxSharedCountdownStop = CladEnum<global::Anki.AudioMetaData.GameEvent.Codelab>.FromName("Sfx_Shared_Countdown_Stop");
 
-    /// <summary>CLAD <c>Sfx_Shared_Cube_Light_On</c> (2279105405).</summary>
+    /// <summary>CLAD member <c>Sfx_Shared_Cube_Light_On</c> (id 2279105405).</summary>
     public static readonly CladEnum<global::Anki.AudioMetaData.GameEvent.Codelab> SfxSharedCubeLightOn = CladEnum<global::Anki.AudioMetaData.GameEvent.Codelab>.FromName("Sfx_Shared_Cube_Light_On");
 
-    /// <summary>CLAD <c>Sfx_Shared_Cube_Light_On_Stop</c> (3298580386).</summary>
+    /// <summary>CLAD member <c>Sfx_Shared_Cube_Light_On_Stop</c> (id 3298580386).</summary>
     public static readonly CladEnum<global::Anki.AudioMetaData.GameEvent.Codelab> SfxSharedCubeLightOnStop = CladEnum<global::Anki.AudioMetaData.GameEvent.Codelab>.FromName("Sfx_Shared_Cube_Light_On_Stop");
 
-    /// <summary>CLAD <c>Sfx_Shared_Error</c> (2368558265).</summary>
+    /// <summary>CLAD member <c>Sfx_Shared_Error</c> (id 2368558265).</summary>
     public static readonly CladEnum<global::Anki.AudioMetaData.GameEvent.Codelab> SfxSharedError = CladEnum<global::Anki.AudioMetaData.GameEvent.Codelab>.FromName("Sfx_Shared_Error");
 
-    /// <summary>CLAD <c>Sfx_Shared_Error_Stop</c> (63429898).</summary>
+    /// <summary>CLAD member <c>Sfx_Shared_Error_Stop</c> (id 63429898).</summary>
     public static readonly CladEnum<global::Anki.AudioMetaData.GameEvent.Codelab> SfxSharedErrorStop = CladEnum<global::Anki.AudioMetaData.GameEvent.Codelab>.FromName("Sfx_Shared_Error_Stop");
 
-    /// <summary>CLAD <c>Sfx_Shared_Success</c> (211381434).</summary>
+    /// <summary>CLAD member <c>Sfx_Shared_Success</c> (id 211381434).</summary>
     public static readonly CladEnum<global::Anki.AudioMetaData.GameEvent.Codelab> SfxSharedSuccess = CladEnum<global::Anki.AudioMetaData.GameEvent.Codelab>.FromName("Sfx_Shared_Success");
 
-    /// <summary>CLAD <c>Sfx_Shared_Success_Stop</c> (2158984211).</summary>
+    /// <summary>CLAD member <c>Sfx_Shared_Success_Stop</c> (id 2158984211).</summary>
     public static readonly CladEnum<global::Anki.AudioMetaData.GameEvent.Codelab> SfxSharedSuccessStop = CladEnum<global::Anki.AudioMetaData.GameEvent.Codelab>.FromName("Sfx_Shared_Success_Stop");
 
-    /// <summary>CLAD <c>Sfx_Shared_Timer_Click</c> (3038792837).</summary>
+    /// <summary>CLAD member <c>Sfx_Shared_Timer_Click</c> (id 3038792837).</summary>
     public static readonly CladEnum<global::Anki.AudioMetaData.GameEvent.Codelab> SfxSharedTimerClick = CladEnum<global::Anki.AudioMetaData.GameEvent.Codelab>.FromName("Sfx_Shared_Timer_Click");
 
-    /// <summary>CLAD <c>Sfx_Shared_Timer_Click_Stop</c> (165689370).</summary>
+    /// <summary>CLAD member <c>Sfx_Shared_Timer_Click_Stop</c> (id 165689370).</summary>
     public static readonly CladEnum<global::Anki.AudioMetaData.GameEvent.Codelab> SfxSharedTimerClickStop = CladEnum<global::Anki.AudioMetaData.GameEvent.Codelab>.FromName("Sfx_Shared_Timer_Click_Stop");
 
-    /// <summary>CLAD <c>Sfx_Shared_Timer_End</c> (343938494).</summary>
+    /// <summary>CLAD member <c>Sfx_Shared_Timer_End</c> (id 343938494).</summary>
     public static readonly CladEnum<global::Anki.AudioMetaData.GameEvent.Codelab> SfxSharedTimerEnd = CladEnum<global::Anki.AudioMetaData.GameEvent.Codelab>.FromName("Sfx_Shared_Timer_End");
 
-    /// <summary>CLAD <c>Sfx_Shared_Timer_End_Stop</c> (1219615815).</summary>
+    /// <summary>CLAD member <c>Sfx_Shared_Timer_End_Stop</c> (id 1219615815).</summary>
     public static readonly CladEnum<global::Anki.AudioMetaData.GameEvent.Codelab> SfxSharedTimerEndStop = CladEnum<global::Anki.AudioMetaData.GameEvent.Codelab>.FromName("Sfx_Shared_Timer_End_Stop");
 
-    /// <summary>CLAD <c>Sfx_Shared_Timer_Warning</c> (1420860677).</summary>
+    /// <summary>CLAD member <c>Sfx_Shared_Timer_Warning</c> (id 1420860677).</summary>
     public static readonly CladEnum<global::Anki.AudioMetaData.GameEvent.Codelab> SfxSharedTimerWarning = CladEnum<global::Anki.AudioMetaData.GameEvent.Codelab>.FromName("Sfx_Shared_Timer_Warning");
 
-    /// <summary>CLAD <c>Sfx_Shared_Timer_Warning_Stop</c> (3016301418).</summary>
+    /// <summary>CLAD member <c>Sfx_Shared_Timer_Warning_Stop</c> (id 3016301418).</summary>
     public static readonly CladEnum<global::Anki.AudioMetaData.GameEvent.Codelab> SfxSharedTimerWarningStop = CladEnum<global::Anki.AudioMetaData.GameEvent.Codelab>.FromName("Sfx_Shared_Timer_Warning_Stop");
 
-    /// <summary>CLAD <c>Music_Fun_Loop</c> (1284343309).</summary>
+    /// <summary>CLAD member <c>Music_Fun_Loop</c> (id 1284343309).</summary>
     public static readonly CladEnum<global::Anki.AudioMetaData.GameEvent.Codelab> MusicFunLoop = CladEnum<global::Anki.AudioMetaData.GameEvent.Codelab>.FromName("Music_Fun_Loop");
 
-    /// <summary>CLAD <c>Music_Fun_Loop_Stop</c> (2123694542).</summary>
+    /// <summary>CLAD member <c>Music_Fun_Loop_Stop</c> (id 2123694542).</summary>
     public static readonly CladEnum<global::Anki.AudioMetaData.GameEvent.Codelab> MusicFunLoopStop = CladEnum<global::Anki.AudioMetaData.GameEvent.Codelab>.FromName("Music_Fun_Loop_Stop");
 
-    /// <summary>CLAD <c>Sfx_Putt_Hole_Success</c> (3020894301).</summary>
+    /// <summary>CLAD member <c>Sfx_Putt_Hole_Success</c> (id 3020894301).</summary>
     public static readonly CladEnum<global::Anki.AudioMetaData.GameEvent.Codelab> SfxPuttHoleSuccess = CladEnum<global::Anki.AudioMetaData.GameEvent.Codelab>.FromName("Sfx_Putt_Hole_Success");
 
-    /// <summary>CLAD <c>Sfx_Putt_Hole_Success_Stop</c> (3048074246).</summary>
+    /// <summary>CLAD member <c>Sfx_Putt_Hole_Success_Stop</c> (id 3048074246).</summary>
     public static readonly CladEnum<global::Anki.AudioMetaData.GameEvent.Codelab> SfxPuttHoleSuccessStop = CladEnum<global::Anki.AudioMetaData.GameEvent.Codelab>.FromName("Sfx_Putt_Hole_Success_Stop");
 
-    /// <summary>CLAD <c>Sfx_Alien_Invasion_Ufo</c> (72626837).</summary>
+    /// <summary>CLAD member <c>Sfx_Alien_Invasion_Ufo</c> (id 72626837).</summary>
     public static readonly CladEnum<global::Anki.AudioMetaData.GameEvent.Codelab> Sfx_Alien_Invasion_Ufo = CladEnum<global::Anki.AudioMetaData.GameEvent.Codelab>.FromName("Sfx_Alien_Invasion_Ufo");
 
-    /// <summary>CLAD <c>Sfx_Alien_Invasion_Ufo_Stop</c> (2912905250).</summary>
+    /// <summary>CLAD member <c>Sfx_Alien_Invasion_Ufo_Stop</c> (id 2912905250).</summary>
     public static readonly CladEnum<global::Anki.AudioMetaData.GameEvent.Codelab> Sfx_Alien_Invasion_Ufo_Stop = CladEnum<global::Anki.AudioMetaData.GameEvent.Codelab>.FromName("Sfx_Alien_Invasion_Ufo_Stop");
 
-    /// <summary>CLAD <c>Sfx_Brick_Bash</c> (773532685).</summary>
+    /// <summary>CLAD member <c>Sfx_Brick_Bash</c> (id 773532685).</summary>
     public static readonly CladEnum<global::Anki.AudioMetaData.GameEvent.Codelab> Sfx_Brick_Bash = CladEnum<global::Anki.AudioMetaData.GameEvent.Codelab>.FromName("Sfx_Brick_Bash");
 
-    /// <summary>CLAD <c>Sfx_Brick_Bash_Stop</c> (1455749214).</summary>
+    /// <summary>CLAD member <c>Sfx_Brick_Bash_Stop</c> (id 1455749214).</summary>
     public static readonly CladEnum<global::Anki.AudioMetaData.GameEvent.Codelab> Sfx_Brick_Bash_Stop = CladEnum<global::Anki.AudioMetaData.GameEvent.Codelab>.FromName("Sfx_Brick_Bash_Stop");
 
-    /// <summary>CLAD <c>Sfx_Constellation_Star</c> (1881919109).</summary>
+    /// <summary>CLAD member <c>Sfx_Constellation_Star</c> (id 1881919109).</summary>
     public static readonly CladEnum<global::Anki.AudioMetaData.GameEvent.Codelab> Sfx_Constellation_Star = CladEnum<global::Anki.AudioMetaData.GameEvent.Codelab>.FromName("Sfx_Constellation_Star");
 
-    /// <summary>CLAD <c>Sfx_Constellation_Star_Stop</c> (579345806).</summary>
+    /// <summary>CLAD member <c>Sfx_Constellation_Star_Stop</c> (id 579345806).</summary>
     public static readonly CladEnum<global::Anki.AudioMetaData.GameEvent.Codelab> Sfx_Constellation_Star_Stop = CladEnum<global::Anki.AudioMetaData.GameEvent.Codelab>.FromName("Sfx_Constellation_Star_Stop");
 
-    /// <summary>CLAD <c>Sfx_Egg_Decorating_Crack</c> (1294616912).</summary>
+    /// <summary>CLAD member <c>Sfx_Egg_Decorating_Crack</c> (id 1294616912).</summary>
     public static readonly CladEnum<global::Anki.AudioMetaData.GameEvent.Codelab> Sfx_Egg_Decorating_Crack = CladEnum<global::Anki.AudioMetaData.GameEvent.Codelab>.FromName("Sfx_Egg_Decorating_Crack");
 
-    /// <summary>CLAD <c>Sfx_Egg_Decorating_Crack_Stop</c> (3818701437).</summary>
+    /// <summary>CLAD member <c>Sfx_Egg_Decorating_Crack_Stop</c> (id 3818701437).</summary>
     public static readonly CladEnum<global::Anki.AudioMetaData.GameEvent.Codelab> Sfx_Egg_Decorating_Crack_Stop = CladEnum<global::Anki.AudioMetaData.GameEvent.Codelab>.FromName("Sfx_Egg_Decorating_Crack_Stop");
 
-    /// <summary>CLAD <c>Sfx_Fidget_Spinner_Loop_Play</c> (711055678).</summary>
+    /// <summary>CLAD member <c>Sfx_Fidget_Spinner_Loop_Play</c> (id 711055678).</summary>
     public static readonly CladEnum<global::Anki.AudioMetaData.GameEvent.Codelab> Sfx_Fidget_Spinner_Loop_Play = CladEnum<global::Anki.AudioMetaData.GameEvent.Codelab>.FromName("Sfx_Fidget_Spinner_Loop_Play");
 
-    /// <summary>CLAD <c>Sfx_Fidget_Spinner_Loop_Stop</c> (2909245734).</summary>
+    /// <summary>CLAD member <c>Sfx_Fidget_Spinner_Loop_Stop</c> (id 2909245734).</summary>
     public static readonly CladEnum<global::Anki.AudioMetaData.GameEvent.Codelab> Sfx_Fidget_Spinner_Loop_Stop = CladEnum<global::Anki.AudioMetaData.GameEvent.Codelab>.FromName("Sfx_Fidget_Spinner_Loop_Stop");
 
-    /// <summary>CLAD <c>Sfx_Fidget_Spinner_Start</c> (2368469177).</summary>
+    /// <summary>CLAD member <c>Sfx_Fidget_Spinner_Start</c> (id 2368469177).</summary>
     public static readonly CladEnum<global::Anki.AudioMetaData.GameEvent.Codelab> Sfx_Fidget_Spinner_Start = CladEnum<global::Anki.AudioMetaData.GameEvent.Codelab>.FromName("Sfx_Fidget_Spinner_Start");
 
-    /// <summary>CLAD <c>Sfx_Fidget_Spinner_Start_Stop</c> (2997419718).</summary>
+    /// <summary>CLAD member <c>Sfx_Fidget_Spinner_Start_Stop</c> (id 2997419718).</summary>
     public static readonly CladEnum<global::Anki.AudioMetaData.GameEvent.Codelab> Sfx_Fidget_Spinner_Start_Stop = CladEnum<global::Anki.AudioMetaData.GameEvent.Codelab>.FromName("Sfx_Fidget_Spinner_Start_Stop");
 
-    /// <summary>CLAD <c>Sfx_Flappy_Increase</c> (3457937792).</summary>
+    /// <summary>CLAD member <c>Sfx_Flappy_Increase</c> (id 3457937792).</summary>
     public static readonly CladEnum<global::Anki.AudioMetaData.GameEvent.Codelab> Sfx_Flappy_Increase = CladEnum<global::Anki.AudioMetaData.GameEvent.Codelab>.FromName("Sfx_Flappy_Increase");
 
-    /// <summary>CLAD <c>Sfx_Flappy_Increase_Stop</c> (437871341).</summary>
+    /// <summary>CLAD member <c>Sfx_Flappy_Increase_Stop</c> (id 437871341).</summary>
     public static readonly CladEnum<global::Anki.AudioMetaData.GameEvent.Codelab> Sfx_Flappy_Increase_Stop = CladEnum<global::Anki.AudioMetaData.GameEvent.Codelab>.FromName("Sfx_Flappy_Increase_Stop");
 
-    /// <summary>CLAD <c>Sfx_Morse_Code_Dash</c> (3631133922).</summary>
+    /// <summary>CLAD member <c>Sfx_Morse_Code_Dash</c> (id 3631133922).</summary>
     public static readonly CladEnum<global::Anki.AudioMetaData.GameEvent.Codelab> Sfx_Morse_Code_Dash = CladEnum<global::Anki.AudioMetaData.GameEvent.Codelab>.FromName("Sfx_Morse_Code_Dash");
 
-    /// <summary>CLAD <c>Sfx_Morse_Code_Dash_Stop</c> (4156175391).</summary>
+    /// <summary>CLAD member <c>Sfx_Morse_Code_Dash_Stop</c> (id 4156175391).</summary>
     public static readonly CladEnum<global::Anki.AudioMetaData.GameEvent.Codelab> Sfx_Morse_Code_Dash_Stop = CladEnum<global::Anki.AudioMetaData.GameEvent.Codelab>.FromName("Sfx_Morse_Code_Dash_Stop");
 
-    /// <summary>CLAD <c>Sfx_Morse_Code_Dot</c> (4212384135).</summary>
+    /// <summary>CLAD member <c>Sfx_Morse_Code_Dot</c> (id 4212384135).</summary>
     public static readonly CladEnum<global::Anki.AudioMetaData.GameEvent.Codelab> Sfx_Morse_Code_Dot = CladEnum<global::Anki.AudioMetaData.GameEvent.Codelab>.FromName("Sfx_Morse_Code_Dot");
 
-    /// <summary>CLAD <c>Sfx_Morse_Code_Dot_Stop</c> (850860868).</summary>
+    /// <summary>CLAD member <c>Sfx_Morse_Code_Dot_Stop</c> (id 850860868).</summary>
     public static readonly CladEnum<global::Anki.AudioMetaData.GameEvent.Codelab> Sfx_Morse_Code_Dot_Stop = CladEnum<global::Anki.AudioMetaData.GameEvent.Codelab>.FromName("Sfx_Morse_Code_Dot_Stop");
 
-    /// <summary>CLAD <c>Sfx_Morse_Code_Silent</c> (1002265509).</summary>
+    /// <summary>CLAD member <c>Sfx_Morse_Code_Silent</c> (id 1002265509).</summary>
     public static readonly CladEnum<global::Anki.AudioMetaData.GameEvent.Codelab> Sfx_Morse_Code_Silent = CladEnum<global::Anki.AudioMetaData.GameEvent.Codelab>.FromName("Sfx_Morse_Code_Silent");
 
-    /// <summary>CLAD <c>Sfx_Morse_Code_Silent_Stop</c> (620507378).</summary>
+    /// <summary>CLAD member <c>Sfx_Morse_Code_Silent_Stop</c> (id 620507378).</summary>
     public static readonly CladEnum<global::Anki.AudioMetaData.GameEvent.Codelab> Sfx_Morse_Code_Silent_Stop = CladEnum<global::Anki.AudioMetaData.GameEvent.Codelab>.FromName("Sfx_Morse_Code_Silent_Stop");
 
-    /// <summary>CLAD <c>Sfx_Paddle_Ball_Bounce</c> (1845849602).</summary>
+    /// <summary>CLAD member <c>Sfx_Paddle_Ball_Bounce</c> (id 1845849602).</summary>
     public static readonly CladEnum<global::Anki.AudioMetaData.GameEvent.Codelab> Sfx_Paddle_Ball_Bounce = CladEnum<global::Anki.AudioMetaData.GameEvent.Codelab>.FromName("Sfx_Paddle_Ball_Bounce");
 
-    /// <summary>CLAD <c>Sfx_Paddle_Ball_Bounce_Stop</c> (3192082383).</summary>
+    /// <summary>CLAD member <c>Sfx_Paddle_Ball_Bounce_Stop</c> (id 3192082383).</summary>
     public static readonly CladEnum<global::Anki.AudioMetaData.GameEvent.Codelab> Sfx_Paddle_Ball_Bounce_Stop = CladEnum<global::Anki.AudioMetaData.GameEvent.Codelab>.FromName("Sfx_Paddle_Ball_Bounce_Stop");
 
-    /// <summary>CLAD <c>Sfx_Pot_O_Gold_Blip_Level1</c> (3533103863).</summary>
+    /// <summary>CLAD member <c>Sfx_Pot_O_Gold_Blip_Level1</c> (id 3533103863).</summary>
     public static readonly CladEnum<global::Anki.AudioMetaData.GameEvent.Codelab> Sfx_Pot_O_Gold_Blip_Level1 = CladEnum<global::Anki.AudioMetaData.GameEvent.Codelab>.FromName("Sfx_Pot_O_Gold_Blip_Level1");
 
-    /// <summary>CLAD <c>Sfx_Pot_O_Gold_Blip_Level1_Stop</c> (970660780).</summary>
+    /// <summary>CLAD member <c>Sfx_Pot_O_Gold_Blip_Level1_Stop</c> (id 970660780).</summary>
     public static readonly CladEnum<global::Anki.AudioMetaData.GameEvent.Codelab> Sfx_Pot_O_Gold_Blip_Level1_Stop = CladEnum<global::Anki.AudioMetaData.GameEvent.Codelab>.FromName("Sfx_Pot_O_Gold_Blip_Level1_Stop");
 
-    /// <summary>CLAD <c>Sfx_Pot_O_Gold_Blip_Level2</c> (3533103860).</summary>
+    /// <summary>CLAD member <c>Sfx_Pot_O_Gold_Blip_Level2</c> (id 3533103860).</summary>
     public static readonly CladEnum<global::Anki.AudioMetaData.GameEvent.Codelab> Sfx_Pot_O_Gold_Blip_Level2 = CladEnum<global::Anki.AudioMetaData.GameEvent.Codelab>.FromName("Sfx_Pot_O_Gold_Blip_Level2");
 
-    /// <summary>CLAD <c>Sfx_Pot_O_Gold_Blip_Level2_Stop</c> (3985940521).</summary>
+    /// <summary>CLAD member <c>Sfx_Pot_O_Gold_Blip_Level2_Stop</c> (id 3985940521).</summary>
     public static readonly CladEnum<global::Anki.AudioMetaData.GameEvent.Codelab> Sfx_Pot_O_Gold_Blip_Level2_Stop = CladEnum<global::Anki.AudioMetaData.GameEvent.Codelab>.FromName("Sfx_Pot_O_Gold_Blip_Level2_Stop");
 
-    /// <summary>CLAD <c>Sfx_Pot_O_Gold_Blip_Level3</c> (3533103861).</summary>
+    /// <summary>CLAD member <c>Sfx_Pot_O_Gold_Blip_Level3</c> (id 3533103861).</summary>
     public static readonly CladEnum<global::Anki.AudioMetaData.GameEvent.Codelab> Sfx_Pot_O_Gold_Blip_Level3 = CladEnum<global::Anki.AudioMetaData.GameEvent.Codelab>.FromName("Sfx_Pot_O_Gold_Blip_Level3");
 
-    /// <summary>CLAD <c>Sfx_Pot_O_Gold_Blip_Level3_Stop</c> (2482812534).</summary>
+    /// <summary>CLAD member <c>Sfx_Pot_O_Gold_Blip_Level3_Stop</c> (id 2482812534).</summary>
     public static readonly CladEnum<global::Anki.AudioMetaData.GameEvent.Codelab> Sfx_Pot_O_Gold_Blip_Level3_Stop = CladEnum<global::Anki.AudioMetaData.GameEvent.Codelab>.FromName("Sfx_Pot_O_Gold_Blip_Level3_Stop");
 
-    /// <summary>CLAD <c>Music_Minigame_Guarding</c> (68811196), auto-added by the Python CladEnumWrapper.</summary>
+    /// <summary>CLAD member <c>Music_Minigame_Guarding</c> (id 68811196).</summary>
     public static readonly CladEnum<global::Anki.AudioMetaData.GameEvent.Codelab> Music_Minigame_Guarding = CladEnum<global::Anki.AudioMetaData.GameEvent.Codelab>.FromName("Music_Minigame_Guarding");
 
-    /// <summary>CLAD <c>Music_Minigame_Keepaway</c> (1704220796), auto-added by the Python CladEnumWrapper.</summary>
+    /// <summary>CLAD member <c>Music_Minigame_Keepaway</c> (id 1704220796).</summary>
     public static readonly CladEnum<global::Anki.AudioMetaData.GameEvent.Codelab> Music_Minigame_Keepaway = CladEnum<global::Anki.AudioMetaData.GameEvent.Codelab>.FromName("Music_Minigame_Keepaway");
 
-    /// <summary>CLAD <c>Music_Minigame_Memory_Match</c> (2453926618), auto-added by the Python CladEnumWrapper.</summary>
+    /// <summary>CLAD member <c>Music_Minigame_Memory_Match</c> (id 2453926618).</summary>
     public static readonly CladEnum<global::Anki.AudioMetaData.GameEvent.Codelab> Music_Minigame_Memory_Match = CladEnum<global::Anki.AudioMetaData.GameEvent.Codelab>.FromName("Music_Minigame_Memory_Match");
 
-    /// <summary>CLAD <c>Music_Minigame_Quick_Tap</c> (2097494912), auto-added by the Python CladEnumWrapper.</summary>
+    /// <summary>CLAD member <c>Music_Minigame_Quick_Tap</c> (id 2097494912).</summary>
     public static readonly CladEnum<global::Anki.AudioMetaData.GameEvent.Codelab> Music_Minigame_Quick_Tap = CladEnum<global::Anki.AudioMetaData.GameEvent.Codelab>.FromName("Music_Minigame_Quick_Tap");
 
-    /// <summary>CLAD <c>Music_Minigame_Setup</c> (1003364776), auto-added by the Python CladEnumWrapper.</summary>
+    /// <summary>CLAD member <c>Music_Minigame_Setup</c> (id 1003364776).</summary>
     public static readonly CladEnum<global::Anki.AudioMetaData.GameEvent.Codelab> Music_Minigame_Setup = CladEnum<global::Anki.AudioMetaData.GameEvent.Codelab>.FromName("Music_Minigame_Setup");
 
-    /// <summary>CLAD <c>Sfx_Car_Belt_Whirr</c> (1246434232), auto-added by the Python CladEnumWrapper.</summary>
+    /// <summary>CLAD member <c>Sfx_Car_Belt_Whirr</c> (id 1246434232).</summary>
     public static readonly CladEnum<global::Anki.AudioMetaData.GameEvent.Codelab> Sfx_Car_Belt_Whirr = CladEnum<global::Anki.AudioMetaData.GameEvent.Codelab>.FromName("Sfx_Car_Belt_Whirr");
 
-    /// <summary>CLAD <c>Sfx_Car_Engine_Loop</c> (1215576831), auto-added by the Python CladEnumWrapper.</summary>
+    /// <summary>CLAD member <c>Sfx_Car_Engine_Loop</c> (id 1215576831).</summary>
     public static readonly CladEnum<global::Anki.AudioMetaData.GameEvent.Codelab> Sfx_Car_Engine_Loop = CladEnum<global::Anki.AudioMetaData.GameEvent.Codelab>.FromName("Sfx_Car_Engine_Loop");
 
-    /// <summary>CLAD <c>Sfx_Car_Engine_Rev</c> (4062794568), auto-added by the Python CladEnumWrapper.</summary>
+    /// <summary>CLAD member <c>Sfx_Car_Engine_Rev</c> (id 4062794568).</summary>
     public static readonly CladEnum<global::Anki.AudioMetaData.GameEvent.Codelab> Sfx_Car_Engine_Rev = CladEnum<global::Anki.AudioMetaData.GameEvent.Codelab>.FromName("Sfx_Car_Engine_Rev");
 
-    /// <summary>CLAD <c>Sfx_Car_Engine_Start</c> (1277888383), auto-added by the Python CladEnumWrapper.</summary>
+    /// <summary>CLAD member <c>Sfx_Car_Engine_Start</c> (id 1277888383).</summary>
     public static readonly CladEnum<global::Anki.AudioMetaData.GameEvent.Codelab> Sfx_Car_Engine_Start = CladEnum<global::Anki.AudioMetaData.GameEvent.Codelab>.FromName("Sfx_Car_Engine_Start");
 
-    /// <summary>CLAD <c>Sfx_Car_Engine_Stop</c> (463482053), auto-added by the Python CladEnumWrapper.</summary>
+    /// <summary>CLAD member <c>Sfx_Car_Engine_Stop</c> (id 463482053).</summary>
     public static readonly CladEnum<global::Anki.AudioMetaData.GameEvent.Codelab> Sfx_Car_Engine_Stop = CladEnum<global::Anki.AudioMetaData.GameEvent.Codelab>.FromName("Sfx_Car_Engine_Stop");
 
-    /// <summary>CLAD <c>Sfx_Car_Explosion_Big</c> (829964050), auto-added by the Python CladEnumWrapper.</summary>
+    /// <summary>CLAD member <c>Sfx_Car_Explosion_Big</c> (id 829964050).</summary>
     public static readonly CladEnum<global::Anki.AudioMetaData.GameEvent.Codelab> Sfx_Car_Explosion_Big = CladEnum<global::Anki.AudioMetaData.GameEvent.Codelab>.FromName("Sfx_Car_Explosion_Big");
 
-    /// <summary>CLAD <c>Sfx_Car_Explosion_Small</c> (3913227909), auto-added by the Python CladEnumWrapper.</summary>
+    /// <summary>CLAD member <c>Sfx_Car_Explosion_Small</c> (id 3913227909).</summary>
     public static readonly CladEnum<global::Anki.AudioMetaData.GameEvent.Codelab> Sfx_Car_Explosion_Small = CladEnum<global::Anki.AudioMetaData.GameEvent.Codelab>.FromName("Sfx_Car_Explosion_Small");
 
-    /// <summary>CLAD <c>Sfx_Car_Gear_Grind</c> (2505152966), auto-added by the Python CladEnumWrapper.</summary>
+    /// <summary>CLAD member <c>Sfx_Car_Gear_Grind</c> (id 2505152966).</summary>
     public static readonly CladEnum<global::Anki.AudioMetaData.GameEvent.Codelab> Sfx_Car_Gear_Grind = CladEnum<global::Anki.AudioMetaData.GameEvent.Codelab>.FromName("Sfx_Car_Gear_Grind");
 
-    /// <summary>CLAD <c>Sfx_Car_Gear_Shift</c> (1754269120), auto-added by the Python CladEnumWrapper.</summary>
+    /// <summary>CLAD member <c>Sfx_Car_Gear_Shift</c> (id 1754269120).</summary>
     public static readonly CladEnum<global::Anki.AudioMetaData.GameEvent.Codelab> Sfx_Car_Gear_Shift = CladEnum<global::Anki.AudioMetaData.GameEvent.Codelab>.FromName("Sfx_Car_Gear_Shift");
 
-    /// <summary>CLAD <c>Sfx_Car_Metal_Clank</c> (3516620147), auto-added by the Python CladEnumWrapper.</summary>
+    /// <summary>CLAD member <c>Sfx_Car_Metal_Clank</c> (id 3516620147).</summary>
     public static readonly CladEnum<global::Anki.AudioMetaData.GameEvent.Codelab> Sfx_Car_Metal_Clank = CladEnum<global::Anki.AudioMetaData.GameEvent.Codelab>.FromName("Sfx_Car_Metal_Clank");
 
-    /// <summary>CLAD <c>Sfx_Car_Tire_Squeal</c> (854603000), auto-added by the Python CladEnumWrapper.</summary>
+    /// <summary>CLAD member <c>Sfx_Car_Tire_Squeal</c> (id 854603000).</summary>
     public static readonly CladEnum<global::Anki.AudioMetaData.GameEvent.Codelab> Sfx_Car_Tire_Squeal = CladEnum<global::Anki.AudioMetaData.GameEvent.Codelab>.FromName("Sfx_Car_Tire_Squeal");
 
-    /// <summary>CLAD <c>Sfx_Fantasy_Boiling</c> (4170334366), auto-added by the Python CladEnumWrapper.</summary>
+    /// <summary>CLAD member <c>Sfx_Fantasy_Boiling</c> (id 4170334366).</summary>
     public static readonly CladEnum<global::Anki.AudioMetaData.GameEvent.Codelab> Sfx_Fantasy_Boiling = CladEnum<global::Anki.AudioMetaData.GameEvent.Codelab>.FromName("Sfx_Fantasy_Boiling");
 
-    /// <summary>CLAD <c>Sfx_Fantasy_Horse_Hooves</c> (2267557798), auto-added by the Python CladEnumWrapper.</summary>
+    /// <summary>CLAD member <c>Sfx_Fantasy_Horse_Hooves</c> (id 2267557798).</summary>
     public static readonly CladEnum<global::Anki.AudioMetaData.GameEvent.Codelab> Sfx_Fantasy_Horse_Hooves = CladEnum<global::Anki.AudioMetaData.GameEvent.Codelab>.FromName("Sfx_Fantasy_Horse_Hooves");
 
-    /// <summary>CLAD <c>Sfx_Fantasy_Magic_Wand</c> (1182522686), auto-added by the Python CladEnumWrapper.</summary>
+    /// <summary>CLAD member <c>Sfx_Fantasy_Magic_Wand</c> (id 1182522686).</summary>
     public static readonly CladEnum<global::Anki.AudioMetaData.GameEvent.Codelab> Sfx_Fantasy_Magic_Wand = CladEnum<global::Anki.AudioMetaData.GameEvent.Codelab>.FromName("Sfx_Fantasy_Magic_Wand");
 
-    /// <summary>CLAD <c>Sfx_Fantasy_Rainbow</c> (2101412478), auto-added by the Python CladEnumWrapper.</summary>
+    /// <summary>CLAD member <c>Sfx_Fantasy_Rainbow</c> (id 2101412478).</summary>
     public static readonly CladEnum<global::Anki.AudioMetaData.GameEvent.Codelab> Sfx_Fantasy_Rainbow = CladEnum<global::Anki.AudioMetaData.GameEvent.Codelab>.FromName("Sfx_Fantasy_Rainbow");
 
-    /// <summary>CLAD <c>Sfx_Fantasy_Smoke_Puff</c> (2522315331), auto-added by the Python CladEnumWrapper.</summary>
+    /// <summary>CLAD member <c>Sfx_Fantasy_Smoke_Puff</c> (id 2522315331).</summary>
     public static readonly CladEnum<global::Anki.AudioMetaData.GameEvent.Codelab> Sfx_Fantasy_Smoke_Puff = CladEnum<global::Anki.AudioMetaData.GameEvent.Codelab>.FromName("Sfx_Fantasy_Smoke_Puff");
 
-    /// <summary>CLAD <c>Sfx_Fantasy_Swords</c> (2009700242), auto-added by the Python CladEnumWrapper.</summary>
+    /// <summary>CLAD member <c>Sfx_Fantasy_Swords</c> (id 2009700242).</summary>
     public static readonly CladEnum<global::Anki.AudioMetaData.GameEvent.Codelab> Sfx_Fantasy_Swords = CladEnum<global::Anki.AudioMetaData.GameEvent.Codelab>.FromName("Sfx_Fantasy_Swords");
 
-    /// <summary>CLAD <c>Sfx_Fantasy_Witch_Cackle</c> (3148707911), auto-added by the Python CladEnumWrapper.</summary>
+    /// <summary>CLAD member <c>Sfx_Fantasy_Witch_Cackle</c> (id 3148707911).</summary>
     public static readonly CladEnum<global::Anki.AudioMetaData.GameEvent.Codelab> Sfx_Fantasy_Witch_Cackle = CladEnum<global::Anki.AudioMetaData.GameEvent.Codelab>.FromName("Sfx_Fantasy_Witch_Cackle");
 
-    /// <summary>CLAD <c>Sfx_General_Click</c> (553309426), auto-added by the Python CladEnumWrapper.</summary>
+    /// <summary>CLAD member <c>Sfx_General_Click</c> (id 553309426).</summary>
     public static readonly CladEnum<global::Anki.AudioMetaData.GameEvent.Codelab> Sfx_General_Click = CladEnum<global::Anki.AudioMetaData.GameEvent.Codelab>.FromName("Sfx_General_Click");
 
-    /// <summary>CLAD <c>Sfx_General_Loop</c> (4189081492), auto-added by the Python CladEnumWrapper.</summary>
+    /// <summary>CLAD member <c>Sfx_General_Loop</c> (id 4189081492).</summary>
     public static readonly CladEnum<global::Anki.AudioMetaData.GameEvent.Codelab> Sfx_General_Loop = CladEnum<global::Anki.AudioMetaData.GameEvent.Codelab>.FromName("Sfx_General_Loop");
 
-    /// <summary>CLAD <c>Sfx_General_Negative</c> (1811230867), auto-added by the Python CladEnumWrapper.</summary>
+    /// <summary>CLAD member <c>Sfx_General_Negative</c> (id 1811230867).</summary>
     public static readonly CladEnum<global::Anki.AudioMetaData.GameEvent.Codelab> Sfx_General_Negative = CladEnum<global::Anki.AudioMetaData.GameEvent.Codelab>.FromName("Sfx_General_Negative");
 
-    /// <summary>CLAD <c>Sfx_General_Pop</c> (3322335847), auto-added by the Python CladEnumWrapper.</summary>
+    /// <summary>CLAD member <c>Sfx_General_Pop</c> (id 3322335847).</summary>
     public static readonly CladEnum<global::Anki.AudioMetaData.GameEvent.Codelab> Sfx_General_Pop = CladEnum<global::Anki.AudioMetaData.GameEvent.Codelab>.FromName("Sfx_General_Pop");
 
-    /// <summary>CLAD <c>Sfx_General_Positive</c> (2323616447), auto-added by the Python CladEnumWrapper.</summary>
+    /// <summary>CLAD member <c>Sfx_General_Positive</c> (id 2323616447).</summary>
     public static readonly CladEnum<global::Anki.AudioMetaData.GameEvent.Codelab> Sfx_General_Positive = CladEnum<global::Anki.AudioMetaData.GameEvent.Codelab>.FromName("Sfx_General_Positive");
 
-    /// <summary>CLAD <c>Sfx_General_Whirr</c> (2094644892), auto-added by the Python CladEnumWrapper.</summary>
+    /// <summary>CLAD member <c>Sfx_General_Whirr</c> (id 2094644892).</summary>
     public static readonly CladEnum<global::Anki.AudioMetaData.GameEvent.Codelab> Sfx_General_Whirr = CladEnum<global::Anki.AudioMetaData.GameEvent.Codelab>.FromName("Sfx_General_Whirr");
 
-    /// <summary>CLAD <c>Sfx_Outdoor_Cricket</c> (2111224819), auto-added by the Python CladEnumWrapper.</summary>
+    /// <summary>CLAD member <c>Sfx_Outdoor_Cricket</c> (id 2111224819).</summary>
     public static readonly CladEnum<global::Anki.AudioMetaData.GameEvent.Codelab> Sfx_Outdoor_Cricket = CladEnum<global::Anki.AudioMetaData.GameEvent.Codelab>.FromName("Sfx_Outdoor_Cricket");
 
-    /// <summary>CLAD <c>Sfx_Outdoor_Fish_Splash</c> (3070185826), auto-added by the Python CladEnumWrapper.</summary>
+    /// <summary>CLAD member <c>Sfx_Outdoor_Fish_Splash</c> (id 3070185826).</summary>
     public static readonly CladEnum<global::Anki.AudioMetaData.GameEvent.Codelab> Sfx_Outdoor_Fish_Splash = CladEnum<global::Anki.AudioMetaData.GameEvent.Codelab>.FromName("Sfx_Outdoor_Fish_Splash");
 
-    /// <summary>CLAD <c>Sfx_Outdoor_Frog</c> (1062257428), auto-added by the Python CladEnumWrapper.</summary>
+    /// <summary>CLAD member <c>Sfx_Outdoor_Frog</c> (id 1062257428).</summary>
     public static readonly CladEnum<global::Anki.AudioMetaData.GameEvent.Codelab> Sfx_Outdoor_Frog = CladEnum<global::Anki.AudioMetaData.GameEvent.Codelab>.FromName("Sfx_Outdoor_Frog");
 
-    /// <summary>CLAD <c>Sfx_Outdoor_Leaves</c> (1835562062), auto-added by the Python CladEnumWrapper.</summary>
+    /// <summary>CLAD member <c>Sfx_Outdoor_Leaves</c> (id 1835562062).</summary>
     public static readonly CladEnum<global::Anki.AudioMetaData.GameEvent.Codelab> Sfx_Outdoor_Leaves = CladEnum<global::Anki.AudioMetaData.GameEvent.Codelab>.FromName("Sfx_Outdoor_Leaves");
 
-    /// <summary>CLAD <c>Sfx_Outdoor_Rain</c> (1236772716), auto-added by the Python CladEnumWrapper.</summary>
+    /// <summary>CLAD member <c>Sfx_Outdoor_Rain</c> (id 1236772716).</summary>
     public static readonly CladEnum<global::Anki.AudioMetaData.GameEvent.Codelab> Sfx_Outdoor_Rain = CladEnum<global::Anki.AudioMetaData.GameEvent.Codelab>.FromName("Sfx_Outdoor_Rain");
 
-    /// <summary>CLAD <c>Sfx_Outdoor_Thunder</c> (210748252), auto-added by the Python CladEnumWrapper.</summary>
+    /// <summary>CLAD member <c>Sfx_Outdoor_Thunder</c> (id 210748252).</summary>
     public static readonly CladEnum<global::Anki.AudioMetaData.GameEvent.Codelab> Sfx_Outdoor_Thunder = CladEnum<global::Anki.AudioMetaData.GameEvent.Codelab>.FromName("Sfx_Outdoor_Thunder");
 
-    /// <summary>CLAD <c>Sfx_Outdoor_Wind_Gust</c> (1145482758), auto-added by the Python CladEnumWrapper.</summary>
+    /// <summary>CLAD member <c>Sfx_Outdoor_Wind_Gust</c> (id 1145482758).</summary>
     public static readonly CladEnum<global::Anki.AudioMetaData.GameEvent.Codelab> Sfx_Outdoor_Wind_Gust = CladEnum<global::Anki.AudioMetaData.GameEvent.Codelab>.FromName("Sfx_Outdoor_Wind_Gust");
 
-    /// <summary>CLAD <c>Sfx_Outdoor_Wolf</c> (3677205318), auto-added by the Python CladEnumWrapper.</summary>
+    /// <summary>CLAD member <c>Sfx_Outdoor_Wolf</c> (id 3677205318).</summary>
     public static readonly CladEnum<global::Anki.AudioMetaData.GameEvent.Codelab> Sfx_Outdoor_Wolf = CladEnum<global::Anki.AudioMetaData.GameEvent.Codelab>.FromName("Sfx_Outdoor_Wolf");
 }
 
-/// <summary>Named SongNoteType values, mirroring the Python <c>NoteTypes</c> wrapper.</summary>
+/// <summary>Named SongNoteType values.</summary>
 public static class NoteTypes
 {
-    /// <summary>CLAD <c>C2</c> (0).</summary>
+    /// <summary>CLAD member <c>C2</c> (id 0).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.ExternalInterface.SongNoteType> C2 = CladEnum<global::Anki.Cozmo.ExternalInterface.SongNoteType>.FromName("C2");
 
-    /// <summary>CLAD <c>C2_Sharp</c> (1).</summary>
+    /// <summary>CLAD member <c>C2_Sharp</c> (id 1).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.ExternalInterface.SongNoteType> C2_Sharp = CladEnum<global::Anki.Cozmo.ExternalInterface.SongNoteType>.FromName("C2_Sharp");
 
-    /// <summary>CLAD <c>D2</c> (2).</summary>
+    /// <summary>CLAD member <c>D2</c> (id 2).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.ExternalInterface.SongNoteType> D2 = CladEnum<global::Anki.Cozmo.ExternalInterface.SongNoteType>.FromName("D2");
 
-    /// <summary>CLAD <c>D2_Sharp</c> (3).</summary>
+    /// <summary>CLAD member <c>D2_Sharp</c> (id 3).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.ExternalInterface.SongNoteType> D2_Sharp = CladEnum<global::Anki.Cozmo.ExternalInterface.SongNoteType>.FromName("D2_Sharp");
 
-    /// <summary>CLAD <c>E2</c> (4).</summary>
+    /// <summary>CLAD member <c>E2</c> (id 4).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.ExternalInterface.SongNoteType> E2 = CladEnum<global::Anki.Cozmo.ExternalInterface.SongNoteType>.FromName("E2");
 
-    /// <summary>CLAD <c>F2</c> (5).</summary>
+    /// <summary>CLAD member <c>F2</c> (id 5).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.ExternalInterface.SongNoteType> F2 = CladEnum<global::Anki.Cozmo.ExternalInterface.SongNoteType>.FromName("F2");
 
-    /// <summary>CLAD <c>F2_Sharp</c> (6).</summary>
+    /// <summary>CLAD member <c>F2_Sharp</c> (id 6).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.ExternalInterface.SongNoteType> F2_Sharp = CladEnum<global::Anki.Cozmo.ExternalInterface.SongNoteType>.FromName("F2_Sharp");
 
-    /// <summary>CLAD <c>G2</c> (7).</summary>
+    /// <summary>CLAD member <c>G2</c> (id 7).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.ExternalInterface.SongNoteType> G2 = CladEnum<global::Anki.Cozmo.ExternalInterface.SongNoteType>.FromName("G2");
 
-    /// <summary>CLAD <c>G2_Sharp</c> (8).</summary>
+    /// <summary>CLAD member <c>G2_Sharp</c> (id 8).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.ExternalInterface.SongNoteType> G2_Sharp = CladEnum<global::Anki.Cozmo.ExternalInterface.SongNoteType>.FromName("G2_Sharp");
 
-    /// <summary>CLAD <c>A2</c> (9).</summary>
+    /// <summary>CLAD member <c>A2</c> (id 9).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.ExternalInterface.SongNoteType> A2 = CladEnum<global::Anki.Cozmo.ExternalInterface.SongNoteType>.FromName("A2");
 
-    /// <summary>CLAD <c>A2_Sharp</c> (10).</summary>
+    /// <summary>CLAD member <c>A2_Sharp</c> (id 10).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.ExternalInterface.SongNoteType> A2_Sharp = CladEnum<global::Anki.Cozmo.ExternalInterface.SongNoteType>.FromName("A2_Sharp");
 
-    /// <summary>CLAD <c>B2</c> (11).</summary>
+    /// <summary>CLAD member <c>B2</c> (id 11).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.ExternalInterface.SongNoteType> B2 = CladEnum<global::Anki.Cozmo.ExternalInterface.SongNoteType>.FromName("B2");
 
-    /// <summary>CLAD <c>C3</c> (12).</summary>
+    /// <summary>CLAD member <c>C3</c> (id 12).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.ExternalInterface.SongNoteType> C3 = CladEnum<global::Anki.Cozmo.ExternalInterface.SongNoteType>.FromName("C3");
 
-    /// <summary>CLAD <c>C3_Sharp</c> (13).</summary>
+    /// <summary>CLAD member <c>C3_Sharp</c> (id 13).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.ExternalInterface.SongNoteType> C3_Sharp = CladEnum<global::Anki.Cozmo.ExternalInterface.SongNoteType>.FromName("C3_Sharp");
 
-    /// <summary>CLAD <c>Rest</c> (14).</summary>
+    /// <summary>CLAD member <c>Rest</c> (id 14).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.ExternalInterface.SongNoteType> Rest = CladEnum<global::Anki.Cozmo.ExternalInterface.SongNoteType>.FromName("Rest");
 }
 
-/// <summary>Named SongNoteDuration values, mirroring the Python <c>NoteDurations</c> wrapper.</summary>
+/// <summary>Named SongNoteDuration values.</summary>
 public static class NoteDurations
 {
-    /// <summary>CLAD <c>Whole</c> (0).</summary>
+    /// <summary>CLAD member <c>Whole</c> (id 0).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.ExternalInterface.SongNoteDuration> Whole = CladEnum<global::Anki.Cozmo.ExternalInterface.SongNoteDuration>.FromName("Whole");
 
-    /// <summary>CLAD <c>ThreeQuarter</c> (1).</summary>
+    /// <summary>CLAD member <c>ThreeQuarter</c> (id 1).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.ExternalInterface.SongNoteDuration> ThreeQuarter = CladEnum<global::Anki.Cozmo.ExternalInterface.SongNoteDuration>.FromName("ThreeQuarter");
 
-    /// <summary>CLAD <c>Half</c> (2).</summary>
+    /// <summary>CLAD member <c>Half</c> (id 2).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.ExternalInterface.SongNoteDuration> Half = CladEnum<global::Anki.Cozmo.ExternalInterface.SongNoteDuration>.FromName("Half");
 
-    /// <summary>CLAD <c>Quarter</c> (3).</summary>
+    /// <summary>CLAD member <c>Quarter</c> (id 3).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.ExternalInterface.SongNoteDuration> Quarter = CladEnum<global::Anki.Cozmo.ExternalInterface.SongNoteDuration>.FromName("Quarter");
 }
 
-/// <summary>Named AlignmentType values, mirroring the Python <c>RobotAlignmentTypes</c> wrapper.</summary>
-/// <remarks>Alignment modes accepted by DockWithCube (robot_alignment.py:25-45).</remarks>
+/// <summary>Named AlignmentType values.</summary>
+/// <remarks>Alignment modes used when docking with a light cube.</remarks>
 public static class RobotAlignmentTypes
 {
-    /// <summary>CLAD <c>LIFT_FINGER</c> (0).</summary>
+    /// <summary>CLAD member <c>LIFT_FINGER</c> (id 0).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.AlignmentType> LiftFinger = CladEnum<global::Anki.Cozmo.AlignmentType>.FromName("LIFT_FINGER");
 
-    /// <summary>CLAD <c>LIFT_PLATE</c> (1).</summary>
+    /// <summary>CLAD member <c>LIFT_PLATE</c> (id 1).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.AlignmentType> LiftPlate = CladEnum<global::Anki.Cozmo.AlignmentType>.FromName("LIFT_PLATE");
 
-    /// <summary>CLAD <c>BODY</c> (2).</summary>
+    /// <summary>CLAD member <c>BODY</c> (id 2).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.AlignmentType> Body = CladEnum<global::Anki.Cozmo.AlignmentType>.FromName("BODY");
 
-    /// <summary>CLAD <c>CUSTOM</c> (3).</summary>
+    /// <summary>CLAD member <c>CUSTOM</c> (id 3).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.AlignmentType> Custom = CladEnum<global::Anki.Cozmo.AlignmentType>.FromName("CUSTOM");
 }
 
-/// <summary>Named UnexpectedMovementSide values, mirroring the Python <c>UnexpectedMovementSide</c> wrapper.</summary>
-/// <remarks>Side of the obstruction reported by EvtUnexpectedMovement (robot.py:2289-2313).</remarks>
+/// <summary>Named UnexpectedMovementSide values.</summary>
+/// <remarks>Side of the obstruction reported by <c>EvtUnexpectedMovement</c>.</remarks>
 public static class UnexpectedMovementSide
 {
-    /// <summary>CLAD <c>UNKNOWN</c> (0).</summary>
+    /// <summary>CLAD member <c>UNKNOWN</c> (id 0).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.UnexpectedMovementSide> Unknown = CladEnum<global::Anki.Cozmo.UnexpectedMovementSide>.FromName("UNKNOWN");
 
-    /// <summary>CLAD <c>FRONT</c> (1).</summary>
+    /// <summary>CLAD member <c>FRONT</c> (id 1).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.UnexpectedMovementSide> Front = CladEnum<global::Anki.Cozmo.UnexpectedMovementSide>.FromName("FRONT");
 
-    /// <summary>CLAD <c>BACK</c> (2).</summary>
+    /// <summary>CLAD member <c>BACK</c> (id 2).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.UnexpectedMovementSide> Back = CladEnum<global::Anki.Cozmo.UnexpectedMovementSide>.FromName("BACK");
 
-    /// <summary>CLAD <c>LEFT</c> (3).</summary>
+    /// <summary>CLAD member <c>LEFT</c> (id 3).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.UnexpectedMovementSide> Left = CladEnum<global::Anki.Cozmo.UnexpectedMovementSide>.FromName("LEFT");
 
-    /// <summary>CLAD <c>RIGHT</c> (4).</summary>
+    /// <summary>CLAD member <c>RIGHT</c> (id 4).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.UnexpectedMovementSide> Right = CladEnum<global::Anki.Cozmo.UnexpectedMovementSide>.FromName("RIGHT");
 }
 
-/// <summary>Named UnexpectedMovementType values, mirroring the Python <c>UnexpectedMovementType</c> wrapper.</summary>
-/// <remarks>Kind of unexpected movement reported by EvtUnexpectedMovement (robot.py:2319-2338).</remarks>
+/// <summary>Named UnexpectedMovementType values.</summary>
+/// <remarks>Kind of unexpected movement reported by <c>EvtUnexpectedMovement</c>.</remarks>
 public static class UnexpectedMovementType
 {
-    /// <summary>CLAD <c>TURNED_BUT_STOPPED</c> (0).</summary>
+    /// <summary>CLAD member <c>TURNED_BUT_STOPPED</c> (id 0).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.UnexpectedMovementType> TurnedButStopped = CladEnum<global::Anki.Cozmo.UnexpectedMovementType>.FromName("TURNED_BUT_STOPPED");
 
-    /// <summary>CLAD <c>TURNED_IN_SAME_DIRECTION</c> (1), internal to match the Python private entry.</summary>
+    /// <summary>Internal CLAD member <c>TURNED_IN_SAME_DIRECTION</c> (id 1).</summary>
     internal static readonly CladEnum<global::Anki.Cozmo.UnexpectedMovementType> TurnedInSameDirection = CladEnum<global::Anki.Cozmo.UnexpectedMovementType>.FromName("TURNED_IN_SAME_DIRECTION");
 
-    /// <summary>CLAD <c>TURNED_IN_OPPOSITE_DIRECTION</c> (2).</summary>
+    /// <summary>CLAD member <c>TURNED_IN_OPPOSITE_DIRECTION</c> (id 2).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.UnexpectedMovementType> TurnedInOppositeDirection = CladEnum<global::Anki.Cozmo.UnexpectedMovementType>.FromName("TURNED_IN_OPPOSITE_DIRECTION");
 }
 
-/// <summary>Named ObjectType values, mirroring the Python <c>CustomObjectTypes</c> wrapper.</summary>
-/// <remarks>Python declares the custom types in <c>CustomObjectTypes</c> and the LightCube object ids as module-level constants (objects.py); both are grouped here. <c>ChargerBasic</c> is the port's name for <c>ObjectType.Charger_Basic</c>, which the world layer needs but Python has no module-level constant for.</remarks>
+/// <summary>Named custom object types and light cube ids.</summary>
 public static class CustomObjectTypes
 {
-    /// <summary>CLAD <c>CustomType00</c> (17).</summary>
+    /// <summary>CLAD member <c>CustomType00</c> (id 17).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.ObjectType> CustomType00 = CladEnum<global::Anki.Cozmo.ObjectType>.FromName("CustomType00");
 
-    /// <summary>CLAD <c>CustomType01</c> (18).</summary>
+    /// <summary>CLAD member <c>CustomType01</c> (id 18).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.ObjectType> CustomType01 = CladEnum<global::Anki.Cozmo.ObjectType>.FromName("CustomType01");
 
-    /// <summary>CLAD <c>CustomType02</c> (19).</summary>
+    /// <summary>CLAD member <c>CustomType02</c> (id 19).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.ObjectType> CustomType02 = CladEnum<global::Anki.Cozmo.ObjectType>.FromName("CustomType02");
 
-    /// <summary>CLAD <c>CustomType03</c> (20).</summary>
+    /// <summary>CLAD member <c>CustomType03</c> (id 20).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.ObjectType> CustomType03 = CladEnum<global::Anki.Cozmo.ObjectType>.FromName("CustomType03");
 
-    /// <summary>CLAD <c>CustomType04</c> (21).</summary>
+    /// <summary>CLAD member <c>CustomType04</c> (id 21).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.ObjectType> CustomType04 = CladEnum<global::Anki.Cozmo.ObjectType>.FromName("CustomType04");
 
-    /// <summary>CLAD <c>CustomType05</c> (22).</summary>
+    /// <summary>CLAD member <c>CustomType05</c> (id 22).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.ObjectType> CustomType05 = CladEnum<global::Anki.Cozmo.ObjectType>.FromName("CustomType05");
 
-    /// <summary>CLAD <c>CustomType06</c> (23).</summary>
+    /// <summary>CLAD member <c>CustomType06</c> (id 23).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.ObjectType> CustomType06 = CladEnum<global::Anki.Cozmo.ObjectType>.FromName("CustomType06");
 
-    /// <summary>CLAD <c>CustomType07</c> (24).</summary>
+    /// <summary>CLAD member <c>CustomType07</c> (id 24).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.ObjectType> CustomType07 = CladEnum<global::Anki.Cozmo.ObjectType>.FromName("CustomType07");
 
-    /// <summary>CLAD <c>CustomType08</c> (25).</summary>
+    /// <summary>CLAD member <c>CustomType08</c> (id 25).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.ObjectType> CustomType08 = CladEnum<global::Anki.Cozmo.ObjectType>.FromName("CustomType08");
 
-    /// <summary>CLAD <c>CustomType09</c> (26).</summary>
+    /// <summary>CLAD member <c>CustomType09</c> (id 26).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.ObjectType> CustomType09 = CladEnum<global::Anki.Cozmo.ObjectType>.FromName("CustomType09");
 
-    /// <summary>CLAD <c>CustomType10</c> (27).</summary>
+    /// <summary>CLAD member <c>CustomType10</c> (id 27).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.ObjectType> CustomType10 = CladEnum<global::Anki.Cozmo.ObjectType>.FromName("CustomType10");
 
-    /// <summary>CLAD <c>CustomType11</c> (28).</summary>
+    /// <summary>CLAD member <c>CustomType11</c> (id 28).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.ObjectType> CustomType11 = CladEnum<global::Anki.Cozmo.ObjectType>.FromName("CustomType11");
 
-    /// <summary>CLAD <c>CustomType12</c> (29).</summary>
+    /// <summary>CLAD member <c>CustomType12</c> (id 29).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.ObjectType> CustomType12 = CladEnum<global::Anki.Cozmo.ObjectType>.FromName("CustomType12");
 
-    /// <summary>CLAD <c>CustomType13</c> (30).</summary>
+    /// <summary>CLAD member <c>CustomType13</c> (id 30).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.ObjectType> CustomType13 = CladEnum<global::Anki.Cozmo.ObjectType>.FromName("CustomType13");
 
-    /// <summary>CLAD <c>CustomType14</c> (31).</summary>
+    /// <summary>CLAD member <c>CustomType14</c> (id 31).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.ObjectType> CustomType14 = CladEnum<global::Anki.Cozmo.ObjectType>.FromName("CustomType14");
 
-    /// <summary>CLAD <c>CustomType15</c> (32).</summary>
+    /// <summary>CLAD member <c>CustomType15</c> (id 32).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.ObjectType> CustomType15 = CladEnum<global::Anki.Cozmo.ObjectType>.FromName("CustomType15");
 
-    /// <summary>CLAD <c>CustomType16</c> (33).</summary>
+    /// <summary>CLAD member <c>CustomType16</c> (id 33).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.ObjectType> CustomType16 = CladEnum<global::Anki.Cozmo.ObjectType>.FromName("CustomType16");
 
-    /// <summary>CLAD <c>CustomType17</c> (34).</summary>
+    /// <summary>CLAD member <c>CustomType17</c> (id 34).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.ObjectType> CustomType17 = CladEnum<global::Anki.Cozmo.ObjectType>.FromName("CustomType17");
 
-    /// <summary>CLAD <c>CustomType18</c> (35).</summary>
+    /// <summary>CLAD member <c>CustomType18</c> (id 35).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.ObjectType> CustomType18 = CladEnum<global::Anki.Cozmo.ObjectType>.FromName("CustomType18");
 
-    /// <summary>CLAD <c>CustomType19</c> (36).</summary>
+    /// <summary>CLAD member <c>CustomType19</c> (id 36).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.ObjectType> CustomType19 = CladEnum<global::Anki.Cozmo.ObjectType>.FromName("CustomType19");
 
-    /// <summary>CLAD <c>Block_LIGHTCUBE1</c> (1).</summary>
+    /// <summary>CLAD member <c>Block_LIGHTCUBE1</c> (id 1).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.ObjectType> LightCube1Id = CladEnum<global::Anki.Cozmo.ObjectType>.FromName("Block_LIGHTCUBE1");
 
-    /// <summary>CLAD <c>Block_LIGHTCUBE2</c> (2).</summary>
+    /// <summary>CLAD member <c>Block_LIGHTCUBE2</c> (id 2).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.ObjectType> LightCube2Id = CladEnum<global::Anki.Cozmo.ObjectType>.FromName("Block_LIGHTCUBE2");
 
-    /// <summary>CLAD <c>Block_LIGHTCUBE3</c> (3).</summary>
+    /// <summary>CLAD member <c>Block_LIGHTCUBE3</c> (id 3).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.ObjectType> LightCube3Id = CladEnum<global::Anki.Cozmo.ObjectType>.FromName("Block_LIGHTCUBE3");
 
-    /// <summary>CLAD <c>Charger_Basic</c> (13).</summary>
+    /// <summary>CLAD member <c>Charger_Basic</c> (id 13).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.ObjectType> ChargerBasic = CladEnum<global::Anki.Cozmo.ObjectType>.FromName("Charger_Basic");
 
     /// <summary>An ordered list of the 3 light cube ids for convenience.</summary>
@@ -3216,55 +3212,54 @@ public static class CustomObjectTypes
     };
 }
 
-/// <summary>Named CustomObjectMarker values, mirroring the Python <c>CustomObjectMarkers</c> wrapper.</summary>
-/// <remarks>Python custom object marker catalogue (objects.py); the CLAD <c>Count</c> sentinel is not exposed.</remarks>
+/// <summary>Named markers used to define custom objects.</summary>
 public static class CustomObjectMarkers
 {
-    /// <summary>CLAD <c>Circles2</c> (0).</summary>
+    /// <summary>CLAD member <c>Circles2</c> (id 0).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.CustomObjectMarker> Circles2 = CladEnum<global::Anki.Cozmo.CustomObjectMarker>.FromName("Circles2");
 
-    /// <summary>CLAD <c>Circles3</c> (1).</summary>
+    /// <summary>CLAD member <c>Circles3</c> (id 1).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.CustomObjectMarker> Circles3 = CladEnum<global::Anki.Cozmo.CustomObjectMarker>.FromName("Circles3");
 
-    /// <summary>CLAD <c>Circles4</c> (2).</summary>
+    /// <summary>CLAD member <c>Circles4</c> (id 2).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.CustomObjectMarker> Circles4 = CladEnum<global::Anki.Cozmo.CustomObjectMarker>.FromName("Circles4");
 
-    /// <summary>CLAD <c>Circles5</c> (3).</summary>
+    /// <summary>CLAD member <c>Circles5</c> (id 3).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.CustomObjectMarker> Circles5 = CladEnum<global::Anki.Cozmo.CustomObjectMarker>.FromName("Circles5");
 
-    /// <summary>CLAD <c>Diamonds2</c> (4).</summary>
+    /// <summary>CLAD member <c>Diamonds2</c> (id 4).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.CustomObjectMarker> Diamonds2 = CladEnum<global::Anki.Cozmo.CustomObjectMarker>.FromName("Diamonds2");
 
-    /// <summary>CLAD <c>Diamonds3</c> (5).</summary>
+    /// <summary>CLAD member <c>Diamonds3</c> (id 5).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.CustomObjectMarker> Diamonds3 = CladEnum<global::Anki.Cozmo.CustomObjectMarker>.FromName("Diamonds3");
 
-    /// <summary>CLAD <c>Diamonds4</c> (6).</summary>
+    /// <summary>CLAD member <c>Diamonds4</c> (id 6).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.CustomObjectMarker> Diamonds4 = CladEnum<global::Anki.Cozmo.CustomObjectMarker>.FromName("Diamonds4");
 
-    /// <summary>CLAD <c>Diamonds5</c> (7).</summary>
+    /// <summary>CLAD member <c>Diamonds5</c> (id 7).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.CustomObjectMarker> Diamonds5 = CladEnum<global::Anki.Cozmo.CustomObjectMarker>.FromName("Diamonds5");
 
-    /// <summary>CLAD <c>Hexagons2</c> (8).</summary>
+    /// <summary>CLAD member <c>Hexagons2</c> (id 8).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.CustomObjectMarker> Hexagons2 = CladEnum<global::Anki.Cozmo.CustomObjectMarker>.FromName("Hexagons2");
 
-    /// <summary>CLAD <c>Hexagons3</c> (9).</summary>
+    /// <summary>CLAD member <c>Hexagons3</c> (id 9).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.CustomObjectMarker> Hexagons3 = CladEnum<global::Anki.Cozmo.CustomObjectMarker>.FromName("Hexagons3");
 
-    /// <summary>CLAD <c>Hexagons4</c> (10).</summary>
+    /// <summary>CLAD member <c>Hexagons4</c> (id 10).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.CustomObjectMarker> Hexagons4 = CladEnum<global::Anki.Cozmo.CustomObjectMarker>.FromName("Hexagons4");
 
-    /// <summary>CLAD <c>Hexagons5</c> (11).</summary>
+    /// <summary>CLAD member <c>Hexagons5</c> (id 11).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.CustomObjectMarker> Hexagons5 = CladEnum<global::Anki.Cozmo.CustomObjectMarker>.FromName("Hexagons5");
 
-    /// <summary>CLAD <c>Triangles2</c> (12).</summary>
+    /// <summary>CLAD member <c>Triangles2</c> (id 12).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.CustomObjectMarker> Triangles2 = CladEnum<global::Anki.Cozmo.CustomObjectMarker>.FromName("Triangles2");
 
-    /// <summary>CLAD <c>Triangles3</c> (13).</summary>
+    /// <summary>CLAD member <c>Triangles3</c> (id 13).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.CustomObjectMarker> Triangles3 = CladEnum<global::Anki.Cozmo.CustomObjectMarker>.FromName("Triangles3");
 
-    /// <summary>CLAD <c>Triangles4</c> (14).</summary>
+    /// <summary>CLAD member <c>Triangles4</c> (id 14).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.CustomObjectMarker> Triangles4 = CladEnum<global::Anki.Cozmo.CustomObjectMarker>.FromName("Triangles4");
 
-    /// <summary>CLAD <c>Triangles5</c> (15).</summary>
+    /// <summary>CLAD member <c>Triangles5</c> (id 15).</summary>
     public static readonly CladEnum<global::Anki.Cozmo.CustomObjectMarker> Triangles5 = CladEnum<global::Anki.Cozmo.CustomObjectMarker>.FromName("Triangles5");
 }

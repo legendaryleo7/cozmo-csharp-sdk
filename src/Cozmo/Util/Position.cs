@@ -16,9 +16,7 @@ namespace Anki.Cozmo.Sdk;
 
 /// <summary>Represents the position of an object in the world, in millimeters.</summary>
 /// <remarks>
-/// Mirrors <c>Position</c> in <c>cozmo/util.py</c>. Python implements it as an empty subclass
-/// of <see cref="Vector3"/>; the C# port keeps that inheritance so a position can be passed
-/// wherever a <see cref="Vector3"/> is expected.
+/// A position is a <see cref="Vector3"/> with coordinates measured in millimeters.
 /// </remarks>
 public sealed class Position : Vector3
 {

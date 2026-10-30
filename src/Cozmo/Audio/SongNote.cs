@@ -17,13 +17,11 @@ namespace Anki.Cozmo.Sdk;
 /// <summary>One element of a song: a note type (pitch or rest) and a note duration.</summary>
 /// <remarks>
 /// <para>
-/// Port of <c>cozmo/song.py::SongNote</c>. Python subclasses the CLAD message
-/// <c>Anki.Cozmo.ExternalInterface.SongNote</c>; the generated C# message is sealed, so
-/// this type cannot mirror it by inheritance. Instead it is a value object carrying the
-/// same pair and converts explicitly with <see cref="ToClad"/>.
+/// This value object carries the note type and duration and converts to the CLAD message
+/// with <see cref="ToClad"/>.
 /// </para>
 /// <para>
-/// The defaults match Python's constructor: <see cref="NoteTypes.C2"/> and
+/// The default note type is <see cref="NoteTypes.C2"/> and the default duration is
 /// <see cref="NoteDurations.Whole"/>.
 /// </para>
 /// </remarks>
@@ -32,7 +30,7 @@ public readonly struct SongNote : IEquatable<SongNote>
     private readonly CladEnum<global::Anki.Cozmo.ExternalInterface.SongNoteType>? _noteType;
     private readonly CladEnum<global::Anki.Cozmo.ExternalInterface.SongNoteDuration>? _noteDuration;
 
-    /// <summary>Creates a song note with Python's defaults.</summary>
+    /// <summary>Creates a song note with the default note type and duration.</summary>
     public SongNote()
         : this(null, null)
     {

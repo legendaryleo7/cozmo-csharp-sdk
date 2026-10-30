@@ -20,17 +20,14 @@ namespace Anki.Cozmo.Sdk;
 /// <summary>The base type for anything Cozmo can see.</summary>
 /// <remarks>
 /// <para>
-/// Port of <c>ObservableElement</c> in <c>cozmo/objects.py</c>. An element tracks the time it
-/// was last observed, the pose and image box reported with that observation, and whether it
-/// is still considered visible.
+/// An element tracks the time it was last observed, the pose and image box reported with that
+/// observation, and whether it is still considered visible.
 /// </para>
 /// <para>
 /// Visibility is timer based: every observation resets a one-shot timer for
 /// <see cref="VisibilityTimeout"/>; when it expires the element becomes invisible and raises
-/// <see cref="EvtObjectDisappeared"/>. Python schedules this with
-/// <c>loop.call_later</c> (objects.py:217-227); this port uses an injected
-/// <see cref="TimeProvider"/> so tests can advance a manual clock instead of waiting on wall
-/// time.
+/// <see cref="EvtObjectDisappeared"/>. An injected <see cref="TimeProvider"/> controls the
+/// timer.
 /// </para>
 /// </remarks>
 public class ObservableElement : Dispatcher
@@ -39,7 +36,6 @@ public class ObservableElement : Dispatcher
     /// Length of time to go without receiving an observation before an element is considered
     /// invisible.
     /// </summary>
-    /// <remarks>Python <c>OBJECT_VISIBILITY_TIMEOUT = 0.4</c> (objects.py:67).</remarks>
     public static readonly TimeSpan ObjectVisibilityTimeout = TimeSpan.FromSeconds(0.4);
 
     private readonly TimeProvider _timeProvider;
@@ -110,16 +106,13 @@ public class ObservableElement : Dispatcher
     /// Length of time without an observation after which this element is considered invisible.
     /// </summary>
     /// <remarks>
-    /// Mirrors Python's overridable <c>visibility_timeout</c> class attribute
-    /// (objects.py:147). Subclasses may override this property to use a different timeout.
+    /// Subclasses may override this property to use a different timeout.
     /// </remarks>
     public virtual TimeSpan VisibilityTimeout => ObjectVisibilityTimeout;
 
     /// <summary>The time since this element was last seen.</summary>
     /// <remarks>
-    /// Python returns <c>math.inf</c> when the element has never been observed
-    /// (objects.py:274-277); <see cref="TimeSpan.MaxValue"/> is the closest
-    /// <see cref="TimeSpan"/> equivalent and is used here.
+    /// Returns <see cref="TimeSpan.MaxValue"/> when the element has never been observed.
     /// </remarks>
     public TimeSpan TimeSinceLastSeen
     {
@@ -146,19 +139,12 @@ public class ObservableElement : Dispatcher
     /// </summary>
     /// <typeparam name="T">Type of the field.</typeparam>
     /// <param name="changedFields">Set of names of fields that have changed.</param>
-    /// <param name="fieldName">Python field name to record.</param>
+    /// <param name="fieldName">Field name to record.</param>
     /// <param name="currentValue">The field's current value.</param>
     /// <param name="newValue">The value to assign.</param>
     /// <param name="setter">Assigns <paramref name="newValue"/> to the field.</param>
     /// <param name="comparer">Optional value comparer; defaults to <see cref="EqualityComparer{T}.Default"/>.</param>
     /// <returns><see langword="true"/> when the value changed and the setter ran.</returns>
-    /// <remarks>
-    /// Port of Python's private <c>_update_field</c> (objects.py:212-216), which is available
-    /// to subclasses and later work packages. Python's own observation path assigns its four
-    /// timestamp/image-box fields directly and adds their names to the changed set
-    /// unconditionally (objects.py:248-256); that behaviour is preserved by
-    /// <see cref="OnObservedAsync"/>.
-    /// </remarks>
     protected static bool UpdateField<T>(
         ISet<string> changedFields,
         string fieldName,
@@ -190,7 +176,6 @@ public class ObservableElement : Dispatcher
     /// </param>
     /// <returns>A task that completes after the events have been dispatched.</returns>
     /// <exception cref="ArgumentNullException"><paramref name="changedFields"/> is <see langword="null"/>.</exception>
-    /// <remarks>Port of <c>ObservableElement._on_observed</c> (objects.py:241-258).</remarks>
     protected async Task OnObservedAsync(
         ImageBox imageBox,
         uint robotTimestamp,

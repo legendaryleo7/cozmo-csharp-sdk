@@ -19,21 +19,20 @@ namespace Anki.Cozmo.Sdk;
 /// <summary>An immutable colour used by a <see cref="Light"/>.</summary>
 /// <remarks>
 /// <para>
-/// Python's <c>cozmo.lights.Color</c> packs a colour into a 32-bit integer ordered as
-/// <c>red &lt;&lt; 24 | green &lt;&lt; 16 | blue &lt;&lt; 8 | alpha</c>. This type stores the same
-/// integer in <see cref="IntColor"/> and exposes its bytes as <see cref="R"/>, <see cref="G"/>,
+/// A colour is packed into a 32-bit integer ordered as
+/// <c>red &lt;&lt; 24 | green &lt;&lt; 16 | blue &lt;&lt; 8 | alpha</c>. The packed value is available
+/// through <see cref="IntColor"/> and its bytes through <see cref="R"/>, <see cref="G"/>,
 /// <see cref="B"/> and <see cref="A"/>.
 /// </para>
 /// <para>
-/// As in Python, colours created from an integer or an RGB triple are fully opaque: the alpha
-/// byte is forced to <see cref="OpaqueAlpha"/>. A colour created from a name only carries no
-/// light value (<see cref="IntColor"/> is zero), which is how <see cref="Colors.Off"/>
-/// represents an unlit LED.
+/// Colours created from an integer or RGB components are fully opaque: the alpha byte is
+/// forced to <see cref="OpaqueAlpha"/>. A colour created from a name alone carries no light
+/// value (<see cref="IntColor"/> is zero), which is how <see cref="Colors.Off"/> represents an
+/// unlit LED.
 /// </para>
 /// <para>
 /// Equality compares <see cref="IntColor"/> only; <see cref="Name"/> is a descriptive label and
-/// does not participate. Python's <c>Color</c> has identity equality, so using a value type here
-/// is a deliberate, documented difference.
+/// does not participate.
 /// </para>
 /// </remarks>
 public readonly struct Color : IEquatable<Color>
@@ -49,11 +48,7 @@ public readonly struct Color : IEquatable<Color>
     /// Packed <c>R &lt;&lt; 24 | G &lt;&lt; 16 | B &lt;&lt; 8 | A</c> value.
     /// </param>
     /// <param name="name">Optional descriptive name; it does not affect the colour value.</param>
-    /// <remarks>
-    /// Mirrors Python <c>Color(int_color=...)</c>. The input is validated to be a 32-bit
-    /// unsigned value by its type, and the alpha byte is replaced with
-    /// <see cref="OpaqueAlpha"/> (lights.py:44).
-    /// </remarks>
+    /// <remarks>The alpha byte is replaced with <see cref="OpaqueAlpha"/>.</remarks>
     public Color(uint intColor, string? name = null)
         : this(intColor, name, forceOpaque: true)
     {
@@ -66,7 +61,7 @@ public readonly struct Color : IEquatable<Color>
     }
 
     /// <summary>The packed RGBA integer value.</summary>
-    /// <remarks>Equal to <c>R &lt;&lt; 24 | G &lt;&lt; 16 | B &lt;&lt; 8 | A</c> (lights.py:48-51).</remarks>
+    /// <remarks>Equal to <c>R &lt;&lt; 24 | G &lt;&lt; 16 | B &lt;&lt; 8 | A</c>.</remarks>
     public uint IntColor => _intColor;
 
     /// <summary>The optional descriptive name, or <see langword="null"/> when unnamed.</summary>
@@ -88,7 +83,7 @@ public readonly struct Color : IEquatable<Color>
     /// <param name="intColor">Packed <c>R &lt;&lt; 24 | G &lt;&lt; 16 | B &lt;&lt; 8 | A</c> value.</param>
     /// <param name="name">Optional descriptive name.</param>
     /// <returns>The new colour.</returns>
-    /// <remarks>The alpha byte is forced opaque (lights.py:43-44).</remarks>
+    /// <remarks>The alpha byte is forced opaque.</remarks>
     public static Color FromIntColor(uint intColor, string? name = null) => new(intColor, name);
 
     /// <summary>Creates an opaque colour from red, green and blue components.</summary>
@@ -97,10 +92,7 @@ public readonly struct Color : IEquatable<Color>
     /// <param name="blue">Blue component, 0-255.</param>
     /// <param name="name">Optional descriptive name.</param>
     /// <returns>The new colour.</returns>
-    /// <remarks>
-    /// Mirrors Python <c>Color(rgb=(red, green, blue))</c>; the alpha byte is forced opaque
-    /// (lights.py:45-46).
-    /// </remarks>
+    /// <remarks>The alpha byte is forced opaque.</remarks>
     public static Color FromRgb(byte red, byte green, byte blue, string? name = null)
         // lights.py:46 packs (r << 24) | (g << 16) | (b << 8) | 0xff.
         => new(((uint)red << 24) | ((uint)green << 16) | ((uint)blue << 8), name);
@@ -108,11 +100,7 @@ public readonly struct Color : IEquatable<Color>
     /// <summary>Creates a colour that carries a name but no light value.</summary>
     /// <param name="name">Descriptive name of the colour.</param>
     /// <returns>A colour whose <see cref="IntColor"/> is zero.</returns>
-    /// <remarks>
-    /// Mirrors Python <c>Color(name=...)</c> without <c>int_color</c> or <c>rgb</c>
-    /// (lights.py:42-47). Use <see cref="Colors.Get"/> to resolve a catalogue name to its
-    /// actual colour.
-    /// </remarks>
+    /// <remarks>Use <see cref="Colors.Get"/> to resolve a catalogue name to its actual colour.</remarks>
     /// <exception cref="ArgumentNullException"><paramref name="name"/> is <see langword="null"/>.</exception>
     public static Color FromName(string name)
     {

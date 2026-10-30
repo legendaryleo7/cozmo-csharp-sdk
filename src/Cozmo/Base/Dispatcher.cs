@@ -16,11 +16,11 @@ using System.Runtime.CompilerServices;
 
 namespace Anki.Cozmo.Sdk;
 
-/// <summary>Mixin that dispatches events to registered handlers, children and a parent.</summary>
+/// <summary>Base class that dispatches events to registered handlers, children and a parent.</summary>
 /// <remarks>
 /// <para>
-/// Dispatch order mirrors the Python SDK: handlers registered on this object, then child
-/// dispatchers, then the parent dispatcher. Handlers registered for a base event type also
+/// Dispatch order is handlers registered on this object, then child dispatchers, then the
+/// parent dispatcher. Handlers registered for a base event type also
 /// receive subclass events. Any handler may throw <see cref="StopPropagationException"/> to
 /// stop the remaining handlers.
 /// </para>
@@ -32,7 +32,7 @@ namespace Anki.Cozmo.Sdk;
 /// </remarks>
 public class Dispatcher : IDisposable
 {
-    /// <summary>Timeout used when a wait does not specify one, matching the Python SDK.</summary>
+    /// <summary>Default timeout used when a wait does not specify one.</summary>
     public static readonly TimeSpan DefaultTimeout = TimeSpan.FromSeconds(30);
 
     private static readonly ConditionalWeakTable<CozmoEvent, HashSet<Dispatcher>> DeliveredTo = new();
@@ -206,7 +206,7 @@ public class Dispatcher : IDisposable
     /// <summary>Waits for the next matching event.</summary>
     /// <param name="filter">Optional predicate the event must satisfy.</param>
     /// <param name="timeout">
-    /// Maximum time to wait. <c>null</c> keeps the Python default of 30 seconds; pass
+    /// Maximum time to wait. <see langword="null"/> uses a 30-second default; pass
     /// <see cref="Timeout.InfiniteTimeSpan"/> to wait indefinitely.
     /// </param>
     /// <exception cref="TimeoutException">No matching event arrived in time.</exception>
@@ -224,7 +224,7 @@ public class Dispatcher : IDisposable
     /// <summary>Waits for the next event matching <paramref name="filter"/>.</summary>
     /// <param name="filter">Event type and predicates to match.</param>
     /// <param name="timeout">
-    /// Maximum time to wait. <c>null</c> keeps the Python default of 30 seconds; pass
+    /// Maximum time to wait. <see langword="null"/> uses a 30-second default; pass
     /// <see cref="Timeout.InfiniteTimeSpan"/> to wait indefinitely.
     /// </param>
     /// <exception cref="TimeoutException">No matching event arrived in time.</exception>

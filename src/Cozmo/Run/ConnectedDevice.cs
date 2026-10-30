@@ -44,7 +44,7 @@ public sealed record ConnectedDevice
     public ICladTransport Transport { get; }
 
     /// <summary>
-    /// Device metadata using the Python SDK keys: <c>device_type</c> plus <c>host</c>,
+    /// Device metadata using the keys <c>device_type</c> plus <c>host</c>,
     /// <c>serial</c> or <c>device_id</c> depending on the connector.
     /// </summary>
     public IReadOnlyDictionary<string, string> DeviceInfo { get; }

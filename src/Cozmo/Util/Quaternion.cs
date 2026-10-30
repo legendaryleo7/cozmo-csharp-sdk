@@ -16,14 +16,8 @@ namespace Anki.Cozmo.Sdk;
 
 /// <summary>Represents the rotation of an object in the world as a quaternion.</summary>
 /// <remarks>
-/// <para>Mirrors <c>Quaternion</c> in <c>cozmo/util.py</c>.</para>
-/// <para>
-/// Python requires either all four quaternion components or an <c>angle_z</c> and raises
-/// <c>ValueError</c> for any other combination. The C# port exposes two constructors
-/// (<see cref="Quaternion(double, double, double, double)"/> and
-/// <see cref="FromZAngle"/>) so an invalid combination cannot be expressed. Python's
-/// <c>Rotation</c> alias is represented by the separate <see cref="Rotation"/> struct.
-/// </para>
+/// Construct a quaternion from all four components or use <see cref="FromZAngle"/> for a
+/// rotation about the z axis. <see cref="Rotation"/> provides a distinct type for rotations.
 /// </remarks>
 public readonly struct Quaternion
 {
@@ -53,11 +47,9 @@ public readonly struct Quaternion
     public double Q3 { get; }
 
     /// <summary>Contains all four elements of the quaternion (q0, q1, q2, q3).</summary>
-    /// <remarks>Mirrors Python's <c>q0_q1_q2_q3</c> property (util.py:750).</remarks>
     public (double Q0, double Q1, double Q2, double Q3) Components => (Q0, Q1, Q2, Q3);
 
     /// <summary>The z Euler component of the object's rotation.</summary>
-    /// <remarks>Mirrors Python's <c>Quaternion.angle_z</c> (util.py:755).</remarks>
     public Angle AngleZ =>
         Angle.FromRadians(
             Math.Atan2(
@@ -65,10 +57,7 @@ public readonly struct Quaternion
                 1.0 - (2.0 * ((Q2 * Q2) + (Q3 * Q3))))); // util.py:761
 
     /// <summary>The pitch, yaw and roll Euler components of the object's rotation.</summary>
-    /// <remarks>
-    /// Mirrors Python's <c>Quaternion.euler_angles</c> (util.py:764). Rotations are
-    /// interpreted in the order Z, Y, X and the near-gimbal-lock branch is reproduced.
-    /// </remarks>
+    /// <remarks>Rotations are interpreted in the order Z, Y, X.</remarks>
     public EulerAngles EulerAngles
     {
         get
@@ -121,7 +110,6 @@ public readonly struct Quaternion
     /// <param name="posY">The y component for the position.</param>
     /// <param name="posZ">The z component for the position.</param>
     /// <returns>A matrix representing this rotation with the provided position.</returns>
-    /// <remarks>Mirrors Python's <c>Quaternion.to_matrix</c> (util.py:662).</remarks>
     public Matrix44 ToMatrix(double posX = 0.0, double posY = 0.0, double posZ = 0.0)
     {
         // See https://en.wikipedia.org/wiki/Quaternions_and_spatial_rotation
@@ -183,17 +171,17 @@ public readonly struct Quaternion
     /// <param name="left">The quaternion.</param>
     /// <param name="right">The scalar divisor.</param>
     /// <returns>A quaternion with the scaled z angle.</returns>
-    /// <exception cref="DivideByZeroException">The divisor is zero, as Python raises <c>ZeroDivisionError</c>.</exception>
+    /// <exception cref="DivideByZeroException">The divisor is zero.</exception>
     public static Quaternion operator /(Quaternion left, double right) =>
         FromZAngle(left.AngleZ / right); // util.py:724-727
 
-    /// <summary>Returns Python's <c>repr</c> representation of this quaternion.</summary>
+    /// <summary>Returns a diagnostic string representation of this quaternion.</summary>
     /// <returns>A string such as <c>&lt;Quaternion q0: 1.00 q1: 0.00 q2: 0.00 q3: 0.00 ...&gt;</c>.</returns>
     public override string ToString() => ToStringWithTypeName(nameof(Quaternion));
 
-    /// <summary>Formats this quaternion using an explicit Python class name.</summary>
-    /// <param name="typeName">The Python class name to show in the representation.</param>
-    /// <returns>The Python-style representation.</returns>
+    /// <summary>Formats this quaternion using the specified type name.</summary>
+    /// <param name="typeName">The type name to show in the representation.</param>
+    /// <returns>A diagnostic string representation.</returns>
     internal string ToStringWithTypeName(string typeName) =>
         FormattableString.Invariant( // util.py:658-660
             $"<{typeName} q0: {Q0:F2} q1: {Q1:F2} q2: {Q2:F2} q3: {Q3:F2} (angle_z: {AngleZ})>");

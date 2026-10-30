@@ -16,13 +16,12 @@ namespace Anki.Cozmo.Sdk;
 
 /// <summary>Version constants and the runtime CLAD compatibility check.</summary>
 /// <remarks>
-/// Mirrors <c>cozmo/version.py</c> and <c>cozmo/__init__.py::verify_min_clad_version</c>.
-/// The CLAD layer is generated at build time, so this check exists for diagnostics and for
-/// callers that inspect a device build version.
+/// Use the compatibility check to verify that the connected device supports the CLAD version
+/// required by this library.
 /// </remarks>
 public static class SdkVersion
 {
-    /// <summary>Python SDK version this port tracks.</summary>
+    /// <summary>Version of the Cozmo SDK API represented by this library.</summary>
     public const string Version = "1.4.12";
 
     /// <summary>cozmoclad package version required by this SDK.</summary>

@@ -19,29 +19,24 @@ namespace Anki.Cozmo.Sdk;
 
 /// <summary>The predefined lights and the helper that writes a light into CLAD LED messages.</summary>
 /// <remarks>
-/// The five predefined lights mirror Python <c>cozmo.lights</c> (lights.py:183-195). Each is a
-/// steady light: the on and off colours are the same, so no flashing is visible.
+/// Each predefined light is steady: its on and off colours are the same, so no flashing is
+/// visible.
 /// </remarks>
 public static class Lights
 {
     /// <summary>A steady green LED light.</summary>
-    /// <remarks>Python <c>lights.green_light</c> (lights.py:183).</remarks>
     public static Light Green { get; } = new(Colors.Green, Colors.Green); // lights.py:183.
 
     /// <summary>A steady red LED light.</summary>
-    /// <remarks>Python <c>lights.red_light</c> (lights.py:186).</remarks>
     public static Light Red { get; } = new(Colors.Red, Colors.Red); // lights.py:186.
 
     /// <summary>A steady blue LED light.</summary>
-    /// <remarks>Python <c>lights.blue_light</c> (lights.py:189).</remarks>
     public static Light Blue { get; } = new(Colors.Blue, Colors.Blue); // lights.py:189.
 
     /// <summary>A steady white LED light.</summary>
-    /// <remarks>Python <c>lights.white_light</c> (lights.py:192).</remarks>
     public static Light White { get; } = new(Colors.White, Colors.White); // lights.py:192.
 
     /// <summary>A steady, non-illuminated LED light.</summary>
-    /// <remarks>Python <c>lights.off_light</c> (lights.py:195).</remarks>
     public static Light Off { get; } = new(Colors.Off, Colors.Off); // lights.py:195.
 
     /// <summary>Writes a light into one slot of a cube LED message.</summary>
@@ -50,16 +45,9 @@ public static class Lights
     /// <param name="light">The light settings to copy.</param>
     /// <remarks>
     /// <para>
-    /// Port of Python <c>lights._set_light(msg, idx, light)</c> (lights.py:168-177), which is
-    /// used for the four LightCube corner lights (objects.py:609 and objects.py:625).
-    /// </para>
-    /// <para>
-    /// The generated <c>Anki.Cozmo.LightState</c> type is deliberately not used here. That is the
-    /// engine-to-game per-object state struct: it stores 16-bit colours and 0-255 frame counts in
-    /// <c>ObjectState.lights</c>, and Python never writes it from the SDK. The Python helper
-    /// writes 32-bit RGBA colours and millisecond periods, so converting to <c>LightState</c>
-    /// would require an RGBA-to-RGB565 and milliseconds-to-frames mapping that the SDK does not
-    /// define.
+    /// The message stores 32-bit RGBA colours and millisecond periods. The generated
+    /// <c>Anki.Cozmo.LightState</c> type represents engine-reported object state and uses a
+    /// different colour and timing format.
     /// </para>
     /// </remarks>
     /// <exception cref="ArgumentNullException">
@@ -86,10 +74,6 @@ public static class Lights
     /// <param name="index">Slot to write, 0-4 for the five backpack lights.</param>
     /// <param name="light">The light settings to copy.</param>
     /// <remarks>
-    /// <para>
-    /// Port of Python <c>lights._set_light(msg, idx, light)</c> (lights.py:168-177), which is
-    /// used for the five backpack lights (robot.py:1446).
-    /// </para>
     /// <para>
     /// See <see cref="SetLight(SetAllActiveObjectLEDs, int, Light)"/> for why the generated
     /// <c>Anki.Cozmo.LightState</c> type is not the target of this helper.

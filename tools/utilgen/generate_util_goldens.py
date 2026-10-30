@@ -146,7 +146,7 @@ class Output:
             "",
             "namespace Cozmo.Tests;",
             "",
-            "/// <summary>Golden values produced by running the Python util implementation.</summary>",
+            "/// <summary>Golden values for utility conversions and arithmetic.</summary>",
             "internal static class UtilGoldenData",
             "{",
         ]

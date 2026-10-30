@@ -18,7 +18,7 @@ namespace Anki.Cozmo.Sdk;
 /// <remarks>
 /// The connector is enabled only when a port is configured, either by the constructor argument
 /// or by the <c>SDK_TCP_PORT</c> environment variable. An unparseable or out-of-range value is
-/// treated as unset, matching the Python connector.
+/// treated as unset.
 /// </remarks>
 public sealed class TcpConnector : DeviceConnector
 {
@@ -34,7 +34,7 @@ public sealed class TcpConnector : DeviceConnector
     /// <summary>Creates a TCP connector.</summary>
     /// <param name="tcpPort">Port to connect to; wins over <c>SDK_TCP_PORT</c>.</param>
     /// <param name="ipAddr">Address of the app's SDK bridge.</param>
-    /// <param name="cozmoPort">Port of the app's SDK bridge, for parity with the Python connector.</param>
+    /// <param name="cozmoPort">Port of the app's SDK bridge.</param>
     /// <param name="connectionCheck">Optional check run after the transport opens.</param>
     /// <exception cref="ArgumentOutOfRangeException"><paramref name="tcpPort"/> is not a valid TCP port.</exception>
     /// <exception cref="ArgumentException"><paramref name="ipAddr"/> is empty.</exception>

@@ -16,9 +16,8 @@ namespace Anki.Cozmo.Sdk;
 
 /// <summary>The pitch, yaw and roll Euler components of a rotation.</summary>
 /// <remarks>
-/// Python's <c>Quaternion.euler_angles</c> returns a plain <c>(pitch, yaw, roll)</c> tuple
-/// (util.py:764-797). This readonly struct preserves the same order and value semantics while
-/// giving the components readable names.
+/// The components are exposed as named properties and in pitch, yaw, roll order when
+/// deconstructed.
 /// </remarks>
 public readonly struct EulerAngles : IEquatable<EulerAngles>
 {
@@ -42,7 +41,7 @@ public readonly struct EulerAngles : IEquatable<EulerAngles>
     /// <summary>Rotation about the z axis, in radians.</summary>
     public double Roll { get; }
 
-    /// <summary>Deconstructs the components in Python's tuple order.</summary>
+    /// <summary>Deconstructs the components in pitch, yaw, roll order.</summary>
     /// <param name="pitch">Rotation about the x axis, in radians.</param>
     /// <param name="yaw">Rotation about the y axis, in radians.</param>
     /// <param name="roll">Rotation about the z axis, in radians.</param>
@@ -81,7 +80,7 @@ public readonly struct EulerAngles : IEquatable<EulerAngles>
     public override int GetHashCode() => HashCode.Combine(Pitch, Yaw, Roll);
 
     /// <summary>Returns a diagnostic representation of this triple.</summary>
-    /// <returns>A string in Python's tuple order.</returns>
+    /// <returns>A string containing the pitch, yaw and roll values.</returns>
     public override string ToString() =>
         FormattableString.Invariant($"({Pitch}, {Yaw}, {Roll})");
 }

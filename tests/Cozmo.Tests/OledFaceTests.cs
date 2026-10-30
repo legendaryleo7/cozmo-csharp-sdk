@@ -17,8 +17,7 @@ using Anki.Cozmo.Sdk;
 namespace Cozmo.Tests;
 
 /// <summary>
-/// OLED packing tests. Every expected byte string below was produced by the Python SDK's
-/// <c>cozmo/oled_face.py</c> functions and is stored here as a literal.
+/// Tests binary packing of grayscale pixels for Cozmo's OLED display.
 /// </summary>
 public sealed class OledFaceTests
 {

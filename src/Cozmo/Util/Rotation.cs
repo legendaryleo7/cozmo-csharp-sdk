@@ -16,19 +16,8 @@ namespace Anki.Cozmo.Sdk;
 
 /// <summary>An alias for <see cref="Quaternion"/>.</summary>
 /// <remarks>
-/// <para>
-/// Python defines <c>Rotation(Quaternion)</c> as an empty subclass (util.py:800-802), so a
-/// <c>Rotation</c> supports exactly the same operations as a <c>Quaternion</c>. C# value types
-/// cannot inherit, so this readonly struct wraps a <see cref="Quaternion"/> and offers
-/// implicit conversions in both directions. Return values that are <see cref="Quaternion"/>
-/// in Python (for example <c>rotation_quaternion</c>) can therefore still be assigned to a
-/// <see cref="Rotation"/> variable.
-/// </para>
-/// <para>
-/// As in Python, arithmetic operators on <see cref="Rotation"/> return a scaled z-angle
-/// rotation; the C# port returns <see cref="Rotation"/> where Python returns a
-/// <see cref="Quaternion"/> instance. The implicit conversion makes the two interchangeable.
-/// </para>
+/// This readonly value type wraps a <see cref="Quaternion"/> and supports implicit conversion
+/// to and from that type. Its arithmetic operators return a scaled z-angle rotation.
 /// </remarks>
 public readonly struct Rotation
 {
@@ -121,7 +110,7 @@ public readonly struct Rotation
     /// <param name="left">The rotation.</param>
     /// <param name="right">The scalar divisor.</param>
     /// <returns>A rotation with the scaled z angle.</returns>
-    /// <exception cref="DivideByZeroException">The divisor is zero, as Python raises <c>ZeroDivisionError</c>.</exception>
+    /// <exception cref="DivideByZeroException">The divisor is zero.</exception>
     public static Rotation operator /(Rotation left, double right) => new((Quaternion)left / right);
 
     /// <summary>Implicitly converts a rotation to its underlying quaternion.</summary>
@@ -134,7 +123,7 @@ public readonly struct Rotation
     /// <returns>A rotation backed by <paramref name="quaternion"/>.</returns>
     public static implicit operator Rotation(Quaternion quaternion) => new(quaternion);
 
-    /// <summary>Returns Python's <c>repr</c> representation of this rotation.</summary>
+    /// <summary>Returns a diagnostic string representation of this rotation.</summary>
     /// <returns>A string such as <c>&lt;Rotation q0: 1.00 q1: 0.00 q2: 0.00 q3: 0.00 ...&gt;</c>.</returns>
     public override string ToString() => _quaternion.ToStringWithTypeName(nameof(Rotation));
 }

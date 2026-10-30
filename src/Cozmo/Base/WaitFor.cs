@@ -16,8 +16,7 @@ namespace Anki.Cozmo.Sdk;
 
 /// <summary>Helpers for waiting on several asynchronous operations at once.</summary>
 /// <remarks>
-/// Mirrors <c>cozmo.event.wait_for_first</c>. Python cancels the remaining futures; .NET
-/// tasks cannot be cancelled without a token, so remaining tasks are left running.
+/// When one operation completes first, the remaining tasks continue running.
 /// </remarks>
 public static class WaitFor
 {

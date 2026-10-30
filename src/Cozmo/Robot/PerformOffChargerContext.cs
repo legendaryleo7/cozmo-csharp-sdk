@@ -16,8 +16,8 @@ namespace Anki.Cozmo.Sdk;
 
 /// <summary>Drives the robot off the charger, then back onto it when disposed.</summary>
 /// <remarks>
-/// Port of <c>robot.py::PerformOffChargerContext</c>. Python uses a context manager; C# uses
-/// <see cref="IAsyncDisposable"/>: <c>await using var context = await robot.PerformOffChargerAsync();</c>
+/// Use with <c>await using</c> so the robot returns to the charger when the scope
+/// ends: <c>await using var context = await robot.PerformOffChargerAsync();</c>
 /// </remarks>
 public sealed class PerformOffChargerContext : IAsyncDisposable
 {

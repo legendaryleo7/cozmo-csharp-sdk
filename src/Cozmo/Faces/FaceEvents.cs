@@ -18,8 +18,8 @@ namespace Anki.Cozmo.Sdk;
 /// <param name="Face">The face that was observed.</param>
 /// <param name="Name">The name associated with the face at the time of the observation.</param>
 /// <param name="Updated">
-/// The names of the face fields that were updated. Mirrors the Python event's <c>updated</c>
-/// set; every observation includes <c>pose</c>, <c>left_eye</c>, <c>right_eye</c>, <c>nose</c>,
+/// Names of the face fields that were updated. Every observation includes <c>pose</c>,
+/// <c>left_eye</c>, <c>right_eye</c>, <c>nose</c>,
 /// <c>mouth</c>, <c>last_observed_time</c>, <c>last_observed_robot_timestamp</c>,
 /// <c>last_event_time</c> and <c>last_observed_image_box</c>, plus <c>expression</c> and
 /// <c>expression_score</c> when those changed.

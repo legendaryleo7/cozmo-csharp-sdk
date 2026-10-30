@@ -21,7 +21,7 @@ using SdkCameraConfig = Anki.Cozmo.Sdk.CameraConfig;
 
 namespace Cozmo.Tests;
 
-/// <summary>One Python-generated mini-JPEG header fix-up vector.</summary>
+/// <summary>A mini-JPEG header repair input and its expected output.</summary>
 internal sealed record MiniJpegVector(
     string Name,
     byte[] Input,
@@ -30,7 +30,7 @@ internal sealed record MiniJpegVector(
     bool Color,
     byte[] Expected);
 
-/// <summary>One scripted camera chunk used by the Python-generated scenarios.</summary>
+/// <summary>Camera chunk metadata and data used by a test scenario.</summary>
 internal sealed record ChunkSpec(
     byte ChunkId,
     uint ImageId,
@@ -39,7 +39,7 @@ internal sealed record ChunkSpec(
     sbyte Resolution,
     byte[] Data);
 
-/// <summary>A Python-generated camera chunk scenario and its expected result.</summary>
+/// <summary>A camera chunk sequence and its expected image output.</summary>
 internal sealed record ChunkScenario(
     ChunkSpec[] Chunks,
     byte[] ExpectedJpeg,
@@ -47,7 +47,7 @@ internal sealed record ChunkScenario(
     int ExpectedWidth,
     int ExpectedHeight);
 
-/// <summary>Tests the WP-10 port of <c>cozmo.camera</c>.</summary>
+/// <summary>Tests camera settings, frame reconstruction and image events.</summary>
 public sealed class CameraTests
 {
     [Fact]

@@ -21,24 +21,20 @@ namespace Anki.Cozmo.Sdk;
 /// <summary>A light cube: four LEDs that Cozmo can actively manipulate and communicate with.</summary>
 /// <remarks>
 /// <para>
-/// Port of <c>LightCube</c> in <c>cozmo/objects.py</c>. A cube has a fixed
-/// <see cref="CubeId"/> identifying which physical cube it is, plus an engine-assigned
+/// A cube has a fixed <see cref="CubeId"/> identifying the physical cube and an engine-assigned
 /// <see cref="ObservableObject.ObjectId"/> that can change when the cube reconnects.
 /// </para>
 /// <para>
-/// The light commands are built here and sent through the connection, because they are
-/// cube-specific rather than world-specific. Inbound messages are still routed by the world
-/// layer (WP-11), which calls the state handlers on this instance.
+/// Light commands are sent through the connection. The world routes inbound messages to this
+/// instance.
 /// </para>
 /// </remarks>
 public sealed class LightCube : ObservableObject
 {
     /// <summary>Voltage at which a cube's battery is considered empty.</summary>
-    /// <remarks>Python <c>LightCube.EMPTY_VOLTAGE</c> (objects.py:435).</remarks>
     public const double EmptyVoltage = 1.0;
 
     /// <summary>Voltage at which a cube's battery is considered full.</summary>
-    /// <remarks>Python <c>LightCube.FULL_VOLTAGE</c> (objects.py:437).</remarks>
     public const double FullVoltage = 1.5;
 
     private readonly CladEnum<ObjectType> _cubeId;
@@ -108,7 +104,6 @@ public sealed class LightCube : ObservableObject
     public uint? LastMovedStartRobotTimestamp { get; private set; }
 
     /// <summary>Battery level as a percentage, or <see langword="null"/> when no voltage is known.</summary>
-    /// <remarks>Port of Python <c>battery_percentage</c> (objects.py:518-529).</remarks>
     public double? BatteryPercentage
     {
         get
@@ -136,7 +131,7 @@ public sealed class LightCube : ObservableObject
     /// <summary>String representation of the battery level.</summary>
     /// <remarks>
     /// Returns <c>"Unknown"</c> until a voltage reading is received, otherwise the rounded
-    /// percentage followed by <c>%</c>, mirroring Python <c>battery_str</c> (objects.py:531-537).
+    /// percentage followed by <c>%</c>.
     /// </remarks>
     public string BatteryStr
     {
@@ -158,8 +153,7 @@ public sealed class LightCube : ObservableObject
 
     /// <summary>Waits for the cube to receive a tap event.</summary>
     /// <param name="timeout">
-    /// Maximum time to wait, or <see langword="null"/> to wait indefinitely, matching Python's
-    /// <c>timeout=None</c> default.
+    /// Maximum time to wait, or <see langword="null"/> to wait indefinitely.
     /// </param>
     /// <returns>The tap event that was received.</returns>
     /// <exception cref="TimeoutException">No tap arrived before <paramref name="timeout"/>.</exception>
@@ -172,7 +166,6 @@ public sealed class LightCube : ObservableObject
     /// <returns>A task that completes after the LED message is sent.</returns>
     /// <exception cref="ArgumentNullException"><paramref name="light"/> is <see langword="null"/>.</exception>
     /// <exception cref="InvalidOperationException">The cube has no valid object id yet.</exception>
-    /// <remarks>Port of Python <c>LightCube.set_lights</c> (objects.py:617-628).</remarks>
     public Task SetLightsAsync(Light light)
     {
         ArgumentNullException.ThrowIfNull(light);
@@ -189,8 +182,7 @@ public sealed class LightCube : ObservableObject
     /// <summary>Sets the cube's LEDs from a list.</summary>
     /// <param name="lights">
     /// Either one light, applied to all four corners, or exactly four lights applied in corner
-    /// order. This overload is a C# convenience; Python exposes the one-light
-    /// <c>set_lights</c> and the four-argument <c>set_light_corners</c>.
+    /// order.
     /// </param>
     /// <returns>A task that completes after the LED message is sent.</returns>
     /// <exception cref="ArgumentNullException"><paramref name="lights"/> is <see langword="null"/>.</exception>
@@ -217,9 +209,8 @@ public sealed class LightCube : ObservableObject
     /// <returns>A task that completes after the LED message is sent.</returns>
     /// <exception cref="InvalidOperationException">The cube has no valid object id yet.</exception>
     /// <remarks>
-    /// Port of Python <c>LightCube.set_light_corners</c> (objects.py:602-612). The corner
-    /// numbering is the CLAD array order; Python deliberately leaves the physical corner
-    /// mapping undocumented.
+    /// Corner numbering follows the CLAD array order; the physical mapping of these slots is
+    /// not specified.
     /// </remarks>
     public Task SetLightCornersAsync(Light? light1, Light? light2, Light? light3, Light? light4)
     {
@@ -239,14 +230,12 @@ public sealed class LightCube : ObservableObject
     /// <summary>Turns off all the LEDs on the cube.</summary>
     /// <returns>A task that completes after the LED message is sent.</returns>
     /// <exception cref="InvalidOperationException">The cube has no valid object id yet.</exception>
-    /// <remarks>Port of Python <c>LightCube.set_lights_off</c> (objects.py:630-632).</remarks>
     public Task SetLightsOffAsync() => SetLightsAsync(Lights.Off);
 
     /// <summary>Applies an object-tapped message.</summary>
     /// <param name="message">The CLAD tap message routed by the world.</param>
     /// <returns>A task that completes after the tapped event is dispatched.</returns>
     /// <exception cref="ArgumentNullException"><paramref name="message"/> is <see langword="null"/>.</exception>
-    /// <remarks>Port of <c>_recv_msg_object_tapped</c> (objects.py:535-541).</remarks>
     public async Task HandleObjectTapped(ObjectTapped message)
     {
         ArgumentNullException.ThrowIfNull(message);
@@ -268,7 +257,6 @@ public sealed class LightCube : ObservableObject
     /// <param name="message">The CLAD move message routed by the world.</param>
     /// <returns>A task that completes after the moving-started or moving event is dispatched.</returns>
     /// <exception cref="ArgumentNullException"><paramref name="message"/> is <see langword="null"/>.</exception>
-    /// <remarks>Port of <c>_recv_msg_object_moved</c> (objects.py:543-568).</remarks>
     public async Task HandleObjectMoved(ObjectMoved message)
     {
         ArgumentNullException.ThrowIfNull(message);
@@ -302,9 +290,7 @@ public sealed class LightCube : ObservableObject
     /// <returns>A task that completes after the moving-stopped event is dispatched.</returns>
     /// <exception cref="ArgumentNullException"><paramref name="message"/> is <see langword="null"/>.</exception>
     /// <remarks>
-    /// Port of <c>_recv_msg_object_stopped_moving</c> (objects.py:570-582). A stop that
-    /// arrives while the cube is not marked as moving reports a zero duration, matching the
-    /// Python comment about very short movements.
+    /// A stop message received while the cube is not marked as moving reports a zero duration.
     /// </remarks>
     public async Task HandleObjectStoppedMoving(ObjectStoppedMoving message)
     {
@@ -327,7 +313,6 @@ public sealed class LightCube : ObservableObject
     /// <param name="message">The CLAD power message routed by the world.</param>
     /// <returns>A completed task; no event is raised.</returns>
     /// <exception cref="ArgumentNullException"><paramref name="message"/> is <see langword="null"/>.</exception>
-    /// <remarks>Port of <c>_recv_msg_object_power_level</c> (objects.py:584-585).</remarks>
     public Task HandleObjectPowerLevel(ObjectPowerLevel message)
     {
         ArgumentNullException.ThrowIfNull(message);
@@ -339,7 +324,6 @@ public sealed class LightCube : ObservableObject
     /// <param name="message">The CLAD connection message routed by the world.</param>
     /// <returns>A task that completes after any connect-changed event is dispatched.</returns>
     /// <exception cref="ArgumentNullException"><paramref name="message"/> is <see langword="null"/>.</exception>
-    /// <remarks>Port of <c>_recv_msg_object_connection_state</c> (objects.py:587-595).</remarks>
     public async Task HandleObjectConnectionState(ObjectConnectionState message)
     {
         ArgumentNullException.ThrowIfNull(message);

@@ -15,13 +15,11 @@
 namespace Anki.Cozmo.Sdk;
 
 /// <summary>Raised when animation names have been received from the engine.</summary>
-/// <remarks>Port of <c>cozmo/anim.py::EvtAnimationsLoaded</c>.</remarks>
 public sealed record EvtAnimationsLoaded : CozmoEvent;
 
 /// <summary>Raised when an animation or animation trigger completes.</summary>
 /// <remarks>
-/// Port of <c>cozmo/anim.py::EvtAnimationCompleted</c>. The action-specific
-/// <see cref="AnimationName"/> is carried in addition to the four
+/// The action-specific <see cref="AnimationName"/> is carried in addition to the four
 /// <see cref="EvtActionCompleted"/> fields.
 /// </remarks>
 /// <param name="Action">The action that completed.</param>

@@ -25,13 +25,13 @@ namespace Anki.Cozmo.Sdk;
 /// <summary>The interface to a Cozmo robot.</summary>
 /// <remarks>
 /// <para>
-/// Port of <c>robot.py::Robot</c>. A robot owns the connection's action dispatcher, the
-/// <see cref="Cozmo.Sdk.World"/>, the <see cref="Cozmo.Sdk.Camera"/> and the animation-name
-/// cache, handles inbound robot state, and exposes the high-level commands.
+/// A robot owns the connection's action dispatcher, the <see cref="Cozmo.Sdk.World"/>, the
+/// <see cref="Cozmo.Sdk.Camera"/> and the animation-name cache. It handles inbound robot state
+/// and exposes high-level commands.
 /// </para>
 /// <para>
-/// Creation normally happens in <c>CozmoRunner</c> after the connection handshake; construction
-/// starts <see cref="InitializeAsync"/> unless <c>autoInitialize</c> is false (tests).
+/// A <see cref="CozmoRunner"/> normally creates the robot after the connection handshake.
+/// Initialization starts automatically unless <c>autoInitialize</c> is <see langword="false"/>.
 /// </para>
 /// </remarks>
 public sealed class Robot : Dispatcher, IWorldRobot

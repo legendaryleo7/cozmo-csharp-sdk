@@ -18,7 +18,7 @@ using Anki.Cozmo.Sdk;
 
 namespace Cozmo.Tests;
 
-/// <summary>Tests the WP-09 port of <c>cozmo.pets</c>.</summary>
+/// <summary>Tests pet type conversion, observations and events.</summary>
 public sealed class PetTests
 {
     [Theory]

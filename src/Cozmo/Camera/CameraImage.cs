@@ -17,17 +17,13 @@ namespace Anki.Cozmo.Sdk;
 /// <summary>A single image from Cozmo's camera.</summary>
 /// <remarks>
 /// <para>
-/// Port of <c>cozmo/world.py::CameraImage</c>. The Python SDK stores a decoded PIL image
-/// and can annotate and resize it via <c>annotate_image</c>. This port has no imaging
-/// library dependency, so <see cref="RawImage"/> is the exact JPEG byte sequence that the
-/// robot produced (after the mini-JPEG header repair when applicable). Image annotation and
-/// the <c>ImageAnnotator</c> hook are deliberately out of scope.
+/// <see cref="RawImage"/> contains the JPEG bytes received from the robot, after mini-JPEG
+/// header repair when needed. The image is not decoded, resized or annotated.
 /// </para>
 /// <para>
 /// <see cref="Width"/> and <see cref="Height"/> describe the nominal image resolution when
-/// it is known from the CLAD resolution. For minimized color frames the embedded JPEG is
-/// half width; the Python SDK decodes and resizes it to the nominal size, while this port
-/// leaves the bytes untouched and reports the nominal size.
+/// it is known from the CLAD resolution. For minimized color frames, the embedded JPEG is
+/// half width while these properties report the nominal size.
 /// </para>
 /// </remarks>
 public sealed class CameraImage

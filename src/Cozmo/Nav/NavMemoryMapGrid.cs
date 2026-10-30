@@ -24,8 +24,8 @@ public sealed record EvtNewNavMemoryMap(NavMemoryMapGrid NavMemoryMap) : CozmoEv
 
 /// <summary>The content types for a <see cref="NavMemoryMapGridNode"/>.</summary>
 /// <remarks>
-/// Port of <c>cozmo/nav_memory_map.py::NodeContentTypes</c>. Each member wraps one value of
-/// the CLAD <c>ENodeContentTypeEnum</c> and exposes its Python name and numeric id.
+/// Each member wraps a value of the CLAD <c>ENodeContentTypeEnum</c> and exposes its name and
+/// numeric id.
 /// </remarks>
 public static class NodeContentTypes
 {
@@ -64,14 +64,12 @@ public static class NodeContentTypes
     /// <summary>
     /// The node is near an obstacle, as reported by the prox sensors.
     /// </summary>
-    /// <remarks>Undocumented and not currently used by the Python SDK.</remarks>
     public static CladEnum<ENodeContentTypeEnum> ObstacleProx { get; } =
         CladEnum<ENodeContentTypeEnum>.FromValue(ENodeContentTypeEnum.ObstacleProx);
 
     /// <summary>Looks up a content type by its CLAD numeric id.</summary>
     /// <param name="id">Numeric id of the content type.</param>
     /// <returns>The matching content type, or <see langword="null"/> when the id is unknown.</returns>
-    /// <remarks>Mirrors Python's <c>CladEnumWrapper.find_by_id</c>.</remarks>
     public static CladEnum<ENodeContentTypeEnum>? FindById(long id) =>
         CladEnum<ENodeContentTypeEnum>.TryFromId(id, out CladEnum<ENodeContentTypeEnum>? entry)
             ? entry
@@ -175,7 +173,7 @@ public sealed class NavMemoryMapGridNode
     /// <returns>
     /// The content included at that point. Outside the map this is
     /// <see cref="NodeContentTypes.Unknown"/>; a point inside a node that was never filled in
-    /// has <see langword="null"/> content, matching the Python implementation.
+    /// has <see langword="null"/> content.
     /// </returns>
     public CladEnum<ENodeContentTypeEnum>? GetContent(double x, double y)
     {
@@ -290,10 +288,8 @@ public sealed class NavMemoryMapGridNode
 /// <summary>A navigation memory map, stored as a quad-tree.</summary>
 /// <remarks>
 /// <para>
-/// Port of <c>cozmo/nav_memory_map.py::NavMemoryMapGrid</c>. Cozmo builds this map of the
-/// navigable world around him from objects, cliffs and visible edges. It differs from an
-/// occupancy map in that each node stores what kind of content is there rather than a
-/// probability of occupancy.
+/// Cozmo builds this map of the navigable world from objects, cliffs and visible edges. Unlike
+/// an occupancy map, each node stores a content type rather than a probability of occupancy.
 /// </para>
 /// <para>
 /// To receive maps the world layer must request them from the robot; the map itself is
@@ -368,7 +364,7 @@ public sealed class NavMemoryMapGrid
     /// <returns>
     /// The content included at that point. Outside the map this is
     /// <see cref="NodeContentTypes.Unknown"/>; a point inside a node that was never filled in
-    /// has <see langword="null"/> content, matching the Python implementation.
+    /// has <see langword="null"/> content.
     /// </returns>
     public CladEnum<ENodeContentTypeEnum>? GetContent(double x, double y) => _rootNode.GetContent(x, y);
 
@@ -381,9 +377,7 @@ public sealed class NavMemoryMapGrid
     /// </exception>
     /// <exception cref="InvalidOperationException">The tree has no free leaf slot where the quad belongs.</exception>
     /// <remarks>
-    /// Mirrors <c>NavMemoryMapGrid._add_quad</c> (nav_memory_map.py:319-322). The Python
-    /// implementation only logs when the requested depth exceeds the root depth and then
-    /// recurses until it fails; this port rejects that malformed input up front.
+    /// Rejects a depth beyond the root depth before modifying the tree.
     /// </remarks>
     public void AddQuad(CladEnum<ENodeContentTypeEnum> content, int depth)
     {

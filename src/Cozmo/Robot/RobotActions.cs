@@ -17,11 +17,11 @@ using Microsoft.Extensions.Logging;
 
 namespace Anki.Cozmo.Sdk;
 
-/// <summary>Base for the simple robot actions defined by robot.py.</summary>
+/// <summary>Base class for robot commands encoded as action messages.</summary>
 /// <remarks>
-/// Each subclass stores the documented Python arguments and fills one
-/// <see cref="RobotActionUnion"/> alternative. The action state machine, abort handling
-/// and completion events live in <see cref="CozmoAction"/>.
+/// Each subclass stores its command arguments and fills one
+/// <see cref="RobotActionUnion"/> alternative. The action state machine, abort handling and
+/// completion events are provided by <see cref="CozmoAction"/>.
 /// </remarks>
 public abstract class RobotAction : CozmoAction
 {
@@ -356,10 +356,10 @@ public sealed class SayText : RobotAction
 /// <summary>Sets the robot's head angle.</summary>
 public sealed class SetHeadAngle : RobotAction
 {
-    /// <summary>Lowest supported head angle (robot.py:99).</summary>
+    /// <summary>Lowest supported head angle, in radians.</summary>
     public static readonly Angle MinHeadAngle = Angle.FromDegrees(-25);
 
-    /// <summary>Highest supported head angle (robot.py:102).</summary>
+    /// <summary>Highest supported head angle, in radians.</summary>
     public static readonly Angle MaxHeadAngle = Angle.FromDegrees(44.5);
 
     /// <summary>Creates the action, clamping the angle to the supported range.</summary>

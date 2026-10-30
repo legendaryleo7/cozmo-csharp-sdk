@@ -21,7 +21,7 @@ namespace Anki.Cozmo.Sdk;
 /// <para>
 /// The connector locates adb in this order: the constructor argument, the
 /// <c>ANDROID_ADB_PATH</c> environment variable, adb on <c>PATH</c>, and finally the common
-/// Android SDK locations checked by the Python SDK on Windows. A missing adb is reported when
+/// Android SDK locations on Windows. A missing adb is reported when
 /// a connection is attempted so that other connectors can still run.
 /// </para>
 /// <para>

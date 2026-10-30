@@ -34,13 +34,13 @@ public sealed class CladProtocolException : CozmoConnectionException
 
 /// <summary>Reassembles CLAD frames from a byte stream.</summary>
 /// <remarks>
-/// The wire format matches <c>cozmo/clad_protocol.py</c>: a two-byte little-endian length
-/// followed by that many payload bytes. A single append may contain part of a frame, many
+/// Each frame starts with a two-byte little-endian length followed by that many payload bytes.
+/// A single append may contain part of a frame, many
 /// frames, or both; a frame may span any number of appends.
 /// </remarks>
 public sealed class CladFramer
 {
-    /// <summary>Largest accepted frame payload, matching the historical C# SDK limit.</summary>
+    /// <summary>Largest accepted CLAD frame payload.</summary>
     public const int MaxFrameSize = 8192;
 
     private readonly int _maxFrameSize;

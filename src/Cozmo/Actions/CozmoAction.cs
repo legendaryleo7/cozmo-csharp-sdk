@@ -20,7 +20,7 @@ namespace Anki.Cozmo.Sdk;
 
 /// <summary>Base class for a high-level task the robot can perform.</summary>
 /// <remarks>
-/// An action is created by a robot command (WP-11), then sent by
+/// An action is created by a robot command, then sent by
 /// <see cref="ActionDispatcher.SendSingleActionAsync"/>. Callers can await
 /// <see cref="WaitForCompletedAsync"/>, register <see cref="OnCompleted"/>, or
 /// <see cref="AbortAsync"/> while it runs.
@@ -78,7 +78,7 @@ public abstract class CozmoAction : Dispatcher
     /// <summary>Human-readable failure reason, or null when no failure occurred.</summary>
     public string? FailureReason => _failureReason;
 
-    /// <summary>CLAD result reported by the robot, or null before completion or for unknown results.</summary>
+    /// <summary>CLAD result reported by the robot, or <see langword="null"/> before completion or when unknown.</summary>
     public CladEnum<global::Anki.Cozmo.ActionResult>? Result => _result;
 
     /// <summary>The completion event, once the action has completed.</summary>
@@ -109,8 +109,7 @@ public abstract class CozmoAction : Dispatcher
 
     /// <summary>Waits for the action to complete.</summary>
     /// <param name="timeout">
-    /// Maximum time to wait; null waits indefinitely, matching the Python
-    /// <c>wait_for_completed(timeout=None)</c> default.
+    /// Maximum time to wait; <see langword="null"/> waits indefinitely.
     /// </param>
     /// <exception cref="TimeoutException">The action did not complete in time.</exception>
     public Task<EvtActionCompleted> WaitForCompletedAsync(TimeSpan? timeout = null)

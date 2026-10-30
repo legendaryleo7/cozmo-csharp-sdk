@@ -19,7 +19,7 @@ using Anki.Cozmo.Sdk.Clad;
 
 namespace Cozmo.Tests;
 
-/// <summary>Tests the WP-09 port of <c>cozmo.faces</c>.</summary>
+/// <summary>Tests face observations, enrollment and events.</summary>
 public sealed class FaceTests
 {
     [Fact]

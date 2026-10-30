@@ -21,14 +21,12 @@ namespace Anki.Cozmo.Sdk;
 /// <summary>A single pet that Cozmo has detected.</summary>
 /// <remarks>
 /// <para>
-/// Port of <c>Pet</c> in <c>cozmo/pets.py</c>. The engine can only tell whether something
-/// looks like a cat or a dog; it cannot recognize a specific pet. If a pet goes off-screen it
-/// receives a new id (and therefore a new <see cref="Pet"/> instance) when it returns.
+/// The engine can identify an observed pet as a cat or a dog, but cannot recognize a specific
+/// pet. If a pet goes off-screen, it receives a new id and <see cref="Pet"/> instance when it
+/// returns.
 /// </para>
 /// <para>
-/// Message subscriptions intentionally live in the world layer (WP-11), matching the Python
-/// design: <c>cozmo/world.py</c> receives the observed-pet message, looks up the pet by id,
-/// and forwards the state to it. See <see cref="HandleObservedPet"/>.
+/// The world routes observed-pet messages to this instance. See <see cref="HandleObservedPet"/>.
 /// </para>
 /// </remarks>
 public sealed class Pet : ObservableElement
@@ -37,7 +35,6 @@ public sealed class Pet : ObservableElement
     /// Length of time to go without receiving an observation before the pet is considered
     /// invisible.
     /// </summary>
-    /// <remarks>Python <c>PET_VISIBILITY_TIMEOUT</c> (pets.py:56), which aliases the object visibility timeout.</remarks>
     public static readonly TimeSpan PetVisibilityTimeout = ObservableElement.ObjectVisibilityTimeout;
 
     private int? _petId;
@@ -64,12 +61,8 @@ public sealed class Pet : ObservableElement
 
     /// <summary>The internal id assigned to the pet.</summary>
     /// <remarks>
-    /// <para>
-    /// The value is <see langword="null"/> until the world allocates the pet. Python's setter
-    /// raises <c>ValueError</c> when the id is assigned twice (pets.py:157-162). The port
-    /// instead logs a warning and applies the new value, matching the face and object id
-    /// conventions so the world (WP-11) can repair its lookup table rather than crash.
-    /// </para>
+    /// <para>The value is <see langword="null"/> until the world allocates the pet.</para>
+    /// <para>If the engine changes the id, the new value is applied and a warning is logged.</para>
     /// </remarks>
     public int? PetId
     {
@@ -101,7 +94,6 @@ public sealed class Pet : ObservableElement
     public string? PetType { get; private set; }
 
     /// <inheritdoc />
-    /// <remarks>Uses <see cref="PetVisibilityTimeout"/> (pets.py:123).</remarks>
     public override TimeSpan VisibilityTimeout => PetVisibilityTimeout;
 
     /// <summary>Applies a robot-observed-pet message.</summary>
@@ -109,8 +101,8 @@ public sealed class Pet : ObservableElement
     /// <returns>A task that completes after the observed and, on first sight, appeared events are dispatched.</returns>
     /// <exception cref="ArgumentNullException"><paramref name="message"/> is <see langword="null"/>.</exception>
     /// <remarks>
-    /// Port of <c>_recv_msg_robot_observed_pet</c> (pets.py:166-175). The observed-pet message
-    /// carries no pose, so <see cref="ObservableElement.Pose"/> stays <see langword="null"/>.
+    /// The observed-pet message carries no pose, so <see cref="ObservableElement.Pose"/> stays
+    /// <see langword="null"/>.
     /// </remarks>
     public async Task HandleObservedPet(RobotObservedPet message)
     {
@@ -149,8 +141,7 @@ public sealed class Pet : ObservableElement
 /// <summary>Raised whenever a pet is visually identified by the robot.</summary>
 /// <param name="Pet">The pet that was observed.</param>
 /// <param name="Updated">
-/// The names of the pet fields that were updated. Mirrors the Python event's <c>updated</c>
-/// set; every observation includes <c>last_observed_time</c>,
+/// Names of the pet fields that were updated. Every observation includes <c>last_observed_time</c>,
 /// <c>last_observed_robot_timestamp</c>, <c>last_event_time</c> and
 /// <c>last_observed_image_box</c>, plus <c>pet_type</c> when it changed.
 /// </param>

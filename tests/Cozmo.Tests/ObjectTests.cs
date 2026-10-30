@@ -21,7 +21,7 @@ using Anki.Cozmo.Sdk.Clad;
 
 namespace Cozmo.Tests;
 
-/// <summary>Tests the WP-08 port of <c>cozmo.objects</c>.</summary>
+/// <summary>Tests observable objects, world events and custom object behavior.</summary>
 public sealed class ObjectTests
 {
     private static readonly TimeSpan TestTimeout = TimeSpan.FromSeconds(2);

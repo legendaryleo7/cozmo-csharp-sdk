@@ -17,7 +17,7 @@ namespace Anki.Cozmo.Sdk;
 /// <summary>Base type for every event dispatched by the SDK.</summary>
 /// <remarks>
 /// Concrete events are immutable records. Handlers registered for a base event type also
-/// receive events of its subclasses, mirroring the Python SDK's class-hierarchy matching.
+/// receive events of its subclasses.
 /// </remarks>
 public abstract record CozmoEvent
 {

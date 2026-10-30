@@ -18,9 +18,8 @@ namespace Anki.Cozmo.Sdk;
 
 /// <summary>Cozmo's charger, which the robot can observe and drive toward.</summary>
 /// <remarks>
-/// Port of <c>Charger</c> in <c>cozmo/objects.py</c> (objects.py:638-649). The class adds no
-/// state of its own to <see cref="ObservableObject"/>; it exists so callers and the world can
-/// distinguish the charger from cubes and custom objects.
+/// This type adds no state to <see cref="ObservableObject"/>; it identifies the charger in
+/// the world model.
 /// </remarks>
 public sealed class Charger : ObservableObject
 {

@@ -16,9 +16,7 @@ namespace Anki.Cozmo.Sdk;
 
 /// <summary>Allocates action ids inside the SDK tag range, wrapping at the end.</summary>
 /// <remarks>
-/// The Python SDK used an unsynchronized class-level counter; this source is safe to call
-/// from several threads, which matters once actions can be created outside the dispatch
-/// loop.
+/// Id allocation is thread-safe.
 /// </remarks>
 internal static class ActionIdSource
 {

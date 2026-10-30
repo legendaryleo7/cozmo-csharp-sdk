@@ -20,14 +20,13 @@ namespace Anki.Cozmo.Sdk;
 /// <summary>Holds the set of animation names returned by the engine.</summary>
 /// <remarks>
 /// <para>
-/// Port of <c>cozmo/anim.py::AnimationNames</c>. Animation names are retrieved from the
-/// engine when the SDK connects, unlike the compile-time <see cref="Triggers"/>
-/// catalogue.
+/// Animation names are retrieved from the engine when the SDK connects. They are distinct
+/// from the compile-time <see cref="Triggers"/> catalogue.
 /// </para>
 /// <para>
 /// <see cref="RefreshAsync"/> clears the set and asks the engine again. Looking a name up
 /// with <see cref="Contains"/> while the set is not loaded raises
-/// <see cref="AnimationsNotLoadedException"/>, matching Python's <c>__contains__</c>.
+/// <see cref="AnimationsNotLoadedException"/>.
 /// </para>
 /// </remarks>
 public sealed class AnimationNames : Dispatcher, IReadOnlyCollection<string>
@@ -104,8 +103,8 @@ public sealed class AnimationNames : Dispatcher, IReadOnlyCollection<string>
 
     /// <summary>Requests the list of animation names from the engine.</summary>
     /// <remarks>
-    /// Matches Python's <c>refresh</c>: the set is marked unloaded and cleared before the
-    /// request is sent, so an animation lookup during a refresh raises
+    /// The set is marked unloaded and cleared before the request is sent, so an animation
+    /// lookup during a refresh raises
     /// <see cref="AnimationsNotLoadedException"/>. An <see cref="EvtAnimationsLoaded"/>
     /// event is raised once the engine's reply has been received.
     /// </remarks>
