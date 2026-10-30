@@ -4,7 +4,7 @@ Status: **complete**. This is the WP-00 deliverable for the Python 1.4.12 → C#
 
 ## Decision
 
-**Do not use `clad_library/CladCSharp.dll` as the CLAD layer. Regenerate the CLAD C#
+**Do not use `legacy/clad_library/CladCSharp.dll` as the CLAD layer. Regenerate the CLAD C#
 layer from cozmoclad 3.6.6 and verify it byte-for-byte against the Python runtime.**
 
 Three independent blockers make the shipped DLL unusable, in increasing order of severity:
@@ -21,7 +21,7 @@ The regenerated layer is implemented in WP-CLAD and already validated: 739 CLAD 
 
 | Artifact | Identity |
 |---|---|
-| `clad_library/CladCSharp.dll` | 1,355,264 bytes, SHA-256 `423553930307d1f63c72884aa509d99c0bd341aef536265c4517438fc74ec09b` |
+| `legacy/clad_library/CladCSharp.dll` | 1,355,264 bytes, SHA-256 `423553930307d1f63c72884aa509d99c0bd341aef536265c4517438fc74ec09b` |
 | cozmoclad 3.6.6 | `ddl-cozmo-python-sdk/cozmoclad/cozmoclad-3.6.6-py3-none-any.whl` |
 | Python SDK source | `ddl-cozmo-python-sdk` at `Release 1.4.12` (`__cozmoclad_version__ = "3.6.6"`) |
 
@@ -155,7 +155,7 @@ arrays, variable arrays, object arrays), and every C# decode re-encodes to the s
 - WP-03 sends `CladIdentity.BuildVersion` and compares `CladIdentity.EngineToGameHash` /
   `GameToEngineHash`; the old `CladVersion._Data` and `SDKVersion._Data` constants are
   replaced.
-- WP-13 removes `clad_library/CladCSharp.dll` from the build. The binary can be kept in
+- WP-13 removes `legacy/clad_library/CladCSharp.dll` from the build. The binary can be kept in
   `legacy/` for historical reference only; nothing may reference it.
 - The old sample (`csharp_interface/`) is not compiled after WP-01; WP-13 ports it to the
   new API.
