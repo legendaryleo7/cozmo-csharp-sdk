@@ -1,8 +1,8 @@
 # Legacy Xamarin/MonoDevelop project
-csharp_interface/obj/
-csharp_interface/bin/
-csharp_interface/cozmocsharp.sln
-csharp_interface/cozmocsharp.userprefs
+legacy/csharp_interface/obj/
+legacy/csharp_interface/bin/
+legacy/csharp_interface/cozmocsharp.sln
+legacy/csharp_interface/cozmocsharp.userprefs
 
 # .NET build output
 bin/
