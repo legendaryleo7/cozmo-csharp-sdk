@@ -15,6 +15,10 @@ TestResults/
 # Tooling scratch
 .scratch/
 
+# DocFX output
+docs/api/
+docs/_site/
+
 # Python tooling cache
 __pycache__/
 *.pyc

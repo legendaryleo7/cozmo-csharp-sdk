@@ -76,6 +76,18 @@ The default connector (`FirstAvailableConnector`) tries, in order:
 dotnet run --project samples/01_hello_world
 ```
 
+## API reference
+
+The public API reference is generated with DocFX and published at
+<https://legendaryleo7.github.io/cozmo-csharp-sdk/>. To build it locally, run:
+
+```bash
+dotnet tool restore
+dotnet tool run docfx -- docs/docfx.json
+```
+
+The generated site is written to `docs/_site`.
+
 ## Repository layout
 
 | Path | Contents |

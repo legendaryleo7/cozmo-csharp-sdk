@@ -1,0 +1,39 @@
+{
+  "$schema": "https://raw.githubusercontent.com/dotnet/docfx/main/schemas/docfx.schema.json",
+  "metadata": [
+    {
+      "src": [
+        {
+          "src": "../src",
+          "files": [
+            "Cozmo/Cozmo.csproj"
+          ]
+        }
+      ],
+      "dest": "api"
+    }
+  ],
+  "build": {
+    "content": [
+      {
+        "files": [
+          "api/**.yml"
+        ]
+      },
+      {
+        "files": [
+          "index.md",
+          "toc.yml"
+        ]
+      }
+    ],
+    "globalMetadata": {
+      "_appTitle": "Cozmo C# SDK",
+      "_appName": "Cozmo C# SDK"
+    },
+    "sitemap": {
+      "baseUrl": "https://legendaryleo7.github.io/cozmo-csharp-sdk/"
+    },
+    "output": "_site"
+  }
+}
