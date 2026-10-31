@@ -25,6 +25,11 @@
           "index.md",
           "toc.yml"
         ]
+      },
+      {
+        "files": [
+          "guides/**/*.md"
+        ]
       }
     ],
     "globalMetadata": {

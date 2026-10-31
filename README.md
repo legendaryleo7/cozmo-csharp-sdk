@@ -76,10 +76,20 @@ The default connector (`FirstAvailableConnector`) tries, in order:
 dotnet run --project samples/01_hello_world
 ```
 
-## API reference
+## Documentation
 
-The public API reference is generated with DocFX and published at
-<https://legendaryleo7.github.io/cozmo-csharp-sdk/>. To build it locally, run:
+The [API reference and guides](https://legendaryleo7.github.io/cozmo-csharp-sdk/) cover
+the public API, setup, connections, actions, events, world objects, camera frames, and
+troubleshooting. The Markdown guides are also available in the repository:
+
+- [Getting started](docs/guides/getting-started.md)
+- [Connecting to Cozmo](docs/guides/connecting.md)
+- [Actions and events](docs/guides/actions-and-events.md)
+- [World and light cubes](docs/guides/world-and-cubes.md)
+- [Camera frames](docs/guides/camera.md)
+- [Troubleshooting](docs/guides/troubleshooting.md)
+
+To build the documentation site locally, run:
 
 ```bash
 dotnet tool restore

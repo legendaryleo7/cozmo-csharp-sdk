@@ -1,4 +1,18 @@
 - name: Overview
   href: index.md
+- name: Guides
+  items:
+    - name: Getting started
+      href: guides/getting-started.md
+    - name: Connecting to Cozmo
+      href: guides/connecting.md
+    - name: Actions and events
+      href: guides/actions-and-events.md
+    - name: World and light cubes
+      href: guides/world-and-cubes.md
+    - name: Camera frames
+      href: guides/camera.md
+    - name: Troubleshooting
+      href: guides/troubleshooting.md
 - name: API Reference
   href: api/toc.yml
