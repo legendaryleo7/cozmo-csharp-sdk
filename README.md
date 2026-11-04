@@ -23,7 +23,7 @@ dotnet build Cozmo.sln -warnaserror
 dotnet test Cozmo.sln
 ```
 
-The suite currently runs **791 tests**, including 410 byte-exact CLAD oracle cases
+The suite currently runs **800 tests**, including 410 byte-exact CLAD oracle cases
 generated from the Python layer, and covers the dispatcher, connection/handshake,
 actions, world/objects/faces/pets, camera, navigation map, animation, behavior,
 audio, lights, OLED packing, device connectors, and the runner.
@@ -71,10 +71,28 @@ The default connector (`FirstAvailableConnector`) tries, in order:
 | [`samples/02_cube_lights`](samples/02_cube_lights) | wait for a light cube and animate its LEDs |
 | [`samples/03_events`](samples/03_events) | subscribe to robot state and world events |
 | [`samples/04_camera_frames`](samples/04_camera_frames) | stream JPEG frames to disk |
+| [`samples/Cozmo.Examples`](samples/Cozmo.Examples) | 47 ports of the Python SDK's tutorial, tool, app, IFTTT and multi-robot examples |
 
 ```bash
 dotnet run --project samples/01_hello_world
 ```
+
+### Python example parity
+
+The [Python example parity matrix](samples/PARITY.md) maps every program in the Python
+SDK's `examples/` tree to its C# counterpart. 47 of the 52 examples are ported. The five
+exceptions depend on Python-only stacks (Tk/OpenGL viewers, the image annotator, IPython,
+numpy/Pillow computer vision, and the Flask remote-control UI); each exception is listed
+with its reason.
+
+```bash
+dotnet run --project samples/Cozmo.Examples -- --list
+dotnet run --project samples/Cozmo.Examples -- tutorials/01_basics/01_hello_world
+```
+
+Each example's key is its Python path without the `.py` extension. The examples project
+uses StbImageSharp for the handful of image-based ports; the SDK library itself remains
+free of imaging dependencies.
 
 ## Documentation
 
@@ -114,6 +132,8 @@ The generated site is written to `docs/_site`.
 | `src/Cozmo/Lights`, `Util` | colours/lights, `Pose`, `Angle`, `Distance`, `Speed`, vectors, `TimeoutHelper` |
 | `src/Cozmo/Run` | device connectors, stream transport, `CozmoRunner` |
 | `tests/Cozmo.Tests` | unit tests plus the generated CLAD oracle |
+| `tests/Cozmo.Examples.Tests` | parity-catalogue and image-helper tests for the examples |
+| `samples/Cozmo.Examples` | C# ports of the Python examples and the shared example helpers |
 | `tools/cladgen`, `tools/utilgen`, `tools/camnavgen` | schema/CLAD/SDK-enum generators and golden-data generators |
 | `legacy` | the original unsupported Xamarin interface and DLL, kept for reference |
 
